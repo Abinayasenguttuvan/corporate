@@ -1,0 +1,6249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly </title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;600;700;800&display=swap"
+        rel="stylesheet">
+
+    
+</head>
+
+<body>
+
+    <!--==========================================
+                HEADER
+    ===========================================-->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <!--=====================
+                    LOGO
+            ======================-->
+
+            <a href="index.html" class="logo">
+
+                <img src="./logo.webp" alt="Stackly Logo">
+
+            </a>
+
+            <!--=====================
+                DESKTOP MENU
+            ======================-->
+
+            <ul class="nav-menu">
+
+                <li>
+                    <a href="index.html" >
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html" >
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./carrers.html">
+                        Careers
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html" class="active">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+
+            <!--=====================
+                RIGHT BUTTON
+            ======================-->
+
+            <a href="./login.html" class="talk-btn">
+
+                Let's Talk
+
+            </a>
+
+            <!--=====================
+                HAMBURGER
+            ======================-->
+
+            <div class="hamburger">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!--=========================
+            MOBILE MENU
+    ==========================-->
+
+    <div class="mobile-menu">
+
+        <ul>
+
+            <li>
+
+                <a href="index.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Home
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="about.html" class="active">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    About Us
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="services.html">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    Services
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="careers.html">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    Careers
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="contact.html">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Contact Us
+
+                </a>
+
+            </li>
+
+        </ul>
+
+        <a href="contact.html" class="mobile-btn">
+
+            Let's Talk
+
+        </a>
+
+    </div>
+
+    <style>
+
+        /*==================================================
+                GOOGLE FONT & RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+a{
+    text-decoration:none;
+}
+
+li{
+    list-style:none;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+/*==================================================
+                    HEADER
+==================================================*/
+
+.header{
+
+    position:fixed;
+
+    top:25px;
+
+    left:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    z-index:9999;
+
+    transition:.4s ease;
+
+}
+
+/*==================================================
+                GLASS NAVBAR
+==================================================*/
+
+.navbar{
+
+    width:min(1320px,92%);
+
+    height:86px;
+
+    padding:0 38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-radius:100px;
+
+    background:rgba(15,23,42,.82);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:2px solid rgba(255,255,255,.18);
+
+    box-shadow:
+
+        0 12px 40px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+/*==================================================
+                STICKY HEADER
+==================================================*/
+
+.header.sticky{
+
+    top:12px;
+
+}
+
+.header.sticky .navbar{
+
+    background:rgba(8,16,32,.96);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/*==================================================
+                    LOGO
+==================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.logo img{
+
+    width:235px;
+
+    transition:.35s;
+
+}
+
+.logo:hover img{
+
+    transform:scale(1.04);
+
+}
+
+/*==================================================
+                DESKTOP MENU
+==================================================*/
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+
+}
+
+.nav-menu li{
+
+    position:relative;
+
+}
+
+.nav-menu a{
+
+    position:relative;
+
+    color:#ffffff;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    padding:8px 2px;
+
+}
+
+/*==================================================
+            ACTIVE MENU
+==================================================*/
+
+.nav-menu a.active{
+
+    color:#39d6d6;
+
+    font-weight:600;
+
+}
+
+/*==================================================
+            HOVER EFFECT
+==================================================*/
+
+.nav-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:20px;
+
+    background:#39d6d6;
+
+    transform:translateX(-50%);
+
+    transition:.35s;
+
+}
+
+.nav-menu a:hover{
+
+    color:#39d6d6;
+
+}
+
+.nav-menu a:hover::after,
+
+.nav-menu a.active::after{
+
+    width:100%;
+
+}
+
+/*==================================================
+            MENU ITEM ANIMATION
+==================================================*/
+
+.nav-menu li{
+
+    transition:.35s;
+
+}
+
+.nav-menu li:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/*==================================================
+                LET'S TALK BUTTON
+==================================================*/
+
+.talk-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:14px 34px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#00d4c9,#00bcd4);
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:600;
+
+letter-spacing:.3px;
+
+transition:.35s ease;
+
+box-shadow:0 12px 30px rgba(0,188,212,.30);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.talk-btn::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:120%;
+
+height:100%;
+
+background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent
+);
+
+transition:.7s;
+
+}
+
+.talk-btn:hover::before{
+
+left:120%;
+
+}
+
+.talk-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,188,212,.45);
+
+}
+
+/*==================================================
+            HAMBURGER
+==================================================*/
+
+.hamburger{
+
+width:50px;
+
+height:50px;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+gap:6px;
+
+cursor:pointer;
+
+border-radius:50%;
+
+transition:.35s;
+
+}
+
+.hamburger span{
+
+width:28px;
+
+height:3px;
+
+border-radius:20px;
+
+background:#ffffff;
+
+transition:.35s;
+
+}
+
+.hamburger:hover{
+
+background:rgba(255,255,255,.08);
+
+}
+
+/*==================================================
+        HAMBURGER ACTIVE
+==================================================*/
+
+.hamburger.active span:nth-child(1){
+
+transform:translateY(9px) rotate(45deg);
+
+}
+
+.hamburger.active span:nth-child(2){
+
+opacity:0;
+
+}
+
+.hamburger.active span:nth-child(3){
+
+transform:translateY(-9px) rotate(-45deg);
+
+}
+
+/*==================================================
+            MOBILE MENU
+==================================================*/
+
+.mobile-menu{
+
+position:fixed;
+
+top:115px;
+
+left:50%;
+
+transform:translateX(-50%) scale(.95);
+
+width:min(92%,420px);
+
+background:#0f172a;
+
+border-radius:28px;
+
+padding:30px;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:0 25px 50px rgba(0,0,0,.35);
+
+z-index:999;
+
+}
+
+.mobile-menu.active{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateX(-50%) scale(1);
+
+}
+
+.mobile-menu ul{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.mobile-menu ul li a{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+color:#ffffff;
+
+font-size:17px;
+
+font-weight:500;
+
+padding:14px 18px;
+
+border-radius:14px;
+
+transition:.35s;
+
+}
+
+.mobile-menu ul li a i{
+
+width:24px;
+
+text-align:center;
+
+color:#00d4c9;
+
+}
+
+.mobile-menu ul li a:hover,
+
+.mobile-menu ul li a.active{
+
+background:rgba(0,212,201,.15);
+
+color:#00d4c9;
+
+}
+
+/*==================================================
+        MOBILE BUTTON
+==================================================*/
+
+.mobile-btn{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin-top:30px;
+
+width:100%;
+
+padding:15px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#00d4c9,#00bcd4);
+
+color:#fff;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.mobile-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 35px rgba(0,188,212,.35);
+
+}
+
+
+/*==================================================
+                LARGE DESKTOP
+==================================================*/
+
+@media (min-width:1600px){
+
+.navbar{
+
+    max-width:1450px;
+
+    height:95px;
+
+    padding:0 45px;
+
+}
+
+.logo img{
+
+    width:260px;
+
+}
+
+.nav-menu{
+
+    gap:55px;
+
+}
+
+.nav-menu a{
+
+    font-size:18px;
+
+}
+
+.talk-btn{
+
+    padding:16px 38px;
+
+    font-size:17px;
+
+}
+
+}
+
+/*==================================================
+                LAPTOP
+==================================================*/
+
+@media (max-width:1400px){
+
+.navbar{
+
+    width:94%;
+
+    padding:0 30px;
+
+}
+
+.logo img{
+
+    width:210px;
+
+}
+
+.nav-menu{
+
+    gap:28px;
+
+}
+
+.nav-menu a{
+
+    font-size:16px;
+
+}
+
+.talk-btn{
+
+    padding:13px 28px;
+
+    font-size:15px;
+
+}
+
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media (max-width:992px){
+
+.navbar{
+
+    height:78px;
+
+    padding:0 22px;
+
+}
+
+.logo img{
+
+    width:180px;
+
+}
+
+.nav-menu{
+
+    display:none;
+
+}
+
+.talk-btn{
+
+    display:none;
+
+}
+
+.hamburger{
+
+    display:flex;
+
+}
+
+.mobile-menu{
+
+    display:block;
+
+}
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media (max-width:768px){
+
+.header{
+
+    top:15px;
+
+}
+
+.navbar{
+
+    width:94%;
+
+    height:72px;
+
+    padding:0 18px;
+
+    border-radius:22px;
+
+}
+
+.logo img{
+
+    width:155px;
+
+}
+
+.hamburger{
+
+    width:42px;
+
+    height:42px;
+
+}
+
+.hamburger span{
+
+    width:24px;
+
+}
+
+.mobile-menu{
+
+    top:95px;
+
+    width:94%;
+
+    padding:22px;
+
+    border-radius:20px;
+
+}
+
+.mobile-menu ul li a{
+
+    font-size:16px;
+
+    padding:13px 16px;
+
+}
+
+.mobile-btn{
+
+    padding:14px;
+
+    font-size:15px;
+
+}
+
+}
+
+/*==================================================
+            SMALL MOBILE
+==================================================*/
+
+@media (max-width:480px){
+
+.header{
+
+    top:10px;
+
+}
+
+.navbar{
+
+    width:95%;
+
+    height:65px;
+
+    padding:0 15px;
+
+    border-radius:18px;
+
+}
+
+.logo img{
+
+    width:135px;
+
+}
+
+.hamburger{
+
+    width:38px;
+
+    height:38px;
+
+}
+
+.hamburger span{
+
+    width:22px;
+
+    height:2.5px;
+
+}
+
+.mobile-menu{
+
+    top:85px;
+
+    padding:18px;
+
+}
+
+.mobile-menu ul{
+
+    gap:12px;
+
+}
+
+.mobile-menu ul li a{
+
+    font-size:15px;
+
+    padding:12px;
+
+}
+
+.mobile-btn{
+
+    margin-top:20px;
+
+    padding:13px;
+
+}
+
+}
+
+/*==================================================
+        EXTRA SMALL DEVICES
+==================================================*/
+
+@media (max-width:360px){
+
+.logo img{
+
+    width:120px;
+
+}
+
+.mobile-menu{
+
+    width:96%;
+
+}
+
+.mobile-menu ul li a{
+
+    font-size:14px;
+
+}
+
+}
+        </style>
+
+        <script>
+            /*==================================================
+                HEADER JAVASCRIPT
+==================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*==============================================
+            SELECT ELEMENTS
+==============================================*/
+
+const header = document.querySelector(".header");
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+const navLinks = document.querySelectorAll(
+    ".nav-menu a, .mobile-menu a"
+);
+
+/*==============================================
+            STICKY HEADER
+==============================================*/
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 60) {
+
+        header.classList.add("sticky");
+
+    } else {
+
+        header.classList.remove("sticky");
+
+    }
+
+});
+
+/*==============================================
+        MOBILE MENU TOGGLE
+==============================================*/
+
+hamburger.addEventListener("click", () => {
+
+    hamburger.classList.toggle("active");
+
+    mobileMenu.classList.toggle("active");
+
+    document.body.classList.toggle("menu-open");
+
+});
+
+/*==============================================
+        CLOSE MENU WHEN LINK CLICKED
+==============================================*/
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        hamburger.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+    });
+
+});
+
+/*==============================================
+        ACTIVE MENU
+==============================================*/
+
+const currentPage = window.location.pathname.split("/").pop();
+
+navLinks.forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+
+        link.classList.add("active");
+
+    } else {
+
+        link.classList.remove("active");
+
+    }
+
+});
+
+/*==============================================
+        CLICK OUTSIDE TO CLOSE MENU
+==============================================*/
+
+document.addEventListener("click", (e) => {
+
+    if (
+
+        !mobileMenu.contains(e.target) &&
+
+        !hamburger.contains(e.target)
+
+    ) {
+
+        hamburger.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+    }
+
+});
+
+/*==============================================
+        ESC KEY CLOSE
+==============================================*/
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        hamburger.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+    }
+
+});
+
+/*==============================================
+        SMOOTH HOVER EFFECT
+==============================================*/
+
+document.querySelectorAll(".nav-menu li").forEach(item => {
+
+    item.addEventListener("mouseenter", () => {
+
+        item.style.transform = "translateY(-2px)";
+
+    });
+
+    item.addEventListener("mouseleave", () => {
+
+        item.style.transform = "translateY(0)";
+
+    });
+
+});
+
+});
+            </script>
+    
+   
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<!-- ==========================================
+        CONTACT HERO SECTION START
+=========================================== -->
+
+<section class="contact-hero">
+
+    <!-- Background Image -->
+    <div class="contact-hero-bg"></div>
+
+    <!-- White Smoky Overlay -->
+    <div class="contact-hero-overlay"></div>
+
+    <div class="contact-hero-container">
+
+        <div class="contact-hero-content">
+
+            <span class="contact-tag" style="padding-top: 50px;">
+                CONTACT US
+            </span>
+
+            <h1>
+                Let's Build Something
+                <span>Great Together.</span>
+            </h1>
+
+            <p>
+                Having a project in mind or need expert consultation?
+                We're here to help you turn your ideas into powerful
+                digital solutions.
+            </p>
+
+            <!-- Features -->
+
+            <div class="hero-features">
+
+                <!-- Expert Support -->
+
+                <div class="hero-feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-solid fa-users"></i>
+
+                    </div>
+
+                    <div class="feature-content">
+
+                        <h4>Expert Support</h4>
+
+                        <p>
+                            Our team is ready to
+                            assist you.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- Quick Response -->
+
+                <div class="hero-feature">
+
+                    <div class="feature-icon">
+
+                        <i class="fa-regular fa-clock"></i>
+
+                    </div>
+
+                    <div class="feature-content">
+
+                        <h4>Quick Response</h4>
+
+                        <p>
+                            We reply within
+                            24 business hours.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+        CONTACT HERO SECTION END
+=========================================== -->
+
+<style>
+    /*==========================================================
+            CONTACT HERO SECTION
+==========================================================*/
+
+.contact-hero{
+    position:relative;
+    width:100%;
+    min-height:720px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    background:#ffffff;
+}
+
+/*==================================
+Background Image
+==================================*/
+
+.contact-hero-bg{
+    position:absolute;
+    inset:0;
+    background:url("./contact.webp") center center/cover no-repeat;
+    z-index:1;
+}
+
+/* Dark layer over image */
+
+.contact-hero-bg::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.18);
+}
+
+/*==================================
+White Smoky Gradient
+==================================*/
+
+.contact-hero-overlay{
+
+position:absolute;
+inset:0;
+
+background:
+linear-gradient(to right,
+rgba(255,255,255,.98) 0%,
+rgba(255,255,255,.96) 30%,
+rgba(255,255,255,.90) 42%,
+rgba(255,255,255,.75) 52%,
+rgba(255,255,255,.40) 63%,
+rgba(255,255,255,.12) 72%,
+rgba(255,255,255,0) 82%);
+
+backdrop-filter:blur(3px);
+
+z-index:2;
+
+}
+/*==================================
+Container
+==================================*/
+
+.contact-hero-container{
+    position:relative;
+    z-index:5;
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+}
+
+.contact-hero-content{
+    width:48%;
+    padding-left:20px;
+}
+/*==================================
+Subtitle
+==================================*/
+
+.contact-tag{
+    display:inline-block;
+    font-size:18px;
+    font-weight:700;
+    color:#45C3D9;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+/*==================================
+Heading
+==================================*/
+
+.contact-hero-content h1{
+    font-size:64px;
+    font-weight:800;
+    color:#111;
+    line-height:1.08;
+    margin-bottom:25px;
+}
+
+.contact-hero-content h1 span{
+    display:block;
+    color:#58CABF;
+}
+
+/*==================================
+Paragraph
+==================================*/
+
+.contact-hero-content p{
+    max-width:620px;
+    font-size:20px;
+    line-height:1.6;
+    color:#222;
+    margin-bottom:55px;
+}
+
+/*==================================
+Features Row
+==================================*/
+
+.hero-features{
+    display:flex;
+    align-items:flex-start;
+    gap:60px;
+}
+
+/*==================================
+Single Feature
+==================================*/
+
+.hero-feature{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+/*==================================
+Blue Icon Circle
+==================================*/
+
+.feature-icon{
+    width:72px;
+    height:72px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#2C8CC7,#1E5D98);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.18);
+
+    flex-shrink:0;
+}
+
+/*==================================
+Icons
+==================================*/
+
+.feature-icon i{
+    color:#fff;
+    font-size:28px;
+}
+
+/*==================================
+Text
+==================================*/
+
+.feature-content h4{
+    margin:0;
+    font-size:20px;
+    font-weight:700;
+    color:#111;
+}
+
+.feature-content p{
+    margin-top:6px;
+    margin-bottom:0;
+    font-size:16px;
+    line-height:1.5;
+    color:#333;
+}
+
+/*==================================
+Hover
+==================================*/
+
+.hero-feature:hover .feature-icon{
+    transform:translateY(-4px);
+    transition:.35s;
+}
+
+.hero-feature:hover h4{
+    color:#2C8CC7;
+    transition:.35s;
+}
+
+/*==========================================================
+                RESPONSIVE CSS
+==========================================================*/
+
+/*=========================
+Large Laptop
+=========================*/
+
+@media (max-width:1400px){
+
+.contact-hero{
+    min-height:650px;
+}
+
+.contact-hero-content{
+    width:55%;
+}
+
+.contact-hero-content h1{
+    font-size:56px;
+}
+
+.contact-hero-content p{
+    font-size:18px;
+    max-width:560px;
+}
+
+.hero-features{
+    gap:45px;
+}
+
+.feature-icon{
+    width:68px;
+    height:68px;
+}
+
+.feature-icon i{
+    font-size:26px;
+}
+
+.feature-content h4{
+    font-size:19px;
+}
+
+.feature-content p{
+    font-size:15px;
+}
+
+}
+
+
+/*=========================
+Laptop
+=========================*/
+
+@media (max-width:1200px){
+
+.contact-hero{
+    min-height:600px;
+    padding:80px 0;
+}
+
+.contact-hero-content{
+    width:62%;
+}
+
+.contact-hero-content h1{
+    font-size:48px;
+}
+
+.contact-hero-content p{
+    font-size:17px;
+    margin-bottom:45px;
+}
+
+.hero-features{
+    gap:35px;
+}
+
+.feature-icon{
+    width:64px;
+    height:64px;
+}
+
+.feature-icon i{
+    font-size:24px;
+}
+
+.feature-content h4{
+    font-size:18px;
+}
+
+}
+
+
+/*=========================
+Tablet
+=========================*/
+
+@media (max-width:991px){
+
+.contact-hero{
+    min-height:auto;
+    padding:90px 0;
+}
+
+.contact-hero-overlay{
+
+    background:
+    linear-gradient(
+        rgba(255,255,255,.90),
+        rgba(255,255,255,.82)
+    );
+
+}
+
+.contact-hero-container{
+    width:90%;
+}
+
+.contact-hero-content{
+    width:100%;
+}
+
+.contact-hero-content h1{
+    font-size:42px;
+}
+
+.contact-hero-content p{
+    max-width:100%;
+    font-size:17px;
+}
+
+.hero-features{
+    gap:35px;
+    flex-wrap:wrap;
+}
+
+.hero-feature{
+    width:calc(50% - 18px);
+}
+
+}
+
+
+/*=========================
+Mobile
+=========================*/
+
+@media (max-width:767px){
+
+.contact-hero{
+    padding:70px 0;
+}
+
+.contact-tag{
+    font-size:15px;
+}
+
+.contact-hero-content h1{
+    font-size:34px;
+}
+
+.contact-hero-content p{
+    font-size:16px;
+    line-height:1.7;
+    margin-bottom:35px;
+}
+
+.hero-features{
+    flex-direction:column;
+    gap:28px;
+}
+
+.hero-feature{
+    width:100%;
+}
+
+.feature-icon{
+    width:60px;
+    height:60px;
+}
+
+.feature-icon i{
+    font-size:22px;
+}
+
+.feature-content h4{
+    font-size:18px;
+}
+
+.feature-content p{
+    font-size:15px;
+}
+
+}
+
+
+/*=========================
+Small Mobile
+=========================*/
+
+@media (max-width:480px){
+
+.contact-hero{
+    padding:60px 0;
+}
+
+.contact-hero-container{
+    width:92%;
+}
+
+.contact-hero-content h1{
+    font-size:28px;
+    line-height:1.2;
+}
+
+.contact-hero-content p{
+    font-size:15px;
+}
+
+.contact-tag{
+    font-size:14px;
+}
+
+.feature-icon{
+    width:55px;
+    height:55px;
+}
+
+.feature-icon i{
+    font-size:20px;
+}
+
+.feature-content h4{
+    font-size:17px;
+}
+
+.feature-content p{
+    font-size:14px;
+}
+
+}
+
+
+/*=========================
+Extra Small Devices
+=========================*/
+
+@media (max-width:360px){
+
+.contact-hero-content h1{
+    font-size:24px;
+}
+
+.contact-hero-content p{
+    font-size:14px;
+}
+
+.feature-content h4{
+    font-size:16px;
+}
+
+.feature-content p{
+    font-size:13px;
+}
+
+}
+</style>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact Us</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="contact.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<!-- ================= CONTACT SECTION ================= -->
+
+<section class="contact-section">
+
+<div class="contact-wrapper">
+
+<!-- ================= LEFT FORM ================= -->
+
+<div class="contact-form scroll-left">
+
+<h2>
+
+Send Us A Message
+
+</h2>
+
+<form id="contactForm">
+
+<div class="input-row">
+
+<div class="input-box">
+
+<input
+type="text"
+id="name"
+placeholder="Your Name*">
+
+<small></small>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="email"
+id="email"
+placeholder="Your Email*">
+
+<small></small>
+
+</div>
+
+</div>
+
+
+<div class="input-row">
+
+<div class="input-box">
+
+<input
+type="text"
+id="phone"
+placeholder="Phone Number">
+
+<small></small>
+
+</div>
+
+<div class="input-box">
+
+<input
+type="text"
+id="company"
+placeholder="Company Name">
+
+<small></small>
+
+</div>
+
+</div>
+
+
+<div class="input-box textarea-box">
+
+<textarea
+
+id="message"
+
+placeholder="Message Here..."
+
+></textarea>
+
+<small></small>
+
+</div>
+
+
+<button
+type="submit"
+class="send-btn">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+<!-- ================= RIGHT SIDE ================= -->
+
+<div class="contact-info scroll-right">
+
+<div class="globe"></div>
+
+<h2>
+
+Contact Information
+
+</h2>
+
+<div class="line"></div>
+
+<div class="info">
+
+<div class="icon">
+
+<i class="fas fa-phone"></i>
+
+</div>
+
+<div class="text">
+
+<h3>Phone</h3>
+
+<p>+91 7010792745</p>
+
+</div>
+
+</div>
+
+
+<div class="info">
+
+<div class="icon">
+
+<i class="fas fa-envelope"></i>
+
+</div>
+
+<div class="text">
+
+<h3>Email</h3>
+
+<p>info@stackly.com</p>
+
+</div>
+
+</div>
+
+
+<div class="info">
+
+<div class="icon">
+
+<i class="fas fa-map-marker-alt"></i>
+
+</div>
+
+<div class="text">
+
+<h3>Address</h3>
+
+<p>
+
+Tamilnadu
+
+<br>
+
+Salem - 636008
+
+</p>
+
+</div>
+
+</div>
+
+
+<div class="info">
+
+<div class="icon">
+
+<i class="fas fa-globe"></i>
+
+</div>
+
+<div class="text">
+
+<h3>Office Hours</h3>
+
+<p>
+
+Mon – Fri : 9:30 AM – 6:30 PM
+
+<br>
+
+Sat & Sun : Closed
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SUCCESS POPUP ================= -->
+
+<div class="popup" id="popup">
+
+<div class="popup-box">
+
+<div class="check">
+
+<i class="fas fa-check-circle"></i>
+
+</div>
+
+<h2>
+
+Message Sent Successfully!
+
+</h2>
+
+<p>
+
+Thank you for contacting us.
+
+We will get back to you shortly.
+
+</p>
+
+<button id="okBtn">
+
+OK
+
+</button>
+
+</div>
+
+</div>
+
+
+<!-- JavaScript -->
+
+<script src="contact.js"></script>
+
+</body>
+
+</html>
+
+<style>
+    /*=========================
+GOOGLE FONT
+==========================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fa;
+    overflow-x:hidden;
+}
+
+
+/*=========================
+CONTACT SECTION
+==========================*/
+
+.contact-section{
+
+    width:100%;
+    padding:90px 8%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.contact-wrapper{
+
+    width:100%;
+    max-width:1200px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:35px;
+}
+
+
+/*=========================
+LEFT FORM CARD
+==========================*/
+
+.contact-form{
+
+    background:#ffffff;
+
+    border-radius:22px;
+
+    padding:42px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.12);
+
+    transition:.5s;
+}
+
+.contact-form:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.contact-form h2{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#111;
+
+    text-align:center;
+
+    margin-bottom:35px;
+
+}
+
+
+/*=========================
+INPUT ROW
+==========================*/
+
+.input-row{
+
+    display:flex;
+
+    gap:20px;
+
+    margin-bottom:18px;
+
+}
+
+
+/*=========================
+INPUT BOX
+==========================*/
+
+.input-box{
+
+    width:100%;
+
+    position:relative;
+
+}
+
+
+.input-box input{
+
+    width:100%;
+
+    height:55px;
+
+    padding:0 18px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+    background:#fff;
+
+}
+
+.input-box input:focus{
+
+    border-color:#4ec7b8;
+
+    box-shadow:0 0 12px rgba(78,199,184,.25);
+
+}
+
+
+.input-box textarea{
+
+    width:100%;
+
+    height:180px;
+
+    resize:none;
+
+    padding:18px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:10px;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.input-box textarea:focus{
+
+    border-color:#4ec7b8;
+
+    box-shadow:0 0 12px rgba(78,199,184,.25);
+
+}
+
+
+.textarea-box{
+
+    margin-top:10px;
+
+}
+
+
+/*=========================
+ERROR TEXT
+==========================*/
+
+.input-box small{
+
+    display:block;
+
+    color:#e53935;
+
+    font-size:13px;
+
+    margin-top:6px;
+
+    min-height:18px;
+
+}
+
+
+/*=========================================
+RIGHT CONTACT INFORMATION CARD
+=========================================*/
+
+.contact-info{
+
+position:relative;
+
+overflow:hidden;
+
+background:#111d38;
+
+color:#ffffff;
+
+border-radius:22px;
+
+padding:40px 35px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.18);
+
+min-height:620px;
+
+transition:.4s;
+
+}
+
+.contact-info:hover{
+
+transform:translateY(-6px);
+
+}
+
+
+/*=========================================
+BACKGROUND GLOBE
+=========================================*/
+
+.globe{
+
+position:absolute;
+
+width:650px;
+
+height:650px;
+
+background:url("./globe.webp") no-repeat center;
+
+background-size:contain;
+
+opacity:.08;
+
+right:-180px;
+
+bottom:-150px;
+
+pointer-events:none;
+
+}
+
+
+/*=========================================
+HEADING
+=========================================*/
+
+.contact-info h2{
+
+font-size:33px;
+
+font-weight:700;
+
+margin-bottom:10px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+.line{
+
+width:70px;
+
+height:4px;
+
+border-radius:20px;
+
+background:#53d2c2;
+
+margin-bottom:35px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+/*=========================================
+CONTACT ROW
+=========================================*/
+
+.info{
+
+display:flex;
+
+align-items:flex-start;
+
+gap:18px;
+
+margin-bottom:35px;
+
+position:relative;
+
+z-index:2;
+
+}
+
+
+/*=========================================
+ICON
+=========================================*/
+
+.icon{
+
+width:56px;
+
+height:56px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#44d6c4,#227dc7);
+
+color:#fff;
+
+font-size:22px;
+
+flex-shrink:0;
+
+box-shadow:0 6px 16px rgba(0,0,0,.25);
+
+}
+
+
+/*=========================================
+TEXT
+=========================================*/
+
+.text h3{
+
+font-size:26px;
+
+margin-bottom:6px;
+
+font-weight:600;
+
+}
+
+.text p{
+
+font-size:18px;
+
+color:#f3f3f3;
+
+line-height:1.8;
+
+}
+
+
+/*=========================================
+SEND BUTTON
+=========================================*/
+
+.send-btn{
+
+width:100%;
+
+height:62px;
+
+border:none;
+
+outline:none;
+
+cursor:pointer;
+
+margin-top:18px;
+
+border-radius:12px;
+
+font-size:22px;
+
+font-weight:700;
+
+color:#111;
+
+background:linear-gradient(90deg,#58d0c0,#48c8b5);
+
+box-shadow:0 8px 18px rgba(0,0,0,.22);
+
+transition:.35s;
+
+}
+
+.send-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 12px 24px rgba(0,0,0,.28);
+
+}
+
+.send-btn:active{
+
+transform:scale(.98);
+
+}
+
+
+/*=========================================
+SUCCESS POPUP
+=========================================*/
+
+.popup{
+
+position:fixed;
+
+inset:0;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:rgba(0,0,0,.55);
+
+visibility:hidden;
+
+opacity:0;
+
+transition:.35s;
+
+z-index:9999;
+
+}
+
+.popup.active{
+
+visibility:visible;
+
+opacity:1;
+
+}
+
+
+.popup-box{
+
+width:420px;
+
+max-width:90%;
+
+background:#fff;
+
+border-radius:20px;
+
+padding:40px 30px;
+
+text-align:center;
+
+animation:popupScale .45s ease;
+
+}
+
+.check{
+
+font-size:75px;
+
+color:#3fd37d;
+
+margin-bottom:18px;
+
+}
+
+.popup-box h2{
+
+font-size:30px;
+
+margin-bottom:12px;
+
+}
+
+.popup-box p{
+
+color:#666;
+
+font-size:17px;
+
+line-height:1.8;
+
+}
+
+.popup-box button{
+
+margin-top:28px;
+
+width:170px;
+
+height:52px;
+
+border:none;
+
+border-radius:10px;
+
+background:#49c8b7;
+
+color:#fff;
+
+font-size:18px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.popup-box button:hover{
+
+background:#2ea99a;
+
+}
+
+
+/*=========================================
+POPUP ANIMATION
+=========================================*/
+
+@keyframes popupScale{
+
+0%{
+
+    transform:scale(.6);
+
+    opacity:0;
+
+}
+
+100%{
+
+    transform:scale(1);
+
+    opacity:1;
+
+}
+
+}
+
+
+/*=========================================
+SCROLL ANIMATION BASE
+=========================================*/
+
+.scroll-left,
+.scroll-right{
+
+opacity:0;
+
+transition:1s ease;
+
+}
+
+.scroll-left{
+
+transform:translateX(-120px);
+
+}
+
+.scroll-right{
+
+transform:translateX(120px);
+
+}
+
+.scroll-left.show,
+.scroll-right.show{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+/*==================================================
+LARGE LAPTOPS (1200px and below)
+==================================================*/
+
+@media (max-width:1200px){
+
+.contact-section{
+
+    padding:80px 5%;
+
+}
+
+.contact-wrapper{
+
+    gap:30px;
+
+}
+
+.contact-form{
+
+    padding:35px;
+
+}
+
+.contact-info{
+
+    padding:35px;
+
+}
+
+.contact-form h2{
+
+    font-size:32px;
+
+}
+
+.contact-info h2{
+
+    font-size:31px;
+
+}
+
+.globe{
+
+    width:560px;
+
+    height:560px;
+
+    right:-160px;
+
+    bottom:-120px;
+
+}
+
+}
+
+
+/*==================================================
+TABLETS
+==================================================*/
+
+@media (max-width:992px){
+
+.contact-wrapper{
+
+    grid-template-columns:1fr;
+
+}
+
+.contact-form{
+
+    order:1;
+
+}
+
+.contact-info{
+
+    order:2;
+
+    min-height:auto;
+
+}
+
+.contact-form h2{
+
+    font-size:30px;
+
+}
+
+.contact-info h2{
+
+    font-size:30px;
+
+}
+
+.globe{
+
+    width:500px;
+
+    height:500px;
+
+    right:-150px;
+
+    bottom:-100px;
+
+}
+
+}
+
+
+/*==================================================
+MOBILE LANDSCAPE
+==================================================*/
+
+@media (max-width:768px){
+
+.contact-section{
+
+    padding:60px 20px;
+
+}
+
+.contact-form{
+
+    padding:28px;
+
+}
+
+.contact-info{
+
+    padding:30px 25px;
+
+}
+
+.input-row{
+
+    flex-direction:column;
+
+    gap:16px;
+
+}
+
+.contact-form h2{
+
+    font-size:28px;
+
+}
+
+.contact-info h2{
+
+    font-size:28px;
+
+}
+
+.text h3{
+
+    font-size:22px;
+
+}
+
+.text p{
+
+    font-size:16px;
+
+    line-height:1.7;
+
+}
+
+.icon{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:20px;
+
+}
+
+.send-btn{
+
+    height:58px;
+
+    font-size:20px;
+
+}
+
+.globe{
+
+    width:430px;
+
+    height:430px;
+
+    right:-120px;
+
+    bottom:-90px;
+
+}
+
+}
+
+
+/*==================================================
+SMALL MOBILES
+==================================================*/
+
+@media (max-width:576px){
+
+.contact-section{
+
+    padding:50px 15px;
+
+}
+
+.contact-form{
+
+    padding:22px;
+
+    border-radius:18px;
+
+}
+
+.contact-info{
+
+    padding:22px;
+
+    border-radius:18px;
+
+}
+
+.contact-form h2{
+
+    font-size:25px;
+
+    margin-bottom:25px;
+
+}
+
+.contact-info h2{
+
+    font-size:25px;
+
+}
+
+.line{
+
+    width:60px;
+
+    margin-bottom:28px;
+
+}
+
+.input-box input{
+
+    height:50px;
+
+    font-size:14px;
+
+}
+
+.input-box textarea{
+
+    height:160px;
+
+    font-size:14px;
+
+}
+
+.send-btn{
+
+    height:55px;
+
+    font-size:18px;
+
+}
+
+.info{
+
+    gap:14px;
+
+    margin-bottom:28px;
+
+}
+
+.icon{
+
+    width:46px;
+
+    height:46px;
+
+    font-size:18px;
+
+}
+
+.text h3{
+
+    font-size:20px;
+
+}
+
+.text p{
+
+    font-size:15px;
+
+}
+
+.popup-box{
+
+    width:92%;
+
+    padding:30px 20px;
+
+}
+
+.popup-box h2{
+
+    font-size:24px;
+
+}
+
+.popup-box p{
+
+    font-size:15px;
+
+}
+
+.popup-box button{
+
+    width:150px;
+
+    height:48px;
+
+}
+
+.globe{
+
+    width:350px;
+
+    height:350px;
+
+    right:-120px;
+
+    bottom:-70px;
+
+}
+
+}
+
+
+/*==================================================
+EXTRA SMALL DEVICES
+==================================================*/
+
+@media (max-width:400px){
+
+.contact-form h2{
+
+    font-size:22px;
+
+}
+
+.contact-info h2{
+
+    font-size:22px;
+
+}
+
+.text h3{
+
+    font-size:18px;
+
+}
+
+.text p{
+
+    font-size:14px;
+
+}
+
+.icon{
+
+    width:42px;
+
+    height:42px;
+
+    font-size:17px;
+
+}
+
+.send-btn{
+
+    height:52px;
+
+    font-size:17px;
+
+}
+
+.input-box input{
+
+    padding:0 14px;
+
+}
+
+.input-box textarea{
+
+    padding:14px;
+
+}
+
+.globe{
+
+    width:280px;
+
+    height:280px;
+
+    right:-90px;
+
+    bottom:-60px;
+
+}
+
+}
+
+
+/*==================================================
+SMOOTH TRANSITIONS
+==================================================*/
+
+.contact-form,
+.contact-info,
+.input-box input,
+.input-box textarea,
+.send-btn,
+.popup-box{
+
+    transition:all .35s ease;
+
+}
+</style>
+
+<script>
+    /*=========================================
+SCROLL ANIMATION
+=========================================*/
+
+const observer = new IntersectionObserver((entries) => {
+
+entries.forEach(entry => {
+
+    if (entry.isIntersecting) {
+
+        entry.target.classList.add("show");
+
+    }
+
+});
+
+}, {
+
+threshold: 0.2
+
+});
+
+document.querySelectorAll(".scroll-left,.scroll-right").forEach(el => {
+
+observer.observe(el);
+
+});
+
+
+/*=========================================
+FORM VALIDATION
+=========================================*/
+
+const form = document.getElementById("contactForm");
+
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const companyInput = document.getElementById("company");
+const messageInput = document.getElementById("message");
+
+const popup = document.getElementById("popup");
+const okBtn = document.getElementById("okBtn");
+
+
+function showError(input, message) {
+
+const box = input.parentElement;
+
+const small = box.querySelector("small");
+
+small.innerText = message;
+
+input.style.borderColor = "#e53935";
+
+}
+
+function showSuccess(input) {
+
+const box = input.parentElement;
+
+const small = box.querySelector("small");
+
+small.innerText = "";
+
+input.style.borderColor = "#4ec7b8";
+
+}
+
+
+function validEmail(email) {
+
+return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+}
+
+function validPhone(phone) {
+
+return /^[0-9]{10}$/.test(phone);
+
+}
+
+
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let valid = true;
+
+
+/*=====================
+NAME
+=====================*/
+
+if(nameInput.value.trim()===""){
+
+    showError(nameInput,"Fill details correctly");
+
+    valid=false;
+
+}
+
+else{
+
+    showSuccess(nameInput);
+
+}
+
+
+/*=====================
+EMAIL
+=====================*/
+
+if(emailInput.value.trim()==="" ||
+
+   !validEmail(emailInput.value.trim())){
+
+    showError(emailInput,"Fill details correctly");
+
+    valid=false;
+
+}
+
+else{
+
+    showSuccess(emailInput);
+
+}
+
+
+/*=====================
+PHONE
+=====================*/
+
+if(phoneInput.value.trim()==="" ||
+
+   !validPhone(phoneInput.value.trim())){
+
+    showError(phoneInput,"Fill details correctly");
+
+    valid=false;
+
+}
+
+else{
+
+    showSuccess(phoneInput);
+
+}
+
+
+/*=====================
+COMPANY
+=====================*/
+
+if(companyInput.value.trim()===""){
+
+    showError(companyInput,"Fill details correctly");
+
+    valid=false;
+
+}
+
+else{
+
+    showSuccess(companyInput);
+
+}
+
+
+/*=====================
+MESSAGE
+=====================*/
+
+if(messageInput.value.trim()===""){
+
+    showError(messageInput,"Fill details correctly");
+
+    valid=false;
+
+}
+
+else{
+
+    showSuccess(messageInput);
+
+}
+
+
+/*=====================
+SUCCESS
+=====================*/
+
+if(valid){
+
+    popup.classList.add("active");
+
+}
+
+});
+
+
+/*=========================================
+POPUP BUTTON
+=========================================*/
+
+okBtn.addEventListener("click",function(){
+
+window.location.href="404.html";
+
+});
+
+
+/*=========================================
+REMOVE ERROR WHILE TYPING
+=========================================*/
+
+const fields = [
+
+nameInput,
+
+emailInput,
+
+phoneInput,
+
+companyInput,
+
+messageInput
+
+];
+
+fields.forEach(field=>{
+
+field.addEventListener("input",()=>{
+
+    field.style.borderColor="#d8d8d8";
+
+    field.parentElement.querySelector("small").innerHTML="";
+
+});
+
+});
+
+
+/*=========================================
+ALLOW ONLY NUMBERS IN PHONE
+=========================================*/
+
+phoneInput.addEventListener("input",function(){
+
+this.value=this.value.replace(/[^0-9]/g,'');
+
+if(this.value.length>10){
+
+    this.value=this.value.slice(0,10);
+
+}
+
+});
+</script>
+
+
+<!-- ==========================================
+MAP SECTION START
+========================================== -->
+
+<section class="map-section scroll-up">
+
+    <div class="office-card">
+
+        <div class="office-icon">
+            <i class="fas fa-map-marker-alt"></i>
+        </div>
+
+        <div class="office-content">
+
+            <h3>Our Office</h3>
+
+            <p>
+                Tamilnadu<br>
+                Salem - 636008,<br>
+                India
+            </p>
+
+        </div>
+
+    </div>
+
+    <iframe
+        src="https://www.google.com/maps?q=Salem,Tamilnadu&output=embed"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+</section>
+
+<!-- ==========================================
+MAP SECTION END
+========================================== -->
+
+<!--=========================================
+            FAQ SECTION
+==========================================-->
+
+<section class="faq-section">
+
+    <div class="faq-container">
+
+        <!--=================================
+                LEFT SIDE
+        ==================================-->
+
+        <div class="faq-left scroll-left">
+
+            <span class="faq-small-title" style="padding-top: 20px;">
+                FAQ'S
+            </span>
+
+            <h2>
+
+                Frequently Asked
+
+                <span>Questions</span>
+
+            </h2>
+
+            <!-- FAQ 1 -->
+
+            <div class="faq-item active">
+
+                <button class="faq-question">
+
+                    <span>How quickly can you start my project?</span>
+
+                    <i class="fas fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        We usually begin within 3–5 business days after the project is confirmed. Our team will schedule a kickoff meeting, gather the necessary requirements, and start the development process immediately.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 2 -->
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>What information do you need to get started?</span>
+
+                    <i class="fas fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        We need your project requirements, business goals, preferred technology, design references, timeline, and any additional documents that help us understand your vision.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 3 -->
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>Do you work with startups and small businesses?</span>
+
+                    <i class="fas fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Yes. We proudly work with startups, small businesses, and enterprise organizations, providing scalable digital solutions tailored to every stage of business growth.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 4 -->
+
+            <div class="faq-item">
+
+                <button class="faq-question">
+
+                    <span>Can I schedule a meeting with your team?</span>
+
+                    <i class="fas fa-plus"></i>
+
+                </button>
+
+                <div class="faq-answer">
+
+                    <p>
+
+                        Absolutely! You can schedule a free consultation with our experts to discuss your project ideas, timelines, pricing, and technical requirements.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--=================================
+                RIGHT SIDE
+        ==================================-->
+
+        <div class="schedule-card scroll-right" >
+
+            <div class="schedule-icon" style="padding-top: 50px;">
+
+                <i class="fas fa-headset"></i>
+
+            </div>
+
+            <h3 >
+
+                Prefer to Talk Directly?
+
+            </h3>
+
+            <p>
+
+                Have questions or need expert advice? Schedule a free consultation with our team and discover how Stackly can help transform your business with innovative digital solutions.
+
+            </p>
+
+            <a href="404.html" class="schedule-btn">
+
+                Schedule a Call
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--=========================================
+            FONT AWESOME
+==========================================-->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!--=========================================
+            FAQ SCRIPT
+==========================================-->
+
+<script src="faq.js"></script>
+
+<Style>
+    /*====================================================
+            FAQ SECTION
+====================================================*/
+
+.faq-container{
+
+width:min(1250px,92%);
+
+margin:100px auto;
+
+display:grid;
+
+grid-template-columns:1.8fr 1fr;
+
+gap:60px;
+
+align-items:start;
+
+}
+
+/*====================================================
+        FAQ LEFT
+====================================================*/
+
+.faq-left{
+
+width:100%;
+
+}
+
+.faq-small-title{
+
+display:inline-block;
+
+color:#00b8c9;
+
+font-size:17px;
+
+font-weight:700;
+
+text-transform:uppercase;
+
+margin-bottom:18px;
+
+}
+
+.faq-left h2{
+
+font-size:48px;
+
+font-weight:800;
+
+color:#111;
+
+line-height:1.2;
+
+margin-bottom:40px;
+
+}
+
+.faq-left h2 span{
+
+color:#00b8c9;
+
+}
+
+.faq-item{
+
+background:#ffffff;
+
+border-radius:18px;
+
+margin-bottom:20px;
+
+overflow:hidden;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.faq-item:hover{
+
+transform:translateY(-5px);
+
+}
+
+.faq-question{
+
+width:100%;
+
+border:none;
+
+background:#fff;
+
+cursor:pointer;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:22px 25px;
+
+font-size:18px;
+
+font-weight:600;
+
+color:#111;
+
+}
+
+.faq-question i{
+
+color:#00b8c9;
+
+transition:.35s;
+
+}
+
+.faq-item.active .faq-question i{
+
+transform:rotate(45deg);
+
+}
+
+.faq-answer{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:max-height .4s ease;
+
+}
+
+.faq-item.active .faq-answer{
+
+max-height:180px;
+
+}
+
+.faq-answer p{
+
+padding:0 25px 25px;
+
+color:#666;
+
+line-height:1.8;
+
+}
+
+/*====================================================
+        RIGHT CARD
+====================================================*/
+
+.schedule-card{
+
+background:#0f172a;
+
+border-radius:28px;
+
+padding:45px 35px;
+
+text-align:center;
+
+color:#fff;
+
+box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.schedule-icon{
+
+width:90px;
+
+height:90px;
+
+margin:auto auto 25px;
+
+border-radius:50%;
+
+background:#00b8c9;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:34px;
+
+}
+
+.schedule-card h3{
+
+font-size:30px;
+
+margin-bottom:18px;
+
+}
+
+.schedule-card p{
+
+font-size:16px;
+
+line-height:1.8;
+
+color:#d6d6d6;
+
+margin-bottom:30px;
+
+}
+
+.schedule-btn{
+
+display:inline-flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:16px 34px;
+
+border-radius:50px;
+
+background:#00b8c9;
+
+color:#fff;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.schedule-btn:hover{
+
+background:#00d9a6;
+
+transform:translateY(-4px);
+
+}
+
+/*====================================================
+        SCROLL ANIMATION
+====================================================*/
+
+.scroll-left,
+.scroll-right{
+
+opacity:0;
+
+transition:1s ease;
+
+}
+
+.scroll-left{
+
+transform:translateX(-100px);
+
+}
+
+.scroll-right{
+
+transform:translateX(100px);
+
+}
+
+.scroll-left.show,
+.scroll-right.show{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+/*====================================================
+            LAPTOP
+====================================================*/
+
+@media(max-width:1200px){
+
+.faq-container{
+
+    gap:40px;
+
+}
+
+.faq-left h2{
+
+    font-size:42px;
+
+}
+
+}
+
+/*====================================================
+            TABLET
+====================================================*/
+
+@media(max-width:992px){
+
+.faq-container{
+
+    grid-template-columns:1fr;
+
+    gap:40px;
+
+}
+
+.schedule-card{
+
+    max-width:600px;
+
+    margin:auto;
+
+}
+
+}
+
+/*====================================================
+            MOBILE
+====================================================*/
+
+@media(max-width:768px){
+
+.faq-container{
+
+    width:92%;
+
+    margin:70px auto;
+
+    gap:35px;
+
+}
+
+.faq-left h2{
+
+    font-size:32px;
+
+    text-align:center;
+
+}
+
+.faq-small-title{
+
+    display:block;
+
+    text-align:center;
+
+}
+
+.faq-question{
+
+    padding:18px;
+
+    font-size:16px;
+
+}
+
+.faq-answer p{
+
+    padding:0 18px 18px;
+
+    font-size:15px;
+
+}
+
+.schedule-card{
+
+    padding:35px 25px;
+
+}
+
+.schedule-icon{
+
+    width:75px;
+
+    height:75px;
+
+    font-size:28px;
+
+}
+
+.schedule-card h3{
+
+    font-size:24px;
+
+}
+
+}
+
+/*====================================================
+        SMALL MOBILE
+====================================================*/
+
+@media(max-width:480px){
+
+.faq-left h2{
+
+    font-size:27px;
+
+}
+
+.faq-question{
+
+    font-size:15px;
+
+    padding:16px;
+
+}
+
+.faq-answer p{
+
+    font-size:14px;
+
+}
+
+.schedule-card{
+
+    padding:28px 20px;
+
+    border-radius:22px;
+
+}
+
+.schedule-card h3{
+
+    font-size:21px;
+
+}
+
+.schedule-card p{
+
+    font-size:14px;
+
+}
+
+.schedule-btn{
+
+    width:100%;
+
+}
+
+}
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+const elements = document.querySelectorAll(".scroll-left, .scroll-right");
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+
+    threshold:0.2
+
+});
+
+elements.forEach(el => observer.observe(el));
+
+});
+        </script>
+
+
+
+
+<!-- ==========================================
+FAQ SECTION END
+========================================== -->
+
+<style>
+    /*======================================
+MAP SECTION
+======================================*/
+
+.map-section{
+    position:relative;
+    width:100%;
+    height:450px;
+    overflow:hidden;
+    margin-top:80px;
+}
+
+.map-section iframe{
+    width:100%;
+    height:100%;
+    border:none;
+    display:block;
+}
+
+
+/*======================================
+OFFICE CARD
+======================================*/
+
+.office-card{
+
+    position:absolute;
+
+    top:55px;
+
+    left:80px;
+
+    width:270px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:28px;
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:flex-start;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    z-index:5;
+
+    transition:.4s;
+
+}
+
+.office-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.office-icon{
+
+    width:55px;
+
+    height:55px;
+
+    border-radius:50%;
+
+    background:#eaf9f7;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#ff4b4b;
+
+    font-size:24px;
+
+}
+
+.office-content h3{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#111;
+
+    margin-bottom:12px;
+
+}
+
+.office-content p{
+
+    font-size:18px;
+
+    color:#444;
+
+    line-height:1.8;
+
+}
+
+
+/*======================================
+FAQ SECTION
+======================================*/
+
+.faq-section{
+
+    padding:90px 8%;
+
+    background:#fff;
+
+}
+
+.faq-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1.2fr .8fr;
+
+    gap:60px;
+
+    align-items:center;
+
+}
+
+
+/*======================================
+LEFT SIDE
+======================================*/
+
+.faq-small-title{
+
+    color:#46c9b8;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    font-size:15px;
+
+    text-transform:uppercase;
+
+}
+
+.faq-left h2{
+
+    font-size:46px;
+
+    line-height:1.15;
+
+    color:#111;
+
+    margin:10px 0 35px;
+
+}
+
+.faq-left h2 span{
+
+    color:#46c9b8;
+
+}
+
+/*=========================================
+        FAQ - MOBILE VIEW
+=========================================*/
+
+@media (max-width:768px){
+
+    .faq-container{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:40px;
+
+        padding:60px 20px;
+
+    }
+
+    .faq-left{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .faq-small-title{
+
+        display:inline-block;
+
+        font-size:15px;
+
+        margin-bottom:12px;
+
+    }
+
+    .faq-left h2{
+
+        font-size:32px;
+
+        line-height:1.3;
+
+        margin-bottom:30px;
+
+    }
+
+    .faq-left h2 span{
+
+        display:block;
+
+    }
+
+    .faq-item{
+
+        margin-bottom:16px;
+
+        border-radius:16px;
+
+        overflow:hidden;
+
+        box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    }
+
+    .faq-question{
+
+        width:100%;
+
+        padding:18px 20px;
+
+        font-size:16px;
+
+        font-weight:600;
+
+        display:flex;
+
+        justify-content:space-between;
+
+        align-items:center;
+
+        text-align:left;
+
+        border:none;
+
+        background:#ffffff;
+
+        cursor:pointer;
+
+    }
+
+    .faq-question i{
+
+        font-size:16px;
+
+        flex-shrink:0;
+
+        margin-left:12px;
+
+    }
+
+    .faq-answer{
+
+        padding:0 20px;
+
+    }
+
+    .faq-answer p{
+
+        font-size:15px;
+
+        line-height:1.8;
+
+        padding:0 0 18px;
+
+        color:#666;
+
+    }
+
+}
+
+/*=========================================
+        SMALL MOBILE
+=========================================*/
+
+@media (max-width:480px){
+
+    .faq-container{
+
+        padding:50px 15px;
+
+    }
+
+    .faq-left h2{
+
+        font-size:26px;
+
+    }
+
+    .faq-question{
+
+        padding:16px;
+
+        font-size:15px;
+
+    }
+
+    .faq-question i{
+
+        font-size:15px;
+
+    }
+
+    .faq-answer{
+
+        padding:0 16px;
+
+    }
+
+    .faq-answer p{
+
+        font-size:14px;
+
+        line-height:1.7;
+
+    }
+
+}
+/*======================================
+FAQ ITEM
+======================================*/
+
+.faq-item{
+
+    background:#fff;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    margin-bottom:14px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.faq-item.active{
+
+    border-color:#46c9b8;
+
+}
+
+.faq-question{
+
+    width:100%;
+
+    background:#fff;
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:18px 22px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    color:#222;
+
+    transition:.3s;
+
+}
+
+.faq-question:hover{
+
+    background:#f7fbfb;
+
+}
+
+.faq-question i{
+
+    color:#222;
+
+    transition:.3s;
+
+}
+
+.faq-item.active i{
+
+    transform:rotate(45deg);
+
+    color:#46c9b8;
+
+}
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .4s ease;
+
+}
+
+.faq-answer p{
+
+    padding:0 22px 20px;
+
+    font-size:15px;
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+
+/*======================================
+RIGHT CARD
+======================================*/
+
+.schedule-card{
+
+    background:#eef8fb;
+
+    border-radius:20px;
+
+    padding:45px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+}
+
+.schedule-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.schedule-icon{
+
+    width:78px;
+
+    height:78px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#46c9b8,#2f80ed);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:34px;
+
+    margin-bottom:25px;
+
+}
+
+.schedule-card h3{
+
+    font-size:34px;
+
+    margin-bottom:18px;
+
+    color:#111;
+
+}
+
+.schedule-card p{
+
+    font-size:18px;
+
+    color:#555;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+
+/*======================================
+BUTTON
+======================================*/
+
+.schedule-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    width:240px;
+
+    height:58px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:600;
+
+    background:linear-gradient(90deg,#58d0c0,#44c5b5);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.18);
+
+    transition:.35s;
+
+}
+
+.schedule-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 14px 28px rgba(0,0,0,.25);
+
+}
+
+/*======================================
+SCROLL ANIMATIONS
+======================================*/
+
+.scroll-up,
+.scroll-left,
+.scroll-right{
+
+    opacity:1;
+
+}
+.scroll-up{
+    transform:translateY(100px);
+}
+
+.scroll-left{
+    transform:translateX(-100px);
+}
+
+.scroll-right{
+    transform:translateX(100px);
+}
+
+.scroll-up.show,
+.scroll-left.show,
+.scroll-right.show{
+    opacity:1;
+    transform:translate(0,0);
+}
+
+
+/*======================================
+TABLET (991px)
+======================================*/
+
+@media(max-width:991px){
+
+.map-section{
+
+    height:400px;
+
+}
+
+.office-card{
+
+    width:250px;
+
+    left:35px;
+
+    top:35px;
+
+    padding:22px;
+
+}
+
+.office-content h3{
+
+    font-size:24px;
+
+}
+
+.office-content p{
+
+    font-size:16px;
+
+}
+
+.faq-section{
+
+    padding:70px 5%;
+
+}
+
+.faq-container{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+
+}
+
+.faq-left h2{
+
+    font-size:38px;
+
+}
+
+.schedule-card{
+
+    padding:35px;
+
+}
+
+.schedule-card h3{
+
+    font-size:30px;
+
+}
+
+.schedule-card p{
+
+    font-size:17px;
+
+}
+
+.schedule-btn{
+
+    width:220px;
+
+}
+
+}
+
+
+/*======================================
+MOBILE (768px)
+======================================*/
+
+@media(max-width:768px){
+
+.map-section{
+
+    height:350px;
+
+}
+
+.office-card{
+
+    position:relative;
+
+    left:0;
+
+    top:0;
+
+    width:90%;
+
+    margin:20px auto;
+
+}
+
+.map-section iframe{
+
+    height:350px;
+
+}
+
+.faq-section{
+
+    padding:60px 20px;
+
+}
+
+.faq-left h2{
+
+    font-size:32px;
+
+}
+
+.faq-question{
+
+    font-size:15px;
+
+    padding:16px;
+
+}
+
+.faq-answer p{
+
+    font-size:14px;
+
+}
+
+.schedule-card{
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+.schedule-icon{
+
+    margin:0 auto 25px;
+
+}
+
+.schedule-card h3{
+
+    font-size:28px;
+
+}
+
+.schedule-card p{
+
+    font-size:16px;
+
+}
+
+.schedule-btn{
+
+    width:100%;
+
+}
+
+}
+
+
+/*======================================
+SMALL MOBILE (576px)
+======================================*/
+
+@media(max-width:576px){
+
+.map-section{
+
+    height:auto;
+
+}
+
+.office-card{
+
+    width:95%;
+
+    padding:20px;
+
+    border-radius:15px;
+
+}
+
+.office-icon{
+
+    width:48px;
+
+    height:48px;
+
+    font-size:20px;
+
+}
+
+.office-content h3{
+
+    font-size:22px;
+
+}
+
+.office-content p{
+
+    font-size:15px;
+
+}
+
+.faq-small-title{
+
+    font-size:13px;
+
+}
+
+.faq-left h2{
+
+    font-size:28px;
+
+}
+
+.faq-item{
+
+    margin-bottom:12px;
+
+}
+
+.faq-question{
+
+    font-size:14px;
+
+}
+
+.schedule-card{
+
+    padding:25px;
+
+    border-radius:18px;
+
+}
+
+.schedule-icon{
+
+    width:65px;
+
+    height:65px;
+
+    font-size:28px;
+
+}
+
+.schedule-card h3{
+
+    font-size:24px;
+
+}
+
+.schedule-card p{
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+.schedule-btn{
+
+    height:52px;
+
+    font-size:17px;
+
+}
+
+}
+
+
+/*======================================
+EXTRA SMALL MOBILE
+======================================*/
+
+@media(max-width:400px){
+
+.office-card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    align-items:center;
+
+}
+
+.office-content{
+
+    text-align:center;
+
+}
+
+.faq-left h2{
+
+    font-size:24px;
+
+}
+
+.schedule-card h3{
+
+    font-size:22px;
+
+}
+
+.schedule-card p{
+
+    font-size:14px;
+
+}
+
+.schedule-btn{
+
+    font-size:16px;
+
+}
+
+}
+
+
+/*======================================
+SMOOTH EFFECTS
+======================================*/
+
+.office-card,
+.schedule-card,
+.faq-item,
+.schedule-btn{
+
+    transition:all .35s ease;
+
+}
+</style>
+
+<script>
+    /*=========================================
+FAQ ACCORDION
+=========================================*/
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+
+    const question = item.querySelector(".faq-question");
+
+    question.addEventListener("click", () => {
+
+        faqItems.forEach((faq) => {
+
+            if (faq !== item) {
+
+                faq.classList.remove("active");
+
+                faq.querySelector(".faq-answer").style.maxHeight = null;
+
+            }
+
+        });
+
+        item.classList.toggle("active");
+
+        const answer = item.querySelector(".faq-answer");
+
+        if (item.classList.contains("active")) {
+
+            answer.style.maxHeight = answer.scrollHeight + "px";
+
+        } else {
+
+            answer.style.maxHeight = null;
+
+        }
+
+    });
+
+});
+
+
+/*=========================================
+OPEN FIRST FAQ
+=========================================*/
+
+window.addEventListener("load", () => {
+
+    const first = document.querySelector(".faq-item.active");
+
+    if (first) {
+
+        const answer = first.querySelector(".faq-answer");
+
+        answer.style.maxHeight = answer.scrollHeight + "px";
+
+    }
+
+});
+
+
+/*=========================================
+SCROLL ANIMATION
+=========================================*/
+
+const observer = new IntersectionObserver(
+
+(entries) => {
+
+    entries.forEach((entry) => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},
+
+{
+
+    threshold: 0.2
+
+}
+
+);
+
+document.querySelectorAll(".scroll-up,.scroll-left,.scroll-right").forEach((el) => {
+
+    observer.observe(el);
+
+});
+
+
+/*=========================================
+SCHEDULE BUTTON
+=========================================*/
+
+const scheduleBtn = document.querySelector(".schedule-btn");
+
+if (scheduleBtn) {
+
+    scheduleBtn.addEventListener("click", function () {
+
+        window.location.href = "404.html";
+
+    });
+
+}
+
+
+/*=========================================
+OFFICE CARD HOVER EFFECT
+=========================================*/
+
+const officeCard = document.querySelector(".office-card");
+
+if (officeCard) {
+
+    officeCard.addEventListener("mouseenter", () => {
+
+        officeCard.style.transform = "translateY(-8px)";
+
+    });
+
+    officeCard.addEventListener("mouseleave", () => {
+
+        officeCard.style.transform = "translateY(0px)";
+
+    });
+
+}
+
+
+/*=========================================
+SMOOTH FAQ ICON ROTATION
+=========================================*/
+
+faqItems.forEach((item) => {
+
+    const icon = item.querySelector("i");
+
+    item.addEventListener("click", () => {
+
+        if (item.classList.contains("active")) {
+
+            icon.style.transform = "rotate(45deg)";
+
+        } else {
+
+            icon.style.transform = "rotate(0deg)";
+
+        }
+
+    });
+
+});
+
+
+/*=========================================
+OPTIONAL: SMOOTH SCROLL TO FAQ
+=========================================*/
+
+function scrollToFAQ() {
+
+    const section = document.querySelector(".faq-section");
+
+    if (section) {
+
+        section.scrollIntoView({
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+}
+</script>
+
+
+<!-- ==========================================================
+     STACKLY FOOTER
+     Non-Conflicting Footer
+=========================================================== -->
+
+<footer class="stkx-footer">
+
+    <!-- ===========================
+         CTA SECTION
+    ============================ -->
+
+    
+
+    <!-- ===========================
+         MAIN FOOTER
+    ============================ -->
+
+    <section class="stkx-footer-main">
+
+        <div class="stkx-footer-container">
+
+            <div class="stkx-footer-grid">
+
+                <!-- ======================
+                     COMPANY
+                ======================= -->
+
+                <div class="stkx-footer-company">
+
+                    <a href="index.html" class="stkx-footer-logo">
+
+                        <img
+                            src="./logo.webp"
+                            alt="Stackly Logo">
+
+                    </a>
+
+                    <p class="stkx-footer-desc">
+                        We help businesses grow with smart
+                        digital solutions and innovative
+                        strategies.
+                    </p>
+
+                    <h3 class="stkx-footer-social-title">
+                        Follow Us :
+                    </h3>
+
+                    <div class="stkx-footer-social">
+
+                        <a href="404.html">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="404.html">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="404.html">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a href="404.html">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                                <!-- ======================
+                     QUICK LINKS
+                ======================= -->
+
+                <div class="stkx-footer-column">
+
+                    <h3 class="stkx-footer-title">
+                        Quick Links
+                    </h3>
+
+                    <ul class="stkx-footer-links">
+
+                        <li>
+                            <a href="index.html">
+                                <span class="stkx-dot"></span>
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">
+                                <span class="stkx-dot"></span>
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services.html">
+                                <span class="stkx-dot"></span>
+                                Services
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./404.html">
+                                <span class="stkx-dot"></span>
+                                Corporate
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./404.html">
+                                <span class="stkx-dot"></span>
+                                Customer
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">
+                                <span class="stkx-dot"></span>
+                                Contact Us
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ======================
+                     OUR SERVICES
+                ======================= -->
+
+                <div class="stkx-footer-column">
+
+                    <h3 class="stkx-footer-title">
+                        Our Services
+                    </h3>
+
+                    <ul class="stkx-footer-links">
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Business Consulting
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Digital Marketing
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                UI/UX Design
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Web Development
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Mobile Apps
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Cloud Solutions
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ======================
+                     CONTACT
+                ======================= -->
+
+                <div class="stkx-footer-column">
+
+                    <h3 class="stkx-footer-title">
+                        Contact Us
+                    </h3>
+
+                    <div class="stkx-footer-contact">
+
+                        <div class="stkx-contact-item">
+
+                            <h4>Address :</h4>
+
+                            <p>
+                                Tamilnadu
+                                <br>
+                                Salem - 636008
+                            </p>
+
+                        </div>
+
+                        <div class="stkx-contact-item">
+
+                            <h4>Phone:</h4>
+
+                            <p>
+                                +91 7010792745
+                            </p>
+
+                        </div>
+
+                        <div class="stkx-contact-item">
+
+                            <h4>Email:</h4>
+
+                            <p>
+                                info@thestackly.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- ==========================================
+         FOOTER BOTTOM
+    =========================================== -->
+
+    <div class="stkx-footer-bottom">
+
+        <div class="stkx-footer-container">
+
+            <div class="stkx-footer-bottom-wrapper">
+
+                <!-- Left -->
+
+                <div class="stkx-footer-copy">
+
+                    <p>
+                        © 2026 Stackly. All Rights Reserved.
+                    </p>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="stkx-footer-bottom-links">
+
+                    <a href="404.html">
+                        Privacy Policy
+                    </a>
+
+                    <span>|</span>
+
+                    <a href="404.html">
+                        Terms &amp; Conditions
+                    </a>
+
+                    <span>|</span>
+
+                    <a href="404.html">
+                        Sitemap
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ==========================================
+     FONT AWESOME
+=========================================== -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- ==========================================
+     FOOTER JAVASCRIPT
+=========================================== -->
+
+<script src="footer.js"></script>
+
+<Style>
+    /*=========================================================
+  STACKLY FOOTER
+  NON-CONFLICTING CSS
+  Prefix : stkx-
+=========================================================*/
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+.stkx-footer{
+    width:100%;
+    background:#050812;
+    color:#ffffff;
+    overflow:hidden;
+    position:relative;
+    font-family:"Poppins",sans-serif;
+}
+
+.stkx-footer-container{
+    width:100%;
+    max-width:1320px;
+    margin:0 auto;
+    padding:0 40px;
+}
+
+/*=========================================================
+ CTA SECTION
+=========================================================*/
+
+/*=========================================================
+CTA SECTION
+=========================================================*/
+
+.stkx-footer-cta{
+    position:relative;
+    width:100%;
+    padding:80px 0;
+    overflow:hidden;
+
+    background:url("./image\ 5.webp") center center/cover no-repeat;
+}
+
+/* Dark Overlay */
+
+.stkx-footer-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:rgba(7,16,36,.78);
+
+    z-index:1;
+}
+
+/* Container */
+
+.stkx-footer-cta .stkx-footer-container{
+    position:relative;
+    z-index:5;
+}
+
+/* Wrapper */
+
+.stkx-footer-cta-wrapper{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:70px;
+}
+
+/* Left */
+
+.stkx-footer-cta-content{
+    flex:1;
+}
+
+.stkx-footer-cta-content h2{
+
+    margin:0;
+
+    color:#fff;
+
+    font-size:56px;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    position:relative;
+
+    z-index:10;
+}
+
+.stkx-footer-cta-content p{
+
+    margin-top:22px;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    position:relative;
+
+    z-index:10;
+}
+
+/* Right */
+
+.stkx-footer-cta-btn-wrap{
+    flex-shrink:0;
+    position:relative;
+    z-index:10;
+}
+
+.stkx-footer-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+
+    min-width:340px;
+
+    padding:24px 38px;
+
+    background:#16d4cb;
+
+    color:#06121b;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    transition:.35s;
+}
+
+.stkx-footer-btn:hover{
+
+    transform:translateY(-6px);
+
+    background:#23e8df;
+
+    box-shadow:0 18px 40px rgba(22,212,203,.35);
+}
+/*=========================================================
+ MAIN FOOTER
+=========================================================*/
+
+.stkx-footer-main{
+
+    background:#04060d;
+
+    padding:90px 0 70px;
+}
+
+.stkx-footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1.4fr
+    1fr
+    1fr
+    1fr;
+
+    gap:60px;
+}
+
+/*=========================================================
+ COMPANY
+=========================================================*/
+
+.stkx-footer-company img{
+
+    width:260px;
+    max-width:100%;
+    display:block;
+}
+
+.stkx-footer-desc{
+
+    margin-top:34px;
+
+    color:#f1f1f1;
+
+    font-size:21px;
+
+    line-height:1.7;
+
+    max-width:360px;
+}
+
+.stkx-footer-social-title{
+
+    margin-top:50px;
+    margin-bottom:25px;
+
+    font-size:34px;
+    font-weight:700;
+}
+
+.stkx-footer-social{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.stkx-footer-social a{
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:25px;
+
+    transition:.35s;
+}
+
+.stkx-footer-social a:nth-child(1){
+    background:#3b5998;
+}
+
+.stkx-footer-social a:nth-child(2){
+    background:#0a66c2;
+}
+
+.stkx-footer-social a:nth-child(3){
+    background:#1da1f2;
+}
+
+.stkx-footer-social a:nth-child(4){
+    background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+
+.stkx-footer-social a:hover{
+
+    transform:translateY(-8px) scale(1.08);
+}
+
+
+/*=========================================================
+  FOOTER COLUMNS
+=========================================================*/
+
+.stkx-footer-column{
+    width:100%;
+}
+
+.stkx-footer-title{
+    margin:0 0 30px;
+    font-size:30px;
+    font-weight:700;
+    color:#ffffff;
+    position:relative;
+}
+
+.stkx-footer-title::after{
+    content:"";
+    display:block;
+    width:65px;
+    height:3px;
+    background:#18d7cf;
+    margin-top:12px;
+    border-radius:20px;
+}
+
+/*=========================================================
+  LINKS
+=========================================================*/
+
+.stkx-footer-links{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.stkx-footer-links li{
+    margin-bottom:18px;
+}
+
+.stkx-footer-links li:last-child{
+    margin-bottom:0;
+}
+
+.stkx-footer-links a{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    color:#d8d8d8;
+    text-decoration:none;
+
+    font-size:18px;
+    font-weight:500;
+
+    transition:.35s;
+}
+
+.stkx-dot{
+
+    width:8px;
+    height:8px;
+
+    background:#19d8cf;
+
+    border-radius:50%;
+
+    transition:.35s;
+}
+
+.stkx-footer-links a:hover{
+
+    color:#19d8cf;
+
+    transform:translateX(8px);
+}
+
+.stkx-footer-links a:hover .stkx-dot{
+
+    transform:scale(1.5);
+}
+
+/*=========================================================
+  CONTACT
+=========================================================*/
+
+.stkx-footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+}
+
+.stkx-contact-item h4{
+
+    margin:0 0 10px;
+
+    font-size:20px;
+    color:#ffffff;
+    font-weight:600;
+}
+
+.stkx-contact-item p{
+
+    margin:0;
+
+    color:#d8d8d8;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+/*=========================================================
+  FOOTER BOTTOM
+=========================================================*/
+
+.stkx-footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:#03050a;
+
+    padding:22px 0;
+}
+
+.stkx-footer-bottom-wrapper{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.stkx-footer-copy p{
+
+    margin:0;
+
+    color:#cfcfcf;
+
+    font-size:15px;
+}
+
+.stkx-footer-bottom-links{
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    flex-wrap:wrap;
+}
+
+.stkx-footer-bottom-links span{
+    color:#666;
+}
+
+.stkx-footer-bottom-links a{
+
+    color:#d4d4d4;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.stkx-footer-bottom-links a:hover{
+    color:#18d7cf;
+}
+
+/*=========================================================
+  SCROLL REVEAL
+=========================================================*/
+
+.stkx-reveal-left,
+.stkx-reveal-right{
+
+    /* opacity:0;
+
+    transition:all .9s ease; */
+}
+
+.stkx-reveal-left{
+    transform:translateX(-70px);
+}
+
+.stkx-reveal-right{
+    transform:translateX(70px);
+}
+
+.stkx-reveal-active{
+
+    opacity:1 !important;
+
+    transform:translate(0,0) !important;
+}
+
+/*=========================================================
+  TABLET
+=========================================================*/
+
+@media (max-width:1024px){
+
+.stkx-footer-container{
+    padding:0 30px;
+}
+
+.stkx-footer-cta-wrapper{
+
+    flex-direction:column;
+    text-align:center;
+    gap:45px;
+}
+
+.stkx-footer-cta-content{
+    max-width:100%;
+}
+
+.stkx-footer-cta-content h2{
+    font-size:44px;
+}
+
+.stkx-footer-cta-content p{
+    font-size:20px;
+}
+
+.stkx-footer-btn{
+    min-width:320px;
+    font-size:21px;
+}
+
+.stkx-footer-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:50px;
+}
+
+.stkx-footer-company{
+    grid-column:1 / -1;
+}
+
+}
+
+/*=========================================================
+  MOBILE
+=========================================================*/
+
+@media (max-width:768px){
+
+.stkx-footer-container{
+    padding:0 20px;
+}
+
+.stkx-footer-cta{
+    padding:55px 0;
+}
+
+.stkx-footer-cta-content h2{
+
+    font-size:34px;
+    line-height:1.25;
+}
+
+.stkx-footer-cta-content p{
+
+    font-size:17px;
+    margin-top:18px;
+}
+
+.stkx-footer-btn{
+
+    width:100%;
+    min-width:100%;
+
+    padding:20px;
+
+    font-size:18px;
+
+    gap:18px;
+}
+
+.stkx-footer-btn svg{
+
+    width:22px;
+    height:22px;
+}
+
+.stkx-footer-main{
+
+    padding:65px 0 50px;
+}
+
+.stkx-footer-grid{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+}
+
+.stkx-footer-company img{
+    width:210px;
+}
+
+.stkx-footer-desc{
+
+    max-width:100%;
+
+    font-size:17px;
+}
+
+.stkx-footer-social-title{
+
+    font-size:24px;
+
+    margin-top:35px;
+}
+
+.stkx-footer-social a{
+
+    width:48px;
+    height:48px;
+
+    font-size:20px;
+}
+
+.stkx-footer-title{
+    font-size:24px;
+}
+
+.stkx-footer-links a{
+    font-size:16px;
+}
+
+.stkx-contact-item h4{
+    font-size:18px;
+}
+
+.stkx-contact-item p{
+    font-size:16px;
+}
+
+.stkx-footer-bottom-wrapper{
+
+    flex-direction:column;
+
+    text-align:center;
+}
+
+.stkx-footer-bottom-links{
+
+    justify-content:center;
+
+    gap:12px;
+}
+
+}
+
+/*=========================================================
+  SMALL MOBILE
+=========================================================*/
+
+@media (max-width:480px){
+
+.stkx-footer-cta-content h2{
+    font-size:28px;
+}
+
+.stkx-footer-cta-content p{
+    font-size:16px;
+}
+
+.stkx-footer-btn{
+    font-size:16px;
+    padding:18px;
+}
+
+.stkx-footer-company img{
+    width:180px;
+}
+
+.stkx-footer-social{
+    gap:12px;
+}
+
+.stkx-footer-social a{
+    width:44px;
+    height:44px;
+}
+
+.stkx-footer-title{
+    font-size:22px;
+}
+
+.stkx-footer-links a{
+    font-size:15px;
+}
+
+.stkx-contact-item p{
+    font-size:15px;
+}
+
+.stkx-footer-copy p,
+.stkx-footer-bottom-links a{
+    font-size:14px;
+}
+
+}
+/*=========================================
+BUTTON RIPPLE EFFECT
+=========================================*/
+
+.stkx-footer-btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.stkx-ripple{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    transform:scale(0);
+
+    background:rgba(255,255,255,.35);
+
+    animation:stkxRipple .6s linear;
+
+    pointer-events:none;
+}
+
+@keyframes stkxRipple{
+
+    to{
+
+        transform:scale(4);
+
+        opacity:0;
+    }
+
+}
+</Style>
+
+<script>
+    /*==========================================================
+ STACKLY FOOTER
+ NON-CONFLICTING JAVASCRIPT
+==========================================================*/
+
+(function () {
+    "use strict";
+
+    // ==============================
+    // SCROLL REVEAL ANIMATION
+    // ==============================
+
+    const stkxRevealItems = document.querySelectorAll(
+        ".stkx-reveal-left, .stkx-reveal-right"
+    );
+
+    if (stkxRevealItems.length > 0) {
+
+        const stkxObserver = new IntersectionObserver(function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("stkx-reveal-active");
+
+                    stkxObserver.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        stkxRevealItems.forEach(function (item) {
+            stkxObserver.observe(item);
+        });
+
+    }
+
+    // ==============================
+    // FOOTER BUTTON RIPPLE EFFECT
+    // ==============================
+
+    const stkxButtons = document.querySelectorAll(".stkx-footer-btn");
+
+    stkxButtons.forEach(function (button) {
+
+        button.addEventListener("click", function (e) {
+
+            const ripple = document.createElement("span");
+
+            const rect = this.getBoundingClientRect();
+
+            const size = Math.max(rect.width, rect.height);
+
+            ripple.style.width = size + "px";
+            ripple.style.height = size + "px";
+
+            ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+            ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+
+            ripple.className = "stkx-ripple";
+
+            this.appendChild(ripple);
+
+            setTimeout(function () {
+                ripple.remove();
+            }, 600);
+
+        });
+
+    });
+
+})();
+</script>

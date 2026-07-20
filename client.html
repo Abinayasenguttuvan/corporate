@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Stackly</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ================= MOBILE MENU ================= -->
+
+    <button class="menu-btn">
+
+        <i class="fas fa-bars"></i>
+
+    </button>
+
+    <!-- ================= SIDEBAR ================= -->
+
+    <aside class="sidebar">
+
+        <a href="index.html" class="logo">
+
+            <img src="./logo.webp" alt="Stackly Logo">
+        
+        </a>
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+
+                <a href="./client.html">
+
+                    <i class="fas fa-gauge-high"></i>
+
+                    Dashboard
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./404.html">
+
+                    <i class="fas fa-folder"></i>
+
+                    Projects
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./404.html">
+
+                    <i class="fas fa-list-check"></i>
+
+                    Tasks
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./404.html">
+
+                    <i class="fas fa-users"></i>
+
+                    Clients
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./404.html">
+
+                    <i class="fas fa-chart-pie"></i>
+
+                    Reports
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="./404.html">
+
+                    <i class="fas fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+            </li>
+
+        </ul>
+
+        <div class="sidebar-bottom">
+
+            <a href="./404.html" class="support">
+
+                <i class="fas fa-circle-question"></i>
+
+                Help & Support
+
+            </a>
+
+            <div class="profile-switch">
+
+                <div class="profile-info">
+
+                    <img src="./ava2.webp" alt="Admin">
+
+                    <span>User</span>
+
+                </div>
+
+                <select id="roleSelect">
+
+                    <option value="admin.html">
+
+                        Client
+
+                    </option>
+
+                   
+                    
+
+                    <option value="client.html">
+
+                        Admin
+
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="main-content">
+
+        <!-- ================= HEADER ================= -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    Dashboard
+
+                </h1>
+
+                <p>
+
+                    Welcome Back, Admin! Here's what's happening today.
+
+                </p>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="icon-btn">
+
+                    <i class="fas fa-bell"></i>
+
+                </button>
+
+                <button class="icon-btn">
+
+                    <i class="fas fa-user"></i>
+
+                </button>
+
+                <div class="date-picker">
+
+                    <i class="fas fa-calendar-days"></i>
+
+                    <input type="date">
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- ================= STATISTICS START ================= -->
+
+        <section class="stats-grid">
+
+                        <!-- ================= CARD 1 ================= -->
+
+                        <div class="stat-card scroll-up">
+
+                            <div class="stat-icon blue">
+            
+                                <i class="fa-regular fa-folder-open"></i>
+            
+                            </div>
+            
+                            <div class="stat-content">
+            
+                                <small>Total Projects</small>
+            
+                                <h2>12</h2>
+            
+                                <span>Active Projects</span>
+            
+                            </div>
+            
+                        </div>
+            
+            
+                        <!-- ================= CARD 2 ================= -->
+            
+                        <div class="stat-card scroll-up">
+            
+                            <div class="stat-icon green">
+            
+                                <i class="fa-solid fa-circle-check"></i>
+            
+                            </div>
+            
+                            <div class="stat-content">
+            
+                                <small>Tasks Completed</small>
+            
+                                <h2>5</h2>
+            
+                                <span>This Month</span>
+            
+                            </div>
+            
+                        </div>
+            
+            
+                        <!-- ================= CARD 3 ================= -->
+            
+                        <div class="stat-card scroll-up">
+            
+                            <div class="stat-icon orange">
+            
+                                <i class="fa-regular fa-clock"></i>
+            
+                            </div>
+            
+                            <div class="stat-content">
+            
+                                <small>Pending Tasks</small>
+            
+                                <h2>18</h2>
+            
+                                <span>Require Attention</span>
+            
+                            </div>
+            
+                        </div>
+            
+            
+                        <!-- ================= CARD 4 ================= -->
+            
+                        <div class="stat-card scroll-up">
+            
+                            <div class="stat-icon purple">
+            
+                                <i class="fa-solid fa-users"></i>
+            
+                            </div>
+            
+                            <div class="stat-content">
+            
+                                <small>Total Clients</small>
+            
+                                <h2>16</h2>
+            
+                                <span>Registered Clients</span>
+            
+                            </div>
+            
+                        </div>
+            
+                    </section>
+            
+            
+                    <!-- ================= CONTENT GRID ================= -->
+            
+                    <section class="content-grid">
+            
+            
+                        <!-- ================= RECENT PROJECTS ================= -->
+            
+                        <div class="dashboard-card scroll-left">
+            
+                            <div class="card-header">
+            
+                                <h3>Recent Projects</h3>
+            
+                                <a href="./404.html">View All</a>
+            
+                            </div>
+            
+            
+                            <div class="project-item">
+            
+                                <div class="project-icon blue">
+            
+                                    <i class="fa-solid fa-desktop"></i>
+            
+                                </div>
+            
+                                <div class="project-info">
+            
+                                    <div class="project-title">
+            
+                                        <span>Website Redesign</span>
+            
+                                        <strong>75%</strong>
+            
+                                    </div>
+            
+                                    <div class="progress">
+            
+                                        <div class="progress-fill fill75"></div>
+            
+                                    </div>
+            
+                                </div>
+            
+                            </div>
+            
+            
+                            <div class="project-item">
+            
+                                <div class="project-icon green">
+            
+                                    <i class="fa-solid fa-mobile-screen-button"></i>
+            
+                                </div>
+            
+                                <div class="project-info">
+            
+                                    <div class="project-title">
+            
+                                        <span>Mobile App Development</span>
+            
+                                        <strong>60%</strong>
+            
+                                    </div>
+            
+                                    <div class="progress">
+            
+                                        <div class="progress-fill fill60"></div>
+            
+                                    </div>
+            
+                                </div>
+            
+                            </div>
+            
+            
+                            <div class="project-item">
+            
+                                <div class="project-icon orange">
+            
+                                    <i class="fa-solid fa-cart-shopping"></i>
+            
+                                </div>
+            
+                                <div class="project-info">
+            
+                                    <div class="project-title">
+            
+                                        <span>E-Commerce Platform</span>
+            
+                                        <strong>45%</strong>
+            
+                                    </div>
+            
+                                    <div class="progress">
+            
+                                        <div class="progress-fill fill45"></div>
+            
+                                    </div>
+            
+                                </div>
+            
+                            </div>
+            
+                            <div class="view-projects">
+            
+                                <a href="./404.html">View All Projects</a>
+            
+                            </div>
+            
+                        </div>
+
+
+                                    <!-- ================= UPCOMING TASKS ================= -->
+
+            <div class="dashboard-card scroll-right">
+
+                <div class="card-header">
+
+                    <h3>Upcoming Tasks</h3>
+
+                    <a href="./404.html">View All</a>
+
+                </div>
+
+                <div class="task-list">
+
+                    <div class="task-item">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            <span class="checkmark"></span>
+
+                            Wireframe Design
+
+                        </label>
+
+                        <span class="task-date">July 06, 2026</span>
+
+                    </div>
+
+                    <div class="task-item">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            <span class="checkmark"></span>
+
+                            Client Meeting
+
+                        </label>
+
+                        <span class="task-date">July 07, 2026</span>
+
+                    </div>
+
+                    <div class="task-item">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            <span class="checkmark"></span>
+
+                            API Integration
+
+                        </label>
+
+                        <span class="task-date">July 08, 2026</span>
+
+                    </div>
+
+                    <div class="task-item">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            <span class="checkmark"></span>
+
+                            UI Design Review
+
+                        </label>
+
+                        <span class="task-date">July 09, 2026</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+<style>
+    /*=========================================
+GOOGLE FONT
+=========================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#F4F7FC;
+    color:#1B2559;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+ul{
+    list-style:none;
+}
+
+
+/*=========================================
+MAIN DASHBOARD
+=========================================*/
+
+.dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+
+/*=========================================
+SIDEBAR
+=========================================*/
+
+.sidebar{
+
+    width:280px;
+
+    background:#111C44;
+
+    color:#fff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    padding:30px 22px;
+
+    transition:.4s;
+
+    z-index:1000;
+
+}
+
+
+/*=========================================
+LOGO
+=========================================*/
+
+.logo{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.logo img{
+
+    width:180px;
+
+}
+
+
+/*=========================================
+MENU
+=========================================*/
+
+.sidebar-menu{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.sidebar-menu li{
+
+    border-radius:14px;
+
+    transition:.35s;
+
+}
+
+.sidebar-menu li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    padding:16px 20px;
+
+    color:#D7E2FF;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    border-radius:14px;
+
+    transition:.35s;
+
+}
+
+.sidebar-menu li i{
+
+    width:22px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+
+/*=========================================
+ACTIVE MENU
+=========================================*/
+
+.sidebar-menu li.active{
+
+    background:linear-gradient(90deg,#5BD4C5,#44C4B3);
+
+}
+
+.sidebar-menu li.active a{
+
+    color:#fff;
+
+}
+
+.sidebar-menu li:hover{
+
+    background:rgba(255,255,255,.08);
+
+}
+
+.sidebar-menu li:hover a{
+
+    color:#fff;
+
+}
+
+
+/*=========================================
+BOTTOM AREA
+=========================================*/
+
+.sidebar-bottom{
+
+    margin-top:35px;
+
+}
+
+.support{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    color:#D7E2FF;
+
+    font-size:15px;
+
+    margin-bottom:30px;
+
+    transition:.3s;
+
+}
+
+.support:hover{
+
+    color:#5BD4C5;
+
+}
+
+
+/*=========================================
+PROFILE
+=========================================*/
+
+.profile-switch{
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:16px;
+
+    padding:16px;
+
+}
+
+.profile-info{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:12px;
+
+}
+
+.profile-info img{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:3px solid #5BD4C5;
+
+}
+
+.profile-info span{
+
+    color:#fff;
+
+    font-weight:600;
+
+    font-size:16px;
+
+}
+
+
+/*=========================================
+SELECT
+=========================================*/
+
+.profile-switch select{
+
+    width:100%;
+
+    height:45px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:10px;
+
+    padding:0 12px;
+
+    background:#fff;
+
+    color:#222;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+}
+
+
+/*=========================================
+MAIN CONTENT
+=========================================*/
+
+.main-content{
+
+    flex:1;
+
+    margin-left:280px;
+
+    padding:35px;
+
+    transition:.4s;
+
+}
+
+
+/*=========================================
+TOPBAR
+=========================================*/
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h1{
+
+    font-size:34px;
+
+    font-weight:700;
+
+    color:#111;
+
+}
+
+.topbar p{
+
+    color:#777;
+
+    margin-top:8px;
+
+}
+
+
+/*=========================================
+TOPBAR RIGHT
+=========================================*/
+
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.icon-btn{
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    transition:.3s;
+
+}
+
+.icon-btn:hover{
+
+    background:#5BD4C5;
+
+    color:#fff;
+
+}
+
+.date-picker{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:#fff;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+.date-picker input{
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    font-size:14px;
+
+}
+
+
+/*=========================================
+MOBILE MENU BUTTON
+=========================================*/
+
+.menu-btn{
+
+    display:none;
+
+    position:fixed;
+
+    top:20px;
+
+    left:20px;
+
+    width:48px;
+
+    height:48px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#5BD4C5;
+
+    color:#fff;
+
+    font-size:20px;
+
+    z-index:1200;
+
+    cursor:pointer;
+
+}
+
+
+/*=========================================
+STATISTICS GRID
+=========================================*/
+
+.stats-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+margin-bottom:35px;
+
+}
+
+
+/*=========================================
+STAT CARD
+=========================================*/
+
+.stat-card{
+
+background:#ffffff;
+
+border-radius:22px;
+
+padding:25px;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+transition:.35s;
+
+cursor:pointer;
+
+}
+
+.stat-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+
+/*=========================================
+STAT ICON
+=========================================*/
+
+.stat-icon{
+
+width:70px;
+
+height:70px;
+
+border-radius:18px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:#fff;
+
+font-size:28px;
+
+flex-shrink:0;
+
+}
+
+.stat-icon.blue{
+
+background:linear-gradient(135deg,#4F8CFF,#2563EB);
+
+}
+
+.stat-icon.green{
+
+background:linear-gradient(135deg,#38D39F,#18B97A);
+
+}
+
+.stat-icon.orange{
+
+background:linear-gradient(135deg,#FFA94D,#F97316);
+
+}
+
+.stat-icon.purple{
+
+background:linear-gradient(135deg,#8B5CF6,#6D28D9);
+
+}
+
+
+/*=========================================
+STAT CONTENT
+=========================================*/
+
+.stat-content{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.stat-content small{
+
+color:#7B8794;
+
+font-size:14px;
+
+margin-bottom:6px;
+
+}
+
+.stat-content h2{
+
+font-size:34px;
+
+color:#111827;
+
+font-weight:700;
+
+margin-bottom:5px;
+
+}
+
+.stat-content span{
+
+font-size:14px;
+
+color:#9CA3AF;
+
+}
+
+
+/*=========================================
+CONTENT GRID
+=========================================*/
+
+.content-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:30px;
+
+}
+
+
+/*=========================================
+COMMON CARD
+=========================================*/
+
+.dashboard-card{
+
+background:#fff;
+
+border-radius:22px;
+
+padding:28px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.dashboard-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+
+/*=========================================
+CARD HEADER
+=========================================*/
+
+.card-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:30px;
+
+}
+
+.card-header h3{
+
+font-size:24px;
+
+color:#111827;
+
+font-weight:700;
+
+}
+
+.card-header a{
+
+color:#36C2B4;
+
+font-size:15px;
+
+font-weight:600;
+
+}
+
+.card-header a:hover{
+
+text-decoration:underline;
+
+}
+
+
+/*=========================================
+PROJECT ITEM
+=========================================*/
+
+.project-item{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+margin-bottom:28px;
+
+}
+
+
+/*=========================================
+PROJECT ICON
+=========================================*/
+
+.project-icon{
+
+width:60px;
+
+height:60px;
+
+border-radius:16px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+color:#fff;
+
+font-size:24px;
+
+flex-shrink:0;
+
+}
+
+.project-icon.blue{
+
+background:#2563EB;
+
+}
+
+.project-icon.green{
+
+background:#18B97A;
+
+}
+
+.project-icon.orange{
+
+background:#F97316;
+
+}
+
+
+/*=========================================
+PROJECT INFO
+=========================================*/
+
+.project-info{
+
+flex:1;
+
+}
+
+.project-title{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:10px;
+
+}
+
+.project-title span{
+
+font-size:16px;
+
+font-weight:600;
+
+color:#111827;
+
+}
+
+.project-title strong{
+
+color:#36C2B4;
+
+font-size:15px;
+
+}
+
+
+/*=========================================
+PROGRESS BAR
+=========================================*/
+
+.progress{
+
+width:100%;
+
+height:10px;
+
+border-radius:20px;
+
+background:#E5E7EB;
+
+overflow:hidden;
+
+}
+
+.progress-fill{
+
+height:100%;
+
+border-radius:20px;
+
+background:linear-gradient(90deg,#36C2B4,#59D5C7);
+
+}
+
+.fill75{
+
+width:75%;
+
+}
+
+.fill60{
+
+width:60%;
+
+}
+
+.fill45{
+
+width:45%;
+
+}
+
+
+/*=========================================
+VIEW PROJECTS
+=========================================*/
+
+.view-projects{
+
+margin-top:20px;
+
+text-align:right;
+
+}
+
+.view-projects a{
+
+color:#36C2B4;
+
+font-weight:600;
+
+}
+
+.view-projects a:hover{
+
+text-decoration:underline;
+
+}
+
+/*=========================================
+UPCOMING TASKS
+=========================================*/
+
+.task-list{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.task-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 0;
+    border-bottom:1px solid #ECECEC;
+}
+
+.task-item:last-child{
+    border-bottom:none;
+}
+
+.task-item label{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    cursor:pointer;
+    font-size:15px;
+    font-weight:500;
+    color:#1B2559;
+}
+
+.task-item input{
+    display:none;
+}
+
+
+/*=========================================
+CUSTOM CHECKBOX
+=========================================*/
+
+.checkmark{
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    border:2px solid #36C2B4;
+
+    position:relative;
+
+    transition:.3s;
+
+}
+
+.task-item input:checked + .checkmark{
+
+    background:#36C2B4;
+
+}
+
+.task-item input:checked + .checkmark::after{
+
+    content:"✓";
+
+    color:#fff;
+
+    font-size:13px;
+
+    position:absolute;
+
+    left:4px;
+
+    top:0;
+
+}
+
+.task-date{
+
+    color:#7B8794;
+
+    font-size:13px;
+
+}
+
+
+/*=========================================
+SCROLL ANIMATION
+=========================================*/
+
+.scroll-up,
+.scroll-left,
+.scroll-right{
+
+    opacity:0;
+
+    transition:all .8s ease;
+
+}
+
+.scroll-up{
+
+    transform:translateY(60px);
+
+}
+
+.scroll-left{
+
+    transform:translateX(-60px);
+
+}
+
+.scroll-right{
+
+    transform:translateX(60px);
+
+}
+
+.show{
+
+    opacity:1 !important;
+
+    transform:translate(0,0) !important;
+
+}
+
+
+/*=========================================
+TABLET
+=========================================*/
+
+@media(max-width:1100px){
+
+.stats-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.content-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+
+/*=========================================
+TABLET SIDEBAR
+=========================================*/
+
+@media(max-width:900px){
+
+.sidebar{
+
+    left:-300px;
+
+}
+
+.sidebar.active{
+
+    left:0;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    padding:90px 20px 20px;
+
+}
+
+.menu-btn{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.topbar{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.topbar-right{
+
+    width:100%;
+
+    justify-content:space-between;
+
+}
+
+}
+
+
+/*=========================================
+MOBILE
+=========================================*/
+
+@media(max-width:768px){
+
+.stats-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.stat-card{
+
+    padding:20px;
+
+}
+
+.stat-icon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:24px;
+
+}
+
+.stat-content h2{
+
+    font-size:28px;
+
+}
+
+.dashboard-card{
+
+    padding:20px;
+
+}
+
+.card-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+}
+
+.project-item{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.project-title{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:5px;
+
+}
+
+.task-item{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+}
+
+}
+
+
+/*=========================================
+SMALL MOBILE
+=========================================*/
+
+@media(max-width:480px){
+
+.topbar h1{
+
+    font-size:28px;
+
+}
+
+.topbar p{
+
+    font-size:14px;
+
+}
+
+.icon-btn{
+
+    width:42px;
+
+    height:42px;
+
+}
+
+.date-picker{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+.sidebar{
+
+    width:260px;
+
+}
+
+.logo img{
+
+    width:150px;
+
+}
+
+.profile-info img{
+
+    width:42px;
+
+    height:42px;
+
+}
+
+}
+
+
+/*=========================================
+HOVER EFFECTS
+=========================================*/
+
+.project-item,
+.task-item,
+.stat-card,
+.dashboard-card{
+
+    transition:.3s;
+
+}
+
+.project-item:hover{
+
+    transform:translateX(6px);
+
+}
+
+.task-item:hover{
+
+    background:#F8FAFC;
+
+    border-radius:12px;
+
+    padding-left:10px;
+
+}
+
+.stat-card:hover .stat-icon{
+
+    transform:rotate(10deg) scale(1.08);
+
+}
+
+.dashboard-card:hover{
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+}
+
+
+/*=========================================
+SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#F1F1F1;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#36C2B4;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#2DA99B;
+
+}
+</style>
+
+<script>
+    /*=========================================
+DASHBOARD JS
+=========================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*=====================================
+MOBILE SIDEBAR
+=====================================*/
+
+const menuBtn = document.querySelector(".menu-btn");
+const sidebar = document.querySelector(".sidebar");
+
+if(menuBtn){
+
+    menuBtn.addEventListener("click", () => {
+
+        sidebar.classList.toggle("active");
+
+    });
+
+}
+
+/*=====================================
+CLOSE SIDEBAR
+=====================================*/
+
+document.addEventListener("click", (e) => {
+
+    if(window.innerWidth <= 900){
+
+        if(
+            !sidebar.contains(e.target) &&
+            !menuBtn.contains(e.target)
+        ){
+
+            sidebar.classList.remove("active");
+
+        }
+
+    }
+
+});
+
+/*=====================================
+ROLE SWITCH
+=====================================*/
+
+const role = document.getElementById("roleSelect");
+
+if(role){
+
+    role.addEventListener("change", function(){
+
+        window.location.href = this.value;
+
+    });
+
+}
+
+/*=====================================
+AUTO DATE
+=====================================*/
+
+const dateInput = document.querySelector(".date-picker input");
+
+if(dateInput){
+
+    const today = new Date().toISOString().split("T")[0];
+
+    dateInput.value = today;
+
+}
+
+/*=====================================
+SCROLL ANIMATION
+=====================================*/
+
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+
+    threshold:0.2
+
+});
+
+document.querySelectorAll(
+    ".scroll-up,.scroll-left,.scroll-right"
+).forEach(el=>{
+
+    observer.observe(el);
+
+});
+
+/*=====================================
+PROGRESS BAR ANIMATION
+=====================================*/
+
+document.querySelectorAll(".progress-fill").forEach(bar=>{
+
+    const width = bar.classList.contains("fill75") ? "75%" :
+                  bar.classList.contains("fill60") ? "60%" :
+                  bar.classList.contains("fill45") ? "45%" : "0%";
+
+    bar.style.width = "0";
+
+    setTimeout(()=>{
+
+        bar.style.transition = "width 1.2s ease";
+
+        bar.style.width = width;
+
+    },300);
+
+});
+
+/*=====================================
+TASK CHECKBOX
+=====================================*/
+
+document.querySelectorAll(".task-item input").forEach(check=>{
+
+    check.addEventListener("change",()=>{
+
+        const task = check.closest(".task-item");
+
+        if(check.checked){
+
+            task.style.opacity=".6";
+
+            task.style.textDecoration="line-through";
+
+        }
+
+        else{
+
+            task.style.opacity="1";
+
+            task.style.textDecoration="none";
+
+        }
+
+    });
+
+});
+
+/*=====================================
+CARD HOVER
+=====================================*/
+
+document.querySelectorAll(".stat-card").forEach(card=>{
+
+    card.addEventListener("mouseenter",()=>{
+
+        card.style.transform="translateY(-8px)";
+
+    });
+
+    card.addEventListener("mouseleave",()=>{
+
+        card.style.transform="translateY(0px)";
+
+    });
+
+});
+
+/*=====================================
+NOTIFICATION BUTTON
+=====================================*/
+
+const bell = document.querySelector(".fa-bell");
+
+if(bell){
+
+    bell.parentElement.addEventListener("click",()=>{
+
+        bell.classList.add("fa-shake");
+
+        setTimeout(()=>{
+
+            bell.classList.remove("fa-shake");
+
+        },1000);
+
+    });
+
+};
+
+/*=====================================
+PROFILE BUTTON
+=====================================*/
+
+const profileBtn = document.querySelector(".fa-user");
+
+if(profileBtn){
+
+    profileBtn.parentElement.addEventListener("click",()=>{
+
+        alert("Profile page coming soon.");
+
+    });
+
+}
+
+
+});
+
+    </script>
+
+</body>
+
+</html>

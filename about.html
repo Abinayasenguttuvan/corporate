@@ -1,0 +1,4248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly </title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;600;700;800&display=swap"
+        rel="stylesheet">
+
+    
+</head>
+
+<body>
+
+    <!--==========================================
+                HEADER
+    ===========================================-->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <!--=====================
+                    LOGO
+            ======================-->
+
+            <a href="index.html" class="logo">
+
+                <img src="./logo.webp" alt="Stackly Logo">
+
+            </a>
+
+            <!--=====================
+                DESKTOP MENU
+            ======================-->
+
+            <ul class="nav-menu">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html" class="active">
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./carrers.html">
+                        Careers
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+
+            <!--=====================
+                RIGHT BUTTON
+            ======================-->
+
+            <a href="./login.html" class="talk-btn">
+
+                Let's Talk
+
+            </a>
+
+            <!--=====================
+                HAMBURGER
+            ======================-->
+
+            <div class="hamburger">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!--=========================
+            MOBILE MENU
+    ==========================-->
+
+    <div class="mobile-menu">
+
+        <ul>
+
+            <li>
+
+                <a href="index.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Home
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="about.html" class="active">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    About Us
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="services.html">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    Services
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="careers.html">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    Careers
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="contact.html">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Contact Us
+
+                </a>
+
+            </li>
+
+        </ul>
+
+        <a href="contact.html" class="mobile-btn">
+
+            Let's Talk
+
+        </a>
+
+    </div>
+
+    <style>
+
+        /*==================================================
+                GOOGLE FONT & RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+a{
+    text-decoration:none;
+}
+
+li{
+    list-style:none;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+/*==================================================
+                    HEADER
+==================================================*/
+
+.header{
+
+    position:fixed;
+
+    top:25px;
+
+    left:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    z-index:9999;
+
+    transition:.4s ease;
+
+}
+
+/*==================================================
+                GLASS NAVBAR
+==================================================*/
+
+.navbar{
+
+    width:min(1320px,92%);
+
+    height:86px;
+
+    padding:0 38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-radius:100px;
+
+    background:rgba(15,23,42,.82);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:2px solid rgba(255,255,255,.18);
+
+    box-shadow:
+
+        0 12px 40px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+/*==================================================
+                STICKY HEADER
+==================================================*/
+
+.header.sticky{
+
+    top:12px;
+
+}
+
+.header.sticky .navbar{
+
+    background:rgba(8,16,32,.96);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/*==================================================
+                    LOGO
+==================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.logo img{
+
+    width:235px;
+
+    transition:.35s;
+
+}
+
+.logo:hover img{
+
+    transform:scale(1.04);
+
+}
+
+/*==================================================
+                DESKTOP MENU
+==================================================*/
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+
+}
+
+.nav-menu li{
+
+    position:relative;
+
+}
+
+.nav-menu a{
+
+    position:relative;
+
+    color:#ffffff;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    padding:8px 2px;
+
+}
+
+/*==================================================
+            ACTIVE MENU
+==================================================*/
+
+.nav-menu a.active{
+
+    color:#39d6d6;
+
+    font-weight:600;
+
+}
+
+/*==================================================
+            HOVER EFFECT
+==================================================*/
+
+.nav-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:20px;
+
+    background:#39d6d6;
+
+    transform:translateX(-50%);
+
+    transition:.35s;
+
+}
+
+.nav-menu a:hover{
+
+    color:#39d6d6;
+
+}
+
+.nav-menu a:hover::after,
+
+.nav-menu a.active::after{
+
+    width:100%;
+
+}
+
+/*==================================================
+            MENU ITEM ANIMATION
+==================================================*/
+
+.nav-menu li{
+
+    transition:.35s;
+
+}
+
+.nav-menu li:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/*==================================================
+                LET'S TALK BUTTON
+==================================================*/
+
+.talk-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:14px 34px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#00d4c9,#00bcd4);
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:600;
+
+letter-spacing:.3px;
+
+transition:.35s ease;
+
+box-shadow:0 12px 30px rgba(0,188,212,.30);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.talk-btn::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:120%;
+
+height:100%;
+
+background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent
+);
+
+transition:.7s;
+
+}
+
+.talk-btn:hover::before{
+
+left:120%;
+
+}
+
+.talk-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,188,212,.45);
+
+}
+
+/*==================================================
+            HAMBURGER
+==================================================*/
+
+.hamburger{
+
+width:50px;
+
+height:50px;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+gap:6px;
+
+cursor:pointer;
+
+border-radius:50%;
+
+transition:.35s;
+
+}
+
+.hamburger span{
+
+width:28px;
+
+height:3px;
+
+border-radius:20px;
+
+background:#ffffff;
+
+transition:.35s;
+
+}
+
+.hamburger:hover{
+
+background:rgba(255,255,255,.08);
+
+}
+
+/*==================================================
+        HAMBURGER ACTIVE
+==================================================*/
+
+.hamburger.active span:nth-child(1){
+
+transform:translateY(9px) rotate(45deg);
+
+}
+
+.hamburger.active span:nth-child(2){
+
+opacity:0;
+
+}
+
+.hamburger.active span:nth-child(3){
+
+transform:translateY(-9px) rotate(-45deg);
+
+}
+
+/*==================================================
+            MOBILE MENU
+==================================================*/
+
+.mobile-menu{
+
+position:fixed;
+
+top:115px;
+
+left:50%;
+
+transform:translateX(-50%) scale(.95);
+
+width:min(92%,420px);
+
+background:#0f172a;
+
+border-radius:28px;
+
+padding:30px;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:0 25px 50px rgba(0,0,0,.35);
+
+z-index:999;
+
+}
+
+.mobile-menu.active{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateX(-50%) scale(1);
+
+}
+
+.mobile-menu ul{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.mobile-menu ul li a{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+color:#ffffff;
+
+font-size:17px;
+
+font-weight:500;
+
+padding:14px 18px;
+
+border-radius:14px;
+
+transition:.35s;
+
+}
+
+.mobile-menu ul li a i{
+
+width:24px;
+
+text-align:center;
+
+color:#00d4c9;
+
+}
+
+.mobile-menu ul li a:hover,
+
+.mobile-menu ul li a.active{
+
+background:rgba(0,212,201,.15);
+
+color:#00d4c9;
+
+}
+
+/*==================================================
+        MOBILE BUTTON
+==================================================*/
+
+.mobile-btn{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin-top:30px;
+
+width:100%;
+
+padding:15px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#00d4c9,#00bcd4);
+
+color:#fff;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.mobile-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 35px rgba(0,188,212,.35);
+
+}
+
+
+/*==================================================
+                LARGE DESKTOP
+==================================================*/
+
+@media (min-width:1600px){
+
+.navbar{
+
+    max-width:1450px;
+
+    height:95px;
+
+    padding:0 45px;
+
+}
+
+.logo img{
+
+    width:260px;
+
+}
+
+.nav-menu{
+
+    gap:55px;
+
+}
+
+.nav-menu a{
+
+    font-size:18px;
+
+}
+
+.talk-btn{
+
+    padding:16px 38px;
+
+    font-size:17px;
+
+}
+
+}
+
+/*==================================================
+                LAPTOP
+==================================================*/
+
+@media (max-width:1400px){
+
+.navbar{
+
+    width:94%;
+
+    padding:0 30px;
+
+}
+
+.logo img{
+
+    width:210px;
+
+}
+
+.nav-menu{
+
+    gap:28px;
+
+}
+
+.nav-menu a{
+
+    font-size:16px;
+
+}
+
+.talk-btn{
+
+    padding:13px 28px;
+
+    font-size:15px;
+
+}
+
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media (max-width:992px){
+
+.navbar{
+
+    height:78px;
+
+    padding:0 22px;
+
+}
+
+.logo img{
+
+    width:180px;
+
+}
+
+.nav-menu{
+
+    display:none;
+
+}
+
+.talk-btn{
+
+    display:none;
+
+}
+
+.hamburger{
+
+    display:flex;
+
+}
+
+.mobile-menu{
+
+    display:block;
+
+}
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media (max-width:768px){
+
+.header{
+
+    top:15px;
+
+}
+
+.navbar{
+
+    width:94%;
+
+    height:72px;
+
+    padding:0 18px;
+
+    border-radius:22px;
+
+}
+
+.logo img{
+
+    width:155px;
+
+}
+
+.hamburger{
+
+    width:42px;
+
+    height:42px;
+
+}
+
+.hamburger span{
+
+    width:24px;
+
+}
+
+.mobile-menu{
+
+    top:95px;
+
+    width:94%;
+
+    padding:22px;
+
+    border-radius:20px;
+
+}
+
+.mobile-menu ul li a{
+
+    font-size:16px;
+
+    padding:13px 16px;
+
+}
+
+.mobile-btn{
+
+    padding:14px;
+
+    font-size:15px;
+
+}
+
+}
+
+/*==================================================
+            SMALL MOBILE
+==================================================*/
+
+@media (max-width:480px){
+
+.header{
+
+    top:10px;
+
+}
+
+.navbar{
+
+    width:95%;
+
+    height:65px;
+
+    padding:0 15px;
+
+    border-radius:18px;
+
+}
+
+.logo img{
+
+    width:135px;
+
+}
+
+.hamburger{
+
+    width:38px;
+
+    height:38px;
+
+}
+
+.hamburger span{
+
+    width:22px;
+
+    height:2.5px;
+
+}
+
+.mobile-menu{
+
+    top:85px;
+
+    padding:18px;
+
+}
+
+.mobile-menu ul{
+
+    gap:12px;
+
+}
+
+.mobile-menu ul li a{
+
+    font-size:15px;
+
+    padding:12px;
+
+}
+
+.mobile-btn{
+
+    margin-top:20px;
+
+    padding:13px;
+
+}
+
+}
+
+/*==================================================
+        EXTRA SMALL DEVICES
+==================================================*/
+
+@media (max-width:360px){
+
+.logo img{
+
+    width:120px;
+
+}
+
+.mobile-menu{
+
+    width:96%;
+
+}
+
+.mobile-menu ul li a{
+
+    font-size:14px;
+
+}
+
+}
+        </style>
+
+        <script>
+            /*==================================================
+                HEADER JAVASCRIPT
+==================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*==============================================
+            SELECT ELEMENTS
+==============================================*/
+
+const header = document.querySelector(".header");
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+const navLinks = document.querySelectorAll(
+    ".nav-menu a, .mobile-menu a"
+);
+
+/*==============================================
+            STICKY HEADER
+==============================================*/
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 60) {
+
+        header.classList.add("sticky");
+
+    } else {
+
+        header.classList.remove("sticky");
+
+    }
+
+});
+
+/*==============================================
+        MOBILE MENU TOGGLE
+==============================================*/
+
+hamburger.addEventListener("click", () => {
+
+    hamburger.classList.toggle("active");
+
+    mobileMenu.classList.toggle("active");
+
+    document.body.classList.toggle("menu-open");
+
+});
+
+/*==============================================
+        CLOSE MENU WHEN LINK CLICKED
+==============================================*/
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        hamburger.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+    });
+
+});
+
+/*==============================================
+        ACTIVE MENU
+==============================================*/
+
+const currentPage = window.location.pathname.split("/").pop();
+
+navLinks.forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+
+        link.classList.add("active");
+
+    } else {
+
+        link.classList.remove("active");
+
+    }
+
+});
+
+/*==============================================
+        CLICK OUTSIDE TO CLOSE MENU
+==============================================*/
+
+document.addEventListener("click", (e) => {
+
+    if (
+
+        !mobileMenu.contains(e.target) &&
+
+        !hamburger.contains(e.target)
+
+    ) {
+
+        hamburger.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+    }
+
+});
+
+/*==============================================
+        ESC KEY CLOSE
+==============================================*/
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        hamburger.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+    }
+
+});
+
+/*==============================================
+        SMOOTH HOVER EFFECT
+==============================================*/
+
+document.querySelectorAll(".nav-menu li").forEach(item => {
+
+    item.addEventListener("mouseenter", () => {
+
+        item.style.transform = "translateY(-2px)";
+
+    });
+
+    item.addEventListener("mouseleave", () => {
+
+        item.style.transform = "translateY(0)";
+
+    });
+
+});
+
+});
+            </script>
+    
+   
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- ===========================
+STACKLY ABOUT HERO SECTION
+=========================== -->
+
+<section class="stk-about-hero">
+
+    <div class="stk-about-hero-container">
+
+        <!-- Left -->
+
+        <div class="stk-about-hero-content reveal-left" style="padding-top: 60px;">
+
+            <h1>
+                About
+                <span>Stackly</span>
+                building digital solutions for a better tomorrow.
+            </h1>
+
+            <p>
+                We create innovative digital products and experiences that help
+                businesses grow, adapt and lead in a constantly evolving world.
+            </p>
+
+        </div>
+
+        <!-- Right -->
+
+        <div class="stk-about-hero-image reveal-right">
+
+            <img
+                src="./image 7.webp"
+                alt="About Stackly">
+
+            <div class="stk-about-experience">
+
+                <h2>5+</h2>
+
+                <span>Years</span>
+
+                <p>Experience</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ===========================
+OUR STORY
+=========================== -->
+
+<section class="stk-about-story">
+
+    <div class="stk-about-story-container">
+
+        <!-- Left -->
+
+        <div class="stk-about-story-content reveal-left">
+
+            <h2>Our Story</h2>
+
+            <div class="stk-about-line"></div>
+
+            <p>
+                Founded in 2015, Stackly began with a simple idea—
+                to combine creativity, technology and strategy
+                to build meaningful digital solutions.
+            </p>
+
+            <p>
+                From a small team of passionate developers and designers,
+                we have grown into a trusted digital partner helping
+                startups and enterprises succeed.
+            </p>
+
+            <p>
+                Today, we continue to innovate, collaborate and deliver
+                solutions that create real impact.
+            </p>
+
+        </div>
+
+        <!-- Right -->
+
+        <div class="stk-about-story-image reveal-right">
+
+            <img
+                src="./Frame 71.webp"
+                alt="Our Story">
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#000;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+    /* ===========================================================
+   STACKLY ABOUT PAGE
+   HERO + OUR STORY
+   NON-CONFLICTING CSS
+   =========================================================== */
+
+.stk-about-hero,
+.stk-about-story{
+    width:100%;
+    position:relative;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===========================================================
+   HERO SECTION
+   =========================================================== */
+
+.stk-about-hero{
+    background:linear-gradient(90deg,#101b33 0%,#11293b 55%,#14354a 100%);
+    padding:90px 0px 30px;
+}
+
+.stk-about-hero-container{
+    
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:70px;
+}
+
+/* LEFT */
+
+.stk-about-hero-content{
+    flex:1;
+    color:#fff;
+    max-width:560px;
+}
+
+.stk-about-hero-content h1{
+    font-size:58px;
+    line-height:1.12;
+    font-weight:800;
+    margin-bottom:28px;
+}
+
+.stk-about-hero-content h1 span{
+    color:#40d2bf;
+}
+
+.stk-about-hero-content p{
+    font-size:21px;
+    line-height:1.8;
+    color:#d7dce4;
+    max-width:520px;
+}
+
+/* RIGHT */
+
+.stk-about-hero-image{
+    flex:1;
+    position:relative;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.stk-about-hero-image img{
+    width:100%;
+    max-width:620px;
+    border-radius:28px;
+    display:block;
+    object-fit:cover;
+    box-shadow:0 25px 60px rgba(0,0,0,.28);
+}
+
+/* EXPERIENCE CARD */
+
+.stk-about-experience{
+    position:absolute;
+    left:-35px;
+    bottom:55px;
+
+    width:155px;
+    height:155px;
+
+    border-radius:22px;
+
+    background:rgba(53,193,214,.88);
+
+    backdrop-filter:blur(12px);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    color:#fff;
+
+    box-shadow:0 20px 35px rgba(0,0,0,.28);
+}
+
+.stk-about-experience h2{
+    margin:0;
+    font-size:44px;
+    font-weight:800;
+}
+
+.stk-about-experience span{
+    font-size:20px;
+    font-weight:700;
+}
+
+.stk-about-experience p{
+    margin-top:6px;
+    font-size:20px;
+    font-weight:700;
+}
+
+/* ===========================================================
+   OUR STORY
+   =========================================================== */
+
+.stk-about-story{
+    background:#fff;
+    padding:90px 0;
+}
+
+.stk-about-story-container{
+
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:80px;
+}
+
+/* LEFT */
+
+.stk-about-story-content{
+    flex:1;
+    max-width:500px;
+}
+
+.stk-about-story-content h2{
+
+    font-size:48px;
+    font-weight:800;
+
+    color:#202020;
+
+    margin-bottom:12px;
+}
+
+.stk-about-line{
+
+    width:90px;
+    height:4px;
+
+    background:#33c4b7;
+
+    border-radius:20px;
+
+    margin-bottom:35px;
+}
+
+.stk-about-story-content p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#555;
+
+    margin-bottom:28px;
+}
+
+/* RIGHT IMAGE */
+
+.stk-about-story-image{
+    flex:1;
+    display:flex;
+    justify-content:flex-end;
+}
+
+.stk-about-story-image img{
+
+    width:100%;
+    max-width:620px;
+
+    border-radius:30px;
+
+    display:block;
+
+    object-fit:cover;
+
+    box-shadow:0 25px 55px rgba(0,0,0,.18);
+}
+
+/* ===========================================================
+   ANIMATION
+   =========================================================== */
+
+.reveal-left,
+.reveal-right{
+
+    opacity:0;
+
+    transition:1s ease;
+}
+
+.reveal-left{
+
+    transform:translateX(-90px);
+}
+
+.reveal-right{
+
+    transform:translateX(90px);
+}
+
+.reveal-left.active,
+.reveal-right.active{
+
+    opacity:1;
+
+    transform:translateX(0);
+}
+
+/* ===========================================================
+   LARGE LAPTOP
+   =========================================================== */
+
+@media(max-width:1200px){
+
+.stk-about-hero-content h1{
+
+    font-size:48px;
+}
+
+.stk-about-story-content h2{
+
+    font-size:42px;
+}
+
+}
+
+/* ===========================================================
+   TABLET
+   =========================================================== */
+
+@media(max-width:992px){
+
+.stk-about-hero{
+
+    padding:70px 0;
+}
+
+.stk-about-hero-container{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:50px;
+}
+
+.stk-about-hero-content{
+
+    max-width:100%;
+}
+
+.stk-about-hero-content p{
+
+    margin:auto;
+}
+
+.stk-about-hero-image{
+
+    justify-content:center;
+}
+
+.stk-about-experience{
+
+    left:20px;
+
+    bottom:20px;
+
+    width:130px;
+
+    height:130px;
+}
+
+.stk-about-story{
+
+    padding:70px 0;
+}
+
+.stk-about-story-container{
+
+    flex-direction:column;
+
+    gap:50px;
+}
+
+.stk-about-story-content{
+
+    max-width:100%;
+
+    text-align:center;
+}
+
+.stk-about-line{
+
+    margin:0 auto 30px;
+}
+
+.stk-about-story-image{
+
+    justify-content:center;
+}
+
+}
+
+/* ===========================================================
+   MOBILE
+   =========================================================== */
+
+@media(max-width:768px){
+
+.stk-about-hero{
+
+    padding:60px 0;
+}
+
+.stk-about-hero-content h1{
+
+    font-size:36px;
+}
+
+.stk-about-hero-content p{
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+.stk-about-hero-image img{
+
+    border-radius:20px;
+}
+
+.stk-about-experience{
+
+    width:105px;
+
+    height:105px;
+
+    left:15px;
+
+    bottom:15px;
+}
+
+.stk-about-experience h2{
+
+    font-size:30px;
+}
+
+.stk-about-experience span{
+
+    font-size:15px;
+}
+
+.stk-about-experience p{
+
+    font-size:14px;
+}
+
+.stk-about-story{
+
+    padding:60px 0;
+}
+
+.stk-about-story-content h2{
+
+    font-size:34px;
+}
+
+.stk-about-story-content p{
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+.stk-about-story-image img{
+
+    border-radius:18px;
+}
+
+}
+
+/* ===========================================================
+   SMALL MOBILE
+   =========================================================== */
+
+@media(max-width:480px){
+
+.stk-about-hero-container,
+.stk-about-story-container{
+
+    width:92%;
+}
+
+.stk-about-hero-content h1{
+
+    font-size:30px;
+
+    line-height:1.25;
+}
+
+.stk-about-hero-content p{
+
+    font-size:15px;
+}
+
+.stk-about-story-content h2{
+
+    font-size:30px;
+}
+
+.stk-about-story-content p{
+
+    font-size:15px;
+}
+
+.stk-about-experience{
+
+    width:90px;
+
+    height:90px;
+}
+
+.stk-about-experience h2{
+
+    font-size:25px;
+}
+
+.stk-about-experience span{
+
+    font-size:13px;
+}
+
+.stk-about-experience p{
+
+    font-size:12px;
+}
+}
+</style>
+
+<script>
+    /* ==========================================================
+   STACKLY ABOUT PAGE
+   HERO + OUR STORY ANIMATION
+   ========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+const revealElements = document.querySelectorAll(
+    ".reveal-left, .reveal-right"
+);
+
+const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.18
+};
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, observerOptions);
+
+revealElements.forEach(element => {
+
+    revealObserver.observe(element);
+
+});
+
+});
+
+
+/* ==========================================================
+HERO FLOATING CARD ANIMATION
+========================================================== */
+
+const experienceCard = document.querySelector(".stk-about-experience");
+
+if (experienceCard) {
+
+let direction = 1;
+
+setInterval(() => {
+
+    experienceCard.style.transform =
+        direction === 1
+            ? "translateY(-10px)"
+            : "translateY(0px)";
+
+    direction *= -1;
+
+}, 1500);
+
+}
+
+
+/* ==========================================================
+HERO IMAGE PARALLAX
+========================================================== */
+
+window.addEventListener("scroll", () => {
+
+const image = document.querySelector(".stk-about-hero-image img");
+
+if (!image) return;
+
+const scroll = window.pageYOffset;
+
+image.style.transform =
+    `translateY(${scroll * 0.04}px)`;
+
+});
+
+
+/* ==========================================================
+STORY IMAGE HOVER EFFECT
+========================================================== */
+
+const storyImage = document.querySelector(".stk-about-story-image img");
+
+if (storyImage) {
+
+storyImage.addEventListener("mouseenter", () => {
+
+    storyImage.style.transform = "scale(1.04)";
+
+    storyImage.style.transition = "0.5s ease";
+
+});
+
+storyImage.addEventListener("mouseleave", () => {
+
+    storyImage.style.transform = "scale(1)";
+
+});
+
+}
+
+
+/* ==========================================================
+HERO IMAGE HOVER EFFECT
+========================================================== */
+
+const heroImage = document.querySelector(".stk-about-hero-image img");
+
+if (heroImage) {
+
+heroImage.addEventListener("mouseenter", () => {
+
+    heroImage.style.transform = "scale(1.03)";
+
+    heroImage.style.transition = "0.5s ease";
+
+});
+
+heroImage.addEventListener("mouseleave", () => {
+
+    heroImage.style.transform = "scale(1)";
+
+});
+
+}
+</script>
+
+
+
+
+
+<!-- ==========================================================
+     STACKLY OUR VALUES SECTION
+========================================================== -->
+
+<section class="stk-values-section">
+
+    <div class="stk-values-container">
+
+        <div class="stk-values-heading reveal-up">
+
+            <h2>Our Values</h2>
+
+            <div class="stk-values-line"></div>
+
+        </div>
+
+        <div class="stk-values-grid">
+
+            <!-- CARD 1 -->
+
+            <div class="stk-value-card reveal-up">
+
+                <div class="stk-value-icon">
+
+                    <i class="fas fa-lightbulb"></i>
+
+                </div>
+
+                <h3>Innovation</h3>
+
+                <p>
+                    We embrace new ideas and technologies
+                    to create smarter solutions.
+                </p>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="stk-value-card reveal-up">
+
+                <div class="stk-value-icon">
+
+                    <i class="fas fa-users"></i>
+
+                </div>
+
+                <h3>Integrity</h3>
+
+                <p>
+                    We believe in transparency,
+                    honesty and building trust
+                    in everything we do.
+                </p>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="stk-value-card reveal-up">
+
+                <div class="stk-value-icon">
+
+                    <i class="fas fa-handshake"></i>
+
+                </div>
+
+                <h3>Collaboration</h3>
+
+                <p>
+                    We work together,
+                    win together,
+                    and grow together.
+                </p>
+
+            </div>
+
+            <!-- CARD 4 -->
+
+            <div class="stk-value-card reveal-up">
+
+                <div class="stk-value-icon">
+
+                    <i class="far fa-star"></i>
+
+                </div>
+
+                <h3>Excellence</h3>
+
+                <p>
+                    We are committed to quality,
+                    performance and continuous
+                    improvement.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ==========================================================
+     STATISTICS SECTION
+========================================================== -->
+
+<section class="stk-stats-section">
+
+    <div class="stk-stats-container">
+
+        <div class="stk-stat-item">
+
+            <h2 class="counter" data-target="200">0</h2>
+
+            <p>Projects Delivered</p>
+
+        </div>
+
+        <div class="stk-stat-divider"></div>
+
+        <div class="stk-stat-item">
+
+            <h2 class="counter" data-target="98">0</h2>
+
+            <p>Client Satisfaction</p>
+
+        </div>
+
+        <div class="stk-stat-divider"></div>
+
+        <div class="stk-stat-item">
+
+            <h2>24/7</h2>
+
+            <p>Support Available</p>
+
+        </div>
+
+        <div class="stk-stat-divider"></div>
+
+        <div class="stk-stat-item">
+
+            <h2 class="counter" data-target="5">0</h2>
+
+            <p>Years Experience</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- ==========================================================
+     TRUSTED COMPANIES
+========================================================== -->
+
+<section class="stk-company-section">
+
+    <div class="stk-company-container">
+
+        <h2 class="reveal-up">
+            Trusted by Leading Companies
+        </h2>
+
+        <div class="stk-company-slider">
+
+            <div class="stk-company-track">
+
+                <!-- ORIGINAL -->
+
+                <img src="./deloitte.png" alt="MetLife">
+
+                <img src="./nextech.jpeg" alt="Freightline">
+
+                <img src="./frightline.png" alt="NexTech">
+
+                <img src="./Luvata.png" alt="NuviTech">
+
+                <img src="./metlife.jpeg" alt="Destra">
+
+                <img src="./nuvitech.jpg" alt="Luvata">
+
+                <!-- DUPLICATE FOR INFINITE LOOP -->
+
+                <img src="./deloitte.png" alt="MetLife">
+
+                <img src="./nextech.jpeg" alt="Freightline">
+
+                <img src="./frightline.png" alt="NexTech">
+
+                <img src="./Luvata.png" alt="NuviTech">
+
+                <img src="./metlife.jpeg" alt="Destra">
+
+                <img src="./nuvitech.jpg" alt="Luvata">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /* ===========================================================
+   STACKLY ABOUT PAGE
+   OUR VALUES SECTION
+   NON-CONFLICTING CSS
+=========================================================== */
+
+.stk-values-section{
+    width:100%;
+    background:#ffffff;
+    padding:90px 0 70px;
+    position:relative;
+    overflow:hidden;
+}
+
+.stk-values-container{
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+}
+
+.stk-values-heading{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.stk-values-heading h2{
+    font-size:48px;
+    font-weight:800;
+    color:#202020;
+    margin-bottom:18px;
+}
+
+.stk-values-line{
+    width:110px;
+    height:4px;
+    background:#2db8a3;
+    border-radius:50px;
+    margin:auto;
+}
+
+/*=========================
+VALUES GRID
+=========================*/
+
+.stk-values-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:35px;
+}
+
+.stk-value-card{
+    text-align:center;
+    padding:20px;
+    transition:.4s;
+}
+
+.stk-value-card:hover{
+    transform:translateY(-12px);
+}
+
+.stk-value-icon{
+    width:74px;
+    height:74px;
+    margin:auto;
+    margin-bottom:22px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#fff;
+    font-size:28px;
+
+    background:linear-gradient(135deg,#45d3d6,#2f92d6);
+
+    box-shadow:0 15px 35px rgba(0,180,180,.28);
+}
+
+.stk-value-card h3{
+    font-size:32px;
+    font-weight:700;
+    margin-bottom:16px;
+    color:#111;
+}
+
+.stk-value-card p{
+    font-size:18px;
+    line-height:1.8;
+    color:#555;
+}
+
+/*=========================================================
+STATISTICS
+=========================================================*/
+
+.stk-stats-section{
+    padding:40px 0 80px;
+    background:#fff;
+}
+
+.stk-stats-container{
+
+    width:90%;
+    max-width:1300px;
+
+    margin:auto;
+
+    background:linear-gradient(90deg,#13243a,#184d53);
+
+    border-radius:24px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:38px 20px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.15);
+}
+
+.stk-stat-item{
+
+    flex:1;
+
+    text-align:center;
+}
+
+.stk-stat-item h2{
+
+    color:#dffefe;
+
+    font-size:48px;
+
+    font-weight:800;
+
+    margin-bottom:10px;
+}
+
+.stk-stat-item p{
+
+    color:#d8f6f6;
+
+    font-size:26px;
+
+    font-weight:600;
+
+    line-height:1.4;
+}
+
+.stk-stat-divider{
+
+    width:1px;
+
+    height:60px;
+
+    background:rgba(255,255,255,.18);
+}
+
+/*=========================================================
+COMPANIES
+=========================================================*/
+
+.stk-company-section{
+
+    padding:20px 0 90px;
+
+    background:#fff;
+
+    overflow:hidden;
+}
+
+.stk-company-container{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+}
+
+.stk-company-container h2{
+
+    font-size:38px;
+
+    color:#222;
+
+    font-weight:700;
+
+    margin-bottom:40px;
+}
+
+/*=========================
+SLIDER
+=========================*/
+
+.stk-company-slider{
+
+    width:100%;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.stk-company-track{
+
+    display:flex;
+
+    align-items:center;
+
+    width:max-content;
+
+    animation:stkCompanyScroll 30s linear infinite;
+}
+
+.stk-company-slider:hover .stk-company-track{
+
+    animation-play-state:paused;
+}
+
+.stk-company-track img{
+
+    width:170px;
+
+    margin:0 45px;
+
+    object-fit:contain;
+
+    transition:.35s;
+}
+
+.stk-company-track img:hover{
+
+    transform:scale(1.08);
+}
+
+/*=========================================================
+MARQUEE
+=========================================================*/
+
+@keyframes stkCompanyScroll{
+
+    from{
+
+        transform:translateX(0);
+    }
+
+    to{
+
+        transform:translateX(-50%);
+    }
+
+}
+
+/*=========================================================
+SCROLL ANIMATION
+=========================================================*/
+
+.reveal-up{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s ease;
+}
+
+.reveal-up.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/*=========================================================
+LAPTOP
+=========================================================*/
+
+@media(max-width:1200px){
+
+.stk-values-grid{
+
+    gap:25px;
+}
+
+.stk-value-card h3{
+
+    font-size:28px;
+}
+
+.stk-stat-item p{
+
+    font-size:22px;
+}
+
+}
+
+/*=========================================================
+TABLET
+=========================================================*/
+
+@media(max-width:992px){
+
+.stk-values-section{
+
+    padding:70px 0;
+}
+
+.stk-values-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+}
+
+.stk-stats-container{
+
+    flex-wrap:wrap;
+
+    gap:30px;
+
+    padding:40px;
+}
+
+.stk-stat-item{
+
+    flex:0 0 48%;
+}
+
+.stk-stat-divider{
+
+    display:none;
+}
+
+.stk-company-track img{
+
+    width:140px;
+
+    margin:0 35px;
+}
+
+}
+
+/*=========================================================
+MOBILE
+=========================================================*/
+
+@media(max-width:768px){
+
+.stk-values-heading h2{
+
+    font-size:36px;
+}
+
+.stk-values-grid{
+
+    grid-template-columns:1fr;
+}
+
+.stk-value-card{
+
+    padding:10px;
+}
+
+.stk-value-icon{
+
+    width:68px;
+
+    height:68px;
+
+    font-size:24px;
+}
+
+.stk-value-card h3{
+
+    font-size:28px;
+}
+
+.stk-value-card p{
+
+    font-size:16px;
+}
+
+.stk-stats-container{
+
+    flex-direction:column;
+
+    gap:35px;
+
+    padding:45px 25px;
+}
+
+.stk-stat-item{
+
+    width:100%;
+}
+
+.stk-stat-item h2{
+
+    font-size:38px;
+}
+
+.stk-stat-item p{
+
+    font-size:22px;
+}
+
+.stk-company-container h2{
+
+    text-align:center;
+
+    font-size:30px;
+}
+
+.stk-company-track img{
+
+    width:120px;
+
+    margin:0 25px;
+}
+
+}
+
+/*=========================================================
+SMALL MOBILE
+=========================================================*/
+
+@media(max-width:480px){
+
+.stk-values-section{
+
+    padding:60px 0;
+}
+
+.stk-values-heading{
+
+    margin-bottom:50px;
+}
+
+.stk-values-heading h2{
+
+    font-size:30px;
+}
+
+.stk-values-line{
+
+    width:90px;
+}
+
+.stk-value-card h3{
+
+    font-size:24px;
+}
+
+.stk-value-card p{
+
+    font-size:15px;
+}
+
+.stk-stat-item h2{
+
+    font-size:32px;
+}
+
+.stk-stat-item p{
+
+    font-size:18px;
+}
+
+.stk-company-container h2{
+
+    font-size:26px;
+}
+
+.stk-company-track img{
+
+    width:100px;
+
+    margin:0 18px;
+}
+
+}
+</style>
+
+<script>
+    /* ==========================================================
+   STACKLY ABOUT PAGE
+   OUR VALUES + COUNTERS + ANIMATIONS
+   ========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+const stkRevealElements = document.querySelectorAll(
+    ".reveal-up, .reveal-left, .reveal-right"
+);
+
+const stkRevealObserver = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.15
+
+});
+
+stkRevealElements.forEach(element => {
+
+    stkRevealObserver.observe(element);
+
+});
+
+
+
+/* ==========================================
+   COUNTER ANIMATION
+========================================== */
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+        if (!entry.isIntersecting) return;
+
+        const counter = entry.target;
+
+        const target = Number(counter.dataset.target);
+
+        let current = 0;
+
+        const increment = Math.max(1, Math.ceil(target / 80));
+
+        const timer = setInterval(() => {
+
+            current += increment;
+
+            if (current >= target) {
+
+                current = target;
+
+                clearInterval(timer);
+
+            }
+
+            if (target === 98) {
+
+                counter.innerHTML = current + "%";
+
+            }
+
+            else if (target === 5) {
+
+                counter.innerHTML = current + "+";
+
+            }
+
+            else {
+
+                counter.innerHTML = current + "+";
+
+            }
+
+        }, 20);
+
+        observer.unobserve(counter);
+
+    });
+
+}, {
+
+    threshold: 0.35
+
+});
+
+counters.forEach(counter => {
+
+    counterObserver.observe(counter);
+
+});
+
+
+
+/* ==========================================
+   VALUE CARD HOVER EFFECT
+========================================== */
+
+const valueCards = document.querySelectorAll(".stk-value-card");
+
+valueCards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        card.style.transform = "translateY(-12px)";
+
+        card.style.transition = "0.35s ease";
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.transform = "translateY(0px)";
+
+    });
+
+});
+
+
+
+/* ==========================================
+   ICON FLOAT ANIMATION
+========================================== */
+
+const icons = document.querySelectorAll(".stk-value-icon");
+
+icons.forEach((icon, index) => {
+
+    let direction = 1;
+
+    setInterval(() => {
+
+        icon.style.transform =
+
+            direction === 1
+
+                ? "translateY(-6px)"
+
+                : "translateY(0px)";
+
+        direction *= -1;
+
+    }, 1400 + (index * 250));
+
+});
+
+
+
+/* ==========================================
+   PARALLAX EFFECT
+========================================== */
+
+const valuesSection = document.querySelector(".stk-values-section");
+
+window.addEventListener("scroll", () => {
+
+    if (!valuesSection) return;
+
+    const offset = window.pageYOffset;
+
+    valuesSection.style.backgroundPositionY =
+
+        -(offset * 0.04) + "px";
+
+});
+
+
+
+/* ==========================================
+   PAUSE ANIMATION WHEN TAB HIDDEN
+========================================== */
+
+const companyTrack = document.querySelector(".stk-company-track");
+
+document.addEventListener("visibilitychange", () => {
+
+    if (!companyTrack) return;
+
+    if (document.hidden) {
+
+        companyTrack.style.animationPlayState = "paused";
+
+    }
+
+    else {
+
+        companyTrack.style.animationPlayState = "running";
+
+    }
+
+});
+
+});
+</script>
+
+<!-- ======================================================
+     READY TO TRANSFORM SECTION
+====================================================== -->
+
+<section class="stk-ready-section">
+
+    <!-- Background Overlay -->
+    <div class="stk-ready-overlay"></div>
+
+    <div class="stk-ready-container">
+
+        <!-- Left Content -->
+
+        <div class="stk-ready-content reveal-left">
+
+            <h2>
+                Ready to Transform
+                <br>
+                your Business ?
+            </h2>
+
+            <p>
+                Lets work together to create solutions that drive
+                growth, improve efficiency and deliver impact.
+            </p>
+
+        </div>
+
+
+        <!-- Right Button -->
+
+        <div class="stk-ready-btn-area reveal-right">
+
+            <a href="404.html" class="stk-ready-btn">
+
+                <span>Get in Touch Today</span>
+
+                <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+    /*==========================================================
+  STACKLY - READY TO TRANSFORM SECTION
+  UPDATED - COMPACT VERSION
+  NON-CONFLICTING CSS
+==========================================================*/
+
+.stk-ready-section{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    background:url("./image\ 5.webp") center center/cover no-repeat;
+    padding:45px 0;
+    isolation:isolate;
+}
+
+/* Dark Overlay */
+
+.stk-ready-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(10,18,35,0.82);
+    z-index:1;
+}
+
+/* Container */
+
+.stk-ready-container{
+    position:relative;
+    z-index:2;
+
+    width:90%;
+    max-width:1300px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    min-height:180px;
+
+    gap:60px;
+}
+
+/*==================================================
+LEFT CONTENT
+==================================================*/
+
+.stk-ready-content{
+    flex:1;
+    max-width:640px;
+}
+
+.stk-ready-content h2{
+    color:#ffffff;
+    font-size:50px;
+    font-weight:800;
+    line-height:1.15;
+    margin-bottom:15px;
+}
+
+.stk-ready-content p{
+    color:#eef2f7;
+    font-size:22px;
+    line-height:1.6;
+    max-width:620px;
+}
+
+/*==================================================
+BUTTON
+==================================================*/
+
+.stk-ready-btn-area{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+
+.stk-ready-btn{
+    width:380px;
+    height:72px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 30px;
+
+    text-decoration:none;
+
+    border-radius:16px;
+
+    background:linear-gradient(90deg,#c69b18,#876807);
+
+    color:#000;
+
+    font-size:24px;
+    font-weight:700;
+
+    transition:all .35s ease;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+
+.stk-ready-btn span{
+    white-space:nowrap;
+}
+
+.stk-ready-btn i{
+    font-size:30px;
+    transition:.35s;
+}
+
+.stk-ready-btn:hover{
+    transform:translateY(-5px);
+    background:linear-gradient(90deg,#d8ab22,#9b7609);
+}
+
+.stk-ready-btn:hover i{
+    transform:translateX(10px);
+}
+
+/*==================================================
+SCROLL ANIMATION
+==================================================*/
+
+.reveal-left,
+.reveal-right{
+    opacity:0;
+    transition:1s ease;
+}
+
+.reveal-left{
+    transform:translateX(-70px);
+}
+
+.reveal-right{
+    transform:translateX(70px);
+}
+
+.reveal-left.active,
+.reveal-right.active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+/*==================================================
+LAPTOP
+==================================================*/
+
+@media (max-width:1200px){
+
+.stk-ready-section{
+    padding:40px 0;
+}
+
+.stk-ready-container{
+    min-height:160px;
+}
+
+.stk-ready-content h2{
+    font-size:42px;
+}
+
+.stk-ready-content p{
+    font-size:20px;
+}
+
+.stk-ready-btn{
+    width:340px;
+    height:68px;
+    font-size:22px;
+}
+
+}
+
+/*==================================================
+TABLET
+==================================================*/
+
+@media (max-width:992px){
+
+.stk-ready-section{
+    padding:40px 0;
+}
+
+.stk-ready-container{
+    flex-direction:column;
+    text-align:center;
+    gap:35px;
+    min-height:auto;
+}
+
+.stk-ready-content{
+    max-width:100%;
+}
+
+.stk-ready-content p{
+    margin:auto;
+}
+
+.stk-ready-btn-area{
+    width:100%;
+    justify-content:center;
+}
+
+.stk-ready-btn{
+    width:340px;
+}
+
+}
+
+/*==================================================
+MOBILE
+==================================================*/
+
+@media (max-width:768px){
+
+.stk-ready-section{
+    padding:35px 0;
+}
+
+.stk-ready-container{
+    width:92%;
+}
+
+.stk-ready-content h2{
+    font-size:34px;
+}
+
+.stk-ready-content p{
+    font-size:17px;
+    line-height:1.7;
+}
+
+.stk-ready-btn{
+    width:100%;
+    max-width:320px;
+    height:60px;
+    font-size:18px;
+    padding:0 22px;
+}
+
+.stk-ready-btn i{
+    font-size:22px;
+}
+
+}
+
+/*==================================================
+SMALL MOBILE
+==================================================*/
+
+@media (max-width:480px){
+
+.stk-ready-section{
+    padding:30px 0;
+}
+
+.stk-ready-content h2{
+    font-size:28px;
+}
+
+.stk-ready-content p{
+    font-size:15px;
+}
+
+.stk-ready-btn{
+    width:100%;
+    max-width:280px;
+    height:56px;
+    font-size:16px;
+    border-radius:14px;
+    padding:0 18px;
+}
+
+.stk-ready-btn i{
+    font-size:18px;
+}
+
+}
+    </style>
+<!-- ===========================
+         MAIN FOOTER
+    ============================ -->
+
+    <section class="stkx-footer-main">
+
+        <div class="stkx-footer-container">
+
+            <div class="stkx-footer-grid">
+
+                <!-- ======================
+                     COMPANY
+                ======================= -->
+
+                <div class="stkx-footer-company">
+
+                    <a href="index.html" class="stkx-footer-logo">
+
+                        <img
+                            src="./logo.webp"
+                            alt="Stackly Logo">
+
+                    </a>
+
+                    <p class="stkx-footer-desc">
+                        We help businesses grow with smart
+                        digital solutions and innovative
+                        strategies.
+                    </p>
+
+                    <h3 class="stkx-footer-social-title">
+                        Follow Us :
+                    </h3>
+
+                    <div class="stkx-footer-social">
+
+                        <a href="404.html">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="404.html">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="404.html">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a href="404.html">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                                <!-- ======================
+                     QUICK LINKS
+                ======================= -->
+
+                <div class="stkx-footer-column">
+
+                    <h3 class="stkx-footer-title">
+                        Quick Links
+                    </h3>
+
+                    <ul class="stkx-footer-links">
+
+                        <li>
+                            <a href="index.html">
+                                <span class="stkx-dot"></span>
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">
+                                <span class="stkx-dot"></span>
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services.html">
+                                <span class="stkx-dot"></span>
+                                Services
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./404.html">
+                                <span class="stkx-dot"></span>
+                                Corporate
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./404.html">
+                                <span class="stkx-dot"></span>
+                                Customer
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">
+                                <span class="stkx-dot"></span>
+                                Contact Us
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ======================
+                     OUR SERVICES
+                ======================= -->
+
+                <div class="stkx-footer-column">
+
+                    <h3 class="stkx-footer-title">
+                        Our Services
+                    </h3>
+
+                    <ul class="stkx-footer-links">
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Business Consulting
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Digital Marketing
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                UI/UX Design
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Web Development
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Mobile Apps
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Cloud Solutions
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ======================
+                     CONTACT
+                ======================= -->
+
+                <div class="stkx-footer-column">
+
+                    <h3 class="stkx-footer-title">
+                        Contact Us
+                    </h3>
+
+                    <div class="stkx-footer-contact">
+
+                        <div class="stkx-contact-item">
+
+                            <h4>Address :</h4>
+
+                            <p>
+                                Tamilnadu
+                                <br>
+                                Salem - 636008
+                            </p>
+
+                        </div>
+
+                        <div class="stkx-contact-item">
+
+                            <h4>Phone:</h4>
+
+                            <p>
+                                +91 7010792745
+                            </p>
+
+                        </div>
+
+                        <div class="stkx-contact-item">
+
+                            <h4>Email:</h4>
+
+                            <p>
+                                info@thestackly.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- ==========================================
+         FOOTER BOTTOM
+    =========================================== -->
+
+    <div class="stkx-footer-bottom">
+
+        <div class="stkx-footer-container">
+
+            <div class="stkx-footer-bottom-wrapper">
+
+                <!-- Left -->
+
+                <div class="stkx-footer-copy">
+
+                    <p>
+                        © 2026 Stackly. All Rights Reserved.
+                    </p>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="stkx-footer-bottom-links">
+
+                    <a href="404.html">
+                        Privacy Policy
+                    </a>
+
+                    <span>|</span>
+
+                    <a href="404.html">
+                        Terms &amp; Conditions
+                    </a>
+
+                    <span>|</span>
+
+                    <a href="404.html">
+                        Sitemap
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ==========================================
+     FONT AWESOME
+=========================================== -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- ==========================================
+     FOOTER JAVASCRIPT
+=========================================== -->
+
+<script src="footer.js"></script>
+
+<Style>
+    /*=========================================================
+  STACKLY FOOTER
+  NON-CONFLICTING CSS
+  Prefix : stkx-
+=========================================================*/
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+.stkx-footer{
+    width:100%;
+    background:#050812;
+    color:#ffffff;
+    overflow:hidden;
+    position:relative;
+    font-family:"Poppins",sans-serif;
+}
+
+.stkx-footer-container{
+    width:100%;
+    max-width:1320px;
+    margin:0 auto;
+    padding:0 40px;
+}
+
+/*=========================================================
+ CTA SECTION
+=========================================================*/
+
+/*=========================================================
+CTA SECTION
+=========================================================*/
+
+.stkx-footer-cta{
+    position:relative;
+    width:100%;
+    padding:80px 0;
+    overflow:hidden;
+
+    background:url("./image\ 5.webp") center center/cover no-repeat;
+}
+
+/* Dark Overlay */
+
+.stkx-footer-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:rgba(7,16,36,.78);
+
+    z-index:1;
+}
+
+/* Container */
+
+.stkx-footer-cta .stkx-footer-container{
+    position:relative;
+    z-index:5;
+}
+
+/* Wrapper */
+
+.stkx-footer-cta-wrapper{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:70px;
+}
+
+/* Left */
+
+.stkx-footer-cta-content{
+    flex:1;
+}
+
+.stkx-footer-cta-content h2{
+
+    margin:0;
+
+    color:#fff;
+
+    font-size:56px;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    position:relative;
+
+    z-index:10;
+}
+
+.stkx-footer-cta-content p{
+
+    margin-top:22px;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    position:relative;
+
+    z-index:10;
+}
+
+/* Right */
+
+.stkx-footer-cta-btn-wrap{
+    flex-shrink:0;
+    position:relative;
+    z-index:10;
+}
+
+.stkx-footer-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+
+    min-width:340px;
+
+    padding:24px 38px;
+
+    background:goldenrod;
+
+    color:#06121b;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    transition:.35s;
+}
+
+.stkx-footer-btn:hover{
+
+    transform:translateY(-6px);
+
+    background:goldenrod;
+
+    box-shadow:0 18px 40px rgba(22,212,203,.35);
+}
+/*=========================================================
+ MAIN FOOTER
+=========================================================*/
+
+.stkx-footer-main{
+
+    background:#04060d;
+
+    padding:90px 0 70px;
+}
+
+.stkx-footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1.4fr
+    1fr
+    1fr
+    1fr;
+
+    gap:60px;
+}
+
+/*=========================================================
+ COMPANY
+=========================================================*/
+
+.stkx-footer-company img{
+
+    width:260px;
+    max-width:100%;
+    display:block;
+}
+
+.stkx-footer-desc{
+
+    margin-top:34px;
+
+    color:#f1f1f1;
+
+    font-size:21px;
+
+    line-height:1.7;
+
+    max-width:360px;
+}
+
+.stkx-footer-social-title{
+
+    margin-top:50px;
+    margin-bottom:25px;
+
+    font-size:34px;
+    font-weight:700;
+}
+
+.stkx-footer-social{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.stkx-footer-social a{
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:25px;
+
+    transition:.35s;
+}
+
+.stkx-footer-social a:nth-child(1){
+    background:#3b5998;
+}
+
+.stkx-footer-social a:nth-child(2){
+    background:#0a66c2;
+}
+
+.stkx-footer-social a:nth-child(3){
+    background:#1da1f2;
+}
+
+.stkx-footer-social a:nth-child(4){
+    background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+
+.stkx-footer-social a:hover{
+
+    transform:translateY(-8px) scale(1.08);
+}
+
+
+/*=========================================================
+  FOOTER COLUMNS
+=========================================================*/
+
+.stkx-footer-column{
+    width:100%;
+}
+
+.stkx-footer-title{
+    margin:0 0 30px;
+    font-size:30px;
+    font-weight:700;
+    color:#ffffff;
+    position:relative;
+}
+
+.stkx-footer-title::after{
+    content:"";
+    display:block;
+    width:65px;
+    height:3px;
+    background:#18d7cf;
+    margin-top:12px;
+    border-radius:20px;
+}
+
+/*=========================================================
+  LINKS
+=========================================================*/
+
+.stkx-footer-links{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.stkx-footer-links li{
+    margin-bottom:18px;
+}
+
+.stkx-footer-links li:last-child{
+    margin-bottom:0;
+}
+
+.stkx-footer-links a{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    color:#d8d8d8;
+    text-decoration:none;
+
+    font-size:18px;
+    font-weight:500;
+
+    transition:.35s;
+}
+
+.stkx-dot{
+
+    width:8px;
+    height:8px;
+
+    background:#19d8cf;
+
+    border-radius:50%;
+
+    transition:.35s;
+}
+
+.stkx-footer-links a:hover{
+
+    color:#19d8cf;
+
+    transform:translateX(8px);
+}
+
+.stkx-footer-links a:hover .stkx-dot{
+
+    transform:scale(1.5);
+}
+
+/*=========================================================
+  CONTACT
+=========================================================*/
+
+.stkx-footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+}
+
+.stkx-contact-item h4{
+
+    margin:0 0 10px;
+
+    font-size:20px;
+    color:#ffffff;
+    font-weight:600;
+}
+
+.stkx-contact-item p{
+
+    margin:0;
+
+    color:#d8d8d8;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+/*=========================================================
+  FOOTER BOTTOM
+=========================================================*/
+
+.stkx-footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:#03050a;
+
+    padding:22px 0;
+}
+
+.stkx-footer-bottom-wrapper{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.stkx-footer-copy p{
+
+    margin:0;
+
+    color:#cfcfcf;
+
+    font-size:15px;
+}
+
+.stkx-footer-bottom-links{
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    flex-wrap:wrap;
+}
+
+.stkx-footer-bottom-links span{
+    color:#666;
+}
+
+.stkx-footer-bottom-links a{
+
+    color:#d4d4d4;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.stkx-footer-bottom-links a:hover{
+    color:#18d7cf;
+}
+
+/*=========================================================
+  SCROLL REVEAL
+=========================================================*/
+
+.stkx-reveal-left,
+.stkx-reveal-right{
+
+    /* opacity:0;
+
+    transition:all .9s ease; */
+}
+
+.stkx-reveal-left{
+    transform:translateX(-70px);
+}
+
+.stkx-reveal-right{
+    transform:translateX(70px);
+}
+
+.stkx-reveal-active{
+
+    opacity:1 !important;
+
+    transform:translate(0,0) !important;
+}
+
+/*=========================================================
+  TABLET
+=========================================================*/
+
+@media (max-width:1024px){
+
+.stkx-footer-container{
+    padding:0 30px;
+}
+
+.stkx-footer-cta-wrapper{
+
+    flex-direction:column;
+    text-align:center;
+    gap:45px;
+}
+
+.stkx-footer-cta-content{
+    max-width:100%;
+}
+
+.stkx-footer-cta-content h2{
+    font-size:44px;
+}
+
+.stkx-footer-cta-content p{
+    font-size:20px;
+}
+
+.stkx-footer-btn{
+    min-width:320px;
+    font-size:21px;
+}
+
+.stkx-footer-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:50px;
+}
+
+.stkx-footer-company{
+    grid-column:1 / -1;
+}
+
+}
+
+/*=========================================================
+  MOBILE
+=========================================================*/
+
+@media (max-width:768px){
+
+.stkx-footer-container{
+    padding:0 20px;
+}
+
+.stkx-footer-cta{
+    padding:55px 0;
+}
+
+.stkx-footer-cta-content h2{
+
+    font-size:34px;
+    line-height:1.25;
+}
+
+.stkx-footer-cta-content p{
+
+    font-size:17px;
+    margin-top:18px;
+}
+
+.stkx-footer-btn{
+
+    width:100%;
+    min-width:100%;
+
+    padding:20px;
+
+    font-size:18px;
+
+    gap:18px;
+}
+
+.stkx-footer-btn svg{
+
+    width:22px;
+    height:22px;
+}
+
+.stkx-footer-main{
+
+    padding:65px 0 50px;
+}
+
+.stkx-footer-grid{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+}
+
+.stkx-footer-company img{
+    width:210px;
+}
+
+.stkx-footer-desc{
+
+    max-width:100%;
+
+    font-size:17px;
+}
+
+.stkx-footer-social-title{
+
+    font-size:24px;
+
+    margin-top:35px;
+}
+
+.stkx-footer-social a{
+
+    width:48px;
+    height:48px;
+
+    font-size:20px;
+}
+
+.stkx-footer-title{
+    font-size:24px;
+}
+
+.stkx-footer-links a{
+    font-size:16px;
+}
+
+.stkx-contact-item h4{
+    font-size:18px;
+}
+
+.stkx-contact-item p{
+    font-size:16px;
+}
+
+.stkx-footer-bottom-wrapper{
+
+    flex-direction:column;
+
+    text-align:center;
+}
+
+.stkx-footer-bottom-links{
+
+    justify-content:center;
+
+    gap:12px;
+}
+
+}
+
+/*=========================================================
+  SMALL MOBILE
+=========================================================*/
+
+@media (max-width:480px){
+
+.stkx-footer-cta-content h2{
+    font-size:28px;
+}
+
+.stkx-footer-cta-content p{
+    font-size:16px;
+}
+
+.stkx-footer-btn{
+    font-size:16px;
+    padding:18px;
+}
+
+.stkx-footer-company img{
+    width:180px;
+}
+
+.stkx-footer-social{
+    gap:12px;
+}
+
+.stkx-footer-social a{
+    width:44px;
+    height:44px;
+}
+
+.stkx-footer-title{
+    font-size:22px;
+}
+
+.stkx-footer-links a{
+    font-size:15px;
+}
+
+.stkx-contact-item p{
+    font-size:15px;
+}
+
+.stkx-footer-copy p,
+.stkx-footer-bottom-links a{
+    font-size:14px;
+}
+
+}
+/*=========================================
+BUTTON RIPPLE EFFECT
+=========================================*/
+
+.stkx-footer-btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.stkx-ripple{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    transform:scale(0);
+
+    background:rgba(255,255,255,.35);
+
+    animation:stkxRipple .6s linear;
+
+    pointer-events:none;
+}
+
+@keyframes stkxRipple{
+
+    to{
+
+        transform:scale(4);
+
+        opacity:0;
+    }
+
+}
+</Style>
+
+<script>
+    /*==========================================================
+ STACKLY FOOTER
+ NON-CONFLICTING JAVASCRIPT
+==========================================================*/
+
+(function () {
+    "use strict";
+
+    // ==============================
+    // SCROLL REVEAL ANIMATION
+    // ==============================
+
+    const stkxRevealItems = document.querySelectorAll(
+        ".stkx-reveal-left, .stkx-reveal-right"
+    );
+
+    if (stkxRevealItems.length > 0) {
+
+        const stkxObserver = new IntersectionObserver(function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("stkx-reveal-active");
+
+                    stkxObserver.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        stkxRevealItems.forEach(function (item) {
+            stkxObserver.observe(item);
+        });
+
+    }
+
+    // ==============================
+    // FOOTER BUTTON RIPPLE EFFECT
+    // ==============================
+
+    const stkxButtons = document.querySelectorAll(".stkx-footer-btn");
+
+    stkxButtons.forEach(function (button) {
+
+        button.addEventListener("click", function (e) {
+
+            const ripple = document.createElement("span");
+
+            const rect = this.getBoundingClientRect();
+
+            const size = Math.max(rect.width, rect.height);
+
+            ripple.style.width = size + "px";
+            ripple.style.height = size + "px";
+
+            ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+            ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+
+            ripple.className = "stkx-ripple";
+
+            this.appendChild(ripple);
+
+            setTimeout(function () {
+                ripple.remove();
+            }, 600);
+
+        });
+
+    });
+
+})();
+</script>
+  

@@ -1,0 +1,5268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly </title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;600;700;800&display=swap"
+        rel="stylesheet">
+
+    
+</head>
+
+<body>
+
+    <!--==========================================
+                HEADER
+    ===========================================-->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <!--=====================
+                    LOGO
+            ======================-->
+
+            <a href="index.html" class="logo">
+
+                <img src="./logo.webp" alt="Stackly Logo">
+
+            </a>
+
+            <!--=====================
+                DESKTOP MENU
+            ======================-->
+
+            <ul class="nav-menu">
+
+                <li>
+                    <a href="index.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="about.html" >
+                        About Us
+                    </a>
+                </li>
+
+                <li>
+                    <a href="services.html">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="./carrers.html" class="active">
+                        Careers
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+
+            <!--=====================
+                RIGHT BUTTON
+            ======================-->
+
+            <a href="contact.html" class="talk-btn">
+
+                Let's Talk
+
+            </a>
+
+            <!--=====================
+                HAMBURGER
+            ======================-->
+
+            <div class="hamburger">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!--=========================
+            MOBILE MENU
+    ==========================-->
+
+    <div class="mobile-menu">
+
+        <ul>
+
+            <li>
+
+                <a href="index.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Home
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="about.html" class="active">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    About Us
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="services.html">
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                    Services
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="careers.html">
+
+                    <i class="fa-solid fa-briefcase"></i>
+
+                    Careers
+
+                </a>
+
+            </li>
+
+            <li>
+
+                <a href="contact.html">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    Contact Us
+
+                </a>
+
+            </li>
+
+        </ul>
+
+        <a href="contact.html" class="mobile-btn">
+
+            Let's Talk
+
+        </a>
+
+    </div>
+
+    <style>
+
+        /*==================================================
+                GOOGLE FONT & RESET
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:#ffffff;
+
+    overflow-x:hidden;
+
+}
+
+a{
+    text-decoration:none;
+}
+
+li{
+    list-style:none;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+/*==================================================
+                    HEADER
+==================================================*/
+
+.header{
+
+    position:fixed;
+
+    top:25px;
+
+    left:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    z-index:9999;
+
+    transition:.4s ease;
+
+}
+
+/*==================================================
+                GLASS NAVBAR
+==================================================*/
+
+.navbar{
+
+    width:min(1320px,92%);
+
+    height:86px;
+
+    padding:0 38px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    border-radius:100px;
+
+    background:rgba(15,23,42,.82);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:2px solid rgba(255,255,255,.18);
+
+    box-shadow:
+
+        0 12px 40px rgba(0,0,0,.25);
+
+    transition:.4s;
+
+}
+
+/*==================================================
+                STICKY HEADER
+==================================================*/
+
+.header.sticky{
+
+    top:12px;
+
+}
+
+.header.sticky .navbar{
+
+    background:rgba(8,16,32,.96);
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/*==================================================
+                    LOGO
+==================================================*/
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    flex-shrink:0;
+
+}
+
+.logo img{
+
+    width:235px;
+
+    transition:.35s;
+
+}
+
+.logo:hover img{
+
+    transform:scale(1.04);
+
+}
+
+/*==================================================
+                DESKTOP MENU
+==================================================*/
+
+.nav-menu{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:42px;
+
+}
+
+.nav-menu li{
+
+    position:relative;
+
+}
+
+.nav-menu a{
+
+    position:relative;
+
+    color:#ffffff;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    transition:.35s;
+
+    padding:8px 2px;
+
+}
+
+/*==================================================
+            ACTIVE MENU
+==================================================*/
+
+.nav-menu a.active{
+
+    color:#39d6d6;
+
+    font-weight:600;
+
+}
+
+/*==================================================
+            HOVER EFFECT
+==================================================*/
+
+.nav-menu a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:3px;
+
+    border-radius:20px;
+
+    background:#39d6d6;
+
+    transform:translateX(-50%);
+
+    transition:.35s;
+
+}
+
+.nav-menu a:hover{
+
+    color:#39d6d6;
+
+}
+
+.nav-menu a:hover::after,
+
+.nav-menu a.active::after{
+
+    width:100%;
+
+}
+
+/*==================================================
+            MENU ITEM ANIMATION
+==================================================*/
+
+.nav-menu li{
+
+    transition:.35s;
+
+}
+
+.nav-menu li:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/*==================================================
+                LET'S TALK BUTTON
+==================================================*/
+
+.talk-btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:14px 34px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#00d4c9,#00bcd4);
+
+color:#fff;
+
+font-size:16px;
+
+font-weight:600;
+
+letter-spacing:.3px;
+
+transition:.35s ease;
+
+box-shadow:0 12px 30px rgba(0,188,212,.30);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.talk-btn::before{
+
+content:"";
+
+position:absolute;
+
+left:-120%;
+
+top:0;
+
+width:120%;
+
+height:100%;
+
+background:linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent
+);
+
+transition:.7s;
+
+}
+
+.talk-btn:hover::before{
+
+left:120%;
+
+}
+
+.talk-btn:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 18px 40px rgba(0,188,212,.45);
+
+}
+
+/*==================================================
+            HAMBURGER
+==================================================*/
+
+.hamburger{
+
+width:50px;
+
+height:50px;
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+gap:6px;
+
+cursor:pointer;
+
+border-radius:50%;
+
+transition:.35s;
+
+}
+
+.hamburger span{
+
+width:28px;
+
+height:3px;
+
+border-radius:20px;
+
+background:#ffffff;
+
+transition:.35s;
+
+}
+
+.hamburger:hover{
+
+background:rgba(255,255,255,.08);
+
+}
+
+/*==================================================
+        HAMBURGER ACTIVE
+==================================================*/
+
+.hamburger.active span:nth-child(1){
+
+transform:translateY(9px) rotate(45deg);
+
+}
+
+.hamburger.active span:nth-child(2){
+
+opacity:0;
+
+}
+
+.hamburger.active span:nth-child(3){
+
+transform:translateY(-9px) rotate(-45deg);
+
+}
+
+/*==================================================
+            MOBILE MENU
+==================================================*/
+
+.mobile-menu{
+
+position:fixed;
+
+top:115px;
+
+left:50%;
+
+transform:translateX(-50%) scale(.95);
+
+width:min(92%,420px);
+
+background:#0f172a;
+
+border-radius:28px;
+
+padding:30px;
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.35s;
+
+border:1px solid rgba(255,255,255,.10);
+
+box-shadow:0 25px 50px rgba(0,0,0,.35);
+
+z-index:999;
+
+}
+
+.mobile-menu.active{
+
+opacity:1;
+
+visibility:visible;
+
+transform:translateX(-50%) scale(1);
+
+}
+
+.mobile-menu ul{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.mobile-menu ul li a{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+color:#ffffff;
+
+font-size:17px;
+
+font-weight:500;
+
+padding:14px 18px;
+
+border-radius:14px;
+
+transition:.35s;
+
+}
+
+.mobile-menu ul li a i{
+
+width:24px;
+
+text-align:center;
+
+color:#00d4c9;
+
+}
+
+.mobile-menu ul li a:hover,
+
+.mobile-menu ul li a.active{
+
+background:rgba(0,212,201,.15);
+
+color:#00d4c9;
+
+}
+
+/*==================================================
+        MOBILE BUTTON
+==================================================*/
+
+.mobile-btn{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+margin-top:30px;
+
+width:100%;
+
+padding:15px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#00d4c9,#00bcd4);
+
+color:#fff;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.mobile-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 35px rgba(0,188,212,.35);
+
+}
+
+
+/*==================================================
+                LARGE DESKTOP
+==================================================*/
+
+@media (min-width:1600px){
+
+.navbar{
+
+    max-width:1450px;
+
+    height:95px;
+
+    padding:0 45px;
+
+}
+
+.logo img{
+
+    width:260px;
+
+}
+
+.nav-menu{
+
+    gap:55px;
+
+}
+
+.nav-menu a{
+
+    font-size:18px;
+
+}
+
+.talk-btn{
+
+    padding:16px 38px;
+
+    font-size:17px;
+
+}
+
+}
+
+/*==================================================
+                LAPTOP
+==================================================*/
+
+@media (max-width:1400px){
+
+.navbar{
+
+    width:94%;
+
+    padding:0 30px;
+
+}
+
+.logo img{
+
+    width:210px;
+
+}
+
+.nav-menu{
+
+    gap:28px;
+
+}
+
+.nav-menu a{
+
+    font-size:16px;
+
+}
+
+.talk-btn{
+
+    padding:13px 28px;
+
+    font-size:15px;
+
+}
+
+}
+
+/*==================================================
+                TABLET
+==================================================*/
+
+@media (max-width:992px){
+
+.navbar{
+
+    height:78px;
+
+    padding:0 22px;
+
+}
+
+.logo img{
+
+    width:180px;
+
+}
+
+.nav-menu{
+
+    display:none;
+
+}
+
+.talk-btn{
+
+    display:none;
+
+}
+
+.hamburger{
+
+    display:flex;
+
+}
+
+.mobile-menu{
+
+    display:block;
+
+}
+
+}
+
+/*==================================================
+                MOBILE
+==================================================*/
+
+@media (max-width:768px){
+
+.header{
+
+    top:15px;
+
+}
+
+.navbar{
+
+    width:94%;
+
+    height:72px;
+
+    padding:0 18px;
+
+    border-radius:22px;
+
+}
+
+.logo img{
+
+    width:155px;
+
+}
+
+.hamburger{
+
+    width:42px;
+
+    height:42px;
+
+}
+
+.hamburger span{
+
+    width:24px;
+
+}
+
+.mobile-menu{
+
+    top:95px;
+
+    width:94%;
+
+    padding:22px;
+
+    border-radius:20px;
+
+}
+
+.mobile-menu ul li a{
+
+    font-size:16px;
+
+    padding:13px 16px;
+
+}
+
+.mobile-btn{
+
+    padding:14px;
+
+    font-size:15px;
+
+}
+
+}
+
+/*==================================================
+            SMALL MOBILE
+==================================================*/
+
+@media (max-width:480px){
+
+.header{
+
+    top:10px;
+
+}
+
+.navbar{
+
+    width:95%;
+
+    height:65px;
+
+    padding:0 15px;
+
+    border-radius:18px;
+
+}
+
+.logo img{
+
+    width:135px;
+
+}
+
+.hamburger{
+
+    width:38px;
+
+    height:38px;
+
+}
+
+.hamburger span{
+
+    width:22px;
+
+    height:2.5px;
+
+}
+
+.mobile-menu{
+
+    top:85px;
+
+    padding:18px;
+
+}
+
+.mobile-menu ul{
+
+    gap:12px;
+
+}
+
+.mobile-menu ul li a{
+
+    font-size:15px;
+
+    padding:12px;
+
+}
+
+.mobile-btn{
+
+    margin-top:20px;
+
+    padding:13px;
+
+}
+
+}
+
+/*==================================================
+        EXTRA SMALL DEVICES
+==================================================*/
+
+@media (max-width:360px){
+
+.logo img{
+
+    width:120px;
+
+}
+
+.mobile-menu{
+
+    width:96%;
+
+}
+
+.mobile-menu ul li a{
+
+    font-size:14px;
+
+}
+
+}
+        </style>
+
+        <script>
+            /*==================================================
+                HEADER JAVASCRIPT
+==================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*==============================================
+            SELECT ELEMENTS
+==============================================*/
+
+const header = document.querySelector(".header");
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+const navLinks = document.querySelectorAll(
+    ".nav-menu a, .mobile-menu a"
+);
+
+/*==============================================
+            STICKY HEADER
+==============================================*/
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 60) {
+
+        header.classList.add("sticky");
+
+    } else {
+
+        header.classList.remove("sticky");
+
+    }
+
+});
+
+/*==============================================
+        MOBILE MENU TOGGLE
+==============================================*/
+
+hamburger.addEventListener("click", () => {
+
+    hamburger.classList.toggle("active");
+
+    mobileMenu.classList.toggle("active");
+
+    document.body.classList.toggle("menu-open");
+
+});
+
+/*==============================================
+        CLOSE MENU WHEN LINK CLICKED
+==============================================*/
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        hamburger.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+    });
+
+});
+
+/*==============================================
+        ACTIVE MENU
+==============================================*/
+
+const currentPage = window.location.pathname.split("/").pop();
+
+navLinks.forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+
+        link.classList.add("active");
+
+    } else {
+
+        link.classList.remove("active");
+
+    }
+
+});
+
+/*==============================================
+        CLICK OUTSIDE TO CLOSE MENU
+==============================================*/
+
+document.addEventListener("click", (e) => {
+
+    if (
+
+        !mobileMenu.contains(e.target) &&
+
+        !hamburger.contains(e.target)
+
+    ) {
+
+        hamburger.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+    }
+
+});
+
+/*==============================================
+        ESC KEY CLOSE
+==============================================*/
+
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        hamburger.classList.remove("active");
+
+        mobileMenu.classList.remove("active");
+
+        document.body.classList.remove("menu-open");
+
+    }
+
+});
+
+/*==============================================
+        SMOOTH HOVER EFFECT
+==============================================*/
+
+document.querySelectorAll(".nav-menu li").forEach(item => {
+
+    item.addEventListener("mouseenter", () => {
+
+        item.style.transform = "translateY(-2px)";
+
+    });
+
+    item.addEventListener("mouseleave", () => {
+
+        item.style.transform = "translateY(0)";
+
+    });
+
+});
+
+});
+            </script>
+    
+   
+<!--=========================================================
+    STACKLY CAREERS HERO SECTION
+    hero.html
+==========================================================-->
+
+<section class="stk-career-hero">
+
+    <!-- Left White Content Panel -->
+    <div class="stk-career-panel reveal-left">
+
+        <span class="stk-career-tag">
+            CAREERS
+        </span>
+
+        <h1 class="stk-career-title">
+            Build Your Future
+            <br>
+            With <span>Stackly</span>
+        </h1>
+
+        <p class="stk-career-text">
+            We're always looking for passionate, innovative and
+            driven people to join our growing team and build
+            impactful digital solutions.
+        </p>
+
+        <a href="careers.html" class="stk-career-btn">
+
+            <span>View Open Positions</span>
+
+            <span class="stk-career-arrow">
+
+                <svg width="28"
+                     height="28"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <path d="M5 12H19"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"/>
+
+                    <path d="M13 6L19 12L13 18"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+
+                </svg>
+
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<style>
+    /*==========================================================
+  STACKLY CAREERS HERO SECTION
+  hero.css - PART 1
+  Non Conflicting CSS
+==========================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,sans-serif;
+    overflow-x:hidden;
+    background:#fff;
+}
+
+/*==========================================================
+ HERO SECTION
+==========================================================*/
+
+.stk-career-hero{
+
+    position:relative;
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    align-items:center;
+
+    overflow:hidden;
+
+    /* Replace with your image */
+    background:
+    linear-gradient(rgba(0,0,0,.08),rgba(0,0,0,.08)),
+    url("./im.webp") center center/cover no-repeat;
+
+    background-size:cover;
+    background-position:center;
+
+}
+
+/*==========================================================
+ LEFT PANEL
+==========================================================*/
+
+.stk-career-panel{
+
+    position:relative;
+
+    width:48%;
+    min-height:100vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding:80px 90px;
+
+    /* background:#ffffff; */
+
+    z-index:10;
+
+}
+
+/*==========================================================
+ WHITE FADE
+==========================================================*/
+
+.stk-career-panel{
+    background:#EAE8E3;
+}
+
+.stk-career-panel::after{
+
+    content:"";
+    position:absolute;
+    top:0;
+    right:-320px;
+    width:380px;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        rgba(234,232,227,1) 0%,
+        rgba(234,232,227,.98) 15%,
+        rgba(234,232,227,.92) 30%,
+        rgba(234,232,227,.78) 48%,
+        rgba(234,232,227,.52) 65%,
+        rgba(234,232,227,.25) 82%,
+        rgba(234,232,227,.08) 94%,
+        transparent 100%
+    );
+
+}
+/*==========================================================
+ CAREERS LABEL
+==========================================================*/
+
+.stk-career-tag{
+
+    display:inline-block;
+
+    color:#11c5c7;
+
+    font-size:18px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+
+    text-transform:uppercase;
+
+    margin-bottom:28px;
+
+}
+
+/*==========================================================
+ HEADING
+==========================================================*/
+
+.stk-career-title{
+
+    color:#111;
+
+    font-size:66px;
+
+    font-weight:800;
+
+    line-height:1.08;
+
+    margin-bottom:28px;
+
+}
+
+.stk-career-title span{
+
+    color:#15c8c9;
+
+}
+
+/*==========================================================
+ PARAGRAPH
+==========================================================*/
+
+.stk-career-text{
+
+    max-width:560px;
+
+    color:#2e2e2e;
+
+    font-size:22px;
+
+    line-height:1.6;
+
+    margin-bottom:55px;
+
+}
+
+/*==========================================================
+ BUTTON
+==========================================================*/
+
+.stk-career-btn{
+
+    width:360px;
+
+    height:76px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:0 30px;
+
+    text-decoration:none;
+
+    color:#111;
+
+    background:#15c8c9;
+
+    border-radius:18px;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    transition:.35s ease;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+
+}
+
+.stk-career-btn:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 22px 45px rgba(0,0,0,.18);
+
+}
+
+.stk-career-arrow{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.35s;
+
+}
+
+.stk-career-btn:hover .stk-career-arrow{
+
+    transform:translateX(8px);
+
+}
+
+.stk-career-arrow svg{
+
+    width:32px;
+
+    height:32px;
+
+}
+
+/*==========================================================
+ SCROLL ANIMATION
+==========================================================*/
+
+.reveal-left{
+
+    opacity:0;
+
+    transform:translateX(-100px);
+
+    transition:1s ease;
+
+}
+
+.reveal-left.active{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/*==========================================================
+ BACKGROUND ANIMATION
+==========================================================*/
+
+.stk-career-hero{
+
+    animation:stkHeroZoom 18s ease-in-out infinite alternate;
+
+}
+
+@keyframes stkHeroZoom{
+
+    from{
+
+        background-size:100%;
+
+    }
+
+    to{
+
+        background-size:108%;
+
+    }
+
+}
+
+/*==========================================================
+  STACKLY CAREERS HERO
+  hero.css - PART 2 (Responsive)
+==========================================================*/
+
+
+/*==========================================
+  Large Desktop
+==========================================*/
+
+@media (max-width:1600px){
+
+.stk-career-panel{
+
+    width:50%;
+    padding:70px 75px;
+
+}
+
+.stk-career-title{
+
+    font-size:58px;
+
+}
+
+.stk-career-text{
+
+    font-size:20px;
+
+}
+
+.stk-career-btn{
+
+    width:340px;
+    height:72px;
+    font-size:22px;
+
+}
+
+}
+
+
+/*==========================================
+  Desktop
+==========================================*/
+
+@media (max-width:1400px){
+
+.stk-career-panel{
+
+    width:42%;
+    max-width:620px;
+    padding:65px;
+
+}
+
+.stk-career-title{
+
+    font-size:52px;
+
+}
+
+.stk-career-text{
+
+    font-size:18px;
+
+}
+
+.stk-career-panel::after{
+
+    right:-180px;
+    width:190px;
+
+}
+
+}
+
+
+/*==========================================
+  Laptop
+==========================================*/
+
+@media (max-width:1200px){
+
+.stk-career-panel{
+
+    width:58%;
+    padding:55px;
+
+}
+
+.stk-career-title{
+
+    font-size:46px;
+
+}
+
+.stk-career-text{
+
+    font-size:17px;
+    line-height:1.7;
+
+}
+
+.stk-career-btn{
+
+    width:300px;
+    height:66px;
+    font-size:19px;
+
+}
+
+.stk-career-arrow{
+
+    width:42px;
+    height:42px;
+
+}
+
+.stk-career-arrow svg{
+
+    width:24px;
+    height:24px;
+
+}
+
+}
+
+
+/*==========================================
+  Tablet Landscape
+==========================================*/
+
+@media (max-width:992px){
+
+.stk-career-hero{
+
+    min-height:720px;
+
+    align-items:center;
+
+}
+
+.stk-career-panel{
+
+    width:70%;
+    min-height:auto;
+
+    padding:55px 45px;
+
+    background:rgba(255,255,255,.95);
+
+    border-radius:0 24px 24px 0;
+
+}
+
+.stk-career-panel::after{
+
+    display:none;
+
+}
+
+.stk-career-title{
+
+    font-size:40px;
+
+}
+
+.stk-career-text{
+
+    font-size:17px;
+
+}
+
+.stk-career-btn{
+
+    width:280px;
+    height:62px;
+
+    font-size:18px;
+
+}
+
+}
+
+
+/*==========================================
+  Tablet Portrait
+==========================================*/
+
+@media (max-width:768px){
+
+.stk-career-hero{
+
+    min-height:100vh;
+
+    padding:30px 20px;
+
+    justify-content:center;
+
+    background-position:center;
+
+}
+
+.stk-career-panel{
+
+    width:100%;
+
+    min-height:auto;
+
+    padding:45px 30px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.96);
+
+    backdrop-filter:blur(8px);
+
+}
+
+.stk-career-tag{
+
+    font-size:15px;
+
+}
+
+.stk-career-title{
+
+    font-size:36px;
+
+    line-height:1.2;
+
+}
+
+.stk-career-text{
+
+    font-size:16px;
+
+    margin-bottom:35px;
+
+}
+
+.stk-career-btn{
+
+    width:100%;
+
+    height:60px;
+
+    padding:0 20px;
+
+    font-size:17px;
+
+}
+
+.stk-career-arrow{
+
+    width:40px;
+    height:40px;
+
+}
+
+}
+
+
+/*==========================================
+  Mobile
+==========================================*/
+
+@media (max-width:576px){
+
+.stk-career-hero{
+
+    padding:20px 15px;
+
+}
+
+.stk-career-panel{
+
+    padding:35px 22px;
+
+}
+
+.stk-career-title{
+
+    font-size:30px;
+
+}
+
+.stk-career-text{
+
+    font-size:15px;
+
+    line-height:1.8;
+
+}
+
+.stk-career-btn{
+
+    height:56px;
+
+    font-size:16px;
+
+    border-radius:14px;
+
+}
+
+.stk-career-arrow{
+
+    width:36px;
+    height:36px;
+
+}
+
+.stk-career-arrow svg{
+
+    width:20px;
+    height:20px;
+
+}
+
+}
+
+
+/*==========================================
+  Small Mobile
+==========================================*/
+
+@media (max-width:420px){
+
+.stk-career-panel{
+
+    padding:30px 18px;
+
+}
+
+.stk-career-tag{
+
+    font-size:14px;
+
+}
+
+.stk-career-title{
+
+    font-size:26px;
+
+    line-height:1.25;
+
+}
+
+.stk-career-text{
+
+    font-size:14px;
+
+    margin-bottom:28px;
+
+}
+
+.stk-career-btn{
+
+    height:54px;
+
+    font-size:15px;
+
+}
+
+.stk-career-arrow{
+
+    width:34px;
+    height:34px;
+
+}
+
+}
+
+
+/*==========================================
+  Large Screens
+==========================================*/
+
+@media (min-width:1920px){
+
+.stk-career-panel{
+
+    width:46%;
+
+    padding-left:120px;
+    padding-right:100px;
+
+}
+
+.stk-career-title{
+
+    font-size:74px;
+
+}
+
+.stk-career-text{
+
+    max-width:620px;
+
+    font-size:24px;
+
+}
+
+.stk-career-btn{
+
+    width:390px;
+
+    height:82px;
+
+    font-size:25px;
+
+}
+
+}
+</style>
+
+<script>
+    /*==========================================================
+  STACKLY HERO SECTION
+  hero.js
+  Non-Conflicting JavaScript
+==========================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*=========================================
+  Reveal Animation
+=========================================*/
+
+const stkRevealItems = document.querySelectorAll(".reveal-left");
+
+const stkObserver = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("active");
+
+            stkObserver.unobserve(entry.target);
+
+        }
+
+    });
+
+}, {
+
+    threshold: 0.25
+
+});
+
+stkRevealItems.forEach(item => {
+
+    stkObserver.observe(item);
+
+});
+
+
+/*=========================================
+  Button Hover Effect
+=========================================*/
+
+const heroBtn = document.querySelector(".stk-career-btn");
+
+if(heroBtn){
+
+    heroBtn.addEventListener("mouseenter",()=>{
+
+        heroBtn.style.transform="translateY(-6px)";
+
+    });
+
+    heroBtn.addEventListener("mouseleave",()=>{
+
+        heroBtn.style.transform="translateY(0px)";
+
+    });
+
+}
+
+
+/*=========================================
+  Arrow Animation
+=========================================*/
+
+const heroArrow=document.querySelector(".stk-career-arrow");
+
+if(heroArrow){
+
+    setInterval(()=>{
+
+        heroArrow.animate(
+
+            [
+
+                {transform:"translateX(0px)"},
+
+                {transform:"translateX(8px)"},
+
+                {transform:"translateX(0px)"}
+
+            ],
+
+            {
+
+                duration:1200,
+
+                easing:"ease-in-out"
+
+            }
+
+        );
+
+    },1800);
+
+}
+
+
+/*=========================================
+  Background Parallax Effect
+=========================================*/
+
+const hero=document.querySelector(".stk-career-hero");
+
+window.addEventListener("scroll",()=>{
+
+    if(!hero) return;
+
+    const scroll=window.pageYOffset;
+
+    hero.style.backgroundPosition="center "+(scroll*0.15)+"px";
+
+});
+
+
+});
+</script>
+
+<!-- ==========================================================
+     STACKLY - WHY JOIN STACKLY
+     File : career.html
+     Non-Conflicting HTML
+========================================================== -->
+
+<section class="stkcr-join-section">
+
+    <div class="stkcr-container">
+
+        <!-- ================= Heading ================= -->
+
+        <div class="stkcr-heading stkcr-reveal">
+
+            <span class="stkcr-subtitle">
+                WHY CHOOSE US
+            </span>
+
+            <h2 class="stkcr-title">
+                Why Join <span>Stackly?</span>
+            </h2>
+
+            <p class="stkcr-description">
+                We offer more than just a job. We offer a place where you can
+                learn, innovate, collaborate and build a successful career with
+                endless opportunities.
+            </p>
+
+        </div>
+
+        <!-- ================= FIRST ROW ================= -->
+
+        <div class="stkcr-row">
+
+            <!-- Card 1 -->
+
+            <div class="stkcr-card stkcr-reveal">
+
+                <div class="stkcr-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <h3>Growth</h3>
+
+                <p>
+                    Continuous learning, mentorship and opportunities
+                    to accelerate your career.
+                </p>
+
+            </div>
+
+            <!-- Card 2 -->
+
+            <div class="stkcr-card stkcr-reveal">
+
+                <div class="stkcr-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <h3>Great Culture</h3>
+
+                <p>
+                    Friendly environment that values teamwork,
+                    collaboration and creativity.
+                </p>
+
+            </div>
+
+            <!-- Card 3 -->
+
+            <div class="stkcr-card stkcr-reveal">
+
+                <div class="stkcr-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <h3>Wellness</h3>
+
+                <p>
+                    Health benefits, wellness initiatives and
+                    work-life balance for everyone.
+                </p>
+
+            </div>
+
+            <!-- Card 4 -->
+
+            <div class="stkcr-card stkcr-reveal">
+
+                <div class="stkcr-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <h3>Flexibility</h3>
+
+                <p>
+                    Flexible working hours with hybrid and
+                    remote work opportunities.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ================= SECOND ROW ================= -->
+
+        <div class="stkcr-row stkcr-row-bottom">
+
+            <!-- Card 5 -->
+
+            <div class="stkcr-card stkcr-reveal">
+
+                <div class="stkcr-icon">
+                    <i class="fa-solid fa-gift"></i>
+                </div>
+
+                <h3>Perks & Benefits</h3>
+
+                <p>
+                    Competitive salary, bonuses, rewards
+                    and exciting employee benefits.
+                </p>
+
+            </div>
+
+            <!-- Card 6 -->
+
+            <div class="stkcr-card stkcr-reveal">
+
+                <div class="stkcr-icon">
+                    <i class="fa-solid fa-earth-americas"></i>
+                </div>
+
+                <h3>Global Impact</h3>
+
+                <p>
+                    Build products used by clients around
+                    the world and make a real impact.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Font Awesome -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"/>
+
+<style>
+    /*==========================================================
+  STACKLY CAREERS
+  WHY JOIN STACKLY
+  careers.css - PART 1
+  Non-Conflicting CSS
+==========================================================*/
+
+/*==============================
+SECTION
+==============================*/
+
+.stkcr-join-section{
+    position:relative;
+    width:100%;
+    padding:100px 20px;
+    background:#ffffff;
+    overflow:hidden;
+}
+
+.stkcr-container{
+    width:100%;
+    max-width:1320px;
+    margin:0 auto;
+}
+
+/*==============================
+HEADING
+==============================*/
+
+.stkcr-heading{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.stkcr-subtitle{
+    display:inline-block;
+    color:#17bfc8;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:16px;
+}
+
+.stkcr-title{
+    font-size:54px;
+    font-weight:800;
+    color:#111111;
+    line-height:1.2;
+    margin-bottom:18px;
+}
+
+.stkcr-title span{
+    color:#18c4cb;
+}
+
+.stkcr-description{
+    width:100%;
+    max-width:720px;
+    margin:0 auto;
+    font-size:18px;
+    color:#666;
+    line-height:1.8;
+}
+
+/*==============================
+ROWS
+==============================*/
+
+.stkcr-row{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-bottom:35px;
+    flex-wrap:nowrap;
+}
+
+.stkcr-row-bottom{
+    justify-content:center;
+}
+
+/*==============================
+CARD
+==============================*/
+
+.stkcr-card{
+
+    width:290px;
+    min-height:250px;
+
+    background:#fff;
+    border:1.5px solid #b8b8b8;
+    border-radius:22px;
+
+    /* border:1px solid #e7e7e7; */
+/*  */
+    border-radius:22px;
+
+    padding:35px 28px;
+
+    text-align:center;
+
+    transition:.35s ease;
+
+    box-shadow:
+    0 8px 22px rgba(0,0,0,.06);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+.stkcr-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 22px 40px rgba(0,0,0,.12);
+
+}
+
+/*==============================
+ICON
+==============================*/
+
+.stkcr-icon{
+
+    width:72px;
+    height:72px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:24px;
+
+    background:linear-gradient(
+    135deg,
+    #6f9ab9,
+    #0075c9);
+
+    color:#ffffff;
+
+    font-size:28px;
+
+    box-shadow:
+    0 10px 22px rgba(0,117,201,.30);
+
+}
+
+/*==============================
+CARD TITLE
+==============================*/
+
+.stkcr-card h3{
+
+    font-size:24px;
+
+    color:#111;
+
+    margin-bottom:16px;
+
+    font-weight:700;
+
+}
+
+/*==============================
+CARD TEXT
+==============================*/
+
+.stkcr-card p{
+
+    font-size:16px;
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/*==============================
+ANIMATION
+==============================*/
+
+.stkcr-reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+}
+
+.stkcr-reveal.stkcr-visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*==============================
+CARD DELAY
+==============================*/
+
+.stkcr-card:nth-child(1){
+    transition-delay:.1s;
+}
+
+.stkcr-card:nth-child(2){
+    transition-delay:.2s;
+}
+
+.stkcr-card:nth-child(3){
+    transition-delay:.3s;
+}
+
+.stkcr-card:nth-child(4){
+    transition-delay:.4s;
+}
+
+.stkcr-card:nth-child(5){
+    transition-delay:.5s;
+}
+
+.stkcr-card:nth-child(6){
+    transition-delay:.6s;
+}
+
+/*==========================================================
+  STACKLY CAREERS
+  careers.css - PART 2 (Responsive)
+  Non-Conflicting CSS
+==========================================================*/
+
+
+/*==============================
+  1600px
+==============================*/
+
+@media screen and (max-width:1600px){
+
+.stkcr-container{
+    max-width:1240px;
+}
+
+.stkcr-card{
+    width:270px;
+}
+
+.stkcr-title{
+    font-size:50px;
+}
+
+}
+
+
+/*==============================
+  1400px
+==============================*/
+
+@media screen and (max-width:1400px){
+
+.stkcr-container{
+    max-width:1150px;
+}
+
+.stkcr-row{
+    gap:25px;
+}
+
+.stkcr-card{
+    width:250px;
+    min-height:240px;
+}
+
+.stkcr-title{
+    font-size:46px;
+}
+
+.stkcr-card h3{
+    font-size:22px;
+}
+
+.stkcr-card p{
+    font-size:15px;
+}
+
+}
+
+
+/*==============================
+  1200px
+==============================*/
+
+@media screen and (max-width:1200px){
+
+.stkcr-row{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    justify-items:center;
+
+    gap:30px;
+
+}
+
+.stkcr-row-bottom{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.stkcr-card{
+
+    width:100%;
+    max-width:320px;
+
+}
+
+.stkcr-title{
+
+    font-size:42px;
+
+}
+
+}
+
+
+/*==============================
+  992px
+==============================*/
+
+@media screen and (max-width:992px){
+
+.stkcr-join-section{
+
+    padding:80px 20px;
+
+}
+
+.stkcr-heading{
+
+    margin-bottom:50px;
+
+}
+
+.stkcr-title{
+
+    font-size:38px;
+
+}
+
+.stkcr-description{
+
+    font-size:17px;
+
+}
+
+.stkcr-card{
+
+    max-width:300px;
+
+    min-height:220px;
+
+    padding:30px 22px;
+
+}
+
+.stkcr-icon{
+
+    width:65px;
+    height:65px;
+    font-size:24px;
+
+}
+
+}
+
+
+/*==============================
+  768px
+==============================*/
+
+@media screen and (max-width:768px){
+
+.stkcr-join-section{
+
+    padding:70px 18px;
+
+}
+
+.stkcr-row{
+
+    grid-template-columns:1fr;
+
+}
+
+.stkcr-row-bottom{
+
+    grid-template-columns:1fr;
+
+}
+
+.stkcr-card{
+
+    max-width:420px;
+
+    width:100%;
+
+}
+
+.stkcr-heading{
+
+    margin-bottom:40px;
+
+}
+
+.stkcr-title{
+
+    font-size:34px;
+
+}
+
+.stkcr-description{
+
+    font-size:16px;
+
+}
+
+}
+
+
+/*==============================
+  576px
+==============================*/
+
+@media screen and (max-width:576px){
+
+.stkcr-join-section{
+
+    padding:60px 15px;
+
+}
+
+.stkcr-title{
+
+    font-size:30px;
+
+    line-height:1.3;
+
+}
+
+.stkcr-description{
+
+    font-size:15px;
+
+}
+
+.stkcr-card{
+
+    padding:28px 20px;
+
+    border-radius:18px;
+
+}
+
+.stkcr-card h3{
+
+    font-size:20px;
+
+}
+
+.stkcr-card p{
+
+    font-size:15px;
+
+    line-height:1.7;
+
+}
+
+.stkcr-icon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:22px;
+
+}
+
+}
+
+
+/*==============================
+  420px
+==============================*/
+
+@media screen and (max-width:420px){
+
+.stkcr-join-section{
+
+    padding:50px 12px;
+
+}
+
+.stkcr-title{
+
+    font-size:26px;
+
+}
+
+.stkcr-description{
+
+    font-size:14px;
+
+}
+
+.stkcr-card{
+
+    padding:25px 18px;
+
+}
+
+.stkcr-icon{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:20px;
+
+}
+
+.stkcr-card h3{
+
+    font-size:18px;
+
+}
+
+.stkcr-card p{
+
+    font-size:14px;
+
+}
+
+}
+
+
+/*==============================
+  360px
+==============================*/
+
+@media screen and (max-width:360px){
+
+.stkcr-title{
+
+    font-size:23px;
+
+}
+
+.stkcr-description{
+
+    font-size:13px;
+
+}
+
+.stkcr-card{
+
+    padding:22px 15px;
+
+}
+
+.stkcr-icon{
+
+    width:50px;
+
+    height:50px;
+
+    font-size:18px;
+
+}
+
+.stkcr-card h3{
+
+    font-size:17px;
+
+}
+
+.stkcr-card p{
+
+    font-size:13px;
+
+}
+
+}
+
+/* Reveal Animation */
+
+.stkcr-reveal{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:
+opacity .8s ease,
+transform .8s ease;
+
+}
+
+.stkcr-reveal.stkcr-visible{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+    </style>
+
+    <script>
+        /*==========================================================
+ STACKLY CAREERS
+ careers.js
+ Non-Conflicting JavaScript
+==========================================================*/
+
+document.addEventListener("DOMContentLoaded", function () {
+
+"use strict";
+
+/*==================================================
+  SCROLL REVEAL
+==================================================*/
+
+const stkcrElements = document.querySelectorAll(".stkcr-reveal");
+
+const stkcrObserver = new IntersectionObserver(function (entries) {
+
+    entries.forEach(function (entry) {
+
+        if (entry.isIntersecting) {
+
+            entry.target.classList.add("stkcr-visible");
+
+        }
+
+    });
+
+}, {
+
+    threshold:0.2
+
+});
+
+stkcrElements.forEach(function (element) {
+
+    stkcrObserver.observe(element);
+
+});
+
+
+/*==================================================
+  STAGGER CARD ANIMATION
+==================================================*/
+
+const stkcrCards = document.querySelectorAll(".stkcr-card");
+
+stkcrCards.forEach(function(card,index){
+
+    card.style.transitionDelay = (index * 120) + "ms";
+
+});
+
+
+/*==================================================
+  CARD TILT EFFECT
+==================================================*/
+
+stkcrCards.forEach(function(card){
+
+    card.addEventListener("mousemove",function(e){
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+        const rotateX = ((y / rect.height) - 0.5) * -8;
+
+        const rotateY = ((x / rect.width) - 0.5) * 8;
+
+        card.style.transform =
+            "perspective(800px) rotateX(" +
+            rotateX +
+            "deg) rotateY(" +
+            rotateY +
+            "deg) translateY(-8px)";
+
+    });
+
+    card.addEventListener("mouseleave",function(){
+
+        card.style.transform =
+            "perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+
+    });
+
+});
+
+
+/*==================================================
+  ICON FLOAT ANIMATION
+==================================================*/
+
+const stkcrIcons = document.querySelectorAll(".stkcr-icon");
+
+stkcrIcons.forEach(function(icon,index){
+
+    setTimeout(function(){
+
+        icon.animate(
+
+            [
+
+                {
+                    transform:"translateY(0px)"
+                },
+
+                {
+                    transform:"translateY(-8px)"
+                },
+
+                {
+                    transform:"translateY(0px)"
+                }
+
+            ],
+
+            {
+
+                duration:2200,
+
+                iterations:Infinity,
+
+                easing:"ease-in-out"
+
+            }
+
+        );
+
+    },index * 200);
+
+});
+
+});
+    </script>
+
+
+<!-- ==========================================================
+     STACKLY TESTIMONIAL SECTION
+     testimonials.html
+     Non-Conflicting HTML
+========================================================== -->
+
+<section class="stktm-section">
+
+    <div class="stktm-container">
+
+        <!--======================
+            Heading
+        =======================-->
+
+        <div class="stktm-heading stktm-reveal">
+
+            <h2>
+                Life At <span>Stackly</span>
+            </h2>
+
+            <p>
+                Don't just take our word for it. Hear from our team.
+            </p>
+
+        </div>
+
+        <!--======================
+            Testimonial Slider
+        =======================-->
+
+        <div class="stktm-slider">
+
+            <div class="stktm-track">
+
+                <!-- Card 1 -->
+
+                <div class="stktm-card">
+
+                    <div class="stktm-stars">
+
+                        ★★★★★
+
+                    </div>
+
+                    <p class="stktm-review">
+
+                        “Outstanding Team with excellent technical knowledge and support.”
+
+                    </p>
+
+                    <div class="stktm-author">
+
+                        <h4>
+                            — Sarah Johnson
+                        </h4>
+
+                        <span>
+                            Product Manager
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- Card 2 -->
+
+                <div class="stktm-card">
+
+                    <div class="stktm-stars">
+
+                        ★★★★★
+
+                    </div>
+
+                    <p class="stktm-review">
+
+                        “Stackly delivered our project on time and beyond expectations.”
+
+                    </p>
+
+                    <div class="stktm-author">
+
+                        <h4>
+                            — Michael Lee
+                        </h4>
+
+                        <span>
+                            Startup Founder
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <!-- Card 3 -->
+
+                <div class="stktm-card">
+
+                    <div class="stktm-stars">
+
+                        ★★★★★
+
+                    </div>
+
+                    <p class="stktm-review">
+
+                        “Clean designs, fast delivery, and great communication.”
+
+                    </p>
+
+                    <div class="stktm-author">
+
+                        <h4>
+                            — Emma Wilson
+                        </h4>
+
+                        <span>
+                            Marketing Head
+                        </span>
+
+                    </div>
+
+                </div>
+
+                
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--======================
+            Navigation
+        =======================-->
+
+        <div class="stktm-navigation">
+
+            <a href="404.html" class="stktm-arrow stktm-prev">
+
+                <svg width="34"
+                     height="34"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <path d="M15 5L8 12L15 19"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+
+                </svg>
+
+            </a>
+
+            <a href="404.html" class="stktm-arrow stktm-next">
+
+                <svg width="34"
+                     height="34"
+                     viewBox="0 0 24 24"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <path d="M9 5L16 12L9 19"
+                          stroke="currentColor"
+                          stroke-width="2.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"/>
+
+                </svg>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+    /*==========================================================
+  STACKLY TESTIMONIALS
+  testimonials.css - PART 1
+  Non-Conflicting CSS
+==========================================================*/
+
+/*==============================
+SECTION
+==============================*/
+
+.stktm-section{
+    position:relative;
+    width:100%;
+    padding:90px 20px 70px;
+    background:#11182b;
+    overflow:hidden;
+}
+
+.stktm-container{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+}
+
+/*==============================
+HEADING
+==============================*/
+
+.stktm-heading{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.stktm-heading h2{
+    font-size:54px;
+    font-weight:800;
+    color:#ffffff;
+    line-height:1.2;
+    margin-bottom:14px;
+}
+
+.stktm-heading h2 span{
+    color:#52d5cb;
+}
+
+.stktm-heading p{
+    color:#d6d6d6;
+    font-size:20px;
+    line-height:1.7;
+}
+
+/*==============================
+SLIDER
+==============================*/
+
+.stktm-slider{
+    width:100%;
+    overflow:hidden;
+}
+
+.stktm-track{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    transition:.6s ease;
+
+}
+
+/*==============================
+CARD
+==============================*/
+/* Smooth Slider */
+
+.stktm-track{
+
+transition:transform .8s ease;
+
+will-change:transform;
+
+}
+
+/* GPU */
+
+.stktm-card{
+
+transform-style:preserve-3d;
+
+will-change:transform;
+
+}
+.stktm-card{
+
+    width:390px;
+
+    min-height:250px;
+
+    padding:35px;
+
+    background:linear-gradient(145deg,#1b2336,#20293f);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    .stktm-stars{
+    font-size:30px;
+    letter-spacing:1px;
+}
+
+    /* background:linear-gradient(
+    145deg,
+    #20293f,
+    #171f33); */
+
+    /* border:1px solid rgba(255,255,255,.15); */
+
+    border-radius:24px;
+
+    box-shadow:
+    0 18px 35px rgba(0,0,0,.22);
+
+    transition:.35s ease;
+
+    flex-shrink:0;
+
+}
+
+.stktm-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#52d5cb;
+
+    box-shadow:
+    0 28px 50px rgba(0,0,0,.35);
+
+}
+
+/*==============================
+STARS
+==============================*/
+
+.stktm-stars{
+
+    font-size:34px;
+
+    color:#FFD43B;
+
+    letter-spacing:3px;
+
+    margin-bottom:28px;
+
+}
+
+/*==============================
+REVIEW
+==============================*/
+
+.stktm-review{
+
+    color:#ffffff;
+
+    font-size:27px;
+
+    font-weight:500;
+
+    line-height:1.55;
+
+    margin-bottom:35px;
+
+}
+
+/*==============================
+AUTHOR
+==============================*/
+
+.stktm-author h4{
+
+    color:#ffffff;
+
+    font-size:24px;
+
+    margin-bottom:8px;
+
+    font-weight:700;
+
+}
+
+.stktm-author span{
+
+    color:#d4d4d4;
+
+    font-size:18px;
+
+}
+
+/*==============================
+NAVIGATION
+==============================*/
+
+.stktm-navigation{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:40px;
+
+    margin-top:50px;
+
+}
+
+/*==============================
+ARROW
+==============================*/
+
+.stktm-arrow{
+
+    width:72px;
+
+    height:72px;
+
+    border-radius:50%;
+
+    border:4px solid #ffffff;
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.35s ease;
+
+}
+
+.stktm-arrow:hover{
+
+    background:#52d5cb;
+
+    border-color:#52d5cb;
+
+    color:#111827;
+
+    transform:scale(1.08);
+
+}
+
+/*==============================
+REVEAL
+==============================*/
+
+.stktm-reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:all .9s ease;
+
+}
+
+.stktm-reveal.stktm-visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/*==========================================================
+  STACKLY TESTIMONIALS
+  testimonials.css - PART 2 (Responsive)
+  Non-Conflicting CSS
+==========================================================*/
+
+
+/*==========================================
+ 1600px
+==========================================*/
+
+@media screen and (max-width:1600px){
+
+.stktm-container{
+
+    max-width:1300px;
+
+}
+
+.stktm-card{
+
+    width:370px;
+
+}
+
+.stktm-heading h2{
+
+    font-size:48px;
+
+}
+
+.stktm-review{
+
+    font-size:24px;
+
+}
+
+}
+
+
+/*==========================================
+ 1400px
+==========================================*/
+
+@media screen and (max-width:1400px){
+
+.stktm-track{
+
+    gap:30px;
+
+}
+
+.stktm-card{
+
+    width:340px;
+
+    padding:30px;
+
+}
+
+.stktm-review{
+
+    font-size:22px;
+
+}
+
+.stktm-author h4{
+
+    font-size:21px;
+
+}
+
+.stktm-author span{
+
+    font-size:16px;
+
+}
+
+}
+
+
+/*==========================================
+ Laptop
+==========================================*/
+
+@media screen and (max-width:1200px){
+
+.stktm-track{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.stktm-card{
+
+    width:46%;
+
+    min-width:320px;
+
+}
+
+.stktm-heading h2{
+
+    font-size:42px;
+
+}
+
+.stktm-heading p{
+
+    font-size:18px;
+
+}
+
+}
+
+
+/*==========================================
+ Tablet
+==========================================*/
+
+@media screen and (max-width:992px){
+
+.stktm-section{
+
+    padding:80px 20px 60px;
+
+}
+
+.stktm-track{
+
+    gap:25px;
+
+}
+
+.stktm-card{
+
+    width:100%;
+
+    max-width:420px;
+
+    min-width:unset;
+
+}
+
+.stktm-heading{
+
+    margin-bottom:45px;
+
+}
+
+.stktm-heading h2{
+
+    font-size:38px;
+
+}
+
+.stktm-heading p{
+
+    font-size:17px;
+
+}
+
+.stktm-stars{
+
+    font-size:28px;
+
+}
+
+.stktm-review{
+
+    font-size:20px;
+
+}
+
+.stktm-author h4{
+
+    font-size:20px;
+
+}
+
+.stktm-navigation{
+
+    margin-top:40px;
+
+}
+
+.stktm-arrow{
+
+    width:65px;
+    height:65px;
+
+}
+
+}
+
+
+/*==========================================
+ Mobile
+==========================================*/
+
+@media screen and (max-width:768px){
+
+.stktm-section{
+
+    padding:70px 18px 55px;
+
+}
+
+.stktm-heading h2{
+
+    font-size:34px;
+
+}
+
+.stktm-heading p{
+
+    font-size:16px;
+
+}
+
+.stktm-card{
+
+    max-width:100%;
+
+    padding:28px 22px;
+
+    border-radius:20px;
+
+}
+
+.stktm-stars{
+
+    font-size:26px;
+
+    margin-bottom:20px;
+
+}
+
+.stktm-review{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    margin-bottom:28px;
+
+}
+
+.stktm-author h4{
+
+    font-size:18px;
+
+}
+
+.stktm-author span{
+
+    font-size:15px;
+
+}
+
+.stktm-navigation{
+
+    gap:22px;
+
+}
+
+.stktm-arrow{
+
+    width:60px;
+    height:60px;
+
+}
+
+.stktm-arrow svg{
+
+    width:28px;
+    height:28px;
+
+}
+
+}
+
+
+/*==========================================
+ Small Mobile
+==========================================*/
+
+@media screen and (max-width:576px){
+
+.stktm-section{
+
+    padding:60px 15px 50px;
+
+}
+
+.stktm-heading{
+
+    margin-bottom:35px;
+
+}
+
+.stktm-heading h2{
+
+    font-size:30px;
+
+}
+
+.stktm-heading p{
+
+    font-size:15px;
+
+}
+
+.stktm-card{
+
+    padding:25px 18px;
+
+}
+
+.stktm-stars{
+
+    font-size:24px;
+
+}
+
+.stktm-review{
+
+    font-size:17px;
+
+}
+
+.stktm-author h4{
+
+    font-size:17px;
+
+}
+
+.stktm-author span{
+
+    font-size:14px;
+
+}
+
+.stktm-arrow{
+
+    width:56px;
+    height:56px;
+
+    border-width:3px;
+
+}
+
+}
+
+
+/*==========================================
+ Extra Small Mobile
+==========================================*/
+
+@media screen and (max-width:380px){
+
+.stktm-heading h2{
+
+    font-size:26px;
+
+}
+
+.stktm-heading p{
+
+    font-size:14px;
+
+}
+
+.stktm-card{
+
+    padding:22px 16px;
+
+}
+
+.stktm-stars{
+
+    font-size:22px;
+
+    letter-spacing:2px;
+
+}
+
+.stktm-review{
+
+    font-size:16px;
+
+}
+
+.stktm-author h4{
+
+    font-size:16px;
+
+}
+
+.stktm-author span{
+
+    font-size:13px;
+
+}
+
+.stktm-navigation{
+
+    gap:18px;
+
+}
+
+.stktm-arrow{
+
+    width:50px;
+    height:50px;
+
+}
+
+.stktm-arrow svg{
+
+    width:22px;
+    height:22px;
+
+}
+
+}
+
+
+/*==========================================
+ Large Screens
+==========================================*/
+
+@media screen and (min-width:1800px){
+
+.stktm-container{
+
+    max-width:1600px;
+
+}
+
+.stktm-track{
+
+    gap:50px;
+
+}
+
+.stktm-card{
+
+    width:430px;
+
+}
+
+.stktm-heading h2{
+
+    font-size:60px;
+
+}
+
+.stktm-review{
+
+    font-size:28px;
+
+}
+
+}
+</style>
+
+<script>
+    /*==========================================================
+  STACKLY TESTIMONIAL SECTION
+  testimonials.js
+  Non-Conflicting JavaScript
+==========================================================*/
+
+document.addEventListener("DOMContentLoaded", function () {
+
+"use strict";
+
+/*==================================================
+  REVEAL ANIMATION
+==================================================*/
+
+const stktmRevealItems = document.querySelectorAll(".stktm-reveal");
+
+const stktmObserver = new IntersectionObserver(function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("stktm-visible");
+
+        }
+
+    });
+
+},{
+
+    threshold:0.20
+
+});
+
+stktmRevealItems.forEach(function(item){
+
+    stktmObserver.observe(item);
+
+});
+
+
+/*==================================================
+  TESTIMONIAL AUTO SLIDER
+==================================================*/
+
+const stktmTrack = document.querySelector(".stktm-track");
+
+const stktmCards = document.querySelectorAll(".stktm-card");
+
+let stktmIndex = 0;
+
+let stktmCardWidth = 430;
+
+function stktmUpdateWidth(){
+
+    if(window.innerWidth > 1400){
+
+        stktmCardWidth = 430;
+
+    }
+
+    else if(window.innerWidth > 1200){
+
+        stktmCardWidth = 380;
+
+    }
+
+    else if(window.innerWidth > 992){
+
+        stktmCardWidth = 360;
+
+    }
+
+    else{
+
+        stktmCardWidth = 0;
+
+    }
+
+}
+
+stktmUpdateWidth();
+
+window.addEventListener("resize",stktmUpdateWidth);
+
+
+function stktmSlide(){
+
+    if(window.innerWidth <= 992){
+
+        stktmTrack.style.transform = "translateX(0px)";
+        return;
+
+    }
+
+    stktmIndex++;
+
+    if(stktmIndex >= stktmCards.length-2){
+
+        stktmIndex = 0;
+
+    }
+
+    stktmTrack.style.transform =
+    "translateX(-" + (stktmIndex * stktmCardWidth) + "px)";
+
+}
+
+let stktmInterval = setInterval(stktmSlide,4000);
+
+
+/*==================================================
+  PAUSE ON HOVER
+==================================================*/
+
+const stktmSlider = document.querySelector(".stktm-slider");
+
+if(stktmSlider){
+
+    stktmSlider.addEventListener("mouseenter",function(){
+
+        clearInterval(stktmInterval);
+
+    });
+
+    stktmSlider.addEventListener("mouseleave",function(){
+
+        stktmInterval = setInterval(stktmSlide,4000);
+
+    });
+
+}
+
+
+/*==================================================
+  CARD HOVER EFFECT
+==================================================*/
+
+stktmCards.forEach(function(card){
+
+    card.addEventListener("mousemove",function(e){
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+        const rotateY = ((x / rect.width)-0.5)*8;
+
+        const rotateX = ((y / rect.height)-0.5)*-8;
+
+        card.style.transform =
+        "perspective(900px) rotateX("+
+        rotateX+
+        "deg) rotateY("+
+        rotateY+
+        "deg) translateY(-8px)";
+
+    });
+
+    card.addEventListener("mouseleave",function(){
+
+        card.style.transform =
+        "perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+
+    });
+
+});
+
+
+/*==================================================
+  ARROW REDIRECT
+==================================================*/
+
+const stktmButtons = document.querySelectorAll(".stktm-arrow");
+
+stktmButtons.forEach(function(button){
+
+    button.addEventListener("click",function(e){
+
+        e.preventDefault();
+
+        window.location.href="404.html";
+
+    });
+
+});
+
+});
+</script>
+
+<!-- ==========================================================
+     STACKLY FOOTER
+     Non-Conflicting Footer
+=========================================================== -->
+
+<footer class="stkx-footer">
+
+    <!-- ===========================
+         CTA SECTION
+    ============================ -->
+
+    <section class="stkx-footer-cta">
+
+        <div class="stkx-footer-overlay"></div>
+
+        <div class="stkx-footer-container">
+
+            <div class="stkx-footer-cta-wrapper">
+
+                <!-- Left -->
+
+                <div class="stkx-footer-cta-content stkx-reveal-left">
+
+                    <h2>
+                        Ready to Transform
+                        <br>
+                        your Business ?
+                    </h2>
+
+                    <p>
+                        Lets work together to create solutions that drive
+                        growth, improve efficiency and deliver impact.
+                    </p>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="stkx-footer-cta-btn-wrap stkx-reveal-right">
+
+                    <a href="404.html" class="stkx-footer-btn">
+
+                        <span>View Open Positions</span>
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+
+                            <polyline points="12 5 19 12 12 19"></polyline>
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===========================
+         MAIN FOOTER
+    ============================ -->
+
+    <section class="stkx-footer-main">
+
+        <div class="stkx-footer-container">
+
+            <div class="stkx-footer-grid">
+
+                <!-- ======================
+                     COMPANY
+                ======================= -->
+
+                <div class="stkx-footer-company">
+
+                    <a href="index.html" class="stkx-footer-logo">
+
+                        <img
+                            src="./logo.webp"
+                            alt="Stackly Logo">
+
+                    </a>
+
+                    <p class="stkx-footer-desc">
+                        We help businesses grow with smart
+                        digital solutions and innovative
+                        strategies.
+                    </p>
+
+                    <h3 class="stkx-footer-social-title">
+                        Follow Us :
+                    </h3>
+
+                    <div class="stkx-footer-social">
+
+                        <a href="404.html">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="404.html">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="404.html">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a href="404.html">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                                <!-- ======================
+                     QUICK LINKS
+                ======================= -->
+
+                <div class="stkx-footer-column">
+
+                    <h3 class="stkx-footer-title">
+                        Quick Links
+                    </h3>
+
+                    <ul class="stkx-footer-links">
+
+                        <li>
+                            <a href="index.html">
+                                <span class="stkx-dot"></span>
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">
+                                <span class="stkx-dot"></span>
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services.html">
+                                <span class="stkx-dot"></span>
+                                Services
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./404.html">
+                                <span class="stkx-dot"></span>
+                                Corporate
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./404.html">
+                                <span class="stkx-dot"></span>
+                                Customer
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">
+                                <span class="stkx-dot"></span>
+                                Contact Us
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ======================
+                     OUR SERVICES
+                ======================= -->
+
+                <div class="stkx-footer-column">
+
+                    <h3 class="stkx-footer-title">
+                        Our Services
+                    </h3>
+
+                    <ul class="stkx-footer-links">
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Business Consulting
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Digital Marketing
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                UI/UX Design
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Web Development
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Mobile Apps
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="404.html">
+                                <span class="stkx-dot"></span>
+                                Cloud Solutions
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- ======================
+                     CONTACT
+                ======================= -->
+
+                <div class="stkx-footer-column">
+
+                    <h3 class="stkx-footer-title">
+                        Contact Us
+                    </h3>
+
+                    <div class="stkx-footer-contact">
+
+                        <div class="stkx-contact-item">
+
+                            <h4>Address :</h4>
+
+                            <p>
+                                Tamilnadu
+                                <br>
+                                Salem - 636008
+                            </p>
+
+                        </div>
+
+                        <div class="stkx-contact-item">
+
+                            <h4>Phone:</h4>
+
+                            <p>
+                                +91 7010792745
+                            </p>
+
+                        </div>
+
+                        <div class="stkx-contact-item">
+
+                            <h4>Email:</h4>
+
+                            <p>
+                                info@thestackly.com
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+        <!-- ==========================================
+         FOOTER BOTTOM
+    =========================================== -->
+
+    <div class="stkx-footer-bottom">
+
+        <div class="stkx-footer-container">
+
+            <div class="stkx-footer-bottom-wrapper">
+
+                <!-- Left -->
+
+                <div class="stkx-footer-copy">
+
+                    <p>
+                        © 2026 Stackly. All Rights Reserved.
+                    </p>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="stkx-footer-bottom-links">
+
+                    <a href="404.html">
+                        Privacy Policy
+                    </a>
+
+                    <span>|</span>
+
+                    <a href="404.html">
+                        Terms &amp; Conditions
+                    </a>
+
+                    <span>|</span>
+
+                    <a href="404.html">
+                        Sitemap
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- ==========================================
+     FONT AWESOME
+=========================================== -->
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<!-- ==========================================
+     FOOTER JAVASCRIPT
+=========================================== -->
+
+<script src="footer.js"></script>
+
+<Style>
+    /*=========================================================
+  STACKLY FOOTER
+  NON-CONFLICTING CSS
+  Prefix : stkx-
+=========================================================*/
+
+*,
+*::before,
+*::after{
+    box-sizing:border-box;
+}
+
+.stkx-footer{
+    width:100%;
+    background:#050812;
+    color:#ffffff;
+    overflow:hidden;
+    position:relative;
+    font-family:"Poppins",sans-serif;
+}
+
+.stkx-footer-container{
+    width:100%;
+    max-width:1320px;
+    margin:0 auto;
+    padding:0 40px;
+}
+
+/*=========================================================
+ CTA SECTION
+=========================================================*/
+
+/*=========================================================
+CTA SECTION
+=========================================================*/
+
+.stkx-footer-cta{
+    position:relative;
+    width:100%;
+    padding:80px 0;
+    overflow:hidden;
+
+    background:url("./image\ 5.webp") center center/cover no-repeat;
+}
+
+/* Dark Overlay */
+
+.stkx-footer-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:rgba(7,16,36,.78);
+
+    z-index:1;
+}
+
+/* Container */
+
+.stkx-footer-cta .stkx-footer-container{
+    position:relative;
+    z-index:5;
+}
+
+/* Wrapper */
+
+.stkx-footer-cta-wrapper{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:70px;
+}
+
+/* Left */
+
+.stkx-footer-cta-content{
+    flex:1;
+}
+
+.stkx-footer-cta-content h2{
+
+    margin:0;
+
+    color:#fff;
+
+    font-size:56px;
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    position:relative;
+
+    z-index:10;
+}
+
+.stkx-footer-cta-content p{
+
+    margin-top:22px;
+
+    color:#ffffff;
+
+    font-size:22px;
+
+    line-height:1.7;
+
+    position:relative;
+
+    z-index:10;
+}
+
+/* Right */
+
+.stkx-footer-cta-btn-wrap{
+    flex-shrink:0;
+    position:relative;
+    z-index:10;
+}
+
+.stkx-footer-btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+
+    min-width:340px;
+
+    padding:24px 38px;
+
+    background:#16d4cb;
+
+    color:#06121b;
+
+    border-radius:16px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+    font-weight:700;
+
+    transition:.35s;
+}
+
+.stkx-footer-btn:hover{
+
+    transform:translateY(-6px);
+
+    background:#23e8df;
+
+    box-shadow:0 18px 40px rgba(22,212,203,.35);
+}
+/*=========================================================
+ MAIN FOOTER
+=========================================================*/
+
+.stkx-footer-main{
+
+    background:#04060d;
+
+    padding:90px 0 70px;
+}
+
+.stkx-footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1.4fr
+    1fr
+    1fr
+    1fr;
+
+    gap:60px;
+}
+
+/*=========================================================
+ COMPANY
+=========================================================*/
+
+.stkx-footer-company img{
+
+    width:260px;
+    max-width:100%;
+    display:block;
+}
+
+.stkx-footer-desc{
+
+    margin-top:34px;
+
+    color:#f1f1f1;
+
+    font-size:21px;
+
+    line-height:1.7;
+
+    max-width:360px;
+}
+
+.stkx-footer-social-title{
+
+    margin-top:50px;
+    margin-bottom:25px;
+
+    font-size:34px;
+    font-weight:700;
+}
+
+.stkx-footer-social{
+
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.stkx-footer-social a{
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:25px;
+
+    transition:.35s;
+}
+
+.stkx-footer-social a:nth-child(1){
+    background:#3b5998;
+}
+
+.stkx-footer-social a:nth-child(2){
+    background:#0a66c2;
+}
+
+.stkx-footer-social a:nth-child(3){
+    background:#1da1f2;
+}
+
+.stkx-footer-social a:nth-child(4){
+    background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+
+.stkx-footer-social a:hover{
+
+    transform:translateY(-8px) scale(1.08);
+}
+
+
+/*=========================================================
+  FOOTER COLUMNS
+=========================================================*/
+
+.stkx-footer-column{
+    width:100%;
+}
+
+.stkx-footer-title{
+    margin:0 0 30px;
+    font-size:30px;
+    font-weight:700;
+    color:#ffffff;
+    position:relative;
+}
+
+.stkx-footer-title::after{
+    content:"";
+    display:block;
+    width:65px;
+    height:3px;
+    background:#18d7cf;
+    margin-top:12px;
+    border-radius:20px;
+}
+
+/*=========================================================
+  LINKS
+=========================================================*/
+
+.stkx-footer-links{
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+.stkx-footer-links li{
+    margin-bottom:18px;
+}
+
+.stkx-footer-links li:last-child{
+    margin-bottom:0;
+}
+
+.stkx-footer-links a{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    color:#d8d8d8;
+    text-decoration:none;
+
+    font-size:18px;
+    font-weight:500;
+
+    transition:.35s;
+}
+
+.stkx-dot{
+
+    width:8px;
+    height:8px;
+
+    background:#19d8cf;
+
+    border-radius:50%;
+
+    transition:.35s;
+}
+
+.stkx-footer-links a:hover{
+
+    color:#19d8cf;
+
+    transform:translateX(8px);
+}
+
+.stkx-footer-links a:hover .stkx-dot{
+
+    transform:scale(1.5);
+}
+
+/*=========================================================
+  CONTACT
+=========================================================*/
+
+.stkx-footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+}
+
+.stkx-contact-item h4{
+
+    margin:0 0 10px;
+
+    font-size:20px;
+    color:#ffffff;
+    font-weight:600;
+}
+
+.stkx-contact-item p{
+
+    margin:0;
+
+    color:#d8d8d8;
+
+    font-size:17px;
+
+    line-height:1.8;
+}
+
+/*=========================================================
+  FOOTER BOTTOM
+=========================================================*/
+
+.stkx-footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    background:#03050a;
+
+    padding:22px 0;
+}
+
+.stkx-footer-bottom-wrapper{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.stkx-footer-copy p{
+
+    margin:0;
+
+    color:#cfcfcf;
+
+    font-size:15px;
+}
+
+.stkx-footer-bottom-links{
+
+    display:flex;
+    align-items:center;
+    gap:16px;
+
+    flex-wrap:wrap;
+}
+
+.stkx-footer-bottom-links span{
+    color:#666;
+}
+
+.stkx-footer-bottom-links a{
+
+    color:#d4d4d4;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    transition:.3s;
+}
+
+.stkx-footer-bottom-links a:hover{
+    color:#18d7cf;
+}
+
+/*=========================================================
+  SCROLL REVEAL
+=========================================================*/
+
+.stkx-reveal-left,
+.stkx-reveal-right{
+
+    /* opacity:0;
+
+    transition:all .9s ease; */
+}
+
+.stkx-reveal-left{
+    transform:translateX(-70px);
+}
+
+.stkx-reveal-right{
+    transform:translateX(70px);
+}
+
+.stkx-reveal-active{
+
+    opacity:1 !important;
+
+    transform:translate(0,0) !important;
+}
+
+/*=========================================================
+  TABLET
+=========================================================*/
+
+@media (max-width:1024px){
+
+.stkx-footer-container{
+    padding:0 30px;
+}
+
+.stkx-footer-cta-wrapper{
+
+    flex-direction:column;
+    text-align:center;
+    gap:45px;
+}
+
+.stkx-footer-cta-content{
+    max-width:100%;
+}
+
+.stkx-footer-cta-content h2{
+    font-size:44px;
+}
+
+.stkx-footer-cta-content p{
+    font-size:20px;
+}
+
+.stkx-footer-btn{
+    min-width:320px;
+    font-size:21px;
+}
+
+.stkx-footer-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:50px;
+}
+
+.stkx-footer-company{
+    grid-column:1 / -1;
+}
+
+}
+
+/*=========================================================
+  MOBILE
+=========================================================*/
+
+@media (max-width:768px){
+
+.stkx-footer-container{
+    padding:0 20px;
+}
+
+.stkx-footer-cta{
+    padding:55px 0;
+}
+
+.stkx-footer-cta-content h2{
+
+    font-size:34px;
+    line-height:1.25;
+}
+
+.stkx-footer-cta-content p{
+
+    font-size:17px;
+    margin-top:18px;
+}
+
+.stkx-footer-btn{
+
+    width:100%;
+    min-width:100%;
+
+    padding:20px;
+
+    font-size:18px;
+
+    gap:18px;
+}
+
+.stkx-footer-btn svg{
+
+    width:22px;
+    height:22px;
+}
+
+.stkx-footer-main{
+
+    padding:65px 0 50px;
+}
+
+.stkx-footer-grid{
+
+    grid-template-columns:1fr;
+
+    gap:45px;
+}
+
+.stkx-footer-company img{
+    width:210px;
+}
+
+.stkx-footer-desc{
+
+    max-width:100%;
+
+    font-size:17px;
+}
+
+.stkx-footer-social-title{
+
+    font-size:24px;
+
+    margin-top:35px;
+}
+
+.stkx-footer-social a{
+
+    width:48px;
+    height:48px;
+
+    font-size:20px;
+}
+
+.stkx-footer-title{
+    font-size:24px;
+}
+
+.stkx-footer-links a{
+    font-size:16px;
+}
+
+.stkx-contact-item h4{
+    font-size:18px;
+}
+
+.stkx-contact-item p{
+    font-size:16px;
+}
+
+.stkx-footer-bottom-wrapper{
+
+    flex-direction:column;
+
+    text-align:center;
+}
+
+.stkx-footer-bottom-links{
+
+    justify-content:center;
+
+    gap:12px;
+}
+
+}
+
+/*=========================================================
+  SMALL MOBILE
+=========================================================*/
+
+@media (max-width:480px){
+
+.stkx-footer-cta-content h2{
+    font-size:28px;
+}
+
+.stkx-footer-cta-content p{
+    font-size:16px;
+}
+
+.stkx-footer-btn{
+    font-size:16px;
+    padding:18px;
+}
+
+.stkx-footer-company img{
+    width:180px;
+}
+
+.stkx-footer-social{
+    gap:12px;
+}
+
+.stkx-footer-social a{
+    width:44px;
+    height:44px;
+}
+
+.stkx-footer-title{
+    font-size:22px;
+}
+
+.stkx-footer-links a{
+    font-size:15px;
+}
+
+.stkx-contact-item p{
+    font-size:15px;
+}
+
+.stkx-footer-copy p,
+.stkx-footer-bottom-links a{
+    font-size:14px;
+}
+
+}
+/*=========================================
+BUTTON RIPPLE EFFECT
+=========================================*/
+
+.stkx-footer-btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.stkx-ripple{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    transform:scale(0);
+
+    background:rgba(255,255,255,.35);
+
+    animation:stkxRipple .6s linear;
+
+    pointer-events:none;
+}
+
+@keyframes stkxRipple{
+
+    to{
+
+        transform:scale(4);
+
+        opacity:0;
+    }
+
+}
+</Style>
+
+<script>
+    /*==========================================================
+ STACKLY FOOTER
+ NON-CONFLICTING JAVASCRIPT
+==========================================================*/
+
+(function () {
+    "use strict";
+
+    // ==============================
+    // SCROLL REVEAL ANIMATION
+    // ==============================
+
+    const stkxRevealItems = document.querySelectorAll(
+        ".stkx-reveal-left, .stkx-reveal-right"
+    );
+
+    if (stkxRevealItems.length > 0) {
+
+        const stkxObserver = new IntersectionObserver(function (entries) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("stkx-reveal-active");
+
+                    stkxObserver.unobserve(entry.target);
+
+                }
+
+            });
+
+        }, {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        stkxRevealItems.forEach(function (item) {
+            stkxObserver.observe(item);
+        });
+
+    }
+
+    // ==============================
+    // FOOTER BUTTON RIPPLE EFFECT
+    // ==============================
+
+    const stkxButtons = document.querySelectorAll(".stkx-footer-btn");
+
+    stkxButtons.forEach(function (button) {
+
+        button.addEventListener("click", function (e) {
+
+            const ripple = document.createElement("span");
+
+            const rect = this.getBoundingClientRect();
+
+            const size = Math.max(rect.width, rect.height);
+
+            ripple.style.width = size + "px";
+            ripple.style.height = size + "px";
+
+            ripple.style.left = (e.clientX - rect.left - size / 2) + "px";
+            ripple.style.top = (e.clientY - rect.top - size / 2) + "px";
+
+            ripple.className = "stkx-ripple";
+
+            this.appendChild(ripple);
+
+            setTimeout(function () {
+                ripple.remove();
+            }, 600);
+
+        });
+
+    });
+
+})();
+</script>
