@@ -45,7 +45,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 
             <ul>
 
-                <li><a href="./index.html">Home</a></li>
+                <li><a href="./index.html" class="active">Home</a></li>
 
                 <li><a href="./about.html">About Us</a></li>
 
@@ -82,6 +82,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 </section>
 
 <style>
+    .site-nav ul li a.active{
+
+color: #35c8df;
+
+font-weight: 600;
+
+}
+
+.site-nav ul li a.active::after{
+
+content: "";
+
+position: absolute;
+
+left: 0;
+
+bottom: -6px;
+
+width: 100%;
+
+height: 3px;
+
+background: #35c8df;
+
+border-radius: 20px;
+
+}
     /*=============================
 HEADER RESET
 =============================*/
@@ -221,7 +248,7 @@ width:0;
 
 height:3px;
 
-background:#00b894;
+background:#35c8df;
 
 transition:.4s;
 
@@ -231,7 +258,7 @@ border-radius:20px;
 
 .site-nav ul li a:hover{
 
-color:#00b894;
+color:#35c8df;
 
 }
 
@@ -251,7 +278,7 @@ text-decoration:none;
 
 padding:13px 34px;
 
-background:#00b894;
+background:#35c8df;
 
 color:#fff;
 
@@ -265,7 +292,7 @@ transition:.3s;
 
 .site-login-btn:hover{
 
-background:#098d71;
+background:#35c8df;
 
 transform:translateY(-2px);
 
