@@ -4,998 +4,1753 @@
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Admin Dashboard</title>
 
-    <title>Dashboard | Stackly</title>
+    <!-- Google Font -->
 
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="css/admin-dashboard.css">
+
+    <!-- Chart JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 <body>
 
-<div class="dashboard">
+<!--==========================
+        SIDEBAR
+===========================-->
 
-    <!-- ================= MOBILE MENU ================= -->
+<aside class="sidebar"
+    id="sidebar">
 
-    <button class="menu-btn">
+    <div class="sidebar-logo">
 
-        <i class="fas fa-bars"></i>
+        <a href="index.html">
 
-    </button>
+            <img src="./logo.webp"
+                alt="Logo">
 
-    <!-- ================= SIDEBAR ================= -->
-
-    <aside class="sidebar">
-
-        <a href="index.html" class="logo">
-
-            <img src="./logo.webp" alt="Stackly Logo">
-        
         </a>
 
-        <ul class="sidebar-menu">
+        <button class="close-sidebar"
+            id="closeSidebar">
 
-            <li class="active">
+            <i class="fas fa-times"></i>
 
-                <a href="./admin.html">
+        </button>
 
-                    <i class="fas fa-gauge-high"></i>
+    </div>
 
-                    Dashboard
+    <ul>
 
-                </a>
+        <li class="active">
 
-            </li>
+            <a href="./admin.html">
 
-            <li>
+                <i class="fas fa-house"></i>
 
-                <a href="./404.html">
-
-                    <i class="fas fa-folder"></i>
-
-                    Projects
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./404.html">
-
-                    <i class="fas fa-list-check"></i>
-
-                    Tasks
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./404.html">
-
-                    <i class="fas fa-users"></i>
-
-                    Clients
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./404.html">
-
-                    <i class="fas fa-chart-pie"></i>
-
-                    Reports
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="./404.html">
-
-                    <i class="fas fa-gear"></i>
-
-                    Settings
-
-                </a>
-
-            </li>
-
-        </ul>
-
-        <div class="sidebar-bottom">
-
-            <a href="./404.html" class="support">
-
-                <i class="fas fa-circle-question"></i>
-
-                Help & Support
+                Dashboard
 
             </a>
 
-            <div class="profile-switch">
+        </li>
 
-                <div class="profile-info">
+        <li>
 
-                    <img src="./ava1.webp" alt="Admin">
+            <a href="./emp.html">
 
-                    <span>User</span>
+                <i class="fas fa-users"></i>
 
-                </div>
+                Employees
 
-                <select id="roleSelect">
+            </a>
 
-                    <option value="./admin.html">
+        </li>
 
-                        Admin
+        <li>
 
-                    </option>
+            <a href="./department.html">
 
-                    <option value="./client.html">
+                <i class="fas fa-user-tie"></i>
 
-                        Client
+                Departments
 
-                    </option>
+            </a>
 
-                </select>
+        </li>
+
+        
+        <li>
+
+            <a href="settings.html">
+
+                <i class="fas fa-gear"></i>
+
+                Settings
+
+            </a>
+
+        </li>
+
+        <li class="logout">
+
+            <a href="./login.html"
+                id="logoutBtn">
+
+                <i class="fas fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!--==========================
+      MAIN CONTENT
+===========================-->
+
+<div class="main-content">
+
+<!--==========================
+      TOP NAVBAR
+===========================-->
+
+<header class="topbar">
+
+    <div class="top-left">
+
+        <button
+            class="menu-btn"
+            id="menuBtn">
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+        <a href="index.html"
+            class="logo">
+
+            <img src="./logo.webp"
+                alt="logo">
+
+        </a>
+
+    </div>
+
+    <!-- Search -->
+
+    <div class="search-box">
+        <a href="./404.html">
+
+        <i class="fas fa-search"></i>
+    
+        <input
+            type="text"
+            placeholder="Search Employees, Projects...">
+
+    </div></a>
+
+    <!-- Right Side -->
+
+    <div class="top-right">
+
+        <!-- Notification -->
+
+        <div class="icon-box">
+            <a href="./404.html">
+
+            <i class="fas fa-bell"></i>
+
+            <span class="badge">
+                5
+            </span></a>
+
+        </div>
+
+        <!-- Messages -->
+
+        <div class="icon-box">
+            <a href="./404.html">
+
+            <i class="fas fa-envelope"></i>
+
+            <span class="badge">
+                2
+            </span></a>
+
+        </div>
+
+        <!-- Profile -->
+
+        <div class="profile">
+
+            <div class="profile-image">
+
+                <i class="fas fa-user-shield"></i>
+
+            </div>
+
+            <div class="profile-info">
+
+                <h4 id="adminName">
+
+                    Loading...
+
+                </h4>
+
+                <span id="adminEmail">
+
+                    loading@email.com
+
+                </span>
+
+                <small id="adminRole">
+
+                    Administrator
+
+                </small>
+
+            </div>
+
+            <i class="fas fa-angle-down"></i>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!--==========================
+      WELCOME BANNER
+===========================-->
+
+<section class="welcome-banner">
+
+    <div class="welcome-content">
+
+        <span>
+
+            Welcome Back 👋
+
+        </span>
+
+        <h1>
+
+            <span id="welcomeName">
+
+                Administrator
+
+            </span>
+
+        </h1>
+
+        <p>
+
+            Monitor employees, projects, reports,
+            and company performance from one place.
+
+        </p>
+<a href="./404.html">
+        <button>
+
+            Continue Working
+
+            <i class="fas fa-arrow-right"></i>
+
+        </button></a>
+
+    </div>
+
+    <div class="welcome-image">
+
+        <img
+            src="./image 7.webp"
+            alt="Corporate">
+
+    </div>
+
+</section>
+
+<!--==========================
+        KPI CARDS
+===========================-->
+
+<section class="cards">
+
+    <!-- Card 1 -->
+
+    <div class="card">
+
+        <div class="card-icon users">
+
+            <i class="fas fa-users"></i>
+
+        </div>
+
+        <div>
+
+            <h5>Total Employees</h5>
+
+            <h2 id="employeeCount">
+
+                0
+
+            </h2>
+
+            <p>
+
+                <i class="fas fa-arrow-trend-up"></i>
+
+                +18% this month
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Card 2 -->
+
+    <div class="card">
+
+        <div class="card-icon project">
+
+            <i class="fas fa-folder-open"></i>
+
+        </div>
+
+        <div>
+
+            <h5>Projects</h5>
+
+            <h2 id="projectCount">
+
+                0
+
+            </h2>
+
+            <p>
+
+                <i class="fas fa-arrow-trend-up"></i>
+
+                +12%
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Card 3 -->
+
+    <div class="card">
+
+        <div class="card-icon revenue">
+
+            <i class="fas fa-indian-rupee-sign"></i>
+
+        </div>
+
+        <div>
+
+            <h5>Revenue</h5>
+
+            <h2 id="revenueCount">
+
+                0
+
+            </h2>
+
+            <p>
+
+                +22% Growth
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- Card 4 -->
+
+    <div class="card">
+
+        <div class="card-icon client">
+
+            <i class="fas fa-handshake"></i>
+
+        </div>
+
+        <div>
+
+            <h5>Clients</h5>
+
+            <h2 id="clientCount">
+
+                0
+
+            </h2>
+
+            <p>
+
+                +15% this month
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+        ANALYTICS SECTION
+====================================== -->
+
+<section class="dashboard-grid">
+
+    <!-- Revenue Analytics -->
+
+    <div class="dashboard-card chart-card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>Revenue Analytics</h2>
+
+                <p>Monthly Revenue Performance</p>
+
+            </div>
+
+            <div class="chart-filter">
+
+                <button class="active">Month</button>
+                <button>Quarter</button>
+                <button>Year</button>
 
             </div>
 
         </div>
 
-    </aside>
+        <div class="chart-container">
 
-    <!-- ================= MAIN CONTENT ================= -->
+            <canvas id="salesChart"></canvas>
 
-    <main class="main-content">
+        </div>
 
-        <!-- ================= HEADER ================= -->
+    </div>
 
-        <header class="topbar">
+    <!-- Recent Activities -->
+
+    <div class="dashboard-card activity-card">
+
+        <div class="card-header">
+
+            <h2>Recent Activities</h2>
+
+        </div>
+
+        <div class="activity-list">
+
+            <div class="activity-item">
+
+                <div class="activity-icon success">
+
+                    <i class="fas fa-user-plus"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>New Employee Joined</h4>
+
+                    <p>John Anderson joined Development Team.</p>
+
+                    <span>10 Minutes Ago</span>
+
+                </div>
+
+            </div>
+
+            <div class="activity-item">
+
+                <div class="activity-icon info">
+
+                    <i class="fas fa-folder-open"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>Project Updated</h4>
+
+                    <p>CRM Dashboard milestone completed.</p>
+
+                    <span>35 Minutes Ago</span>
+
+                </div>
+
+            </div>
+
+            <div class="activity-item">
+
+                <div class="activity-icon warning">
+
+                    <i class="fas fa-calendar-check"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>Meeting Scheduled</h4>
+
+                    <p>Board Meeting at 4:00 PM.</p>
+
+                    <span>Today</span>
+
+                </div>
+
+            </div>
+
+            <div class="activity-item">
+
+                <div class="activity-icon purple">
+
+                    <i class="fas fa-chart-line"></i>
+
+                </div>
+
+                <div>
+
+                    <h4>Revenue Increased</h4>
+
+                    <p>Revenue increased by 22% this month.</p>
+
+                    <span>Today</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+       PERFORMANCE SECTION
+====================================== -->
+
+<section class="dashboard-grid">
+
+    <!-- Department Performance -->
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>Department Performance</h2>
+
+        </div>
+
+        <div class="progress-item">
+
+            <div class="progress-title">
+
+                <span>Development</span>
+
+                <span>96%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar dev"
+                    style="width:96%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <div class="progress-title">
+
+                <span>Sales</span>
+
+                <span>89%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar sales"
+                    style="width:89%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <div class="progress-title">
+
+                <span>Marketing</span>
+
+                <span>91%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar marketing"
+                    style="width:91%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <div class="progress-title">
+
+                <span>Finance</span>
+
+                <span>84%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar finance"
+                    style="width:84%"></div>
+
+            </div>
+
+        </div>
+
+        <div class="progress-item">
+
+            <div class="progress-title">
+
+                <span>Human Resources</span>
+
+                <span>88%</span>
+
+            </div>
+
+            <div class="progress">
+
+                <div class="progress-bar hr"
+                    style="width:88%"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Today's Schedule -->
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>Today's Schedule</h2>
+
+        </div>
+
+        <div class="schedule-list">
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+
+                    09:00 AM
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <h4>Management Meeting</h4>
+
+                    <p>Conference Hall - A</p>
+
+                </div>
+
+            </div>
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+
+                    11:30 AM
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <h4>HR Interviews</h4>
+
+                    <p>Meeting Room 02</p>
+
+                </div>
+
+            </div>
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+
+                    02:00 PM
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <h4>Client Presentation</h4>
+
+                    <p>Microsoft Teams</p>
+
+                </div>
+
+            </div>
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+
+                    05:00 PM
+
+                </div>
+
+                <div class="schedule-content">
+
+                    <h4>Project Review</h4>
+
+                    <p>Development Team</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+          PROJECT STATUS
+====================================== -->
+
+<section class="project-status">
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>Project Progress</h2>
+
+        </div>
+
+        <div class="project-list">
+
+            <div class="project">
+
+                <div class="project-info">
+
+                    <h4>Corporate Website</h4>
+
+                    <span>95%</span>
+
+                </div>
+
+                <div class="progress">
+
+                    <div class="progress-bar website"
+                        style="width:95%"></div>
+
+                </div>
+
+            </div>
+
+            <div class="project">
+
+                <div class="project-info">
+
+                    <h4>CRM Dashboard</h4>
+
+                    <span>78%</span>
+
+                </div>
+
+                <div class="progress">
+
+                    <div class="progress-bar crm"
+                        style="width:78%"></div>
+
+                </div>
+
+            </div>
+
+            <div class="project">
+
+                <div class="project-info">
+
+                    <h4>Mobile Application</h4>
+
+                    <span>62%</span>
+
+                </div>
+
+                <div class="progress">
+
+                    <div class="progress-bar mobile"
+                        style="width:62%"></div>
+
+                </div>
+
+            </div>
+
+            <div class="project">
+
+                <div class="project-info">
+
+                    <h4>ERP Integration</h4>
+
+                    <span>88%</span>
+
+                </div>
+
+                <div class="progress">
+
+                    <div class="progress-bar erp"
+                        style="width:88%"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+        EMPLOYEE TABLE SECTION
+====================================== -->
+
+<section class="dashboard-grid">
+
+    <!-- Employee Table -->
+
+    <div class="dashboard-card employee-table-card">
+
+        <div class="card-header">
 
             <div>
 
-                <h1>
+                <h2>Employee Performance</h2>
 
-                    Dashboard
-
-                </h1>
-
-                <p>
-
-                    Welcome Back, Admin! Here's what's happening today.
-
-                </p>
+                <p>Latest employee status</p>
 
             </div>
 
-            <div class="topbar-right">
+            <button class="view-all-btn">
 
-                <button class="icon-btn">
+                View All
 
-                    <i class="fas fa-bell"></i>
+            </button>
 
-                </button>
+        </div>
 
-                <button class="icon-btn">
+        <div class="table-responsive">
 
-                    <i class="fas fa-user"></i>
+            <table class="employee-table">
 
-                </button>
+                <thead>
 
-                <div class="date-picker">
+                    <tr>
 
-                    <i class="fas fa-calendar-days"></i>
+                        <th>Employee</th>
+                        <th>Department</th>
+                        <th>Performance</th>
+                        <th>Status</th>
 
-                    <input type="date">
+                    </tr>
 
-                </div>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+
+                            <div class="employee-info">
+
+                                <div class="employee-avatar">
+
+                                    <i class="fas fa-user"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h4>John Anderson</h4>
+
+                                    <span>EMP001</span>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>Development</td>
+
+                        <td>
+
+                            <span class="performance excellent">
+
+                                98%
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <span class="status active">
+
+                                Active
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+
+                            <div class="employee-info">
+
+                                <div class="employee-avatar">
+
+                                    <i class="fas fa-user"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h4>Sarah Williams</h4>
+
+                                    <span>EMP002</span>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>Marketing</td>
+
+                        <td>
+
+                            <span class="performance good">
+
+                                91%
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <span class="status active">
+
+                                Active
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+
+                            <div class="employee-info">
+
+                                <div class="employee-avatar">
+
+                                    <i class="fas fa-user"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h4>David Smith</h4>
+
+                                    <span>EMP003</span>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>Finance</td>
+
+                        <td>
+
+                            <span class="performance average">
+
+                                84%
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <span class="status leave">
+
+                                On Leave
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>
+
+                            <div class="employee-info">
+
+                                <div class="employee-avatar">
+
+                                    <i class="fas fa-user"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <h4>Emily Johnson</h4>
+
+                                    <span>EMP004</span>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>Human Resources</td>
+
+                        <td>
+
+                            <span class="performance excellent">
+
+                                96%
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <span class="status meeting">
+
+                                Meeting
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- Top Employees -->
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>Top Performers</h2>
+
+        </div>
+
+        <div class="top-performer">
+
+            <div class="rank">1</div>
+
+            <div class="performer-info">
+
+                <h4>John Anderson</h4>
+
+                <span>Development</span>
 
             </div>
 
-        </header>
+            <strong>98%</strong>
 
-        <!-- ================= STATISTICS START ================= -->
+        </div>
 
-        <section class="stats-grid">
+        <div class="top-performer">
 
-                        <!-- ================= CARD 1 ================= -->
+            <div class="rank">2</div>
 
-                        <div class="stat-card scroll-up">
+            <div class="performer-info">
 
-                            <div class="stat-icon blue">
-            
-                                <i class="fa-regular fa-folder-open"></i>
-            
-                            </div>
-            
-                            <div class="stat-content">
-            
-                                <small>Total Projects</small>
-            
-                                <h2>12</h2>
-            
-                                <span>Active Projects</span>
-            
-                            </div>
-            
-                        </div>
-            
-            
-                        <!-- ================= CARD 2 ================= -->
-            
-                        <div class="stat-card scroll-up">
-            
-                            <div class="stat-icon green">
-            
-                                <i class="fa-solid fa-circle-check"></i>
-            
-                            </div>
-            
-                            <div class="stat-content">
-            
-                                <small>Tasks Completed</small>
-            
-                                <h2>28</h2>
-            
-                                <span>This Month</span>
-            
-                            </div>
-            
-                        </div>
-            
-            
-                        <!-- ================= CARD 3 ================= -->
-            
-                        <div class="stat-card scroll-up">
-            
-                            <div class="stat-icon orange">
-            
-                                <i class="fa-regular fa-clock"></i>
-            
-                            </div>
-            
-                            <div class="stat-content">
-            
-                                <small>Pending Tasks</small>
-            
-                                <h2>8</h2>
-            
-                                <span>Require Attention</span>
-            
-                            </div>
-            
-                        </div>
-            
-            
-                        <!-- ================= CARD 4 ================= -->
-            
-                        <div class="stat-card scroll-up">
-            
-                            <div class="stat-icon purple">
-            
-                                <i class="fa-solid fa-users"></i>
-            
-                            </div>
-            
-                            <div class="stat-content">
-            
-                                <small>Total Clients</small>
-            
-                                <h2>16</h2>
-            
-                                <span>Registered Clients</span>
-            
-                            </div>
-            
-                        </div>
-            
-                    </section>
-            
-            
-                    <!-- ================= CONTENT GRID ================= -->
-            
-                    <section class="content-grid">
-            
-            
-                        <!-- ================= RECENT PROJECTS ================= -->
-            
-                        <div class="dashboard-card scroll-left">
-            
-                            <div class="card-header">
-            
-                                <h3>Recent Projects</h3>
-            
-                                <a href="./404.html">View All</a>
-            
-                            </div>
-            
-            
-                            <div class="project-item">
-            
-                                <div class="project-icon blue">
-            
-                                    <i class="fa-solid fa-desktop"></i>
-            
-                                </div>
-            
-                                <div class="project-info">
-            
-                                    <div class="project-title">
-            
-                                        <span>Website Redesign</span>
-            
-                                        <strong>75%</strong>
-            
-                                    </div>
-            
-                                    <div class="progress">
-            
-                                        <div class="progress-fill fill75"></div>
-            
-                                    </div>
-            
-                                </div>
-            
-                            </div>
-            
-            
-                            <div class="project-item">
-            
-                                <div class="project-icon green">
-            
-                                    <i class="fa-solid fa-mobile-screen-button"></i>
-            
-                                </div>
-            
-                                <div class="project-info">
-            
-                                    <div class="project-title">
-            
-                                        <span>Mobile App Development</span>
-            
-                                        <strong>60%</strong>
-            
-                                    </div>
-            
-                                    <div class="progress">
-            
-                                        <div class="progress-fill fill60"></div>
-            
-                                    </div>
-            
-                                </div>
-            
-                            </div>
-            
-            
-                            <div class="project-item">
-            
-                                <div class="project-icon orange">
-            
-                                    <i class="fa-solid fa-cart-shopping"></i>
-            
-                                </div>
-            
-                                <div class="project-info">
-            
-                                    <div class="project-title">
-            
-                                        <span>E-Commerce Platform</span>
-            
-                                        <strong>45%</strong>
-            
-                                    </div>
-            
-                                    <div class="progress">
-            
-                                        <div class="progress-fill fill45"></div>
-            
-                                    </div>
-            
-                                </div>
-            
-                            </div>
-            
-                            <div class="view-projects">
-            
-                                <a href="./404.html">View All Projects</a>
-            
-                            </div>
-            
-                        </div>
+                <h4>Emily Johnson</h4>
 
-
-                                    <!-- ================= UPCOMING TASKS ================= -->
-
-            <div class="dashboard-card scroll-right">
-
-                <div class="card-header">
-
-                    <h3>Upcoming Tasks</h3>
-
-                    <a href="./404.html">View All</a>
-
-                </div>
-
-                <div class="task-list">
-
-                    <div class="task-item">
-
-                        <label>
-
-                            <input type="checkbox">
-
-                            <span class="checkmark"></span>
-
-                            Wireframe Design
-
-                        </label>
-
-                        <span class="task-date">July 06, 2026</span>
-
-                    </div>
-
-                    <div class="task-item">
-
-                        <label>
-
-                            <input type="checkbox">
-
-                            <span class="checkmark"></span>
-
-                            Client Meeting
-
-                        </label>
-
-                        <span class="task-date">July 07, 2026</span>
-
-                    </div>
-
-                    <div class="task-item">
-
-                        <label>
-
-                            <input type="checkbox">
-
-                            <span class="checkmark"></span>
-
-                            API Integration
-
-                        </label>
-
-                        <span class="task-date">July 08, 2026</span>
-
-                    </div>
-
-                    <div class="task-item">
-
-                        <label>
-
-                            <input type="checkbox">
-
-                            <span class="checkmark"></span>
-
-                            UI Design Review
-
-                        </label>
-
-                        <span class="task-date">July 09, 2026</span>
-
-                    </div>
-
-                </div>
+                <span>HR</span>
 
             </div>
 
-        </section>
+            <strong>96%</strong>
 
-    </main>
+        </div>
+
+        <div class="top-performer">
+
+            <div class="rank">3</div>
+
+            <div class="performer-info">
+
+                <h4>Sarah Williams</h4>
+
+                <span>Marketing</span>
+
+            </div>
+
+            <strong>91%</strong>
+
+        </div>
+
+        <div class="top-performer">
+
+            <div class="rank">4</div>
+
+            <div class="performer-info">
+
+                <h4>David Smith</h4>
+
+                <span>Finance</span>
+
+            </div>
+
+            <strong>84%</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+        QUICK ACTIONS
+====================================== -->
+
+<section class="quick-actions">
+
+    <div class="action-card">
+
+        <i class="fas fa-user-plus"></i>
+
+        <h3>Add Employee</h3>
+
+        <p>Create a new employee account.</p>
+
+    </div>
+
+    <div class="action-card">
+
+        <i class="fas fa-folder-plus"></i>
+
+        <h3>Create Project</h3>
+
+        <p>Start a new corporate project.</p>
+
+    </div>
+
+    <div class="action-card">
+
+        <i class="fas fa-chart-pie"></i>
+
+        <h3>Generate Report</h3>
+
+        <p>Export analytics and reports.</p>
+
+    </div>
+
+    <div class="action-card">
+
+        <i class="fas fa-calendar-plus"></i>
+
+        <h3>Schedule Meeting</h3>
+
+        <p>Create upcoming meetings.</p>
+
+    </div>
+
+</section>
+
+<!-- ======================================
+        FOOTER
+====================================== -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 Corporate Admin Dashboard.
+        All Rights Reserved.
+
+    </p>
+
+</footer>
 
 </div>
 
-<script src="dashboard.js"></script>
+<!-- ======================================
+      PROFILE DROPDOWN
+====================================== -->
+
+<div class="profile-dropdown"
+     id="profileDropdown">
+
+    <ul>
+
+        <li>
+
+            <i class="fas fa-user"></i>
+
+            My Profile
+
+        </li>
+<a href="./404.html">
+        <li>
+
+            <i class="fas fa-user-gear"></i>
+
+            Account Settings
+
+        </li></a>
+        <a href="./404.html">
+        <li>
+
+            <i class="fas fa-lock"></i>
+
+            Change Password
+
+        </li></a>
+        <a href="./login.html">
+
+        <li id="logoutMenu">
+
+            <i class="fas fa-right-from-bracket"></i>
+
+            Logout
+
+        </li></a>
+
+    </ul>
+
+</div>
 
 <style>
     /*=========================================
-GOOGLE FONT
+        CORPORATE ADMIN DASHBOARD CSS
 =========================================*/
+
+/* Google Font */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
+/*=========================================
+              ROOT VARIABLES
+=========================================*/
+
+:root{
+
+    --primary:#2563eb;
+    --secondary:#0ea5e9;
+    --accent:#14b8a6;
+
+    --dark:#0f172a;
+    --dark-light:#1e293b;
+
+    --white:#ffffff;
+
+    --bg:#f5f7fb;
+
+    --border:#e5e7eb;
+
+    --text:#374151;
+
+    --success:#22c55e;
+
+    --warning:#f59e0b;
+
+    --danger:#ef4444;
+
+    --purple:#7c3aed;
+
+    --shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+}
+
+
+/*=========================================
+              RESET
+=========================================*/
+
 *{
+
     margin:0;
+
     padding:0;
+
     box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+
 }
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
 body{
-    background:#F4F7FC;
-    color:#1B2559;
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
     overflow-x:hidden;
-}
 
-a{
-    text-decoration:none;
 }
-
-ul{
-    list-style:none;
-}
-
 
 /*=========================================
-MAIN DASHBOARD
+          SCROLLBAR
 =========================================*/
 
-.dashboard{
+::-webkit-scrollbar{
 
-    display:flex;
-
-    min-height:100vh;
+    width:8px;
 
 }
 
+::-webkit-scrollbar-track{
+
+    background:#edf2f7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+    180deg,
+    var(--primary),
+    var(--secondary));
+
+    border-radius:20px;
+
+}
 
 /*=========================================
-SIDEBAR
+            SIDEBAR
 =========================================*/
 
 .sidebar{
 
-    width:280px;
-
-    background:#111C44;
-
-    color:#fff;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
     position:fixed;
-
-    left:0;
 
     top:0;
 
-    bottom:0;
+    left:0;
 
-    padding:30px 22px;
+    width:270px;
 
-    transition:.4s;
+    height:100vh;
 
-    z-index:1000;
+    background:linear-gradient(
+    180deg,
+    #0f172a,
+    #1e293b);
+
+    color:#fff;
+
+    z-index:999;
+
+    overflow-y:auto;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
 
 }
-
 
 /*=========================================
-LOGO
+          SIDEBAR LOGO
 =========================================*/
 
-.logo{
-
-    text-align:center;
-
-    margin-bottom:45px;
-
-}
-
-.logo img{
-
-    width:180px;
-
-}
-
-
-/*=========================================
-MENU
-=========================================*/
-
-.sidebar-menu{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:12px;
-
-}
-
-.sidebar-menu li{
-
-    border-radius:14px;
-
-    transition:.35s;
-
-}
-
-.sidebar-menu li a{
+.sidebar-logo{
 
     display:flex;
 
     align-items:center;
 
-    gap:16px;
+    justify-content:space-between;
 
-    padding:16px 20px;
+    padding:24px;
 
-    color:#D7E2FF;
+    border-bottom:1px solid rgba(255,255,255,.08);
 
-    font-size:16px;
+}
 
-    font-weight:500;
+.sidebar-logo img{
+
+    width:170px;
+
+    max-width:100%;
+
+}
+
+.close-sidebar{
+
+    display:none;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.12);
+
+    transition:var(--transition);
+
+}
+
+.close-sidebar:hover{
+
+    transform:rotate(180deg);
+
+    background:var(--danger);
+
+}
+
+/*=========================================
+            SIDEBAR MENU
+=========================================*/
+
+.sidebar ul{
+
+    list-style:none;
+
+    padding:20px 15px;
+
+}
+
+.sidebar ul li{
+
+    margin-bottom:8px;
+
+}
+
+.sidebar ul li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:#d1d5db;
+
+    padding:14px 18px;
 
     border-radius:14px;
 
-    transition:.35s;
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:var(--transition);
 
 }
 
-.sidebar-menu li i{
+.sidebar ul li a i{
 
-    width:22px;
-
-    text-align:center;
+    width:24px;
 
     font-size:18px;
 
-}
-
-
-/*=========================================
-ACTIVE MENU
-=========================================*/
-
-.sidebar-menu li.active{
-
-    background:linear-gradient(90deg,#5BD4C5,#44C4B3);
+    text-align:center;
 
 }
 
-.sidebar-menu li.active a{
+/* Hover */
+
+.sidebar ul li a:hover{
+
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
 
     color:#fff;
 
-}
-
-.sidebar-menu li:hover{
-
-    background:rgba(255,255,255,.08);
+    transform:translateX(6px);
 
 }
 
-.sidebar-menu li:hover a{
+/* Active */
+
+.sidebar ul li.active a{
+
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
 
     color:#fff;
 
+    box-shadow:
+    0 12px 25px rgba(37,99,235,.35);
+
 }
 
-
 /*=========================================
-BOTTOM AREA
+            LOGOUT
 =========================================*/
 
-.sidebar-bottom{
+.logout{
 
     margin-top:35px;
 
 }
 
-.support{
+.logout a{
 
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    color:#D7E2FF;
-
-    font-size:15px;
-
-    margin-bottom:30px;
-
-    transition:.3s;
+    color:#ffd4d4 !important;
 
 }
 
-.support:hover{
+.logout a:hover{
 
-    color:#5BD4C5;
+    background:var(--danger)!important;
 
 }
-
 
 /*=========================================
-PROFILE
-=========================================*/
-
-.profile-switch{
-
-    background:rgba(255,255,255,.08);
-
-    border-radius:16px;
-
-    padding:16px;
-
-}
-
-.profile-info{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    margin-bottom:12px;
-
-}
-
-.profile-info img{
-
-    width:48px;
-
-    height:48px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:3px solid #5BD4C5;
-
-}
-
-.profile-info span{
-
-    color:#fff;
-
-    font-weight:600;
-
-    font-size:16px;
-
-}
-
-
-/*=========================================
-SELECT
-=========================================*/
-
-.profile-switch select{
-
-    width:100%;
-
-    height:45px;
-
-    border:none;
-
-    outline:none;
-
-    border-radius:10px;
-
-    padding:0 12px;
-
-    background:#fff;
-
-    color:#222;
-
-    font-size:15px;
-
-    cursor:pointer;
-
-}
-
-
-/*=========================================
-MAIN CONTENT
+            MAIN CONTENT
 =========================================*/
 
 .main-content{
 
-    flex:1;
+    margin-left:270px;
 
-    margin-left:280px;
+    min-height:100vh;
 
-    padding:35px;
+    padding:28px;
 
-    transition:.4s;
+    transition:var(--transition);
 
 }
 
+/*=========================================
+      COMMON DASHBOARD CARD
+=========================================*/
+
+.dashboard-card{
+
+    background:#fff;
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.dashboard-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.12);
+
+}
 
 /*=========================================
-TOPBAR
+          SECTION SPACING
+=========================================*/
+
+section{
+
+    margin-bottom:28px;
+
+}
+
+/*=========================================
+          UTILITY CLASSES
+=========================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.d-flex{
+
+    display:flex;
+
+}
+
+.align-center{
+
+    align-items:center;
+
+}
+
+.justify-between{
+
+    justify-content:space-between;
+
+}
+
+/*=========================================
+            TOP NAVIGATION
 =========================================*/
 
 .topbar{
 
-    display:flex;
+display:flex;
 
-    justify-content:space-between;
+align-items:center;
 
-    align-items:center;
+justify-content:space-between;
 
-    margin-bottom:35px;
+gap:20px;
 
-}
+background:rgba(255,255,255,.95);
 
-.topbar h1{
+backdrop-filter:blur(14px);
 
-    font-size:34px;
+padding:18px 28px;
 
-    font-weight:700;
+border-radius:20px;
 
-    color:#111;
+box-shadow:0 10px 35px rgba(0,0,0,.08);
 
-}
+margin-bottom:30px;
 
-.topbar p{
+position:sticky;
 
-    color:#777;
+top:20px;
 
-    margin-top:8px;
-
-}
-
-
-/*=========================================
-TOPBAR RIGHT
-=========================================*/
-
-.topbar-right{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
+z-index:100;
 
 }
 
-.icon-btn{
-
-    width:48px;
-
-    height:48px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#fff;
-
-    cursor:pointer;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-.icon-btn:hover{
-
-    background:#5BD4C5;
-
-    color:#fff;
-
-}
-
-.date-picker{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    background:#fff;
-
-    padding:10px 16px;
-
-    border-radius:12px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-}
-
-.date-picker input{
-
-    border:none;
-
-    outline:none;
-
-    background:transparent;
-
-    font-size:14px;
-
-}
-
-
-/*=========================================
-MOBILE MENU BUTTON
-=========================================*/
-
-.menu-btn{
-
-    display:none;
-
-    position:fixed;
-
-    top:20px;
-
-    left:20px;
-
-    width:48px;
-
-    height:48px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#5BD4C5;
-
-    color:#fff;
-
-    font-size:20px;
-
-    z-index:1200;
-
-    cursor:pointer;
-
-}
-
-
-/*=========================================
-STATISTICS GRID
-=========================================*/
-
-.stats-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
-margin-bottom:35px;
-
-}
-
-
-/*=========================================
-STAT CARD
-=========================================*/
-
-.stat-card{
-
-background:#ffffff;
-
-border-radius:22px;
-
-padding:25px;
+.top-left{
 
 display:flex;
 
@@ -1003,40 +1758,548 @@ align-items:center;
 
 gap:18px;
 
-box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
 
-transition:.35s;
+.menu-btn{
+
+display:none;
+
+width:48px;
+
+height:48px;
+
+border:none;
+
+outline:none;
 
 cursor:pointer;
 
+border-radius:12px;
+
+background:var(--primary);
+
+color:#fff;
+
+font-size:20px;
+
+transition:var(--transition);
+
 }
 
-.stat-card:hover{
+.menu-btn:hover{
 
-transform:translateY(-8px);
-
-box-shadow:0 20px 40px rgba(0,0,0,.12);
+transform:scale(1.08);
 
 }
 
+.logo img{
+
+width:170px;
+
+display:block;
+
+}
 
 /*=========================================
-STAT ICON
+          SEARCH BOX
 =========================================*/
 
-.stat-icon{
+.search-box{
 
-width:70px;
+flex:1;
 
-height:70px;
-
-border-radius:18px;
+max-width:520px;
 
 display:flex;
 
-justify-content:center;
+align-items:center;
+
+gap:12px;
+
+background:#f1f5f9;
+
+border:1px solid var(--border);
+
+border-radius:50px;
+
+padding:0 20px;
+
+height:54px;
+
+}
+
+.search-box i{
+
+color:#64748b;
+
+font-size:18px;
+
+}
+
+.search-box input{
+
+flex:1;
+
+border:none;
+
+outline:none;
+
+background:transparent;
+
+font-size:15px;
+
+color:var(--text);
+
+font-family:'Poppins',sans-serif;
+
+}
+
+.search-box input::placeholder{
+
+color:#94a3b8;
+
+}
+
+/*=========================================
+         RIGHT SECTION
+=========================================*/
+
+.top-right{
+
+display:flex;
 
 align-items:center;
+
+gap:18px;
+
+}
+
+/*=========================================
+         ICON BOX
+=========================================*/
+
+.icon-box{
+
+position:relative;
+
+width:52px;
+
+height:52px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:#f8fafc;
+
+cursor:pointer;
+
+transition:var(--transition);
+
+border:1px solid var(--border);
+
+}
+
+.icon-box:hover{
+
+background:var(--primary);
+
+color:#fff;
+
+transform:translateY(-4px);
+
+}
+
+.icon-box i{
+
+font-size:18px;
+
+}
+
+.badge{
+
+position:absolute;
+
+top:-4px;
+
+right:-2px;
+
+width:22px;
+
+height:22px;
+
+border-radius:50%;
+
+background:var(--danger);
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:11px;
+
+font-weight:700;
+
+}
+
+/*=========================================
+        PROFILE
+=========================================*/
+
+.profile{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+cursor:pointer;
+
+background:#fff;
+
+border:1px solid var(--border);
+
+padding:10px 18px;
+
+border-radius:60px;
+
+transition:var(--transition);
+
+}
+
+.profile:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.profile-image{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,
+var(--primary),
+var(--secondary));
+
+color:#fff;
+
+font-size:22px;
+
+}
+
+.profile-info{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.profile-info h4{
+
+font-size:15px;
+
+font-weight:600;
+
+color:var(--dark);
+
+}
+
+.profile-info span{
+
+font-size:12px;
+
+color:#64748b;
+
+}
+
+.profile-info small{
+
+font-size:11px;
+
+color:var(--accent);
+
+font-weight:600;
+
+}
+
+.profile .fa-angle-down{
+
+color:#64748b;
+
+}
+
+/*=========================================
+      WELCOME BANNER
+=========================================*/
+
+.welcome-banner{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:40px;
+
+padding:45px;
+
+border-radius:28px;
+
+overflow:hidden;
+
+background:linear-gradient(135deg,
+#2563eb,
+#0ea5e9,
+#14b8a6);
+
+color:#fff;
+
+position:relative;
+
+}
+
+.welcome-banner::before{
+
+content:"";
+
+position:absolute;
+
+width:340px;
+
+height:340px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.12);
+
+right:-120px;
+
+top:-120px;
+
+}
+
+.welcome-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.welcome-content span{
+
+display:inline-block;
+
+font-size:17px;
+
+font-weight:500;
+
+margin-bottom:12px;
+
+}
+
+.welcome-content h1{
+
+font-size:42px;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+line-height:1.2;
+
+}
+
+.welcome-content p{
+
+font-size:16px;
+
+line-height:1.8;
+
+max-width:560px;
+
+margin-bottom:30px;
+
+}
+
+.welcome-content button{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+border:none;
+
+cursor:pointer;
+
+padding:15px 30px;
+
+border-radius:50px;
+
+background:#fff;
+
+color:var(--primary);
+
+font-size:15px;
+
+font-weight:600;
+
+transition:var(--transition);
+
+}
+
+.welcome-content button:hover{
+
+transform:translateY(-4px);
+
+}
+
+.welcome-image{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.welcome-image img{
+
+width:360px;
+
+max-width:100%;
+
+animation:floatImage 5s ease-in-out infinite;
+
+}
+
+@keyframes floatImage{
+
+0%{
+
+    transform:translateY(0);
+
+}
+
+50%{
+
+    transform:translateY(-14px);
+
+}
+
+100%{
+
+    transform:translateY(0);
+
+}
+
+}
+
+/*=========================================
+         KPI CARDS
+=========================================*/
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+.card{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:25px;
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:var(--transition);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:4px;
+
+background:linear-gradient(90deg,
+var(--primary),
+var(--secondary));
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.card-icon{
+
+width:75px;
+
+height:75px;
+
+border-radius:20px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
 
 color:#fff;
 
@@ -1046,116 +2309,120 @@ flex-shrink:0;
 
 }
 
-.stat-icon.blue{
+.users{
 
-background:linear-gradient(135deg,#4F8CFF,#2563EB);
-
-}
-
-.stat-icon.green{
-
-background:linear-gradient(135deg,#38D39F,#18B97A);
+background:linear-gradient(135deg,#2563eb,#3b82f6);
 
 }
 
-.stat-icon.orange{
+.project{
 
-background:linear-gradient(135deg,#FFA94D,#F97316);
-
-}
-
-.stat-icon.purple{
-
-background:linear-gradient(135deg,#8B5CF6,#6D28D9);
+background:linear-gradient(135deg,#14b8a6,#2dd4bf);
 
 }
 
+.revenue{
 
-/*=========================================
-STAT CONTENT
-=========================================*/
-
-.stat-content{
-
-display:flex;
-
-flex-direction:column;
+background:linear-gradient(135deg,#22c55e,#16a34a);
 
 }
 
-.stat-content small{
+.client{
 
-color:#7B8794;
-
-font-size:14px;
-
-margin-bottom:6px;
+background:linear-gradient(135deg,#f59e0b,#f97316);
 
 }
 
-.stat-content h2{
+.card h5{
+
+font-size:15px;
+
+color:#64748b;
+
+margin-bottom:8px;
+
+font-weight:500;
+
+}
+
+.card h2{
 
 font-size:34px;
 
-color:#111827;
+color:var(--dark);
+
+margin-bottom:8px;
 
 font-weight:700;
 
-margin-bottom:5px;
-
 }
 
-.stat-content span{
+.card p{
+
+display:flex;
+
+align-items:center;
+
+gap:8px;
+
+color:var(--success);
 
 font-size:14px;
 
-color:#9CA3AF;
+font-weight:600;
 
 }
 
+.card p i{
+
+font-size:13px;
+
+}
 
 /*=========================================
-CONTENT GRID
+        DASHBOARD GRID
 =========================================*/
 
-.content-grid{
+.dashboard-grid{
 
 display:grid;
 
 grid-template-columns:2fr 1fr;
 
-gap:30px;
+gap:25px;
+
+margin-bottom:30px;
 
 }
 
+.chart-card{
+
+min-height:500px;
+
+}
+
+.chart-container{
+
+width:100%;
+
+height:380px;
+
+position:relative;
+
+margin-top:20px;
+
+}
+
+.chart-container canvas{
+
+width:100% !important;
+
+height:100% !important;
+
+}
 
 /*=========================================
-COMMON CARD
-=========================================*/
-
-.dashboard-card{
-
-background:#fff;
-
-border-radius:22px;
-
-padding:28px;
-
-box-shadow:0 12px 30px rgba(0,0,0,.08);
-
-transition:.35s;
-
-}
-
-.dashboard-card:hover{
-
-transform:translateY(-6px);
-
-}
-
-
-/*=========================================
-CARD HEADER
+        CARD HEADER
 =========================================*/
 
 .card-header{
@@ -1166,63 +2433,122 @@ justify-content:space-between;
 
 align-items:center;
 
-margin-bottom:30px;
+margin-bottom:25px;
+
+gap:15px;
 
 }
 
-.card-header h3{
+.card-header h2{
 
 font-size:24px;
 
-color:#111827;
+color:var(--dark);
 
 font-weight:700;
 
 }
 
-.card-header a{
+.card-header p{
 
-color:#36C2B4;
+color:#64748b;
 
-font-size:15px;
+font-size:14px;
 
-font-weight:600;
-
-}
-
-.card-header a:hover{
-
-text-decoration:underline;
+margin-top:5px;
 
 }
-
 
 /*=========================================
-PROJECT ITEM
+    CHART FILTER BUTTONS
 =========================================*/
 
-.project-item{
+.chart-filter{
 
 display:flex;
 
-align-items:center;
-
-gap:18px;
-
-margin-bottom:28px;
+gap:10px;
 
 }
 
+.chart-filter button{
+
+border:none;
+
+outline:none;
+
+padding:10px 18px;
+
+border-radius:30px;
+
+background:#eef2ff;
+
+color:var(--primary);
+
+cursor:pointer;
+
+font-size:14px;
+
+font-weight:600;
+
+transition:var(--transition);
+
+}
+
+.chart-filter button.active,
+
+.chart-filter button:hover{
+
+background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
+
+color:#fff;
+
+}
 
 /*=========================================
-PROJECT ICON
+    RECENT ACTIVITIES
 =========================================*/
 
-.project-icon{
+.activity-list{
 
-width:60px;
+display:flex;
 
-height:60px;
+flex-direction:column;
+
+gap:20px;
+
+}
+
+.activity-item{
+
+display:flex;
+
+gap:15px;
+
+align-items:flex-start;
+
+padding-bottom:20px;
+
+border-bottom:1px solid #edf2f7;
+
+}
+
+.activity-item:last-child{
+
+border-bottom:none;
+
+padding-bottom:0;
+
+}
+
+.activity-icon{
+
+width:55px;
+
+height:55px;
 
 border-radius:16px;
 
@@ -1234,42 +2560,83 @@ align-items:center;
 
 color:#fff;
 
-font-size:24px;
+font-size:20px;
 
 flex-shrink:0;
 
 }
 
-.project-icon.blue{
+.success{
 
-background:#2563EB;
-
-}
-
-.project-icon.green{
-
-background:#18B97A;
+background:#22c55e;
 
 }
 
-.project-icon.orange{
+.info{
 
-background:#F97316;
+background:#2563eb;
 
 }
 
+.warning{
+
+background:#f59e0b;
+
+}
+
+.purple{
+
+background:#8b5cf6;
+
+}
+
+.activity-item h4{
+
+font-size:16px;
+
+margin-bottom:6px;
+
+color:var(--dark);
+
+}
+
+.activity-item p{
+
+font-size:14px;
+
+color:#64748b;
+
+line-height:1.6;
+
+margin-bottom:6px;
+
+}
+
+.activity-item span{
+
+color:#94a3b8;
+
+font-size:12px;
+
+}
 
 /*=========================================
-PROJECT INFO
+  DEPARTMENT PERFORMANCE
 =========================================*/
 
-.project-info{
+.progress-item{
 
-flex:1;
+margin-bottom:22px;
 
 }
 
-.project-title{
+.progress-item:last-child{
+
+margin-bottom:0;
+
+}
+
+.progress-title{
 
 display:flex;
 
@@ -1279,259 +2646,868 @@ align-items:center;
 
 margin-bottom:10px;
 
-}
-
-.project-title span{
-
-font-size:16px;
+font-size:15px;
 
 font-weight:600;
 
-color:#111827;
-
 }
-
-.project-title strong{
-
-color:#36C2B4;
-
-font-size:15px;
-
-}
-
-
-/*=========================================
-PROGRESS BAR
-=========================================*/
 
 .progress{
 
 width:100%;
 
-height:10px;
+height:12px;
 
-border-radius:20px;
+border-radius:50px;
 
-background:#E5E7EB;
+background:#e5e7eb;
 
 overflow:hidden;
 
 }
 
-.progress-fill{
+.progress-bar{
 
 height:100%;
 
-border-radius:20px;
+border-radius:50px;
 
-background:linear-gradient(90deg,#36C2B4,#59D5C7);
-
-}
-
-.fill75{
-
-width:75%;
+transition:width 1s ease;
 
 }
 
-.fill60{
+.progress-bar.dev{
 
-width:60%;
-
-}
-
-.fill45{
-
-width:45%;
+background:linear-gradient(
+    90deg,
+    #2563eb,
+    #60a5fa);
 
 }
 
+.progress-bar.sales{
+
+background:linear-gradient(
+    90deg,
+    #22c55e,
+    #4ade80);
+
+}
+
+.progress-bar.marketing{
+
+background:linear-gradient(
+    90deg,
+    #8b5cf6,
+    #a78bfa);
+
+}
+
+.progress-bar.finance{
+
+background:linear-gradient(
+    90deg,
+    #f59e0b,
+    #fbbf24);
+
+}
+
+.progress-bar.hr{
+
+background:linear-gradient(
+    90deg,
+    #ec4899,
+    #f472b6);
+
+}
 
 /*=========================================
-VIEW PROJECTS
+    TODAY'S SCHEDULE
 =========================================*/
 
-.view-projects{
+.schedule-list{
 
-margin-top:20px;
+display:flex;
 
-text-align:right;
+flex-direction:column;
+
+gap:20px;
 
 }
 
-.view-projects a{
+.schedule-item{
 
-color:#36C2B4;
+display:flex;
+
+gap:18px;
+
+align-items:flex-start;
+
+padding:15px;
+
+border-radius:16px;
+
+background:#f8fafc;
+
+transition:var(--transition);
+
+}
+
+.schedule-item:hover{
+
+transform:translateX(8px);
+
+background:#eef4ff;
+
+}
+
+.schedule-time{
+
+min-width:95px;
+
+text-align:center;
+
+padding:12px;
+
+border-radius:12px;
+
+color:#fff;
+
+background:linear-gradient(
+    135deg,
+    var(--primary),
+    var(--secondary));
+
+font-weight:600;
+
+font-size:14px;
+
+}
+
+.schedule-content h4{
+
+font-size:16px;
+
+margin-bottom:5px;
+
+color:var(--dark);
+
+}
+
+.schedule-content p{
+
+color:#64748b;
+
+font-size:14px;
+
+}
+
+/*=========================================
+    PROJECT PROGRESS
+=========================================*/
+
+.project-status{
+
+margin-bottom:30px;
+
+}
+
+.project-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:25px;
+
+}
+
+.project{
+
+display:flex;
+
+flex-direction:column;
+
+gap:10px;
+
+}
+
+.project-info{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+.project-info h4{
+
+font-size:16px;
+
+color:var(--dark);
+
+}
+
+.project-info span{
+
+color:var(--primary);
+
+font-weight:700;
+
+}
+
+.website{
+
+background:linear-gradient(
+    90deg,
+    #2563eb,
+    #3b82f6);
+
+}
+
+.crm{
+
+background:linear-gradient(
+    90deg,
+    #22c55e,
+    #4ade80);
+
+}
+
+.mobile{
+
+background:linear-gradient(
+    90deg,
+    #8b5cf6,
+    #c084fc);
+
+}
+
+.erp{
+
+background:linear-gradient(
+    90deg,
+    #f59e0b,
+    #fb923c);
+
+}
+
+/*=========================================
+        EMPLOYEE TABLE
+=========================================*/
+
+.employee-table-card{
+
+overflow:hidden;
+
+}
+
+.table-responsive{
+
+width:100%;
+
+overflow-x:auto;
+
+}
+
+.employee-table{
+
+width:100%;
+
+border-collapse:collapse;
+
+min-width:700px;
+
+}
+
+.employee-table thead{
+
+background:#f8fafc;
+
+}
+
+.employee-table th{
+
+padding:18px;
+
+text-align:left;
+
+color:var(--dark);
+
+font-size:15px;
+
+font-weight:600;
+
+border-bottom:1px solid var(--border);
+
+}
+
+.employee-table td{
+
+padding:18px;
+
+border-bottom:1px solid #eef2f7;
+
+font-size:14px;
+
+color:#475569;
+
+}
+
+.employee-table tbody tr{
+
+transition:var(--transition);
+
+}
+
+.employee-table tbody tr:hover{
+
+background:#f8fbff;
+
+}
+
+.employee-info{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.employee-avatar{
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,
+var(--primary),
+var(--secondary));
+
+color:#fff;
+
+font-size:18px;
+
+}
+
+.employee-info h4{
+
+font-size:15px;
+
+color:var(--dark);
+
+margin-bottom:3px;
+
+}
+
+.employee-info span{
+
+color:#94a3b8;
+
+font-size:12px;
+
+}
+
+/*=========================================
+    PERFORMANCE BADGES
+=========================================*/
+
+.performance{
+
+padding:8px 14px;
+
+border-radius:30px;
+
+font-weight:600;
+
+font-size:13px;
+
+}
+
+.performance.excellent{
+
+background:#dcfce7;
+
+color:#15803d;
+
+}
+
+.performance.good{
+
+background:#dbeafe;
+
+color:#1d4ed8;
+
+}
+
+.performance.average{
+
+background:#fef3c7;
+
+color:#b45309;
+
+}
+
+/*=========================================
+        STATUS
+=========================================*/
+
+.status{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+font-size:13px;
 
 font-weight:600;
 
 }
 
-.view-projects a:hover{
+.status.active{
 
-text-decoration:underline;
+background:#dcfce7;
+
+color:#16a34a;
+
+}
+
+.status.meeting{
+
+background:#dbeafe;
+
+color:#2563eb;
+
+}
+
+.status.leave{
+
+background:#fee2e2;
+
+color:#dc2626;
 
 }
 
 /*=========================================
-UPCOMING TASKS
+    VIEW ALL BUTTON
 =========================================*/
 
-.task-list{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
+.view-all-btn{
+
+border:none;
+
+cursor:pointer;
+
+padding:11px 20px;
+
+border-radius:40px;
+
+color:#fff;
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary));
+
+font-size:14px;
+
+font-weight:600;
+
+transition:var(--transition);
+
 }
 
-.task-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:16px 0;
-    border-bottom:1px solid #ECECEC;
-}
+.view-all-btn:hover{
 
-.task-item:last-child{
-    border-bottom:none;
-}
+transform:translateY(-3px);
 
-.task-item label{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:500;
-    color:#1B2559;
 }
-
-.task-item input{
-    display:none;
-}
-
 
 /*=========================================
-CUSTOM CHECKBOX
+    TOP PERFORMERS
 =========================================*/
 
-.checkmark{
+.top-performer{
 
-    width:22px;
+display:flex;
 
-    height:22px;
+align-items:center;
 
-    border-radius:50%;
+gap:15px;
 
-    border:2px solid #36C2B4;
+padding:18px 0;
 
-    position:relative;
-
-    transition:.3s;
+border-bottom:1px solid #eef2f7;
 
 }
 
-.task-item input:checked + .checkmark{
+.top-performer:last-child{
 
-    background:#36C2B4;
-
-}
-
-.task-item input:checked + .checkmark::after{
-
-    content:"✓";
-
-    color:#fff;
-
-    font-size:13px;
-
-    position:absolute;
-
-    left:4px;
-
-    top:0;
+border-bottom:none;
 
 }
 
-.task-date{
+.rank{
 
-    color:#7B8794;
+width:42px;
 
-    font-size:13px;
+height:42px;
+
+border-radius:50%;
+
+background:linear-gradient(
+135deg,
+#f59e0b,
+#fb923c);
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-weight:700;
 
 }
 
+.performer-info{
+
+flex:1;
+
+}
+
+.performer-info h4{
+
+font-size:15px;
+
+color:var(--dark);
+
+}
+
+.performer-info span{
+
+font-size:13px;
+
+color:#94a3b8;
+
+}
+
+.top-performer strong{
+
+color:var(--primary);
+
+font-size:16px;
+
+}
 
 /*=========================================
-SCROLL ANIMATION
+    QUICK ACTIONS
 =========================================*/
 
-.scroll-up,
-.scroll-left,
-.scroll-right{
+.quick-actions{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+margin-bottom:30px;
+
+}
+
+.action-card{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:30px 20px;
+
+text-align:center;
+
+box-shadow:var(--shadow);
+
+transition:var(--transition);
+
+}
+
+.action-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.action-card i{
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+margin:0 auto 18px;
+
+font-size:28px;
+
+color:#fff;
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary));
+
+}
+
+.action-card h3{
+
+margin-bottom:10px;
+
+color:var(--dark);
+
+font-size:18px;
+
+}
+
+.action-card p{
+
+font-size:14px;
+
+color:#64748b;
+
+line-height:1.6;
+
+}
+
+/*=========================================
+    PROFILE DROPDOWN
+=========================================*/
+
+.profile-dropdown{
+
+position:fixed;
+
+top:90px;
+
+right:30px;
+
+width:240px;
+
+background:#fff;
+
+border-radius:18px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+overflow:hidden;
+
+display:none;
+
+z-index:2000;
+
+}
+
+.profile-dropdown.active{
+
+display:block;
+
+animation:fadeDown .3s ease;
+
+}
+
+@keyframes fadeDown{
+
+from{
 
     opacity:0;
 
-    transition:all .8s ease;
+    transform:translateY(-10px);
 
 }
 
-.scroll-up{
+to{
 
-    transform:translateY(60px);
+    opacity:1;
 
-}
-
-.scroll-left{
-
-    transform:translateX(-60px);
+    transform:translateY(0);
 
 }
 
-.scroll-right{
+}
 
-    transform:translateX(60px);
+.profile-dropdown ul{
+
+list-style:none;
 
 }
 
-.show{
+.profile-dropdown li{
 
-    opacity:1 !important;
+display:flex;
 
-    transform:translate(0,0) !important;
+align-items:center;
+
+gap:14px;
+
+padding:16px 20px;
+
+cursor:pointer;
+
+transition:var(--transition);
+
+color:#334155;
 
 }
 
+.profile-dropdown li:hover{
+
+background:#eff6ff;
+
+color:var(--primary);
+
+}
+
+.profile-dropdown li i{
+
+width:20px;
+
+text-align:center;
+
+}
 
 /*=========================================
-TABLET
+        FOOTER
 =========================================*/
 
-@media(max-width:1100px){
+.dashboard-footer{
 
-.stats-grid{
+margin-top:35px;
+
+padding:25px;
+
+border-radius:18px;
+
+background:#fff;
+
+text-align:center;
+
+color:#64748b;
+
+font-size:14px;
+
+box-shadow:var(--shadow);
+
+}
+
+/*=========================================
+    HOVER ANIMATIONS
+=========================================*/
+
+.dashboard-card,
+.card,
+.action-card{
+
+will-change:transform;
+
+}
+
+.dashboard-card:hover,
+.card:hover,
+.action-card:hover{
+
+transition:all .35s ease;
+
+}
+
+/*=========================================
+            RESPONSIVE DESIGN
+=========================================*/
+
+/* ---------- Large Laptop (1400px) ---------- */
+
+@media (max-width:1400px){
+
+.cards{
 
     grid-template-columns:repeat(2,1fr);
 
 }
 
-.content-grid{
+.quick-actions{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ---------- Laptop ---------- */
+
+@media (max-width:1200px){
+
+.dashboard-grid{
 
     grid-template-columns:1fr;
 
 }
 
+.welcome-banner{
+
+    flex-direction:column;
+
+    text-align:center;
+
 }
 
+.welcome-content p{
 
-/*=========================================
-TABLET SIDEBAR
-=========================================*/
+    margin:20px auto;
 
-@media(max-width:900px){
+}
+
+.welcome-image img{
+
+    width:300px;
+
+}
+
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:992px){
 
 .sidebar{
 
-    left:-300px;
+    left:-280px;
+
+    width:270px;
 
 }
 
@@ -1541,11 +3517,13 @@ TABLET SIDEBAR
 
 }
 
-.main-content{
+.close-sidebar{
 
-    margin-left:0;
+    display:flex;
 
-    padding:90px 20px 20px;
+    align-items:center;
+
+    justify-content:center;
 
 }
 
@@ -1553,70 +3531,243 @@ TABLET SIDEBAR
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
 
-}
-
-.topbar{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:20px;
+    justify-content:center;
 
 }
 
-.topbar-right{
+.main-content{
 
-    width:100%;
-
-    justify-content:space-between;
-
-}
-
-}
-
-
-/*=========================================
-MOBILE
-=========================================*/
-
-@media(max-width:768px){
-
-.stats-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-.stat-card{
+    margin-left:0;
 
     padding:20px;
 
 }
 
-.stat-icon{
+.topbar{
 
-    width:60px;
-
-    height:60px;
-
-    font-size:24px;
+    padding:15px 20px;
 
 }
 
-.stat-content h2{
+.search-box{
 
-    font-size:28px;
+    max-width:300px;
+
+}
+
+.cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.quick-actions{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+.topbar{
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.search-box{
+
+    order:3;
+
+    width:100%;
+
+    max-width:100%;
+
+}
+
+.top-right{
+
+    width:100%;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+}
+
+.profile{
+
+    padding:8px 12px;
+
+}
+
+.profile-info{
+
+    display:none;
+
+}
+
+.welcome-banner{
+
+    padding:30px 20px;
+
+}
+
+.welcome-content h1{
+
+    font-size:30px;
+
+}
+
+.welcome-content p{
+
+    font-size:15px;
+
+}
+
+.welcome-image img{
+
+    width:240px;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.quick-actions{
+
+    grid-template-columns:1fr;
+
+}
+
+.card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.card-icon{
+
+    margin-bottom:10px;
+
+}
+
+.employee-table{
+
+    min-width:650px;
+
+}
+
+.profile-dropdown{
+
+    right:15px;
+
+    width:220px;
+
+}
+
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:576px){
+
+.main-content{
+
+    padding:15px;
+
+}
+
+.topbar{
+
+    padding:15px;
+
+    border-radius:15px;
+
+}
+
+.logo img{
+
+    width:130px;
+
+}
+
+.icon-box{
+
+    width:45px;
+
+    height:45px;
+
+}
+
+.profile-image{
+
+    width:45px;
+
+    height:45px;
+
+    font-size:18px;
+
+}
+
+.welcome-content h1{
+
+    font-size:26px;
+
+}
+
+.welcome-content button{
+
+    width:100%;
+
+    justify-content:center;
 
 }
 
 .dashboard-card{
 
     padding:20px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+.action-card{
+
+    padding:25px 15px;
+
+}
+
+.chart-filter{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.chart-filter button{
+
+    flex:1;
+
+    min-width:90px;
 
 }
 
@@ -1626,209 +3777,643 @@ MOBILE
 
     align-items:flex-start;
 
-    gap:10px;
-
 }
 
-.project-item{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-}
-
-.project-title{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:5px;
-
-}
-
-.task-item{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:10px;
-
-}
-
-}
-
-
-/*=========================================
-SMALL MOBILE
-=========================================*/
-
-@media(max-width:480px){
-
-.topbar h1{
-
-    font-size:28px;
-
-}
-
-.topbar p{
-
-    font-size:14px;
-
-}
-
-.icon-btn{
-
-    width:42px;
-
-    height:42px;
-
-}
-
-.date-picker{
+.view-all-btn{
 
     width:100%;
 
-    justify-content:center;
+}
+
+.schedule-item{
+
+    flex-direction:column;
 
 }
 
-.sidebar{
+.schedule-time{
 
-    width:260px;
-
-}
-
-.logo img{
-
-    width:150px;
-
-}
-
-.profile-info img{
-
-    width:42px;
-
-    height:42px;
+    width:100%;
 
 }
 
 }
-
 
 /*=========================================
-HOVER EFFECTS
+        SIDEBAR OVERLAY
 =========================================*/
 
-.project-item,
-.task-item,
-.stat-card,
-.dashboard-card{
+.sidebar-overlay{
 
-    transition:.3s;
+position:fixed;
 
-}
+inset:0;
 
-.project-item:hover{
+background:rgba(0,0,0,.45);
 
-    transform:translateX(6px);
+backdrop-filter:blur(2px);
 
-}
+opacity:0;
 
-.task-item:hover{
+visibility:hidden;
 
-    background:#F8FAFC;
+transition:.3s;
 
-    border-radius:12px;
-
-    padding-left:10px;
+z-index:998;
 
 }
 
-.stat-card:hover .stat-icon{
+.sidebar-overlay.active{
 
-    transform:rotate(10deg) scale(1.08);
+opacity:1;
 
-}
-
-.dashboard-card:hover{
-
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
+visibility:visible;
 
 }
-
 
 /*=========================================
-SCROLLBAR
+        FADE ANIMATION
 =========================================*/
 
-::-webkit-scrollbar{
+.fade-up{
 
-    width:8px;
+opacity:0;
 
-}
+transform:translateY(40px);
 
-::-webkit-scrollbar-track{
-
-    background:#F1F1F1;
+transition:all .8s ease;
 
 }
 
-::-webkit-scrollbar-thumb{
+.fade-up.show{
 
-    background:#36C2B4;
+opacity:1;
 
-    border-radius:20px;
+transform:translateY(0);
 
 }
 
-::-webkit-scrollbar-thumb:hover{
+/*=========================================
+        BUTTON EFFECT
+=========================================*/
 
-    background:#2DA99B;
+button{
+
+font-family:'Poppins',sans-serif;
+
+}
+
+button:active{
+
+transform:scale(.97);
+
+}
+
+/*=========================================
+        IMAGE SETTINGS
+=========================================*/
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/*=========================================
+        INPUT SETTINGS
+=========================================*/
+
+input{
+
+font-family:'Poppins',sans-serif;
+
+}
+
+/*=========================================
+        LINKS
+=========================================*/
+
+a{
+
+text-decoration:none;
+
+}
+
+/*=========================================
+        FINAL UTILITIES
+=========================================*/
+
+.hidden{
+
+display:none !important;
+
+}
+
+.text-success{
+
+color:var(--success);
+
+}
+
+.text-danger{
+
+color:var(--danger);
+
+}
+
+.text-warning{
+
+color:var(--warning);
+
+}
+
+.rounded{
+
+border-radius:var(--radius);
+
+}
+
+.shadow{
+
+box-shadow:var(--shadow);
 
 }
 </style>
 
 <script>
-    /*=========================================
-DASHBOARD JS
-=========================================*/
+    /*=========================================================
+        CORPORATE ADMIN DASHBOARD - PART 1
+=========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-/*=====================================
-MOBILE SIDEBAR
-=====================================*/
+/*====================================
+        LOCAL STORAGE USER
+====================================*/
 
-const menuBtn = document.querySelector(".menu-btn");
-const sidebar = document.querySelector(".sidebar");
+const name =
+    localStorage.getItem("name") ||
+    localStorage.getItem("userName") ||
+    "Administrator";
 
-if(menuBtn){
+const email =
+    localStorage.getItem("email") ||
+    localStorage.getItem("userEmail") ||
+    "admin@company.com";
 
-    menuBtn.addEventListener("click", () => {
+const role =
+    localStorage.getItem("role") ||
+    "Administrator";
 
-        sidebar.classList.toggle("active");
+// Profile
+
+const adminName = document.getElementById("adminName");
+const adminEmail = document.getElementById("adminEmail");
+const adminRole = document.getElementById("adminRole");
+const welcomeName = document.getElementById("welcomeName");
+
+if (adminName) adminName.textContent = name;
+if (adminEmail) adminEmail.textContent = email;
+if (adminRole) adminRole.textContent = role;
+if (welcomeName) welcomeName.textContent = name;
+
+/*====================================
+        SIDEBAR
+====================================*/
+
+const sidebar = document.getElementById("sidebar");
+const menuBtn = document.getElementById("menuBtn");
+const closeSidebar = document.getElementById("closeSidebar");
+
+// Overlay
+
+const overlay = document.createElement("div");
+overlay.className = "sidebar-overlay";
+document.body.appendChild(overlay);
+
+function openSidebar() {
+
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+
+}
+
+function closeMenu() {
+
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+
+}
+
+if (menuBtn) {
+
+    menuBtn.addEventListener("click", openSidebar);
+
+}
+
+if (closeSidebar) {
+
+    closeSidebar.addEventListener("click", closeMenu);
+
+}
+
+overlay.addEventListener("click", closeMenu);
+
+/*====================================
+      PROFILE DROPDOWN
+====================================*/
+
+const profile =
+    document.querySelector(".profile");
+
+const dropdown =
+    document.getElementById("profileDropdown");
+
+if (profile && dropdown) {
+
+    profile.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        dropdown.classList.toggle("active");
+
+    });
+
+    document.addEventListener("click", () => {
+
+        dropdown.classList.remove("active");
 
     });
 
 }
 
-/*=====================================
-CLOSE SIDEBAR
-=====================================*/
+/*====================================
+        LOGOUT
+====================================*/
 
-document.addEventListener("click", (e) => {
+function logoutUser() {
 
-    if(window.innerWidth <= 900){
+    const confirmLogout =
+        confirm("Do you want to logout?");
 
-        if(
-            !sidebar.contains(e.target) &&
-            !menuBtn.contains(e.target)
-        ){
+    if (!confirmLogout) return;
+
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+    localStorage.removeItem("role");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userEmail");
+
+    window.location.href = "login.html";
+
+}
+
+const logoutBtn =
+    document.getElementById("logoutBtn");
+
+const logoutMenu =
+    document.getElementById("logoutMenu");
+
+if (logoutBtn) {
+
+    logoutBtn.addEventListener(
+        "click",
+        (e) => {
+
+            e.preventDefault();
+
+            logoutUser();
+
+        }
+    );
+
+}
+
+if (logoutMenu) {
+
+    logoutMenu.addEventListener(
+        "click",
+        logoutUser
+    );
+
+}
+
+/*====================================
+      KPI COUNTER ANIMATION
+====================================*/
+
+function animateCounter(id, target, prefix = "") {
+
+    const element =
+        document.getElementById(id);
+
+    if (!element) return;
+
+    let current = 0;
+
+    const increment =
+        Math.ceil(target / 80);
+
+    const timer = setInterval(() => {
+
+        current += increment;
+
+        if (current >= target) {
+
+            current = target;
+
+            clearInterval(timer);
+
+        }
+
+        element.textContent =
+            prefix + current.toLocaleString();
+
+    }, 20);
+
+}
+
+animateCounter(
+    "employeeCount",
+    1286
+);
+
+animateCounter(
+    "projectCount",
+    84
+);
+
+animateCounter(
+    "clientCount",
+    312
+);
+
+animateCounter(
+    "revenueCount",
+    12800000,
+    "₹"
+);
+
+});
+
+
+/*=========================================================
+        CORPORATE ADMIN DASHBOARD - PART 2
+=========================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*====================================
+        REVENUE CHART
+====================================*/
+
+const salesChart = document.getElementById("salesChart");
+
+if (salesChart) {
+
+    new Chart(salesChart, {
+
+        type: "line",
+
+        data: {
+
+            labels: [
+
+                "Jan",
+                "Feb",
+                "Mar",
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec"
+
+            ],
+
+            datasets: [
+
+                {
+
+                    label: "Revenue",
+
+                    data: [
+
+                        320,
+                        480,
+                        510,
+                        640,
+                        720,
+                        840,
+                        930,
+                        980,
+                        1150,
+                        1320,
+                        1450,
+                        1620
+
+                    ],
+
+                    borderColor: "#2563eb",
+
+                    backgroundColor: "rgba(37,99,235,.12)",
+
+                    fill: true,
+
+                    tension: .4,
+
+                    borderWidth: 4,
+
+                    pointRadius: 5,
+
+                    pointHoverRadius: 8,
+
+                    pointBackgroundColor: "#2563eb"
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+
+                    display: false
+
+                }
+
+            },
+
+            scales: {
+
+                x: {
+
+                    grid: {
+
+                        display: false
+
+                    }
+
+                },
+
+                y: {
+
+                    beginAtZero: true,
+
+                    grid: {
+
+                        color: "#eef2f7"
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
+}
+
+/*====================================
+      SCROLL REVEAL
+====================================*/
+
+const revealItems = document.querySelectorAll(
+
+    ".dashboard-card, .card, .welcome-banner, .action-card"
+
+);
+
+const observer = new IntersectionObserver(
+
+    (entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    },
+
+    {
+
+        threshold: .15
+
+    }
+
+);
+
+revealItems.forEach((item) => {
+
+    item.classList.add("fade-up");
+
+    observer.observe(item);
+
+});
+
+/*====================================
+    ACTIVE SIDEBAR MENU
+====================================*/
+
+const menuItems = document.querySelectorAll(
+
+    ".sidebar ul li"
+
+);
+
+menuItems.forEach((item) => {
+
+    item.addEventListener("click", () => {
+
+        menuItems.forEach((i) => {
+
+            i.classList.remove("active");
+
+        });
+
+        item.classList.add("active");
+
+    });
+
+});
+
+/*====================================
+    CARD HOVER EFFECT
+====================================*/
+
+const cards = document.querySelectorAll(
+
+    ".dashboard-card, .card"
+
+);
+
+cards.forEach((card) => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+        card.style.background =
+
+            `radial-gradient(circle at ${x}px ${y}px,
+            rgba(37,99,235,.06),
+            #ffffff 70%)`;
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        card.style.background = "#ffffff";
+
+    });
+
+});
+
+/*====================================
+      WINDOW RESIZE
+====================================*/
+
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 992) {
+
+        const sidebar = document.getElementById("sidebar");
+
+        const overlay = document.querySelector(".sidebar-overlay");
+
+        if (sidebar) {
 
             sidebar.classList.remove("active");
+
+        }
+
+        if (overlay) {
+
+            overlay.classList.remove("active");
 
         }
 
@@ -1836,180 +4421,60 @@ document.addEventListener("click", (e) => {
 
 });
 
-/*=====================================
-ROLE SWITCH
-=====================================*/
+/*====================================
+      FILTER BUTTON UI
+====================================*/
 
-const role = document.getElementById("roleSelect");
+const filterButtons = document.querySelectorAll(
 
-if(role){
+    ".chart-filter button"
 
-    role.addEventListener("change", function(){
+);
 
-        window.location.href = this.value;
+filterButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach((btn) => {
+
+            btn.classList.remove("active");
+
+        });
+
+        button.classList.add("active");
+
+    });
+
+});
+
+/*====================================
+      WELCOME BUTTON
+====================================*/
+
+const continueButton = document.querySelector(
+
+    ".welcome-content button"
+
+);
+
+if (continueButton) {
+
+    continueButton.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: document.querySelector(".cards").offsetTop - 90,
+
+            behavior: "smooth"
+
+        });
 
     });
 
 }
 
-/*=====================================
-AUTO DATE
-=====================================*/
-
-const dateInput = document.querySelector(".date-picker input");
-
-if(dateInput){
-
-    const today = new Date().toISOString().split("T")[0];
-
-    dateInput.value = today;
-
-}
-
-/*=====================================
-SCROLL ANIMATION
-=====================================*/
-
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-},{
-
-    threshold:0.2
-
 });
-
-document.querySelectorAll(
-    ".scroll-up,.scroll-left,.scroll-right"
-).forEach(el=>{
-
-    observer.observe(el);
-
-});
-
-/*=====================================
-PROGRESS BAR ANIMATION
-=====================================*/
-
-document.querySelectorAll(".progress-fill").forEach(bar=>{
-
-    const width = bar.classList.contains("fill75") ? "75%" :
-                  bar.classList.contains("fill60") ? "60%" :
-                  bar.classList.contains("fill45") ? "45%" : "0%";
-
-    bar.style.width = "0";
-
-    setTimeout(()=>{
-
-        bar.style.transition = "width 1.2s ease";
-
-        bar.style.width = width;
-
-    },300);
-
-});
-
-/*=====================================
-TASK CHECKBOX
-=====================================*/
-
-document.querySelectorAll(".task-item input").forEach(check=>{
-
-    check.addEventListener("change",()=>{
-
-        const task = check.closest(".task-item");
-
-        if(check.checked){
-
-            task.style.opacity=".6";
-
-            task.style.textDecoration="line-through";
-
-        }
-
-        else{
-
-            task.style.opacity="1";
-
-            task.style.textDecoration="none";
-
-        }
-
-    });
-
-});
-
-/*=====================================
-CARD HOVER
-=====================================*/
-
-document.querySelectorAll(".stat-card").forEach(card=>{
-
-    card.addEventListener("mouseenter",()=>{
-
-        card.style.transform="translateY(-8px)";
-
-    });
-
-    card.addEventListener("mouseleave",()=>{
-
-        card.style.transform="translateY(0px)";
-
-    });
-
-});
-
-/*=====================================
-NOTIFICATION BUTTON
-=====================================*/
-
-const bell = document.querySelector(".fa-bell");
-
-if(bell){
-
-    bell.parentElement.addEventListener("click",()=>{
-
-        bell.classList.add("fa-shake");
-
-        setTimeout(()=>{
-
-            bell.classList.remove("fa-shake");
-
-        },1000);
-
-    });
-
-};
-
-/*=====================================
-PROFILE BUTTON
-=====================================*/
-
-const profileBtn = document.querySelector(".fa-user");
-
-if(profileBtn){
-
-    profileBtn.parentElement.addEventListener("click",()=>{
-
-        alert("Profile page coming soon.");
-
-    });
-
-}
-
-
-});
-
-    </script>
+</script>
 
 </body>
 

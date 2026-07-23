@@ -1,0 +1,4636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Corporate Client Dashboard</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    
+
+    <!-- Chart JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<!--==========================
+        SIDEBAR
+===========================-->
+
+<aside class="sidebar"
+    id="sidebar">
+
+    <div class="sidebar-logo">
+
+        <a href="index.html">
+
+            <img src="./logo.webp"
+                alt="Logo">
+
+        </a>
+
+        <button class="close-sidebar"
+            id="closeSidebar">
+
+            <i class="fas fa-times"></i>
+
+        </button>
+
+    </div>
+
+    <ul>
+
+        <li>
+
+            <a href="./client.html">
+
+                <i class="fas fa-house"></i>
+
+                Dashboard
+
+            </a>
+
+        </li>
+
+        <li >
+
+            <a href="./projects.html">
+
+                <i class="fas fa-users"></i>
+
+                Projects
+
+            </a>
+
+        </li>
+
+        <li>
+
+            <a href="./reports.html">
+
+                <i class="fas fa-user-tie"></i>
+
+                Reports
+
+            </a>
+
+        </li>
+
+        <li class="active">
+
+            <a href="./calender.html">
+
+                <i class="fas fa-folder-open"></i>
+
+                Calender
+
+            </a>
+
+        </li>
+
+        
+        <li class="logout">
+
+            <a href="./login.html"
+                id="logoutBtn">
+
+                <i class="fas fa-right-from-bracket"></i>
+
+                Logout
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</aside>
+
+<!--==========================
+      MAIN CONTENT
+===========================-->
+
+<div class="main-content">
+
+<!--==========================
+      TOP NAVBAR
+===========================-->
+
+<header class="topbar">
+
+    <div class="top-left">
+
+        <button
+            class="menu-btn"
+            id="menuBtn">
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+        <a href="index.html"
+            class="logo">
+
+            <img src="./logo.webp"
+                alt="logo">
+
+        </a>
+
+    </div>
+
+    <!-- Search -->
+
+    <div class="search-box">
+        <a href="./404.html">
+
+        <i class="fas fa-search"></i>
+    
+        <input
+            type="text"
+            placeholder="Search Employees, Projects...">
+
+    </div></a>
+
+    <!-- Right Side -->
+
+    <div class="top-right">
+
+        <!-- Notification -->
+
+        <div class="icon-box">
+            <a href="./404.html">
+
+            <i class="fas fa-bell"></i>
+
+            <span class="badge">
+                5
+            </span></a>
+
+        </div>
+
+        <!-- Messages -->
+
+        <div class="icon-box">
+            <a href="./404.html">
+
+            <i class="fas fa-envelope"></i>
+
+            <span class="badge">
+                2
+            </span></a>
+
+        </div>
+
+        <!-- Profile -->
+
+        <div class="profile">
+
+            <div class="profile-image">
+
+                <i class="fas fa-user-shield"></i>
+
+            </div>
+
+            <div class="profile-info">
+
+                <h4 id="adminName">
+
+                    Loading...
+
+                </h4>
+
+                <span id="adminEmail">
+
+                    loading@email.com
+
+                </span>
+
+                <small id="clientRole">
+
+          Client
+
+                </small>
+
+            </div>
+
+            <i class="fas fa-angle-down"></i>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================================
+                CALENDAR DASHBOARD
+=========================================================== -->
+
+<section class="calendar-dashboard">
+
+    <!-- ========================================= -->
+    <!-- WELCOME SECTION -->
+    <!-- ========================================= -->
+
+    <div class="calendar-banner">
+
+        <div class="calendar-banner-content">
+
+            <span class="calendar-tag">
+                <i class="fas fa-calendar-days"></i>
+                Corporate Calendar
+            </span>
+
+            <h1>
+                Company
+                <span>Calendar Dashboard</span>
+            </h1>
+
+            <p>
+                Organize meetings, company events, employee birthdays,
+                project schedules and important corporate activities
+                from one place.
+            </p>
+
+            <div class="calendar-banner-buttons">
+
+                <a href="404.html" class="calendar-btn-primary">
+
+                    <i class="fas fa-plus"></i>
+
+                    Add Event
+
+                </a>
+
+                <a href="404.html" class="calendar-btn-secondary">
+
+                    <i class="fas fa-download"></i>
+
+                    Export Calendar
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="calendar-banner-image">
+
+            <img src="./index1.webp"
+                 alt="Calendar">
+
+        </div>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- STATISTICS -->
+    <!-- ========================================= -->
+
+    <div class="calendar-stats">
+
+        <div class="calendar-stat-card">
+
+            <div class="calendar-stat-icon blue">
+
+                <i class="fas fa-calendar-check"></i>
+
+            </div>
+
+            <div>
+
+                <h2 id="totalEvents">
+
+                    128
+
+                </h2>
+
+                <p>Total Events</p>
+
+            </div>
+
+        </div>
+
+        <div class="calendar-stat-card">
+
+            <div class="calendar-stat-icon green">
+
+                <i class="fas fa-users"></i>
+
+            </div>
+
+            <div>
+
+                <h2 id="meetingsCount">
+
+                    42
+
+                </h2>
+
+                <p>Meetings</p>
+
+            </div>
+
+        </div>
+
+        <div class="calendar-stat-card">
+
+            <div class="calendar-stat-icon orange">
+
+                <i class="fas fa-birthday-cake"></i>
+
+            </div>
+
+            <div>
+
+                <h2 id="birthdayCount">
+
+                    15
+
+                </h2>
+
+                <p>Birthdays</p>
+
+            </div>
+
+        </div>
+
+        <div class="calendar-stat-card">
+
+            <div class="calendar-stat-icon red">
+
+                <i class="fas fa-clock"></i>
+
+            </div>
+
+            <div>
+
+                <h2 id="todayEvents">
+
+                    6
+
+                </h2>
+
+                <p>Today's Events</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ========================================= -->
+    <!-- CALENDAR CONTAINER -->
+    <!-- ========================================= -->
+
+    <div class="calendar-container">
+
+        <!-- Calendar Header -->
+
+        <div class="calendar-header">
+
+            <button
+                id="prevMonth"
+                class="calendar-nav-btn">
+
+                <i class="fas fa-angle-left"></i>
+
+            </button>
+
+            <h2 id="calendarMonth">
+
+                July 2026
+
+            </h2>
+
+            <button
+                id="nextMonth"
+                class="calendar-nav-btn">
+
+                <i class="fas fa-angle-right"></i>
+
+            </button>
+
+        </div>
+
+        <!-- Week Names -->
+
+        <div class="calendar-weekdays">
+
+            <div>Sun</div>
+
+            <div>Mon</div>
+
+            <div>Tue</div>
+
+            <div>Wed</div>
+
+            <div>Thu</div>
+
+            <div>Fri</div>
+
+            <div>Sat</div>
+
+        </div>
+
+        <!-- Calendar Dates -->
+
+        <div
+            class="calendar-days"
+            id="calendarDays">
+
+            <!-- JavaScript Generates Dates -->
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================================
+                    CALENDAR DETAILS
+========================================================== -->
+
+<div class="calendar-content-grid">
+
+    <!-- ===================================== -->
+    <!-- TODAY'S SCHEDULE -->
+    <!-- ===================================== -->
+
+    <div class="today-schedule-card">
+
+        <h2>
+
+            <i class="fas fa-calendar-day"></i>
+
+            Today's Schedule
+
+        </h2>
+
+        <div class="schedule-list">
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+
+                    09:00 AM
+
+                </div>
+
+                <div class="schedule-details">
+
+                    <h4>Management Meeting</h4>
+
+                    <p>Conference Hall - A</p>
+
+                </div>
+
+            </div>
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+
+                    11:30 AM
+
+                </div>
+
+                <div class="schedule-details">
+
+                    <h4>Client Presentation</h4>
+
+                    <p>Meeting Room - 2</p>
+
+                </div>
+
+            </div>
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+
+                    02:00 PM
+
+                </div>
+
+                <div class="schedule-details">
+
+                    <h4>Project Review</h4>
+
+                    <p>Development Team</p>
+
+                </div>
+
+            </div>
+
+            <div class="schedule-item">
+
+                <div class="schedule-time">
+
+                    04:30 PM
+
+                </div>
+
+                <div class="schedule-details">
+
+                    <h4>HR Discussion</h4>
+
+                    <p>HR Department</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- UPCOMING MEETINGS -->
+    <!-- ===================================== -->
+
+    <div class="meeting-card">
+
+        <h2>
+
+            <i class="fas fa-users"></i>
+
+            Upcoming Meetings
+
+        </h2>
+
+        <div class="meeting-list">
+
+            <div class="meeting-item">
+
+                <i class="fas fa-handshake"></i>
+
+                <div>
+
+                    <h4>Sales Team</h4>
+
+                    <span>Tomorrow - 10:00 AM</span>
+
+                </div>
+
+            </div>
+
+            <div class="meeting-item">
+
+                <i class="fas fa-laptop-code"></i>
+
+                <div>
+
+                    <h4>Development Sprint</h4>
+
+                    <span>Friday - 02:00 PM</span>
+
+                </div>
+
+            </div>
+
+            <div class="meeting-item">
+
+                <i class="fas fa-chart-line"></i>
+
+                <div>
+
+                    <h4>Quarterly Review</h4>
+
+                    <span>Monday - 11:00 AM</span>
+
+                </div>
+
+            </div>
+
+            <div class="meeting-item">
+
+                <i class="fas fa-user-tie"></i>
+
+                <div>
+
+                    <h4>CEO Discussion</h4>
+
+                    <span>Tuesday - 09:30 AM</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================================================
+                    SECOND GRID
+========================================================== -->
+
+<div class="calendar-bottom-grid">
+
+    <!-- ===================================== -->
+    <!-- EMPLOYEE BIRTHDAYS -->
+    <!-- ===================================== -->
+
+    <div class="birthday-card">
+
+        <h2>
+
+            <i class="fas fa-birthday-cake"></i>
+
+            Employee Birthdays
+
+        </h2>
+
+        <div class="birthday-list">
+
+            <div class="birthday-item">
+
+                <i class="fas fa-user-circle"></i>
+
+                <div>
+
+                    <h4>John Smith</h4>
+
+                    <span>July 24</span>
+
+                </div>
+
+            </div>
+
+            <div class="birthday-item">
+
+                <i class="fas fa-user-circle"></i>
+
+                <div>
+
+                    <h4>Emma Wilson</h4>
+
+                    <span>July 26</span>
+
+                </div>
+
+            </div>
+
+            <div class="birthday-item">
+
+                <i class="fas fa-user-circle"></i>
+
+                <div>
+
+                    <h4>David Johnson</h4>
+
+                    <span>July 29</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- COMPANY EVENTS -->
+    <!-- ===================================== -->
+
+    <div class="company-event-card">
+
+        <h2>
+
+            <i class="fas fa-building"></i>
+
+            Company Events
+
+        </h2>
+
+        <div class="event-list">
+
+            <div class="event-item">
+
+                <i class="fas fa-award"></i>
+
+                <div>
+
+                    <h4>Annual Awards</h4>
+
+                    <span>August 10</span>
+
+                </div>
+
+            </div>
+
+            <div class="event-item">
+
+                <i class="fas fa-tree"></i>
+
+                <div>
+
+                    <h4>Tree Plantation</h4>
+
+                    <span>August 15</span>
+
+                </div>
+
+            </div>
+
+            <div class="event-item">
+
+                <i class="fas fa-users"></i>
+
+                <div>
+
+                    <h4>Team Outing</h4>
+
+                    <span>August 22</span>
+
+                </div>
+
+            </div>
+
+            <div class="event-item">
+
+                <i class="fas fa-laptop"></i>
+
+                <div>
+
+                    <h4>Technology Seminar</h4>
+
+                    <span>September 02</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- ==========================================================
+                    FINAL SECTION
+========================================================== -->
+
+<div class="calendar-last-grid">
+
+    <!-- ===================================== -->
+    <!-- COMPANY HOLIDAYS -->
+    <!-- ===================================== -->
+
+    <div class="holiday-card">
+
+        <h2>
+
+            <i class="fas fa-umbrella-beach"></i>
+
+            Company Holidays
+
+        </h2>
+
+        <div class="holiday-list">
+
+            <div class="holiday-item">
+
+                <span class="holiday-date">
+                    15 Aug
+                </span>
+
+                <div>
+
+                    <h4>Independence Day</h4>
+
+                    <p>National Holiday</p>
+
+                </div>
+
+            </div>
+
+            <div class="holiday-item">
+
+                <span class="holiday-date">
+                    27 Aug
+                </span>
+
+                <div>
+
+                    <h4>Company Foundation Day</h4>
+
+                    <p>Corporate Celebration</p>
+
+                </div>
+
+            </div>
+
+            <div class="holiday-item">
+
+                <span class="holiday-date">
+                    02 Oct
+                </span>
+
+                <div>
+
+                    <h4>Gandhi Jayanti</h4>
+
+                    <p>National Holiday</p>
+
+                </div>
+
+            </div>
+
+            <div class="holiday-item">
+
+                <span class="holiday-date">
+                    25 Dec
+                </span>
+
+                <div>
+
+                    <h4>Christmas</h4>
+
+                    <p>Festival Holiday</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- MONTHLY EVENT SUMMARY -->
+    <!-- ===================================== -->
+
+    <div class="calendar-summary-card">
+
+        <h2>
+
+            <i class="fas fa-chart-pie"></i>
+
+            Monthly Summary
+
+        </h2>
+
+        <div class="summary-row">
+
+            <span>Total Meetings</span>
+
+            <strong>42</strong>
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>Company Events</span>
+
+            <strong>18</strong>
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>Birthdays</span>
+
+            <strong>15</strong>
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>Public Holidays</span>
+
+            <strong>8</strong>
+
+        </div>
+
+        <div class="summary-row">
+
+            <span>Working Days</span>
+
+            <strong>22</strong>
+
+        </div>
+
+    </div>
+
+    <!-- ===================================== -->
+    <!-- QUICK ACTIONS -->
+    <!-- ===================================== -->
+
+    <div class="calendar-action-card">
+
+        <h2>
+
+            <i class="fas fa-bolt"></i>
+
+            Quick Actions
+
+        </h2>
+
+        <div class="calendar-actions">
+
+            <a href="404.html">
+
+                <i class="fas fa-plus-circle"></i>
+
+                Create Meeting
+
+            </a>
+
+            <a href="404.html">
+
+                <i class="fas fa-calendar-plus"></i>
+
+                Add Event
+
+            </a>
+
+            <a href="404.html">
+
+                <i class="fas fa-file-export"></i>
+
+                Export Calendar
+
+            </a>
+
+            <a href="404.html">
+
+                <i class="fas fa-print"></i>
+
+                Print Schedule
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<style>
+    /*=========================================================
+            CALENDAR DASHBOARD - PART 1A
+=========================================================*/
+
+.calendar-dashboard{
+
+padding:30px;
+
+min-height:100vh;
+
+background:
+linear-gradient(rgba(245,248,255,.95),
+rgba(245,248,255,.95)),
+url("../images/calendar-bg.jpg");
+
+background-size:cover;
+
+background-position:center;
+
+background-repeat:no-repeat;
+
+background-attachment:fixed;
+
+}
+
+/*=========================================================
+            BANNER
+=========================================================*/
+
+.calendar-banner{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:40px;
+
+background:#ffffff;
+
+border-radius:22px;
+
+padding:35px;
+
+margin-bottom:30px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.calendar-banner-content{
+
+flex:1;
+
+}
+
+.calendar-tag{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:8px;
+
+background:#e8f1ff;
+
+color:#2563eb;
+
+padding:8px 18px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:600;
+
+margin-bottom:18px;
+
+}
+
+.calendar-banner-content h1{
+
+font-size:40px;
+
+color:#1f2937;
+
+margin-bottom:15px;
+
+}
+
+.calendar-banner-content h1 span{
+
+color:#2563eb;
+
+}
+
+.calendar-banner-content p{
+
+color:#64748b;
+
+line-height:1.8;
+
+max-width:620px;
+
+}
+
+.calendar-banner-buttons{
+
+display:flex;
+
+gap:18px;
+
+margin-top:30px;
+
+flex-wrap:wrap;
+
+}
+
+.calendar-btn-primary,
+
+.calendar-btn-secondary{
+
+text-decoration:none;
+
+padding:14px 24px;
+
+border-radius:12px;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.calendar-btn-primary{
+
+background:#2563eb;
+
+color:#fff;
+
+}
+
+.calendar-btn-primary:hover{
+
+background:#1d4ed8;
+
+transform:translateY(-3px);
+
+}
+
+.calendar-btn-secondary{
+
+border:2px solid #2563eb;
+
+color:#2563eb;
+
+background:#fff;
+
+}
+
+.calendar-btn-secondary:hover{
+
+background:#2563eb;
+
+color:#fff;
+
+}
+
+.calendar-banner-image{
+
+flex:1;
+
+display:flex;
+
+justify-content:flex-end;
+
+}
+
+.calendar-banner-image img{
+
+width:100%;
+
+max-width:420px;
+
+animation:calendarFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes calendarFloat{
+
+0%{
+
+    transform:translateY(0);
+
+}
+
+50%{
+
+    transform:translateY(-12px);
+
+}
+
+100%{
+
+    transform:translateY(0);
+
+}
+
+}
+
+/*=========================================================
+            STATISTICS
+=========================================================*/
+
+.calendar-stats{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+margin-bottom:35px;
+
+}
+
+.calendar-stat-card{
+
+background:#ffffff;
+
+border-radius:20px;
+
+padding:24px;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.calendar-stat-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.calendar-stat-icon{
+
+width:72px;
+
+height:72px;
+
+border-radius:18px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:30px;
+
+color:#fff;
+
+}
+
+.calendar-stat-icon.blue{
+
+background:#2563eb;
+
+}
+
+.calendar-stat-icon.green{
+
+background:#22c55e;
+
+}
+
+.calendar-stat-icon.orange{
+
+background:#f59e0b;
+
+}
+
+.calendar-stat-icon.red{
+
+background:#ef4444;
+
+}
+
+.calendar-stat-card h2{
+
+font-size:30px;
+
+color:#1f2937;
+
+margin-bottom:5px;
+
+}
+
+.calendar-stat-card p{
+
+color:#64748b;
+
+font-size:15px;
+
+}
+
+/*=========================================================
+            RESPONSIVE
+=========================================================*/
+
+@media(max-width:1200px){
+
+.calendar-stats{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:992px){
+
+.calendar-banner{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.calendar-banner-image{
+
+    justify-content:center;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.calendar-dashboard{
+
+    padding:20px;
+
+}
+
+.calendar-stats{
+
+    grid-template-columns:1fr;
+
+}
+
+.calendar-banner{
+
+    padding:25px;
+
+}
+
+.calendar-banner-content h1{
+
+    font-size:30px;
+
+}
+
+.calendar-banner-buttons{
+
+    justify-content:center;
+
+}
+
+.calendar-banner-image img{
+
+    max-width:300px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.calendar-dashboard{
+
+    padding:15px;
+
+}
+
+.calendar-banner{
+
+    padding:20px;
+
+}
+
+.calendar-stat-card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.calendar-stat-icon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:24px;
+
+}
+
+.calendar-stat-card h2{
+
+    font-size:24px;
+
+}
+
+}
+
+/*=========================================================
+        CALENDAR DASHBOARD - PART 1B
+=========================================================*/
+
+/*==============================
+        CALENDAR SECTION
+==============================*/
+
+.calendar-main-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr;
+
+gap:30px;
+
+margin-bottom:35px;
+
+}
+
+/*==============================
+    CALENDAR CARD
+==============================*/
+
+.calendar-card{
+
+background:#fff;
+
+border-radius:22px;
+
+padding:28px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+overflow:hidden;
+
+}
+
+/*==============================
+    HEADER
+==============================*/
+
+.calendar-header{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:25px;
+
+}
+
+.calendar-header h2{
+
+font-size:26px;
+
+color:#1f2937;
+
+font-weight:700;
+
+}
+
+.calendar-nav{
+
+display:flex;
+
+gap:12px;
+
+}
+
+.calendar-nav button{
+
+width:42px;
+
+height:42px;
+
+border:none;
+
+border-radius:12px;
+
+background:#2563eb;
+
+color:#fff;
+
+cursor:pointer;
+
+font-size:16px;
+
+transition:.35s;
+
+}
+
+.calendar-nav button:hover{
+
+background:#1d4ed8;
+
+transform:scale(1.08);
+
+}
+
+/*==============================
+    WEEK DAYS
+==============================*/
+
+.calendar-weekdays{
+
+display:grid;
+
+grid-template-columns:repeat(7,1fr);
+
+gap:10px;
+
+margin-bottom:15px;
+
+}
+
+.calendar-weekdays div{
+
+background:#eef4ff;
+
+color:#2563eb;
+
+text-align:center;
+
+padding:14px;
+
+border-radius:12px;
+
+font-weight:700;
+
+font-size:15px;
+
+}
+
+/*==============================
+    DATE GRID
+==============================*/
+
+.calendar-days{
+
+display:grid;
+
+grid-template-columns:repeat(7,1fr);
+
+gap:12px;
+
+}
+
+.calendar-day{
+
+position:relative;
+
+background:#f8fbff;
+
+min-height:90px;
+
+border-radius:16px;
+
+padding:12px;
+
+cursor:pointer;
+
+transition:.35s;
+
+border:1px solid #edf2f7;
+
+}
+
+.calendar-day:hover{
+
+transform:translateY(-6px);
+
+background:#edf5ff;
+
+box-shadow:0 12px 24px rgba(37,99,235,.12);
+
+}
+
+.calendar-day span{
+
+font-size:16px;
+
+font-weight:600;
+
+color:#374151;
+
+}
+
+/*==============================
+    TODAY
+==============================*/
+
+.calendar-day.today{
+
+background:linear-gradient(135deg,#2563eb,#4f46e5);
+
+color:#fff;
+
+}
+
+.calendar-day.today span{
+
+color:#fff;
+
+}
+
+/*==============================
+    EVENT DOT
+==============================*/
+
+.calendar-day.has-event::after{
+
+content:"";
+
+position:absolute;
+
+bottom:12px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:10px;
+
+height:10px;
+
+background:#22c55e;
+
+border-radius:50%;
+
+}
+
+/*==============================
+    MULTIPLE EVENTS
+==============================*/
+
+.calendar-day.multi-event::before{
+
+content:"";
+
+position:absolute;
+
+bottom:12px;
+
+left:38%;
+
+width:8px;
+
+height:8px;
+
+background:#ef4444;
+
+border-radius:50%;
+
+}
+
+.calendar-day.multi-event::after{
+
+content:"";
+
+position:absolute;
+
+bottom:12px;
+
+left:58%;
+
+width:8px;
+
+height:8px;
+
+background:#22c55e;
+
+border-radius:50%;
+
+}
+
+/*==============================
+    DISABLED DAYS
+==============================*/
+
+.calendar-day.disabled{
+
+background:#fafafa;
+
+color:#cbd5e1;
+
+cursor:not-allowed;
+
+}
+
+.calendar-day.disabled span{
+
+color:#cbd5e1;
+
+}
+
+/*==============================
+    SELECTED DAY
+==============================*/
+
+.calendar-day.active{
+
+border:2px solid #2563eb;
+
+box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+/*==============================
+    LEGEND
+==============================*/
+
+.calendar-legend{
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+margin-top:25px;
+
+flex-wrap:wrap;
+
+}
+
+.calendar-legend-item{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+font-size:14px;
+
+color:#64748b;
+
+}
+
+.legend-dot{
+
+width:12px;
+
+height:12px;
+
+border-radius:50%;
+
+}
+
+.legend-blue{
+
+background:#2563eb;
+
+}
+
+.legend-green{
+
+background:#22c55e;
+
+}
+
+.legend-red{
+
+background:#ef4444;
+
+}
+
+/*==============================
+    RESPONSIVE
+==============================*/
+
+@media(max-width:1200px){
+
+.calendar-main-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.calendar-card{
+
+    padding:20px;
+
+}
+
+.calendar-header{
+
+    flex-direction:column;
+
+    gap:18px;
+
+    text-align:center;
+
+}
+
+.calendar-header h2{
+
+    font-size:22px;
+
+}
+
+.calendar-weekdays div{
+
+    padding:10px 5px;
+
+    font-size:13px;
+
+}
+
+.calendar-day{
+
+    min-height:70px;
+
+    padding:8px;
+
+}
+
+.calendar-day span{
+
+    font-size:14px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.calendar-card{
+
+    padding:15px;
+
+}
+
+.calendar-nav button{
+
+    width:36px;
+
+    height:36px;
+
+}
+
+.calendar-weekdays{
+
+    gap:5px;
+
+}
+
+.calendar-days{
+
+    gap:6px;
+
+}
+
+.calendar-day{
+
+    min-height:55px;
+
+    border-radius:10px;
+
+}
+
+.calendar-day span{
+
+    font-size:12px;
+
+}
+
+.calendar-legend{
+
+    gap:15px;
+
+}
+
+}
+
+/*=========================================================
+        CALENDAR DASHBOARD - CSS PART 2
+=========================================================*/
+
+/*==============================
+        CONTENT GRID
+==============================*/
+
+.calendar-content-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+margin-bottom:30px;
+
+}
+
+/*==============================
+    COMMON CARD
+==============================*/
+
+.today-schedule-card,
+.meeting-card,
+.birthday-card,
+.company-event-card{
+
+background:#ffffff;
+
+border-radius:22px;
+
+padding:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.today-schedule-card:hover,
+.meeting-card:hover,
+.birthday-card:hover,
+.company-event-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 22px 40px rgba(37,99,235,.12);
+
+}
+
+/*==============================
+    HEADINGS
+==============================*/
+
+.today-schedule-card h2,
+.meeting-card h2,
+.birthday-card h2,
+.company-event-card h2{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+margin-bottom:22px;
+
+color:#1f2937;
+
+font-size:22px;
+
+}
+
+.today-schedule-card h2 i{
+
+color:#2563eb;
+
+}
+
+.meeting-card h2 i{
+
+color:#10b981;
+
+}
+
+.birthday-card h2 i{
+
+color:#f59e0b;
+
+}
+
+.company-event-card h2 i{
+
+color:#8b5cf6;
+
+}
+
+/*==============================
+    SCHEDULE
+==============================*/
+
+.schedule-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.schedule-item{
+
+display:flex;
+
+gap:18px;
+
+align-items:center;
+
+padding:16px;
+
+background:#f8fbff;
+
+border-radius:16px;
+
+transition:.35s;
+
+}
+
+.schedule-item:hover{
+
+background:#edf5ff;
+
+}
+
+.schedule-time{
+
+min-width:90px;
+
+background:#2563eb;
+
+color:#fff;
+
+text-align:center;
+
+padding:10px;
+
+border-radius:12px;
+
+font-weight:600;
+
+}
+
+.schedule-details h4{
+
+color:#1f2937;
+
+margin-bottom:4px;
+
+}
+
+.schedule-details p{
+
+color:#64748b;
+
+font-size:14px;
+
+}
+
+/*==============================
+    MEETING
+==============================*/
+
+.meeting-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.meeting-item{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+background:#f8fbff;
+
+padding:15px;
+
+border-radius:15px;
+
+transition:.35s;
+
+}
+
+.meeting-item:hover{
+
+background:#ecfdf5;
+
+}
+
+.meeting-item i{
+
+width:55px;
+
+height:55px;
+
+border-radius:14px;
+
+background:#10b981;
+
+color:#fff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:22px;
+
+}
+
+.meeting-item h4{
+
+color:#1f2937;
+
+margin-bottom:5px;
+
+}
+
+.meeting-item span{
+
+color:#64748b;
+
+font-size:14px;
+
+}
+
+/*==============================
+    BIRTHDAY
+==============================*/
+
+.birthday-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.birthday-item{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+background:#fff7ed;
+
+padding:15px;
+
+border-radius:15px;
+
+transition:.35s;
+
+}
+
+.birthday-item:hover{
+
+transform:translateX(6px);
+
+}
+
+.birthday-item i{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+background:#f59e0b;
+
+color:#fff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:24px;
+
+}
+
+.birthday-item h4{
+
+color:#1f2937;
+
+margin-bottom:5px;
+
+}
+
+.birthday-item span{
+
+color:#78716c;
+
+}
+
+/*==============================
+    COMPANY EVENTS
+==============================*/
+
+.event-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:16px;
+
+}
+
+.event-item{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+background:#f5f3ff;
+
+padding:15px;
+
+border-radius:15px;
+
+transition:.35s;
+
+}
+
+.event-item:hover{
+
+transform:translateY(-4px);
+
+}
+
+.event-item i{
+
+width:55px;
+
+height:55px;
+
+background:#8b5cf6;
+
+color:#fff;
+
+border-radius:14px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:22px;
+
+}
+
+.event-item h4{
+
+color:#1f2937;
+
+margin-bottom:5px;
+
+}
+
+.event-item span{
+
+color:#64748b;
+
+}
+
+/*==============================
+    BOTTOM GRID
+==============================*/
+
+.calendar-bottom-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:30px;
+
+margin-top:30px;
+
+}
+
+/*==============================
+    RESPONSIVE
+==============================*/
+
+@media(max-width:1200px){
+
+.calendar-content-grid,
+.calendar-bottom-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.today-schedule-card,
+.meeting-card,
+.birthday-card,
+.company-event-card{
+
+    padding:20px;
+
+}
+
+.schedule-item,
+.meeting-item,
+.birthday-item,
+.event-item{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.schedule-time{
+
+    width:100%;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.today-schedule-card h2,
+.meeting-card h2,
+.birthday-card h2,
+.company-event-card h2{
+
+    font-size:18px;
+
+}
+
+.meeting-item i,
+.birthday-item i,
+.event-item i{
+
+    width:48px;
+
+    height:48px;
+
+    font-size:18px;
+
+}
+
+.schedule-time{
+
+    font-size:13px;
+
+}
+
+}
+
+/*=========================================================
+        CALENDAR DASHBOARD - CSS PART 3
+=========================================================*/
+
+/*==============================
+        LAST GRID
+==============================*/
+
+.calendar-last-grid{
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr;
+
+gap:30px;
+
+margin-top:30px;
+
+}
+
+/*==============================
+    COMMON CARDS
+==============================*/
+
+.holiday-card,
+.calendar-summary-card,
+.calendar-action-card{
+
+background:#ffffff;
+
+border-radius:22px;
+
+padding:25px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.holiday-card:hover,
+.calendar-summary-card:hover,
+.calendar-action-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 20px 40px rgba(37,99,235,.12);
+
+}
+
+/*==============================
+    HEADINGS
+==============================*/
+
+.holiday-card h2,
+.calendar-summary-card h2,
+.calendar-action-card h2{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+margin-bottom:22px;
+
+color:#1f2937;
+
+font-size:22px;
+
+}
+
+.holiday-card h2 i{
+
+color:#ef4444;
+
+}
+
+.calendar-summary-card h2 i{
+
+color:#2563eb;
+
+}
+
+.calendar-action-card h2 i{
+
+color:#22c55e;
+
+}
+
+/*==============================
+    HOLIDAYS
+==============================*/
+
+.holiday-list{
+
+display:flex;
+
+flex-direction:column;
+
+gap:18px;
+
+}
+
+.holiday-item{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+padding:15px;
+
+background:#fff5f5;
+
+border-radius:15px;
+
+transition:.35s;
+
+}
+
+.holiday-item:hover{
+
+background:#ffe4e6;
+
+}
+
+.holiday-date{
+
+width:70px;
+
+min-width:70px;
+
+height:70px;
+
+border-radius:15px;
+
+background:#ef4444;
+
+color:#fff;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-weight:700;
+
+text-align:center;
+
+}
+
+.holiday-item h4{
+
+color:#1f2937;
+
+margin-bottom:5px;
+
+}
+
+.holiday-item p{
+
+color:#64748b;
+
+font-size:14px;
+
+}
+
+/*==============================
+    SUMMARY
+==============================*/
+
+.summary-row{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:14px 0;
+
+border-bottom:1px solid #edf2f7;
+
+}
+
+.summary-row:last-child{
+
+border:none;
+
+}
+
+.summary-row span{
+
+color:#64748b;
+
+}
+
+.summary-row strong{
+
+color:#2563eb;
+
+font-size:18px;
+
+}
+
+/*==============================
+    QUICK ACTIONS
+==============================*/
+
+.calendar-actions{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+.calendar-actions a{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+text-decoration:none;
+
+background:#2563eb;
+
+color:#fff;
+
+padding:15px 18px;
+
+border-radius:14px;
+
+transition:.35s;
+
+font-weight:600;
+
+}
+
+.calendar-actions a:hover{
+
+background:#1d4ed8;
+
+transform:translateX(8px);
+
+}
+
+.calendar-actions i{
+
+font-size:18px;
+
+}
+
+/*==============================
+    SCROLL ANIMATION
+==============================*/
+
+.calendar-fade{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:all .8s ease;
+
+}
+
+.calendar-fade.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/*==============================
+    FLOAT ANIMATION
+==============================*/
+
+@keyframes calendarFloatCard{
+
+0%{
+
+    transform:translateY(0);
+
+}
+
+50%{
+
+    transform:translateY(-6px);
+
+}
+
+100%{
+
+    transform:translateY(0);
+
+}
+
+}
+
+.calendar-summary-card{
+
+animation:calendarFloatCard 4s ease-in-out infinite;
+
+}
+
+/*==============================
+    RESPONSIVE
+==============================*/
+
+@media(max-width:1200px){
+
+.calendar-last-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.holiday-card,
+.calendar-summary-card,
+.calendar-action-card{
+
+    padding:20px;
+
+}
+
+.holiday-item{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.holiday-date{
+
+    margin:auto;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.holiday-card h2,
+.calendar-summary-card h2,
+.calendar-action-card h2{
+
+    font-size:18px;
+
+}
+
+.calendar-actions a{
+
+    font-size:14px;
+
+    padding:14px;
+
+}
+
+.summary-row strong{
+
+    font-size:16px;
+
+}
+
+}
+
+</style>
+<script>
+    /*=========================================================
+        CORPORATE CALENDAR DASHBOARD
+=========================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*=========================================
+    MONTHS
+=========================================*/
+
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+];
+
+const monthText =
+    document.getElementById("calendarMonth");
+
+const prevBtn =
+    document.getElementById("calendarPrev");
+
+const nextBtn =
+    document.getElementById("calendarNext");
+
+let currentDate = new Date();
+
+function updateMonth() {
+
+    if (!monthText) return;
+
+    monthText.textContent =
+        months[currentDate.getMonth()] +
+        " " +
+        currentDate.getFullYear();
+
+}
+
+updateMonth();
+
+if (prevBtn) {
+
+    prevBtn.addEventListener("click", () => {
+
+        currentDate.setMonth(
+            currentDate.getMonth() - 1
+        );
+
+        updateMonth();
+
+    });
+
+}
+
+if (nextBtn) {
+
+    nextBtn.addEventListener("click", () => {
+
+        currentDate.setMonth(
+            currentDate.getMonth() + 1
+        );
+
+        updateMonth();
+
+    });
+
+}
+
+/*=========================================
+    SELECT DATE
+=========================================*/
+
+const days =
+    document.querySelectorAll(".calendar-day");
+
+days.forEach(day => {
+
+    day.addEventListener("click", () => {
+
+        days.forEach(d =>
+            d.classList.remove("active")
+        );
+
+        day.classList.add("active");
+
+    });
+
+});
+
+/*=========================================
+    FADE ANIMATION
+=========================================*/
+
+const observer =
+    new IntersectionObserver(entries => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+                entry.target.classList.add("show");
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.15
+    });
+
+document
+    .querySelectorAll(".calendar-fade")
+    .forEach(item => observer.observe(item));
+
+/*=========================================
+    TODAY
+=========================================*/
+
+const today =
+    document.getElementById("todayDate");
+
+if (today) {
+
+    today.textContent =
+        new Date().toDateString();
+
+}
+
+/*=========================================
+    DIGITAL CLOCK
+=========================================*/
+
+const clock =
+    document.getElementById("calendarClock");
+
+function updateClock() {
+
+    if (!clock) return;
+
+    clock.textContent =
+        new Date().toLocaleTimeString([], {
+
+            hour: "2-digit",
+
+            minute: "2-digit",
+
+            second: "2-digit"
+
+        });
+
+}
+
+updateClock();
+
+setInterval(updateClock, 1000);
+
+/*=========================================
+    BUTTON RIPPLE
+=========================================*/
+
+document
+    .querySelectorAll(".calendar-actions a")
+    .forEach(button => {
+
+        button.addEventListener("mouseenter", () => {
+
+            button.style.transform =
+                "translateX(8px)";
+
+        });
+
+        button.addEventListener("mouseleave", () => {
+
+            button.style.transform =
+                "translateX(0px)";
+
+        });
+
+    });
+
+/*=========================================
+    CARD HOVER EFFECT
+=========================================*/
+
+document
+    .querySelectorAll(
+        ".calendar-stat-card,.calendar-card,.today-schedule-card,.meeting-card,.birthday-card,.company-event-card,.holiday-card,.calendar-summary-card,.calendar-action-card"
+    )
+    .forEach(card => {
+
+        card.addEventListener("mouseenter", () => {
+
+            card.style.transition =
+                ".35s";
+
+            card.style.transform =
+                "translateY(-8px)";
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
+            card.style.transform =
+                "translateY(0px)";
+
+        });
+
+    });
+
+});
+</script>
+
+
+<style>
+    
+
+    /*=========================================
+        CORPORATE ADMIN DASHBOARD CSS
+=========================================*/
+
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================================
+              ROOT VARIABLES
+=========================================*/
+
+:root{
+
+    --primary:#2563eb;
+    --secondary:#0ea5e9;
+    --accent:#14b8a6;
+
+    --dark:#0f172a;
+    --dark-light:#1e293b;
+
+    --white:#ffffff;
+
+    --bg:#f5f7fb;
+
+    --border:#e5e7eb;
+
+    --text:#374151;
+
+    --success:#22c55e;
+
+    --warning:#f59e0b;
+
+    --danger:#ef4444;
+
+    --purple:#7c3aed;
+
+    --shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+    --transition:.35s ease;
+
+}
+
+
+/*=========================================
+              RESET
+=========================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+/*=========================================
+          SCROLLBAR
+=========================================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf2f7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+    180deg,
+    var(--primary),
+    var(--secondary));
+
+    border-radius:20px;
+
+}
+
+/*=========================================
+            SIDEBAR
+=========================================*/
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:270px;
+
+    height:100vh;
+
+    background:linear-gradient(
+    180deg,
+    #0f172a,
+    #1e293b);
+
+    color:#fff;
+
+    z-index:999;
+
+    overflow-y:auto;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+}
+
+/*=========================================
+          SIDEBAR LOGO
+=========================================*/
+
+.sidebar-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:24px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.sidebar-logo img{
+
+    width:170px;
+
+    max-width:100%;
+
+}
+
+.close-sidebar{
+
+    display:none;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.12);
+
+    transition:var(--transition);
+
+}
+
+.close-sidebar:hover{
+
+    transform:rotate(180deg);
+
+    background:var(--danger);
+
+}
+
+/*=========================================
+            SIDEBAR MENU
+=========================================*/
+
+.sidebar ul{
+
+    list-style:none;
+
+    padding:20px 15px;
+
+}
+
+.sidebar ul li{
+
+    margin-bottom:8px;
+
+}
+
+.sidebar ul li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:#d1d5db;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+}
+
+.sidebar ul li a i{
+
+    width:24px;
+
+    font-size:18px;
+
+    text-align:center;
+
+}
+
+/* Hover */
+
+.sidebar ul li a:hover{
+
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
+
+    color:#fff;
+
+    transform:translateX(6px);
+
+}
+
+/* Active */
+
+.sidebar ul li.active a{
+
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
+
+    color:#fff;
+
+    box-shadow:
+    0 12px 25px rgba(37,99,235,.35);
+
+}
+
+/*=========================================
+            LOGOUT
+=========================================*/
+
+.logout{
+
+    margin-top:35px;
+
+}
+
+.logout a{
+
+    color:#ffd4d4 !important;
+
+}
+
+.logout a:hover{
+
+    background:var(--danger)!important;
+
+}
+
+/*=========================================
+            MAIN CONTENT
+=========================================*/
+
+.main-content{
+
+    margin-left:270px;
+
+    min-height:100vh;
+
+    padding:28px;
+
+    transition:var(--transition);
+
+}
+
+/*=========================================
+      COMMON DASHBOARD CARD
+=========================================*/
+
+.dashboard-card{
+
+    background:#fff;
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.dashboard-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.12);
+
+}
+
+/*=========================================
+          SECTION SPACING
+=========================================*/
+
+section{
+
+    margin-bottom:28px;
+
+}
+
+/*=========================================
+          UTILITY CLASSES
+=========================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.d-flex{
+
+    display:flex;
+
+}
+
+.align-center{
+
+    align-items:center;
+
+}
+
+.justify-between{
+
+    justify-content:space-between;
+
+}
+
+/*=========================================
+            TOP NAVIGATION
+=========================================*/
+
+.topbar{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+background:rgba(255,255,255,.95);
+
+backdrop-filter:blur(14px);
+
+padding:18px 28px;
+
+border-radius:20px;
+
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+margin-bottom:30px;
+
+position:sticky;
+
+top:20px;
+
+z-index:100;
+
+}
+
+.top-left{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.menu-btn{
+
+display:none;
+
+width:48px;
+
+height:48px;
+
+border:none;
+
+outline:none;
+
+cursor:pointer;
+
+border-radius:12px;
+
+background:var(--primary);
+
+color:#fff;
+
+font-size:20px;
+
+transition:var(--transition);
+
+}
+
+.menu-btn:hover{
+
+transform:scale(1.08);
+
+}
+
+.logo img{
+
+width:170px;
+
+display:block;
+
+}
+
+/*=========================================
+          SEARCH BOX
+=========================================*/
+
+.search-box{
+
+flex:1;
+
+max-width:520px;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+background:#f1f5f9;
+
+border:1px solid var(--border);
+
+border-radius:50px;
+
+padding:0 20px;
+
+height:54px;
+
+}
+
+.search-box i{
+
+color:#64748b;
+
+font-size:18px;
+
+}
+
+.search-box input{
+
+flex:1;
+
+border:none;
+
+outline:none;
+
+background:transparent;
+
+font-size:15px;
+
+color:var(--text);
+
+font-family:'Poppins',sans-serif;
+
+}
+
+.search-box input::placeholder{
+
+color:#94a3b8;
+
+}
+
+/*=========================================
+         RIGHT SECTION
+=========================================*/
+
+.top-right{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+/*=========================================
+         ICON BOX
+=========================================*/
+
+.icon-box{
+
+position:relative;
+
+width:52px;
+
+height:52px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:#f8fafc;
+
+cursor:pointer;
+
+transition:var(--transition);
+
+border:1px solid var(--border);
+
+}
+
+.icon-box:hover{
+
+background:var(--primary);
+
+color:#fff;
+
+transform:translateY(-4px);
+
+}
+
+.icon-box i{
+
+font-size:18px;
+
+}
+
+.badge{
+
+position:absolute;
+
+top:-4px;
+
+right:-2px;
+
+width:22px;
+
+height:22px;
+
+border-radius:50%;
+
+background:var(--danger);
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:11px;
+
+font-weight:700;
+
+}
+
+/*=========================================
+        PROFILE
+=========================================*/
+
+.profile{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+cursor:pointer;
+
+background:#fff;
+
+border:1px solid var(--border);
+
+padding:10px 18px;
+
+border-radius:60px;
+
+transition:var(--transition);
+
+}
+
+.profile:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.profile-image{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,
+var(--primary),
+var(--secondary));
+
+color:#fff;
+
+font-size:22px;
+
+}
+
+.profile-info{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.profile-info h4{
+
+font-size:15px;
+
+font-weight:600;
+
+color:var(--dark);
+
+}
+
+.profile-info span{
+
+font-size:12px;
+
+color:#64748b;
+
+}
+
+.profile-info small{
+
+font-size:11px;
+
+color:var(--accent);
+
+font-weight:600;
+
+}
+
+.profile .fa-angle-down{
+
+color:#64748b;
+
+}
+
+/*=========================================
+      WELCOME BANNER
+=========================================*/
+
+.welcome-banner{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:40px;
+
+padding:45px;
+
+border-radius:28px;
+
+overflow:hidden;
+
+background:linear-gradient(135deg,
+#2563eb,
+#0ea5e9,
+#14b8a6);
+
+color:#fff;
+
+position:relative;
+
+}
+
+.welcome-banner::before{
+
+content:"";
+
+position:absolute;
+
+width:340px;
+
+height:340px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.12);
+
+right:-120px;
+
+top:-120px;
+
+}
+
+.welcome-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.welcome-content span{
+
+display:inline-block;
+
+font-size:17px;
+
+font-weight:500;
+
+margin-bottom:12px;
+
+}
+
+.welcome-content h1{
+
+font-size:42px;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+line-height:1.2;
+
+}
+
+.welcome-content p{
+
+font-size:16px;
+
+line-height:1.8;
+
+max-width:560px;
+
+margin-bottom:30px;
+
+}
+
+.welcome-content button{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+border:none;
+
+cursor:pointer;
+
+padding:15px 30px;
+
+border-radius:50px;
+
+background:#fff;
+
+color:var(--primary);
+
+font-size:15px;
+
+font-weight:600;
+
+transition:var(--transition);
+
+}
+
+.welcome-content button:hover{
+
+transform:translateY(-4px);
+
+}
+
+.welcome-image{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.welcome-image img{
+
+width:360px;
+
+max-width:100%;
+
+animation:floatImage 5s ease-in-out infinite;
+
+}
+
+@keyframes floatImage{
+
+0%{
+
+    transform:translateY(0);
+
+}
+
+50%{
+
+    transform:translateY(-14px);
+
+}
+
+100%{
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+
+/*=========================================
+            RESPONSIVE DESIGN
+=========================================*/
+
+/* ---------- Large Laptop (1400px) ---------- */
+
+@media (max-width:1400px){
+
+.cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.quick-actions{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ---------- Laptop ---------- */
+
+@media (max-width:1200px){
+
+.dashboard-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.welcome-banner{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.welcome-content p{
+
+    margin:20px auto;
+
+}
+
+.welcome-image img{
+
+    width:300px;
+
+}
+
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:992px){
+
+.sidebar{
+
+    left:-280px;
+
+    width:270px;
+
+}
+
+.sidebar.active{
+
+    left:0;
+
+}
+
+.close-sidebar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.menu-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    padding:20px;
+
+}
+
+.topbar{
+
+    padding:15px 20px;
+
+}
+
+.search-box{
+
+    max-width:300px;
+
+}
+
+.cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.quick-actions{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+.topbar{
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.search-box{
+
+    order:3;
+
+    width:100%;
+
+    max-width:100%;
+
+}
+
+.top-right{
+
+    width:100%;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+}
+
+.profile{
+
+    padding:8px 12px;
+
+}
+
+.profile-info{
+
+    display:none;
+
+}
+
+.welcome-banner{
+
+    padding:30px 20px;
+
+}
+
+.welcome-content h1{
+
+    font-size:30px;
+
+}
+
+.welcome-content p{
+
+    font-size:15px;
+
+}
+
+.welcome-image img{
+
+    width:240px;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.quick-actions{
+
+    grid-template-columns:1fr;
+
+}
+
+.card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.card-icon{
+
+    margin-bottom:10px;
+
+}
+
+.employee-table{
+
+    min-width:650px;
+
+}
+
+.profile-dropdown{
+
+    right:15px;
+
+    width:220px;
+
+}
+
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:576px){
+
+.main-content{
+
+    padding:15px;
+
+}
+
+.topbar{
+
+    padding:15px;
+
+    border-radius:15px;
+
+}
+
+.logo img{
+
+    width:130px;
+
+}
+
+.icon-box{
+
+    width:45px;
+
+    height:45px;
+
+}
+
+.profile-image{
+
+    width:45px;
+
+    height:45px;
+
+    font-size:18px;
+
+}
+
+.welcome-content h1{
+
+    font-size:26px;
+
+}
+
+.welcome-content button{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+.dashboard-card{
+
+    padding:20px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+.action-card{
+
+    padding:25px 15px;
+
+}
+
+.chart-filter{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.chart-filter button{
+
+    flex:1;
+
+    min-width:90px;
+
+}
+
+.card-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.view-all-btn{
+
+    width:100%;
+
+}
+
+.schedule-item{
+
+    flex-direction:column;
+
+}
+
+.schedule-time{
+
+    width:100%;
+
+}
+
+}
+
+/*=========================================
+        SIDEBAR OVERLAY
+=========================================*/
+
+.sidebar-overlay{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+backdrop-filter:blur(2px);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:998;
+
+}
+
+.sidebar-overlay.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+/*=========================================
+        FADE ANIMATION
+=========================================*/
+
+.fade-up{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:all .8s ease;
+
+}
+
+.fade-up.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/*=========================================
+        BUTTON EFFECT
+=========================================*/
+
+button{
+
+font-family:'Poppins',sans-serif;
+
+}
+
+button:active{
+
+transform:scale(.97);
+
+}
+
+/*=========================================
+        IMAGE SETTINGS
+=========================================*/
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/*=========================================
+        INPUT SETTINGS
+=========================================*/
+
+input{
+
+font-family:'Poppins',sans-serif;
+
+}
+
+/*=========================================
+        LINKS
+=========================================*/
+
+a{
+
+text-decoration:none;
+
+}
+
+/*=========================================
+        FINAL UTILITIES
+=========================================*/
+
+.hidden{
+
+display:none !important;
+
+}
+
+.text-success{
+
+color:var(--success);
+
+}
+
+.text-danger{
+
+color:var(--danger);
+
+}
+
+.text-warning{
+
+color:var(--warning);
+
+}
+
+.rounded{
+
+border-radius:var(--radius);
+
+}
+
+.shadow{
+
+box-shadow:var(--shadow);
+
+}
+
+</style>
+
+
+    <script>
+    /*=========================================================
+        CORPORATE ADMIN DASHBOARD - PART 1
+=========================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*====================================
+        LOCAL STORAGE USER
+====================================*/
+
+const name =
+    localStorage.getItem("name") ||
+    localStorage.getItem("userName") ||
+    "Administrator";
+
+const email =
+    localStorage.getItem("email") ||
+    localStorage.getItem("userEmail") ||
+    "admin@company.com";
+
+const role =
+    localStorage.getItem("role") ||
+    "Administrator";
+
+// Profile
+
+const adminName = document.getElementById("adminName");
+const adminEmail = document.getElementById("adminEmail");
+const adminRole = document.getElementById("adminRole");
+const welcomeName = document.getElementById("welcomeName");
+
+if (adminName) adminName.textContent = name;
+if (adminEmail) adminEmail.textContent = email;
+if (adminRole) adminRole.textContent = role;
+if (welcomeName) welcomeName.textContent = name;
+
+/*====================================
+        SIDEBAR
+====================================*/
+
+const sidebar = document.getElementById("sidebar");
+const menuBtn = document.getElementById("menuBtn");
+const closeSidebar = document.getElementById("closeSidebar");
+
+// Overlay
+
+const overlay = document.createElement("div");
+overlay.className = "sidebar-overlay";
+document.body.appendChild(overlay);
+
+function openSidebar() {
+
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+
+}
+
+function closeMenu() {
+
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+
+}
+
+if (menuBtn) {
+
+    menuBtn.addEventListener("click", openSidebar);
+
+}
+
+if (closeSidebar) {
+
+    closeSidebar.addEventListener("click", closeMenu);
+
+}
+
+overlay.addEventListener("click", closeMenu);
+
+/*====================================
+      PROFILE DROPDOWN
+====================================*/
+
+const profile =
+    document.querySelector(".profile");
+
+const dropdown =
+    document.getElementById("profileDropdown");
+
+if (profile && dropdown) {
+
+    profile.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        dropdown.classList.toggle("active");
+
+    });
+
+    document.addEventListener("click", () => {
+
+        dropdown.classList.remove("active");
+
+    });
+
+}
+
+/*====================================
+        LOGOUT
+====================================*/
+
+function logoutUser() {
+
+    const confirmLogout =
+        confirm("Do you want to logout?");
+
+    if (!confirmLogout) return;
+
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+    localStorage.removeItem("role");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userEmail");
+
+    window.location.href = "login.html";
+
+}
+
+const logoutBtn =
+    document.getElementById("logoutBtn");
+
+const logoutMenu =
+    document.getElementById("logoutMenu");
+
+if (logoutBtn) {
+
+    logoutBtn.addEventListener(
+        "click",
+        (e) => {
+
+            e.preventDefault();
+
+            logoutUser();
+
+        }
+    );
+
+}
+
+if (logoutMenu) {
+
+    logoutMenu.addEventListener(
+        "click",
+        logoutUser
+    );
+
+}
+
+/*====================================
+      KPI COUNTER ANIMATION
+====================================*/
+
+function animateCounter(id, target, prefix = "") {
+
+    const element =
+        document.getElementById(id);
+
+    if (!element) return;
+
+    let current = 0;
+
+    const increment =
+        Math.ceil(target / 80);
+
+    const timer = setInterval(() => {
+
+        current += increment;
+
+        if (current >= target) {
+
+            current = target;
+
+            clearInterval(timer);
+
+        }
+
+        element.textContent =
+            prefix + current.toLocaleString();
+
+    }, 20);
+
+}
+
+animateCounter(
+    "employeeCount",
+    1286
+);
+
+animateCounter(
+    "projectCount",
+    84
+);
+
+animateCounter(
+    "clientCount",
+    312
+);
+
+animateCounter(
+    "revenueCount",
+    12800000,
+    "₹"
+);
+
+});
+
+
+
+</script>

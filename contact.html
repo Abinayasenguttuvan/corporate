@@ -3,1189 +3,579 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Stackly </title>
+<title>Stackly Corporate</title>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;600;700;800&display=swap"
-        rel="stylesheet">
 
-    
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 
 <body>
 
-    <!--==========================================
-                HEADER
-    ===========================================-->
+<!--================ HEADER START ================-->
 
-    <header class="header">
+<header class="site-header">
 
-        <nav class="navbar">
+    <div class="site-header-container">
 
-            <!--=====================
-                    LOGO
-            ======================-->
+        <!-- Logo -->
 
-            <a href="index.html" class="logo">
+        <a href="index.html" class="site-logo">
 
-                <img src="./logo.webp" alt="Stackly Logo">
-
-            </a>
-
-            <!--=====================
-                DESKTOP MENU
-            ======================-->
-
-            <ul class="nav-menu">
-
-                <li>
-                    <a href="index.html" >
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="about.html" >
-                        About Us
-                    </a>
-                </li>
-
-                <li>
-                    <a href="services.html">
-                        Services
-                    </a>
-                </li>
-
-                <li>
-                    <a href="./carrers.html">
-                        Careers
-                    </a>
-                </li>
-
-                <li>
-                    <a href="contact.html" class="active">
-                        Contact Us
-                    </a>
-                </li>
-
-            </ul>
-
-            <!--=====================
-                RIGHT BUTTON
-            ======================-->
-
-            <a href="./login.html" class="talk-btn">
-
-                Let's Talk
-
-            </a>
-
-            <!--=====================
-                HAMBURGER
-            ======================-->
-
-            <div class="hamburger">
-
-                <span></span>
-
-                <span></span>
-
-                <span></span>
-
-            </div>
-
-        </nav>
-
-    </header>
-
-    <!--=========================
-            MOBILE MENU
-    ==========================-->
-
-    <div class="mobile-menu">
-
-        <ul>
-
-            <li>
-
-                <a href="index.html">
-
-                    <i class="fa-solid fa-house"></i>
-
-                    Home
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="about.html" class="active">
-
-                    <i class="fa-solid fa-user"></i>
-
-                    About Us
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="services.html">
-
-                    <i class="fa-solid fa-layer-group"></i>
-
-                    Services
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="careers.html">
-
-                    <i class="fa-solid fa-briefcase"></i>
-
-                    Careers
-
-                </a>
-
-            </li>
-
-            <li>
-
-                <a href="contact.html">
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    Contact Us
-
-                </a>
-
-            </li>
-
-        </ul>
-
-        <a href="contact.html" class="mobile-btn">
-
-            Let's Talk
+            <img src="./logo.webp" alt="Logo">
 
         </a>
 
+        <!-- Desktop Menu -->
+
+        <nav class="site-nav" id="siteNav">
+
+            <!-- Close Button -->
+
+            <button class="site-close-btn" id="closeMenu">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <ul>
+
+                <li><a href="./index.html" >Home</a></li>
+
+                <li><a href="./about.html">About Us</a></li>
+
+                <li><a href="./services.html">Services</a></li>
+
+                <li><a href="./carrers.html">Careers</a></li>
+
+                <li><a href="./contact.html" class="active">Contact Us</a></li>
+
+            </ul>
+
+            <a href="login.html" class="site-login-btn">
+
+                Login
+
+            </a>
+
+        </nav>
+
+        <!-- Hamburger -->
+
+        <button class="site-menu-btn" id="openMenu">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
     </div>
 
-    <style>
+</header>
 
-        /*==================================================
-                GOOGLE FONT & RESET
-==================================================*/
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+</section>
+
+<style>
+    .site-nav ul li a.active{
+
+color: #35c8df;
+
+font-weight: 600;
+
 }
 
-html{
-    scroll-behavior:smooth;
+.site-nav ul li a.active::after{
+
+content: "";
+
+position: absolute;
+
+left: 0;
+
+bottom: -6px;
+
+width: 100%;
+
+height: 3px;
+
+background: #35c8df;
+
+border-radius: 20px;
+
+}
+    /*=============================
+HEADER RESET
+=============================*/
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
 
-    font-family:'Poppins',sans-serif;
-
-    background:#ffffff;
-
-    overflow-x:hidden;
+font-family:Poppins,sans-serif;
+overflow-x:hidden;
 
 }
 
-a{
-    text-decoration:none;
-}
+/*=============================
+HEADER
+=============================*/
 
-li{
-    list-style:none;
-}
+.site-header{
 
-img{
-    display:block;
-    max-width:100%;
-}
+position:fixed;
 
-/*==================================================
-                    HEADER
-==================================================*/
+top:0;
 
-.header{
+left:0;
 
-    position:fixed;
+width:100%;
 
-    top:25px;
+height:90px;
 
-    left:0;
+background:#03050a;
 
-    width:100%;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 
-    display:flex;
-
-    justify-content:center;
-
-    z-index:9999;
-
-    transition:.4s ease;
+z-index:99999;
 
 }
 
-/*==================================================
-                GLASS NAVBAR
-==================================================*/
+.site-header-container{
 
-.navbar{
+max-width:1400px;
 
-    width:min(1320px,92%);
+height:90px;
 
-    height:86px;
+margin:auto;
 
-    padding:0 38px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    border-radius:100px;
-
-    background:rgba(15,23,42,.82);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    border:2px solid rgba(255,255,255,.18);
-
-    box-shadow:
-
-        0 12px 40px rgba(0,0,0,.25);
-
-    transition:.4s;
-
-}
-
-/*==================================================
-                STICKY HEADER
-==================================================*/
-
-.header.sticky{
-
-    top:12px;
-
-}
-
-.header.sticky .navbar{
-
-    background:rgba(8,16,32,.96);
-
-    box-shadow:
-
-        0 20px 45px rgba(0,0,0,.35);
-
-}
-
-/*==================================================
-                    LOGO
-==================================================*/
-
-.logo{
-
-    display:flex;
-
-    align-items:center;
-
-    flex-shrink:0;
-
-}
-
-.logo img{
-
-    width:235px;
-
-    transition:.35s;
-
-}
-
-.logo:hover img{
-
-    transform:scale(1.04);
-
-}
-
-/*==================================================
-                DESKTOP MENU
-==================================================*/
-
-.nav-menu{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:42px;
-
-}
-
-.nav-menu li{
-
-    position:relative;
-
-}
-
-.nav-menu a{
-
-    position:relative;
-
-    color:#ffffff;
-
-    font-size:17px;
-
-    font-weight:500;
-
-    transition:.35s;
-
-    padding:8px 2px;
-
-}
-
-/*==================================================
-            ACTIVE MENU
-==================================================*/
-
-.nav-menu a.active{
-
-    color:#39d6d6;
-
-    font-weight:600;
-
-}
-
-/*==================================================
-            HOVER EFFECT
-==================================================*/
-
-.nav-menu a::after{
-
-    content:"";
-
-    position:absolute;
-
-    left:50%;
-
-    bottom:-8px;
-
-    width:0;
-
-    height:3px;
-
-    border-radius:20px;
-
-    background:#39d6d6;
-
-    transform:translateX(-50%);
-
-    transition:.35s;
-
-}
-
-.nav-menu a:hover{
-
-    color:#39d6d6;
-
-}
-
-.nav-menu a:hover::after,
-
-.nav-menu a.active::after{
-
-    width:100%;
-
-}
-
-/*==================================================
-            MENU ITEM ANIMATION
-==================================================*/
-
-.nav-menu li{
-
-    transition:.35s;
-
-}
-
-.nav-menu li:hover{
-
-    transform:translateY(-2px);
-
-}
-
-
-/*==================================================
-                LET'S TALK BUTTON
-==================================================*/
-
-.talk-btn{
-
-display:inline-flex;
+display:flex;
 
 align-items:center;
 
-justify-content:center;
+justify-content:space-between;
 
-padding:14px 34px;
+padding:0 60px;
+ 
+}
 
-border-radius:50px;
+/*=============================
+LOGO
+=============================*/
 
-background:linear-gradient(135deg,#00d4c9,#00bcd4);
+.site-logo{
 
-color:#fff;
+display:flex;
+
+align-items:center;
+
+text-decoration:none;
+
+}
+
+.site-logo img{
+
+width:180px;
+
+height:auto;
+
+display:block;
+
+}
+
+/*=============================
+NAVIGATION
+=============================*/
+
+.site-nav{
+
+display:flex;
+
+align-items:center;
+
+gap:40px;
+
+}
+
+.site-nav ul{
+
+display:flex;
+
+align-items:center;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+.site-nav ul li a{
+
+text-decoration:none;
 
 font-size:16px;
 
 font-weight:600;
 
-letter-spacing:.3px;
+color: white;
 
-transition:.35s ease;
-
-box-shadow:0 12px 30px rgba(0,188,212,.30);
+transition:.3s;
 
 position:relative;
 
-overflow:hidden;
-
 }
 
-.talk-btn::before{
+.site-nav ul li a::after{
 
 content:"";
 
 position:absolute;
 
-left:-120%;
+bottom:-6px;
 
-top:0;
+left:0;
 
-width:120%;
-
-height:100%;
-
-background:linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,.45),
-    transparent
-);
-
-transition:.7s;
-
-}
-
-.talk-btn:hover::before{
-
-left:120%;
-
-}
-
-.talk-btn:hover{
-
-transform:translateY(-4px);
-
-box-shadow:0 18px 40px rgba(0,188,212,.45);
-
-}
-
-/*==================================================
-            HAMBURGER
-==================================================*/
-
-.hamburger{
-
-width:50px;
-
-height:50px;
-
-display:none;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-gap:6px;
-
-cursor:pointer;
-
-border-radius:50%;
-
-transition:.35s;
-
-}
-
-.hamburger span{
-
-width:28px;
+width:0;
 
 height:3px;
 
+background:#35c8df;
+
+transition:.4s;
+
 border-radius:20px;
 
-background:#ffffff;
+}
 
-transition:.35s;
+.site-nav ul li a:hover{
+
+color:#35c8df;
 
 }
 
-.hamburger:hover{
+.site-nav ul li a:hover::after{
 
-background:rgba(255,255,255,.08);
-
-}
-
-/*==================================================
-        HAMBURGER ACTIVE
-==================================================*/
-
-.hamburger.active span:nth-child(1){
-
-transform:translateY(9px) rotate(45deg);
+width:100%;
 
 }
 
-.hamburger.active span:nth-child(2){
+/*=============================
+LOGIN BUTTON
+=============================*/
 
-opacity:0;
+.site-login-btn{
+
+text-decoration:none;
+
+padding:13px 34px;
+
+background:#35c8df;
+
+color:#fff;
+
+border-radius:40px;
+
+font-weight:600;
+
+transition:.3s;
 
 }
 
-.hamburger.active span:nth-child(3){
+.site-login-btn:hover{
 
-transform:translateY(-9px) rotate(-45deg);
+background:#35c8df;
+
+transform:translateY(-2px);
 
 }
 
-/*==================================================
-            MOBILE MENU
-==================================================*/
+/*=============================
+MENU BUTTON
+=============================*/
 
-.mobile-menu{
+.site-menu-btn{
+
+display:none;
+
+border:none;
+
+background:none;
+
+font-size:30px;
+
+cursor:pointer;
+
+color:white;
+
+}
+
+/*=============================
+CLOSE BUTTON
+=============================*/
+
+.site-close-btn{
+
+display:none;
+
+background:none;
+color:white;
+
+border:none;
+
+font-size:32px;
+
+position:absolute;
+
+right:25px;
+
+top:25px;
+
+cursor:pointer;
+
+}
+
+/*=============================
+HEADER SPACE
+=============================*/
+
+.site-header-space{
+
+height:90px;
+
+}
+
+/*=============================
+TABLET
+=============================*/
+
+@media(max-width:992px){
+
+.site-header-container{
+
+padding:0 25px;
+
+}
+
+.site-logo img{
+
+width:160px;
+
+}
+
+.site-menu-btn{
+
+display:block;
+
+}
+
+.site-nav{
 
 position:fixed;
 
-top:115px;
+right:-100%;
 
-left:50%;
+top:0;
 
-transform:translateX(-50%) scale(.95);
+width:320px;
 
-width:min(92%,420px);
+height:100vh;
 
-background:#0f172a;
-
-border-radius:28px;
-
-padding:30px;
-
-opacity:0;
-
-visibility:hidden;
-
-transition:.35s;
-
-border:1px solid rgba(255,255,255,.10);
-
-box-shadow:0 25px 50px rgba(0,0,0,.35);
-
-z-index:999;
-
-}
-
-.mobile-menu.active{
-
-opacity:1;
-
-visibility:visible;
-
-transform:translateX(-50%) scale(1);
-
-}
-
-.mobile-menu ul{
-
-display:flex;
+background: black;
 
 flex-direction:column;
-
-gap:18px;
-
-}
-
-.mobile-menu ul li a{
-
-display:flex;
-
-align-items:center;
-
-gap:14px;
-
-color:#ffffff;
-
-font-size:17px;
-
-font-weight:500;
-
-padding:14px 18px;
-
-border-radius:14px;
-
-transition:.35s;
-
-}
-
-.mobile-menu ul li a i{
-
-width:24px;
-
-text-align:center;
-
-color:#00d4c9;
-
-}
-
-.mobile-menu ul li a:hover,
-
-.mobile-menu ul li a.active{
-
-background:rgba(0,212,201,.15);
-
-color:#00d4c9;
-
-}
-
-/*==================================================
-        MOBILE BUTTON
-==================================================*/
-
-.mobile-btn{
-
-display:flex;
 
 justify-content:center;
 
 align-items:center;
 
-margin-top:30px;
+transition:.4s;
+
+box-shadow:-5px 0 20px rgba(0,0,0,.15);
+
+z-index:999999;
+
+}
+
+.site-nav.active{
+
+right:0;
+
+}
+
+.site-close-btn{
+
+display:block;
+
+}
+
+.site-nav ul{
+
+flex-direction:column;
+
+gap:28px;
+
+}
+
+.site-nav ul li a{
+
+font-size:20px;
+
+}
+
+.site-login-btn{
+
+margin-top:25px;
+
+}
+
+}
+
+
+/*=============================
+MOBILE
+=============================*/
+
+@media(max-width:576px){
+
+.site-header{
+
+height:75px;
+
+}
+
+.site-header-space{
+
+height:75px;
+
+}
+
+.site-header-container{
+
+height:75px;
+
+padding:0 20px;
+
+}
+
+.site-logo img{
+
+width:145px;
+
+}
+
+.site-nav{
 
 width:100%;
 
-padding:15px;
+}
 
-border-radius:50px;
+.site-menu-btn{
 
-background:linear-gradient(135deg,#00d4c9,#00bcd4);
-
-color:#fff;
-
-font-weight:600;
-
-transition:.35s;
+font-size:28px;
 
 }
 
-.mobile-btn:hover{
+.site-nav ul li a{
 
-transform:translateY(-3px);
-
-box-shadow:0 15px 35px rgba(0,188,212,.35);
+font-size:18px;
 
 }
 
+.site-login-btn{
 
-/*==================================================
-                LARGE DESKTOP
-==================================================*/
+width:180px;
 
-@media (min-width:1600px){
+text-align:center;
 
-.navbar{
-
-    max-width:1450px;
-
-    height:95px;
-
-    padding:0 45px;
-
-}
-
-.logo img{
-
-    width:260px;
-
-}
-
-.nav-menu{
-
-    gap:55px;
-
-}
-
-.nav-menu a{
-
-    font-size:18px;
-
-}
-
-.talk-btn{
-
-    padding:16px 38px;
-
-    font-size:17px;
+padding:14px;
 
 }
 
 }
 
-/*==================================================
-                LAPTOP
-==================================================*/
+/*=============================
+LARGE DESKTOP
+=============================*/
 
-@media (max-width:1400px){
+@media(min-width:1400px){
 
-.navbar{
+.site-header-container{
 
-    width:94%;
-
-    padding:0 30px;
+max-width:1500px;
 
 }
 
-.logo img{
+.site-logo img{
 
-    width:210px;
-
-}
-
-.nav-menu{
-
-    gap:28px;
+width:190px;
 
 }
 
-.nav-menu a{
+.site-nav ul{
 
-    font-size:16px;
-
-}
-
-.talk-btn{
-
-    padding:13px 28px;
-
-    font-size:15px;
+gap:42px;
 
 }
 
 }
 
-/*==================================================
-                TABLET
-==================================================*/
+</style>
 
-@media (max-width:992px){
+<script>
+    const openMenu = document.getElementById("openMenu");
 
-.navbar{
+const closeMenu = document.getElementById("closeMenu");
 
-    height:78px;
+const nav = document.getElementById("siteNav");
 
-    padding:0 22px;
+openMenu.addEventListener("click", () => {
 
-}
-
-.logo img{
-
-    width:180px;
-
-}
-
-.nav-menu{
-
-    display:none;
-
-}
-
-.talk-btn{
-
-    display:none;
-
-}
-
-.hamburger{
-
-    display:flex;
-
-}
-
-.mobile-menu{
-
-    display:block;
-
-}
-
-}
-
-/*==================================================
-                MOBILE
-==================================================*/
-
-@media (max-width:768px){
-
-.header{
-
-    top:15px;
-
-}
-
-.navbar{
-
-    width:94%;
-
-    height:72px;
-
-    padding:0 18px;
-
-    border-radius:22px;
-
-}
-
-.logo img{
-
-    width:155px;
-
-}
-
-.hamburger{
-
-    width:42px;
-
-    height:42px;
-
-}
-
-.hamburger span{
-
-    width:24px;
-
-}
-
-.mobile-menu{
-
-    top:95px;
-
-    width:94%;
-
-    padding:22px;
-
-    border-radius:20px;
-
-}
-
-.mobile-menu ul li a{
-
-    font-size:16px;
-
-    padding:13px 16px;
-
-}
-
-.mobile-btn{
-
-    padding:14px;
-
-    font-size:15px;
-
-}
-
-}
-
-/*==================================================
-            SMALL MOBILE
-==================================================*/
-
-@media (max-width:480px){
-
-.header{
-
-    top:10px;
-
-}
-
-.navbar{
-
-    width:95%;
-
-    height:65px;
-
-    padding:0 15px;
-
-    border-radius:18px;
-
-}
-
-.logo img{
-
-    width:135px;
-
-}
-
-.hamburger{
-
-    width:38px;
-
-    height:38px;
-
-}
-
-.hamburger span{
-
-    width:22px;
-
-    height:2.5px;
-
-}
-
-.mobile-menu{
-
-    top:85px;
-
-    padding:18px;
-
-}
-
-.mobile-menu ul{
-
-    gap:12px;
-
-}
-
-.mobile-menu ul li a{
-
-    font-size:15px;
-
-    padding:12px;
-
-}
-
-.mobile-btn{
-
-    margin-top:20px;
-
-    padding:13px;
-
-}
-
-}
-
-/*==================================================
-        EXTRA SMALL DEVICES
-==================================================*/
-
-@media (max-width:360px){
-
-.logo img{
-
-    width:120px;
-
-}
-
-.mobile-menu{
-
-    width:96%;
-
-}
-
-.mobile-menu ul li a{
-
-    font-size:14px;
-
-}
-
-}
-        </style>
-
-        <script>
-            /*==================================================
-                HEADER JAVASCRIPT
-==================================================*/
-
-document.addEventListener("DOMContentLoaded", () => {
-
-/*==============================================
-            SELECT ELEMENTS
-==============================================*/
-
-const header = document.querySelector(".header");
-const hamburger = document.querySelector(".hamburger");
-const mobileMenu = document.querySelector(".mobile-menu");
-
-const navLinks = document.querySelectorAll(
-    ".nav-menu a, .mobile-menu a"
-);
-
-/*==============================================
-            STICKY HEADER
-==============================================*/
-
-window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 60) {
-
-        header.classList.add("sticky");
-
-    } else {
-
-        header.classList.remove("sticky");
-
-    }
+    nav.classList.add("active");
 
 });
 
-/*==============================================
-        MOBILE MENU TOGGLE
-==============================================*/
+closeMenu.addEventListener("click", () => {
 
-hamburger.addEventListener("click", () => {
-
-    hamburger.classList.toggle("active");
-
-    mobileMenu.classList.toggle("active");
-
-    document.body.classList.toggle("menu-open");
+    nav.classList.remove("active");
 
 });
 
-/*==============================================
-        CLOSE MENU WHEN LINK CLICKED
-==============================================*/
+// Close menu after clicking a link
 
-navLinks.forEach(link => {
+document.querySelectorAll(".site-nav a").forEach(link => {
 
     link.addEventListener("click", () => {
 
-        hamburger.classList.remove("active");
-
-        mobileMenu.classList.remove("active");
-
-        document.body.classList.remove("menu-open");
+        nav.classList.remove("active");
 
     });
 
 });
 
-/*==============================================
-        ACTIVE MENU
-==============================================*/
+// Close menu when clicking outside
 
-const currentPage = window.location.pathname.split("/").pop();
+document.addEventListener("click", function(e){
 
-navLinks.forEach(link => {
+    if(
+        !nav.contains(e.target) &&
+        !openMenu.contains(e.target)
+    ){
 
-    const href = link.getAttribute("href");
-
-    if (href === currentPage || (currentPage === "" && href === "index.html")) {
-
-        link.classList.add("active");
-
-    } else {
-
-        link.classList.remove("active");
+        nav.classList.remove("active");
 
     }
 
 });
-
-/*==============================================
-        CLICK OUTSIDE TO CLOSE MENU
-==============================================*/
-
-document.addEventListener("click", (e) => {
-
-    if (
-
-        !mobileMenu.contains(e.target) &&
-
-        !hamburger.contains(e.target)
-
-    ) {
-
-        hamburger.classList.remove("active");
-
-        mobileMenu.classList.remove("active");
-
-        document.body.classList.remove("menu-open");
-
-    }
-
-});
-
-/*==============================================
-        ESC KEY CLOSE
-==============================================*/
-
-document.addEventListener("keydown", (e) => {
-
-    if (e.key === "Escape") {
-
-        hamburger.classList.remove("active");
-
-        mobileMenu.classList.remove("active");
-
-        document.body.classList.remove("menu-open");
-
-    }
-
-});
-
-/*==============================================
-        SMOOTH HOVER EFFECT
-==============================================*/
-
-document.querySelectorAll(".nav-menu li").forEach(item => {
-
-    item.addEventListener("mouseenter", () => {
-
-        item.style.transform = "translateY(-2px)";
-
-    });
-
-    item.addEventListener("mouseleave", () => {
-
-        item.style.transform = "translateY(0)";
-
-    });
-
-});
-
-});
-            </script>
-    
+    </script>
    
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -5155,18 +4545,71 @@ function scrollToFAQ() {
 </script>
 
 
-<!-- ==========================================================
-     STACKLY FOOTER
-     Non-Conflicting Footer
-=========================================================== -->
-
 <footer class="stkx-footer">
 
     <!-- ===========================
          CTA SECTION
     ============================ -->
 
-    
+    <section class="stkx-footer-cta">
+
+        <div class="stkx-footer-overlay"></div>
+
+        <div class="stkx-footer-container">
+
+            <div class="stkx-footer-cta-wrapper">
+
+                <!-- Left -->
+
+                <div class="stkx-footer-cta-content stkx-reveal-left">
+
+                    <h2>
+                        Ready to Transform
+                        <br>
+                        your Business ?
+                    </h2>
+
+                    <p>
+                        Lets work together to create solutions that drive
+                        growth, improve efficiency and deliver impact.
+                    </p>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="stkx-footer-cta-btn-wrap stkx-reveal-right">
+
+                    <a href="404.html" class="stkx-footer-btn">
+
+                        <span>Get in touch today</span>
+
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="32"
+                            height="32"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.3"
+                            stroke-linecap="round"
+                            stroke-linejoin="round">
+
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+
+                            <polyline points="12 5 19 12 12 19"></polyline>
+
+                        </svg>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
     <!-- ===========================
          MAIN FOOTER
@@ -5237,42 +4680,37 @@ function scrollToFAQ() {
                     <ul class="stkx-footer-links">
 
                         <li>
-                            <a href="index.html">
+                            <a href="./index.html">
                                 <span class="stkx-dot"></span>
                                 Home
                             </a>
                         </li>
 
                         <li>
-                            <a href="about.html">
+                            <a href="./about.html">
                                 <span class="stkx-dot"></span>
                                 About Us
                             </a>
                         </li>
 
                         <li>
-                            <a href="services.html">
+                            <a href="./services.html">
                                 <span class="stkx-dot"></span>
                                 Services
                             </a>
                         </li>
 
                         <li>
-                            <a href="./404.html">
+                            <a href="./carrers.html">
                                 <span class="stkx-dot"></span>
-                                Corporate
+                              Careers
                             </a>
                         </li>
 
-                        <li>
-                            <a href="./404.html">
-                                <span class="stkx-dot"></span>
-                                Customer
-                            </a>
-                        </li>
+                        
 
                         <li>
-                            <a href="contact.html">
+                            <a href="./contact.html">
                                 <span class="stkx-dot"></span>
                                 Contact Us
                             </a>
@@ -5457,18 +4895,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
      FOOTER JAVASCRIPT
 =========================================== -->
 
-<script src="footer.js"></script>
 
-<Style>
+
+<style>
+
     /*=========================================================
   STACKLY FOOTER
-  NON-CONFLICTING CSS
-  Prefix : stkx-
+  OPTIMIZED CSS - PART 1
 =========================================================*/
+
+/*==========================
+    RESET
+==========================*/
 
 *,
 *::before,
 *::after{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
 }
 
@@ -5484,246 +4928,307 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
 .stkx-footer-container{
     width:100%;
     max-width:1320px;
-    margin:0 auto;
+    margin:auto;
     padding:0 40px;
 }
 
 /*=========================================================
- CTA SECTION
-=========================================================*/
-
-/*=========================================================
-CTA SECTION
+                CTA SECTION
 =========================================================*/
 
 .stkx-footer-cta{
+
     position:relative;
+
     width:100%;
-    padding:80px 0;
+
+    padding:50px 0;
+
     overflow:hidden;
 
-    background:url("./image\ 5.webp") center center/cover no-repeat;
+    background:url("./image 5.webp") center center/cover no-repeat;
+
 }
 
-/* Dark Overlay */
+/* Overlay */
 
 .stkx-footer-overlay{
+
     position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+
+    inset:0;
 
     background:rgba(7,16,36,.78);
 
     z-index:1;
+
 }
 
-/* Container */
+/* CTA Container */
 
 .stkx-footer-cta .stkx-footer-container{
+
     position:relative;
+
     z-index:5;
+
 }
 
-/* Wrapper */
+/* CTA Wrapper */
 
 .stkx-footer-cta-wrapper{
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
-    gap:70px;
+
+    gap:50px;
+
 }
 
-/* Left */
+/*==========================
+      CTA CONTENT
+==========================*/
 
 .stkx-footer-cta-content{
+
     flex:1;
+
 }
 
 .stkx-footer-cta-content h2{
 
-    margin:0;
+    color:#ffffff;
 
-    color:#fff;
-
-    font-size:56px;
+    font-size:46px;
 
     font-weight:700;
 
-    line-height:1.15;
+    line-height:1.2;
 
-    position:relative;
+    margin:0;
 
-    z-index:10;
 }
 
 .stkx-footer-cta-content p{
 
-    margin-top:22px;
+    margin-top:14px;
 
-    color:#ffffff;
+    color:#f4f4f4;
 
-    font-size:22px;
+    font-size:18px;
 
-    line-height:1.7;
+    line-height:1.6;
 
-    position:relative;
+    max-width:620px;
 
-    z-index:10;
 }
 
-/* Right */
+/*==========================
+        CTA BUTTON
+==========================*/
 
 .stkx-footer-cta-btn-wrap{
+
     flex-shrink:0;
-    position:relative;
-    z-index:10;
+
 }
 
 .stkx-footer-btn{
 
-    display:flex;
+    display:inline-flex;
+
     align-items:center;
+
     justify-content:center;
-    gap:18px;
 
-    min-width:340px;
+    gap:15px;
 
-    padding:24px 38px;
+    min-width:280px;
 
-    background:#16d4cb;
+    padding:18px 30px;
+
+    background:goldenrod;
 
     color:#06121b;
 
-    border-radius:16px;
-
     text-decoration:none;
 
-    font-size:22px;
+    border-radius:14px;
+
+    font-size:18px;
 
     font-weight:700;
 
-    transition:.35s;
+    transition:.35s ease;
+
+    position:relative;
+
+    overflow:hidden;
+
 }
 
 .stkx-footer-btn:hover{
 
-    transform:translateY(-6px);
+    transform:translateY(-4px);
 
-    background:#23e8df;
+    box-shadow:0 15px 30px rgba(22,212,203,.25);
 
-    box-shadow:0 18px 40px rgba(22,212,203,.35);
 }
+
 /*=========================================================
- MAIN FOOTER
+                MAIN FOOTER
 =========================================================*/
 
 .stkx-footer-main{
 
     background:#04060d;
 
-    padding:90px 0 70px;
+    padding:55px 0 40px;
+
 }
+
+/*==========================
+        GRID
+==========================*/
 
 .stkx-footer-grid{
 
     display:grid;
 
     grid-template-columns:
-    1.4fr
-    1fr
-    1fr
-    1fr;
+        1.4fr
+        1fr
+        1fr
+        1fr;
 
-    gap:60px;
+    gap:35px;
+
 }
 
 /*=========================================================
- COMPANY
+            COMPANY SECTION
 =========================================================*/
 
 .stkx-footer-company img{
 
-    width:260px;
+    width:220px;
+
     max-width:100%;
+
     display:block;
+
 }
 
 .stkx-footer-desc{
 
-    margin-top:34px;
+    margin-top:18px;
 
-    color:#f1f1f1;
+    color:#d9d9d9;
 
-    font-size:21px;
+    font-size:17px;
 
-    line-height:1.7;
+    line-height:1.6;
 
-    max-width:360px;
+    max-width:330px;
+
 }
+
+/*==========================
+      SOCIAL TITLE
+==========================*/
 
 .stkx-footer-social-title{
 
-    margin-top:50px;
-    margin-bottom:25px;
+    margin-top:30px;
 
-    font-size:34px;
+    margin-bottom:16px;
+
+    font-size:24px;
+
     font-weight:700;
+
 }
+
+/*==========================
+      SOCIAL ICONS
+==========================*/
 
 .stkx-footer-social{
 
     display:flex;
+
     align-items:center;
-    gap:18px;
+
+    gap:12px;
+
 }
 
 .stkx-footer-social a{
 
-    width:58px;
-    height:58px;
+    width:46px;
+
+    height:46px;
 
     border-radius:50%;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
+
+    color:#ffffff;
+
+    font-size:19px;
 
     text-decoration:none;
 
-    color:#fff;
+    transition:.35s ease;
 
-    font-size:25px;
-
-    transition:.35s;
 }
 
 .stkx-footer-social a:nth-child(1){
+
     background:#3b5998;
+
 }
 
 .stkx-footer-social a:nth-child(2){
+
     background:#0a66c2;
+
 }
 
 .stkx-footer-social a:nth-child(3){
+
     background:#1da1f2;
+
 }
 
 .stkx-footer-social a:nth-child(4){
-    background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+
+    background:linear-gradient(
+        45deg,
+        #feda75,
+        #fa7e1e,
+        #d62976,
+        #962fbf,
+        #4f5bd5
+    );
+
 }
 
 .stkx-footer-social a:hover{
 
-    transform:translateY(-8px) scale(1.08);
+    transform:translateY(-4px) scale(1.05);
+
 }
 
-
 /*=========================================================
-  FOOTER COLUMNS
+            FOOTER COLUMNS
 =========================================================*/
 
 .stkx-footer-column{
@@ -5731,97 +5236,147 @@ CTA SECTION
 }
 
 .stkx-footer-title{
-    margin:0 0 30px;
-    font-size:30px;
+
+    margin:0 0 18px;
+
+    font-size:24px;
+
     font-weight:700;
+
     color:#ffffff;
+
     position:relative;
+
+    line-height:1.3;
+
 }
 
 .stkx-footer-title::after{
+
     content:"";
+
     display:block;
-    width:65px;
+
+    width:55px;
+
     height:3px;
+
     background:#18d7cf;
-    margin-top:12px;
+
+    margin-top:10px;
+
     border-radius:20px;
+
 }
 
 /*=========================================================
-  LINKS
+                FOOTER LINKS
 =========================================================*/
 
 .stkx-footer-links{
+
     margin:0;
+
     padding:0;
+
     list-style:none;
+
 }
 
 .stkx-footer-links li{
-    margin-bottom:18px;
+
+    margin-bottom:12px;
+
 }
 
 .stkx-footer-links li:last-child{
+
     margin-bottom:0;
+
 }
 
 .stkx-footer-links a{
 
     display:flex;
+
     align-items:center;
-    gap:14px;
+
+    gap:12px;
 
     color:#d8d8d8;
+
     text-decoration:none;
 
-    font-size:18px;
+    font-size:16px;
+
     font-weight:500;
 
-    transition:.35s;
+    transition:.35s ease;
+
 }
 
 .stkx-dot{
 
-    width:8px;
-    height:8px;
+    width:7px;
 
-    background:#19d8cf;
+    height:7px;
+
+    background:#18d7cf;
 
     border-radius:50%;
 
-    transition:.35s;
+    transition:.35s ease;
+
+    flex-shrink:0;
+
 }
 
 .stkx-footer-links a:hover{
 
-    color:#19d8cf;
+    color:#18d7cf;
 
-    transform:translateX(8px);
+    transform:translateX(6px);
+
 }
 
 .stkx-footer-links a:hover .stkx-dot{
 
-    transform:scale(1.5);
+    transform:scale(1.4);
+
 }
 
 /*=========================================================
-  CONTACT
+                CONTACT SECTION
 =========================================================*/
 
 .stkx-footer-contact{
+
     display:flex;
+
     flex-direction:column;
-    gap:28px;
+
+    gap:18px;
+
+}
+
+.stkx-contact-item{
+
+    display:flex;
+
+    flex-direction:column;
+
 }
 
 .stkx-contact-item h4{
 
-    margin:0 0 10px;
+    margin:0 0 6px;
 
-    font-size:20px;
+    font-size:18px;
+
     color:#ffffff;
+
     font-weight:600;
+
 }
 
 .stkx-contact-item p{
@@ -5830,30 +5385,38 @@ CTA SECTION
 
     color:#d8d8d8;
 
-    font-size:17px;
+    font-size:15px;
 
-    line-height:1.8;
+    line-height:1.6;
+
 }
 
 /*=========================================================
-  FOOTER BOTTOM
+                FOOTER BOTTOM
 =========================================================*/
 
 .stkx-footer-bottom{
 
-    border-top:1px solid rgba(255,255,255,.08);
-
     background:#03050a;
 
-    padding:22px 0;
+    border-top:1px solid rgba(255,255,255,.08);
+
+    padding:14px 0;
+
 }
 
 .stkx-footer-bottom-wrapper{
 
     display:flex;
-    align-items:center;
+
     justify-content:space-between;
-    gap:25px;
+
+    align-items:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
 }
 
 .stkx-footer-copy p{
@@ -5862,20 +5425,28 @@ CTA SECTION
 
     color:#cfcfcf;
 
-    font-size:15px;
+    font-size:14px;
+
+    line-height:1.5;
+
 }
 
 .stkx-footer-bottom-links{
 
     display:flex;
+
     align-items:center;
-    gap:16px;
+
+    gap:12px;
 
     flex-wrap:wrap;
+
 }
 
 .stkx-footer-bottom-links span{
-    color:#666;
+
+    color:#666666;
+
 }
 
 .stkx-footer-bottom-links a{
@@ -5884,33 +5455,39 @@ CTA SECTION
 
     text-decoration:none;
 
-    font-size:15px;
+    font-size:14px;
 
-    transition:.3s;
+    transition:.3s ease;
+
 }
 
 .stkx-footer-bottom-links a:hover{
+
     color:#18d7cf;
+
 }
 
 /*=========================================================
-  SCROLL REVEAL
+            SCROLL REVEAL
 =========================================================*/
 
 .stkx-reveal-left,
 .stkx-reveal-right{
 
-    /* opacity:0;
+    transition:all .8s ease;
 
-    transition:all .9s ease; */
 }
 
 .stkx-reveal-left{
-    transform:translateX(-70px);
+
+    transform:translateX(-50px);
+
 }
 
 .stkx-reveal-right{
-    transform:translateX(70px);
+
+    transform:translateX(50px);
+
 }
 
 .stkx-reveal-active{
@@ -5918,227 +5495,541 @@ CTA SECTION
     opacity:1 !important;
 
     transform:translate(0,0) !important;
+
 }
 
+
 /*=========================================================
-  TABLET
+            LAPTOP (1200px)
 =========================================================*/
 
-@media (max-width:1024px){
+@media (max-width:1200px){
 
 .stkx-footer-container{
     padding:0 30px;
 }
 
-.stkx-footer-cta-wrapper{
-
-    flex-direction:column;
-    text-align:center;
-    gap:45px;
+.stkx-footer-grid{
+    gap:30px;
 }
 
-.stkx-footer-cta-content{
-    max-width:100%;
+.stkx-footer-cta{
+    padding:45px 0;
+}
+
+.stkx-footer-cta-wrapper{
+    gap:40px;
 }
 
 .stkx-footer-cta-content h2{
-    font-size:44px;
+    font-size:40px;
 }
 
 .stkx-footer-cta-content p{
-    font-size:20px;
+    font-size:17px;
 }
 
 .stkx-footer-btn{
-    min-width:320px;
-    font-size:21px;
+    min-width:250px;
+    padding:16px 26px;
+    font-size:17px;
+}
+
+.stkx-footer-company img{
+    width:200px;
+}
+
+.stkx-footer-desc{
+    font-size:16px;
+}
+
+}
+
+/*=========================================================
+                TABLET
+=========================================================*/
+
+@media (max-width:992px){
+
+.stkx-footer-container{
+    padding:0 25px;
+}
+
+.stkx-footer-cta{
+
+    padding:40px 0;
+
+}
+
+.stkx-footer-cta-wrapper{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:30px;
+
+}
+
+.stkx-footer-cta-content{
+
+    max-width:100%;
+
+}
+
+.stkx-footer-cta-content h2{
+
+    font-size:34px;
+
+}
+
+.stkx-footer-cta-content p{
+
+    font-size:16px;
+
+    margin-top:12px;
+
+    max-width:650px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+.stkx-footer-btn{
+
+    min-width:240px;
+
+    padding:15px 25px;
+
+    font-size:16px;
+
+}
+
+.stkx-footer-main{
+
+    padding:45px 0 35px;
+
 }
 
 .stkx-footer-grid{
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:50px;
+    gap:35px;
+
 }
 
 .stkx-footer-company{
-    grid-column:1 / -1;
+
+    grid-column:1/-1;
+
+    text-align:center;
+
+}
+
+.stkx-footer-company img{
+
+    margin:auto;
+
+}
+
+.stkx-footer-desc{
+
+    max-width:600px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+.stkx-footer-social{
+
+    justify-content:center;
+
 }
 
 }
 
 /*=========================================================
-  MOBILE
+                    MOBILE
 =========================================================*/
 
 @media (max-width:768px){
 
 .stkx-footer-container{
+
     padding:0 20px;
+
 }
 
 .stkx-footer-cta{
-    padding:55px 0;
+
+    padding:35px 0;
+
+}
+
+.stkx-footer-cta-wrapper{
+
+    gap:25px;
+
 }
 
 .stkx-footer-cta-content h2{
 
-    font-size:34px;
-    line-height:1.25;
+    font-size:28px;
+
+    line-height:1.3;
+
 }
 
 .stkx-footer-cta-content p{
 
-    font-size:17px;
-    margin-top:18px;
+    font-size:15px;
+
+    line-height:1.6;
+
 }
 
 .stkx-footer-btn{
 
     width:100%;
+
     min-width:100%;
 
-    padding:20px;
+    padding:15px;
 
-    font-size:18px;
+    font-size:16px;
 
-    gap:18px;
-}
+    justify-content:center;
 
-.stkx-footer-btn svg{
-
-    width:22px;
-    height:22px;
 }
 
 .stkx-footer-main{
 
-    padding:65px 0 50px;
+    padding:40px 0 30px;
+
 }
 
 .stkx-footer-grid{
 
     grid-template-columns:1fr;
 
-    gap:45px;
+    gap:30px;
+
+}
+
+.stkx-footer-company{
+
+    text-align:center;
+
 }
 
 .stkx-footer-company img{
-    width:210px;
+
+    width:180px;
+
+    margin:auto;
+
 }
 
 .stkx-footer-desc{
 
+    font-size:15px;
+
     max-width:100%;
 
-    font-size:17px;
 }
 
 .stkx-footer-social-title{
 
-    font-size:24px;
+    margin-top:20px;
 
-    margin-top:35px;
+    font-size:20px;
+
+}
+
+.stkx-footer-social{
+
+    justify-content:center;
+
+    gap:10px;
+
 }
 
 .stkx-footer-social a{
 
-    width:48px;
-    height:48px;
+    width:42px;
 
-    font-size:20px;
+    height:42px;
+
+    font-size:17px;
+
 }
 
 .stkx-footer-title{
-    font-size:24px;
+
+    font-size:20px;
+
+    margin-bottom:15px;
+
+}
+
+.stkx-footer-links li{
+
+    margin-bottom:10px;
+
 }
 
 .stkx-footer-links a{
-    font-size:16px;
+
+    font-size:15px;
+
 }
 
 .stkx-contact-item h4{
-    font-size:18px;
+
+    font-size:16px;
+
 }
 
 .stkx-contact-item p{
-    font-size:16px;
+
+    font-size:14px;
+
+}
+
+.stkx-footer-bottom{
+
+    padding:12px 0;
+
 }
 
 .stkx-footer-bottom-wrapper{
 
     flex-direction:column;
 
+    gap:10px;
+
     text-align:center;
+
 }
 
 .stkx-footer-bottom-links{
 
     justify-content:center;
 
-    gap:12px;
 }
 
 }
 
 /*=========================================================
-  SMALL MOBILE
+                SMALL MOBILE
 =========================================================*/
 
 @media (max-width:480px){
 
+.stkx-footer-container{
+
+    padding:0 15px;
+
+}
+
+.stkx-footer-cta{
+
+    padding:30px 0;
+
+}
+
 .stkx-footer-cta-content h2{
-    font-size:28px;
+
+    font-size:24px;
+
 }
 
 .stkx-footer-cta-content p{
-    font-size:16px;
+
+    font-size:14px;
+
 }
 
 .stkx-footer-btn{
-    font-size:16px;
-    padding:18px;
+
+    padding:14px;
+
+    font-size:15px;
+
 }
 
 .stkx-footer-company img{
-    width:180px;
+
+    width:160px;
+
 }
 
-.stkx-footer-social{
-    gap:12px;
+.stkx-footer-desc{
+
+    font-size:14px;
+
+}
+
+.stkx-footer-social-title{
+
+    font-size:18px;
+
 }
 
 .stkx-footer-social a{
-    width:44px;
-    height:44px;
+
+    width:40px;
+
+    height:40px;
+
+    font-size:16px;
+
 }
 
 .stkx-footer-title{
-    font-size:22px;
+
+    font-size:18px;
+
 }
 
 .stkx-footer-links a{
+
+    font-size:14px;
+
+}
+
+.stkx-contact-item h4{
+
     font-size:15px;
+
 }
 
 .stkx-contact-item p{
-    font-size:15px;
+
+    font-size:13px;
+
 }
 
 .stkx-footer-copy p,
+
 .stkx-footer-bottom-links a{
-    font-size:14px;
+
+    font-size:13px;
+
 }
 
 }
+
+
+/*=========================================================
+        STACKLY FOOTER
+        PART 4
+        ANIMATIONS & EFFECTS
+=========================================================*/
+
 /*=========================================
-BUTTON RIPPLE EFFECT
+        SCROLL REVEAL
+=========================================*/
+
+.stkx-reveal-left,
+.stkx-reveal-right{
+
+    opacity:0;
+
+    transition:
+        transform .8s ease,
+        opacity .8s ease;
+
+    will-change:transform,opacity;
+
+}
+
+.stkx-reveal-left{
+
+    transform:translateX(-50px);
+
+}
+
+.stkx-reveal-right{
+
+    transform:translateX(50px);
+
+}
+
+.stkx-reveal-active{
+
+    opacity:1;
+
+    transform:translateX(0);
+
+}
+
+/*=========================================
+        BUTTON
 =========================================*/
 
 .stkx-footer-btn{
+
     position:relative;
+
     overflow:hidden;
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
+
 }
+
+/* Shine Effect */
+
+.stkx-footer-btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:120%;
+
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.45),
+        transparent
+    );
+
+    transition:left .7s ease;
+
+}
+
+.stkx-footer-btn:hover::before{
+
+    left:120%;
+
+}
+
+.stkx-footer-btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 14px 30px rgba(24,215,207,.30);
+
+}
+
+/*=========================================
+        RIPPLE
+=========================================*/
 
 .stkx-ripple{
 
@@ -6153,6 +6044,7 @@ BUTTON RIPPLE EFFECT
     animation:stkxRipple .6s linear;
 
     pointer-events:none;
+
 }
 
 @keyframes stkxRipple{
@@ -6162,10 +6054,182 @@ BUTTON RIPPLE EFFECT
         transform:scale(4);
 
         opacity:0;
+
     }
 
 }
-</Style>
+
+/*=========================================
+        SOCIAL ICON
+=========================================*/
+
+.stkx-footer-social a{
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.stkx-footer-social a:hover{
+
+    transform:translateY(-4px) scale(1.08);
+
+    box-shadow:0 10px 22px rgba(0,0,0,.30);
+
+}
+
+/*=========================================
+        FOOTER LINKS
+=========================================*/
+
+.stkx-footer-links a{
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+
+}
+
+.stkx-footer-links a:hover{
+
+    color:#18d7cf;
+
+    transform:translateX(6px);
+
+}
+
+.stkx-footer-links a:hover .stkx-dot{
+
+    transform:scale(1.5);
+
+}
+
+/*=========================================
+        TITLES
+=========================================*/
+
+.stkx-footer-title{
+
+    transition:color .3s ease;
+
+}
+
+.stkx-footer-column:hover .stkx-footer-title{
+
+    color:#18d7cf;
+
+}
+
+/*=========================================
+        COMPANY LOGO
+=========================================*/
+
+.stkx-footer-company img{
+
+    transition:transform .35s ease;
+
+}
+
+.stkx-footer-company img:hover{
+
+    transform:scale(1.04);
+
+}
+
+/*=========================================
+        CONTACT ITEMS
+=========================================*/
+
+.stkx-contact-item{
+
+    transition:transform .3s ease;
+
+}
+
+.stkx-contact-item:hover{
+
+    transform:translateX(4px);
+
+}
+
+/*=========================================
+        FOOTER APPEAR
+=========================================*/
+
+.stkx-footer{
+
+    animation:stkxFooterFade .8s ease;
+
+}
+
+@keyframes stkxFooterFade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+/*=========================================
+        FOCUS ACCESSIBILITY
+=========================================*/
+
+.stkx-footer a:focus-visible{
+
+    outline:2px solid #18d7cf;
+
+    outline-offset:4px;
+
+    border-radius:6px;
+
+}
+
+/*=========================================
+        SMOOTH TRANSITIONS
+=========================================*/
+
+.stkx-footer *{
+
+    transition-property:
+        color,
+        background,
+        transform,
+        box-shadow,
+        opacity;
+
+    transition-duration:.3s;
+
+    transition-timing-function:ease;
+
+}
+
+/*=========================================
+        REDUCE MOTION
+=========================================*/
+
+@media (prefers-reduced-motion:reduce){
+
+*{
+
+animation:none !important;
+
+transition:none !important;
+
+scroll-behavior:auto !important;
+
+}
+
+}
+    </style>
 
 <script>
     /*==========================================================
@@ -6247,3 +6311,7 @@ BUTTON RIPPLE EFFECT
 
 })();
 </script>
+  
+</body>
+
+</html>

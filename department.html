@@ -7,7 +7,7 @@
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-    <title>Corporate Client Dashboard</title>
+    <title>Corporate Admin Dashboard</title>
 
     <!-- Google Font -->
 
@@ -28,7 +28,8 @@
 
     <!-- CSS -->
 
-    
+    <link rel="stylesheet"
+        href="css/admin-dashboard.css">
 
     <!-- Chart JS -->
 
@@ -65,9 +66,9 @@
 
     <ul>
 
-        <li class="active">
+        <li >
 
-            <a href="./client.html">
+            <a href="./admin.html">
 
                 <i class="fas fa-house"></i>
 
@@ -77,43 +78,43 @@
 
         </li>
 
-        <li >
+        <li>
 
-            <a href="./projects.html">
+            <a href="./emp.html">
 
                 <i class="fas fa-users"></i>
 
-                Projects
+                Employees
 
             </a>
 
         </li>
 
-        <li>
+        <li class="active">
 
-            <a href="./reports.html">
+            <a href="./department.html">
 
                 <i class="fas fa-user-tie"></i>
 
-                Reports
-
-            </a>
-
-        </li>
-
-        <li>
-
-            <a href="./calender.html">
-
-                <i class="fas fa-folder-open"></i>
-
-                Calender
+                Departments
 
             </a>
 
         </li>
 
         
+        <li>
+
+            <a href="./settings.html">
+
+                <i class="fas fa-gear"></i>
+
+                Settings
+
+            </a>
+
+        </li>
+
         <li class="logout">
 
             <a href="./login.html"
@@ -230,9 +231,9 @@
 
                 </span>
 
-                <small id="clientRole">
+                <small id="adminRole">
 
-                    Client
+                    Administrator
 
                 </small>
 
@@ -247,199 +248,101 @@
 </header>
 
 
-<!-- ==========================================================
-                    CLIENT DASHBOARD
-=========================================================== -->
 
-<section class="client-dashboard">
+<section class="department-dashboard">
 
-    <!-- Welcome Banner -->
+    <!-- Header -->
 
-    <div class="client-welcome">
+    <div class="department-header">
 
-        <div class="welcome-left">
+        <div>
 
-            <h1>
+            <h1>Department Management</h1>
 
-                Welcome,
-
-                <span id="welcomeName">
-
-                    Client
-
-                </span>
-
-                👋
-
-            </h1>
-
-            <p>
-
-                Track your projects, monitor progress and stay updated
-                with your corporate services.
-
-            </p>
+            <p>Monitor all departments and their performance.</p>
 
         </div>
 
-        <div class="welcome-right">
+        <button class="add-department-btn">
+            <a href="./404.html">
 
-            <img src="./image 7.webp"
-                alt="Client Dashboard">
+            <i class="fas fa-plus-circle"></i>
+
+            Add Department
+
+        </button></a>
+
+    </div>
+
+    <!-- Cards -->
+
+    <div class="department-cards">
+
+        <div class="department-card">
+
+            <i class="fas fa-building"></i>
+
+            <h2>8</h2>
+
+            <p>Total Departments</p>
+
+        </div>
+
+        <div class="department-card">
+
+            <i class="fas fa-users"></i>
+
+            <h2>1286</h2>
+
+            <p>Total Employees</p>
+
+        </div>
+
+        <div class="department-card">
+
+            <i class="fas fa-chart-line"></i>
+
+            <h2>96%</h2>
+
+            <p>Performance</p>
+
+        </div>
+
+        <div class="department-card">
+
+            <i class="fas fa-award"></i>
+
+            <h2>24</h2>
+
+            <p>Projects</p>
 
         </div>
 
     </div>
 
-    <!-- ========================================= -->
+    <!-- Charts -->
 
-    <!-- SUMMARY CARDS -->
+    <div class="department-chart-grid">
 
-    <!-- ========================================= -->
+        <div class="department-chart-card">
 
-    <div class="client-cards">
-
-        <div class="client-card">
-
-            <div class="card-icon blue">
-
-                <i class="fas fa-folder-open"></i>
-
-            </div>
-
-            <div>
-
-                <h2 id="projectCount">
-
-                    0
-
-                </h2>
-
-                <p>
-
-                    Active Projects
-
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="client-card">
-
-            <div class="card-icon green">
-
-                <i class="fas fa-chart-line"></i>
-
-            </div>
-
-            <div>
-
-                <h2 id="completionCount">
-
-                    0%
-
-                </h2>
-
-                <p>
-
-                    Completion
-
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="client-card">
-
-            <div class="card-icon orange">
-
-                <i class="fas fa-headset"></i>
-
-            </div>
-
-            <div>
-
-                <h2 id="ticketCount">
-
-                    0
-
-                </h2>
-
-                <p>
-
-                    Support Tickets
-
-                </p>
-
-            </div>
-
-        </div>
-
-        <div class="client-card">
-
-            <div class="card-icon purple">
-
-                <i class="fas fa-calendar-check"></i>
-
-            </div>
-
-            <div>
-
-                <h2 id="meetingCount">
-
-                    0
-
-                </h2>
-
-                <p>
-
-                    Meetings
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- ========================================= -->
-
-    <!-- CHARTS -->
-
-    <!-- ========================================= -->
-
-    <div class="client-chart-grid">
-
-        <div class="chart-card">
-
-            <h3>
-
-                Project Progress
-
-            </h3>
+            <h3>Department Performance</h3>
 
             <div class="chart-container">
 
-                <canvas id="projectChart"></canvas>
+                <canvas id="departmentBarChart"></canvas>
 
             </div>
 
         </div>
 
-        <div class="chart-card">
+        <div class="department-chart-card">
 
-            <h3>
-
-                Service Distribution
-
-            </h3>
+            <h3>Employee Distribution</h3>
 
             <div class="chart-container">
 
-                <canvas id="serviceChart"></canvas>
+                <canvas id="departmentPieChart"></canvas>
 
             </div>
 
@@ -447,23 +350,11 @@
 
     </div>
 
-    <!-- ========================================= -->
+    <!-- Table -->
 
-    <!-- RECENT PROJECTS -->
+    <div class="department-table">
 
-    <!-- ========================================= -->
-
-    <div class="client-table">
-
-        <div class="table-header">
-
-            <h2>
-
-                Recent Projects
-
-            </h2>
-
-        </div>
+        <h3>Department List</h3>
 
         <table>
 
@@ -471,13 +362,13 @@
 
                 <tr>
 
-                    <th>Project</th>
+                    <th>Department</th>
+
+                    <th>Manager</th>
+
+                    <th>Employees</th>
 
                     <th>Status</th>
-
-                    <th>Progress</th>
-
-                    <th>Deadline</th>
 
                 </tr>
 
@@ -487,61 +378,49 @@
 
                 <tr>
 
-                    <td>Corporate Website</td>
+                    <td>Development</td>
 
-                    <td>
+                    <td>John David</td>
 
-                        <span class="status active">
+                    <td>320</td>
 
-                            Active
-
-                        </span>
-
-                    </td>
-
-                    <td>90%</td>
-
-                    <td>15 Aug 2026</td>
+                    <td><span class="active">Active</span></td>
 
                 </tr>
 
                 <tr>
 
-                    <td>CRM Integration</td>
+                    <td>Marketing</td>
 
-                    <td>
+                    <td>Sarah Lee</td>
 
-                        <span class="status review">
+                    <td>140</td>
 
-                            Review
-
-                        </span>
-
-                    </td>
-
-                    <td>72%</td>
-
-                    <td>28 Aug 2026</td>
+                    <td><span class="active">Active</span></td>
 
                 </tr>
 
                 <tr>
 
-                    <td>Cloud Migration</td>
+                    <td>Finance</td>
 
-                    <td>
+                    <td>Michael</td>
 
-                        <span class="status completed">
+                    <td>96</td>
 
-                            Completed
+                    <td><span class="meeting">Review</span></td>
 
-                        </span>
+                </tr>
 
-                    </td>
+                <tr>
 
-                    <td>100%</td>
+                    <td>HR</td>
 
-                    <td>05 Jul 2026</td>
+                    <td>Emma Watson</td>
+
+                    <td>84</td>
+
+                    <td><span class="leave">Recruiting</span></td>
 
                 </tr>
 
@@ -551,104 +430,813 @@
 
     </div>
 
-    <!-- ========================================= -->
+</section>
 
-    <!-- LOWER GRID -->
+<!-- =====================================================
+        DEPARTMENT HEADS
+====================================================== -->
 
-    <!-- ========================================= -->
+<div class="department-head-section">
 
-    <div class="client-bottom-grid">
+    <h2 class="section-title">
 
-        <!-- Upcoming Meetings -->
+        <i class="fas fa-user-tie"></i>
 
-        <div class="meeting-card">
+        Department Heads
 
-            <h2>
+    </h2>
 
-                Upcoming Meetings
+    <div class="department-head-grid">
 
-            </h2>
+        <div class="department-head-card">
 
-            <ul>
+            <div class="head-icon">
 
-                <li>
+                <i class="fas fa-laptop-code"></i>
 
-                    <i class="fas fa-video"></i>
+            </div>
 
-                    Project Review - 25 Jul
+            <h3>Development</h3>
 
-                </li>
+            <h4>John Anderson</h4>
 
-                <li>
+            <p>Senior Development Manager</p>
 
-                    <i class="fas fa-users"></i>
-
-                    Client Discussion - 28 Jul
-
-                </li>
-
-                <li>
-
-                    <i class="fas fa-laptop"></i>
-
-                    Demo Session - 30 Jul
-
-                </li>
-
-            </ul>
+            <span>320 Employees</span>
 
         </div>
 
-        <!-- Support -->
+        <div class="department-head-card">
 
-        <div class="support-card">
+            <div class="head-icon">
 
-            <h2>
+                <i class="fas fa-bullhorn"></i>
 
-                Recent Support Tickets
+            </div>
 
-            </h2>
+            <h3>Marketing</h3>
 
-            <ul>
+            <h4>Sarah Williams</h4>
 
-                <li>
+            <p>Marketing Director</p>
 
-                    <i class="fas fa-circle-check"></i>
+            <span>148 Employees</span>
 
-                    Login Issue - Resolved
+        </div>
 
-                </li>
+        <div class="department-head-card">
 
-                <li>
+            <div class="head-icon">
 
-                    <i class="fas fa-spinner"></i>
+                <i class="fas fa-money-check-dollar"></i>
 
-                    Dashboard Update - In Progress
+            </div>
 
-                </li>
+            <h3>Finance</h3>
 
-                <li>
+            <h4>Michael Brown</h4>
 
-                    <i class="fas fa-clock"></i>
+            <p>Finance Manager</p>
 
-                    Feature Request - Pending
+            <span>96 Employees</span>
 
-                </li>
+        </div>
 
-            </ul>
+        <div class="department-head-card">
+
+            <div class="head-icon">
+
+                <i class="fas fa-user-group"></i>
+
+            </div>
+
+            <h3>Human Resources</h3>
+
+            <h4>Emma Watson</h4>
+
+            <p>HR Manager</p>
+
+            <span>84 Employees</span>
 
         </div>
 
     </div>
 
-</section>
+</div>
+
+<!-- =====================================================
+        DEPARTMENT PERFORMANCE
+====================================================== -->
+
+<div class="department-performance">
+
+    <h2 class="section-title">
+
+        <i class="fas fa-chart-line"></i>
+
+        Department Performance
+
+    </h2>
+
+    <div class="performance-box">
+
+        <div class="performance-item">
+
+            <div class="performance-title">
+
+                <span>Development</span>
+
+                <span>95%</span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill development"></div>
+
+            </div>
+
+        </div>
+
+        <div class="performance-item">
+
+            <div class="performance-title">
+
+                <span>Marketing</span>
+
+                <span>88%</span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill marketing"></div>
+
+            </div>
+
+        </div>
+
+        <div class="performance-item">
+
+            <div class="performance-title">
+
+                <span>Finance</span>
+
+                <span>84%</span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill finance"></div>
+
+            </div>
+
+        </div>
+
+        <div class="performance-item">
+
+            <div class="performance-title">
+
+                <span>Human Resources</span>
+
+                <span>80%</span>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div class="progress-fill hr"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+        ONGOING PROJECTS
+====================================================== -->
+
+<div class="department-projects">
+
+    <h2 class="section-title">
+
+        <i class="fas fa-diagram-project"></i>
+
+        Ongoing Department Projects
+
+    </h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+
+            <div class="project-top">
+
+                <i class="fas fa-globe"></i>
+
+                <span class="project-status active-project">
+
+                    Active
+
+                </span>
+
+            </div>
+
+            <h3>Corporate Website Upgrade</h3>
+
+            <p>
+
+                Redesigning the company website with a
+                modern responsive interface.
+
+            </p>
+
+            <div class="project-footer">
+
+                <span>
+
+                    <i class="fas fa-users"></i>
+
+                    12 Members
+
+                </span>
+
+                <span>
+
+                    <i class="fas fa-calendar"></i>
+
+                    Aug 15
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-top">
+
+                <i class="fas fa-shield-halved"></i>
+
+                <span class="project-status review-project">
+
+                    Review
+
+                </span>
+
+            </div>
+
+            <h3>Cyber Security Audit</h3>
+
+            <p>
+
+                Internal security audit and compliance
+                verification across departments.
+
+            </p>
+
+            <div class="project-footer">
+
+                <span>
+
+                    <i class="fas fa-users"></i>
+
+                    8 Members
+
+                </span>
+
+                <span>
+
+                    <i class="fas fa-calendar"></i>
+
+                    Aug 28
+
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="project-card">
+
+            <div class="project-top">
+
+                <i class="fas fa-chart-column"></i>
+
+                <span class="project-status planning-project">
+
+                    Planning
+
+                </span>
+
+            </div>
+
+            <h3>Sales Analytics Platform</h3>
+
+            <p>
+
+                Building an advanced dashboard for
+                sales reporting and forecasting.
+
+            </p>
+
+            <div class="project-footer">
+
+                <span>
+
+                    <i class="fas fa-users"></i>
+
+                    15 Members
+
+                </span>
+
+                <span>
+
+                    <i class="fas fa-calendar"></i>
+
+                    Sep 10
+
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
 
 <style>
+
     /*=========================================================
-            CLIENT DASHBOARD
+                SECTION TITLE
 =========================================================*/
 
-.client-dashboard{
+.section-title{
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:28px;
+
+font-weight:700;
+
+color:#1e293b;
+
+margin:50px 0 25px;
+
+}
+
+.section-title i{
+
+color:#2563eb;
+
+}
+
+/*=========================================================
+            DEPARTMENT HEADS
+=========================================================*/
+
+.department-head-grid{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+.department-head-card{
+
+background:rgba(255,255,255,.95);
+
+border-radius:20px;
+
+padding:30px;
+
+text-align:center;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.department-head-card::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:5px;
+
+background:linear-gradient(90deg,#2563eb,#22c55e);
+
+}
+
+.department-head-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 25px 45px rgba(0,0,0,.15);
+
+}
+
+.head-icon{
+
+width:85px;
+
+height:85px;
+
+margin:auto;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#2563eb,#22c55e);
+
+color:#fff;
+
+font-size:34px;
+
+margin-bottom:18px;
+
+}
+
+.department-head-card h3{
+
+color:#2563eb;
+
+margin-bottom:8px;
+
+}
+
+.department-head-card h4{
+
+color:#1e293b;
+
+margin-bottom:8px;
+
+}
+
+.department-head-card p{
+
+color:#64748b;
+
+margin-bottom:15px;
+
+}
+
+.department-head-card span{
+
+display:inline-block;
+
+background:#eff6ff;
+
+color:#2563eb;
+
+padding:8px 18px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:600;
+
+}
+
+/*=========================================================
+        PERFORMANCE
+=========================================================*/
+
+.performance-box{
+
+background:#fff;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.performance-item{
+
+margin-bottom:28px;
+
+}
+
+.performance-title{
+
+display:flex;
+
+justify-content:space-between;
+
+font-weight:600;
+
+color:#1e293b;
+
+margin-bottom:10px;
+
+}
+
+.progress-bar{
+
+width:100%;
+
+height:14px;
+
+background:#e5e7eb;
+
+border-radius:30px;
+
+overflow:hidden;
+
+}
+
+.progress-fill{
+
+height:100%;
+
+border-radius:30px;
+
+animation:growBar 2s ease;
+
+}
+
+.development{
+
+width:95%;
+
+background:#2563eb;
+
+}
+
+.marketing{
+
+width:88%;
+
+background:#22c55e;
+
+}
+
+.finance{
+
+width:84%;
+
+background:#f59e0b;
+
+}
+
+.hr{
+
+width:80%;
+
+background:#8b5cf6;
+
+}
+
+@keyframes growBar{
+
+from{
+
+    width:0;
+
+}
+
+}
+
+/*=========================================================
+            PROJECTS
+=========================================================*/
+
+.project-grid{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:25px;
+
+}
+
+.project-card{
+
+background:#fff;
+
+padding:28px;
+
+border-radius:20px;
+
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+}
+
+.project-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.project-top{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+margin-bottom:20px;
+
+}
+
+.project-top i{
+
+font-size:32px;
+
+color:#2563eb;
+
+}
+
+.project-card h3{
+
+margin-bottom:12px;
+
+color:#1e293b;
+
+}
+
+.project-card p{
+
+color:#64748b;
+
+line-height:1.7;
+
+margin-bottom:25px;
+
+}
+
+.project-footer{
+
+display:flex;
+
+justify-content:space-between;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+color:#64748b;
+
+font-size:14px;
+
+}
+
+.project-status{
+
+padding:7px 16px;
+
+border-radius:30px;
+
+color:#fff;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+.active-project{
+
+background:#22c55e;
+
+}
+
+.review-project{
+
+background:#f59e0b;
+
+}
+
+.planning-project{
+
+background:#2563eb;
+
+}
+
+/*=========================================================
+            RESPONSIVE
+=========================================================*/
+
+@media(max-width:1200px){
+
+.department-head-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.project-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.department-head-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.project-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.section-title{
+
+    font-size:24px;
+
+}
+
+.performance-box{
+
+    padding:20px;
+
+}
+
+.department-head-card{
+
+    padding:24px;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.head-icon{
+
+    width:70px;
+
+    height:70px;
+
+    font-size:28px;
+
+}
+
+.project-card{
+
+    padding:20px;
+
+}
+
+.project-footer{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+}
+    /*==================================================
+            DEPARTMENT DASHBOARD
+==================================================*/
+
+.department-dashboard{
 
 min-height:100vh;
 
@@ -656,8 +1244,8 @@ padding:30px;
 
 background:
 linear-gradient(rgba(245,248,255,.94),
-rgba(245,248,255,.96)),
-url("../images/client-bg.jpg");
+rgba(245,248,255,.95)),
+url("../images/department-bg.jpg");
 
 background-size:cover;
 
@@ -669,11 +1257,11 @@ background-attachment:fixed;
 
 }
 
-/*=========================================================
-            WELCOME SECTION
-=========================================================*/
+/*==================================================
+            HEADER
+==================================================*/
 
-.client-welcome{
+.department-header{
 
 display:flex;
 
@@ -681,95 +1269,73 @@ justify-content:space-between;
 
 align-items:center;
 
-gap:30px;
+flex-wrap:wrap;
 
-background:rgba(255,255,255,.92);
-
-backdrop-filter:blur(10px);
-
-border-radius:24px;
-
-padding:35px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
+gap:20px;
 
 margin-bottom:35px;
 
 }
 
-.welcome-left{
+.department-header h1{
 
-flex:1;
-
-}
-
-.welcome-left h1{
-
-font-size:38px;
+font-size:34px;
 
 color:#1e293b;
 
-margin-bottom:12px;
+margin-bottom:8px;
+
+font-weight:700;
 
 }
 
-.welcome-left h1 span{
-
-color:#2563eb;
-
-}
-
-.welcome-left p{
+.department-header p{
 
 color:#64748b;
 
-line-height:1.8;
-
-max-width:650px;
+font-size:15px;
 
 }
 
-.welcome-right{
+/*==================================================
+        BUTTON
+==================================================*/
 
-flex:1;
+.add-department-btn{
 
-display:flex;
+padding:14px 28px;
 
-justify-content:flex-end;
+border:none;
 
-}
+border-radius:50px;
 
-.welcome-right img{
+cursor:pointer;
 
-width:100%;
+color:#fff;
 
-max-width:420px;
+font-size:15px;
 
-animation:floatImage 4s ease-in-out infinite;
+font-weight:600;
 
-}
+background:linear-gradient(135deg,#2563eb,#22c55e);
 
-@keyframes floatImage{
-
-0%,100%{
-
-    transform:translateY(0);
+transition:.35s;
 
 }
 
-50%{
+.add-department-btn:hover{
 
-    transform:translateY(-10px);
+transform:translateY(-5px);
+
+box-shadow:0 15px 25px rgba(37,99,235,.25);
 
 }
 
-}
+/*==================================================
+            SUMMARY CARDS
+==================================================*/
 
-/*=========================================================
-            KPI CARDS
-=========================================================*/
-
-.client-cards{
+.department-cards{
 
 display:grid;
 
@@ -781,97 +1347,71 @@ margin-bottom:35px;
 
 }
 
-.client-card{
+.department-card{
 
-background:#fff;
+background:rgba(255,255,255,.92);
+
+backdrop-filter:blur(12px);
 
 border-radius:20px;
 
-padding:25px;
+padding:30px;
 
-display:flex;
+text-align:center;
 
-align-items:center;
-
-gap:18px;
-
-box-shadow:0 15px 30px rgba(0,0,0,.08);
+box-shadow:0 15px 35px rgba(0,0,0,.08);
 
 transition:.35s;
 
 }
 
-.client-card:hover{
+.department-card:hover{
 
 transform:translateY(-8px);
 
 }
 
-.card-icon{
+.department-card i{
 
-width:70px;
+width:75px;
 
-height:70px;
+height:75px;
 
-border-radius:18px;
+line-height:75px;
 
-display:flex;
+border-radius:50%;
 
-justify-content:center;
-
-align-items:center;
+background:linear-gradient(135deg,#2563eb,#22c55e);
 
 color:#fff;
 
 font-size:28px;
 
-}
-
-.blue{
-
-background:#2563eb;
+margin-bottom:18px;
 
 }
 
-.green{
+.department-card h2{
 
-background:#22c55e;
+color:#0f172a;
 
-}
+font-size:32px;
 
-.orange{
-
-background:#f59e0b;
+margin-bottom:8px;
 
 }
 
-.purple{
-
-background:#8b5cf6;
-
-}
-
-.client-card h2{
-
-font-size:30px;
-
-color:#1e293b;
-
-margin-bottom:5px;
-
-}
-
-.client-card p{
+.department-card p{
 
 color:#64748b;
 
 }
 
-/*=========================================================
-                CHARTS
-=========================================================*/
+/*==================================================
+            CHART GRID
+==================================================*/
 
-.client-chart-grid{
+.department-chart-grid{
 
 display:grid;
 
@@ -883,25 +1423,289 @@ margin-bottom:35px;
 
 }
 
-.chart-card{
+.department-chart-card{
 
 background:#fff;
 
-padding:25px;
-
 border-radius:20px;
 
-box-shadow:0 15px 35px rgba(0,0,0,.08);
+padding:25px;
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+transition:.35s;
 
 }
 
-.chart-card h3{
+.department-chart-card:hover{
+
+transform:translateY(-6px);
+
+}
+
+.department-chart-card h3{
+
+color:#1e293b;
+
+margin-bottom:20px;
+
+}
+
+/*==================================================
+            CHART
+==================================================*/
+
+.chart-container{
+
+position:relative;
+
+width:100%;
+
+height:340px;
+
+}
+
+.chart-container canvas{
+
+width:100% !important;
+
+height:100% !important;
+
+}
+
+/*==================================================
+            TABLE
+==================================================*/
+
+.department-table{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:25px;
+
+overflow-x:auto;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.department-table h3{
 
 margin-bottom:20px;
 
 color:#1e293b;
 
 }
+
+.department-table table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+.department-table th{
+
+background:#2563eb;
+
+color:#fff;
+
+padding:16px;
+
+text-align:left;
+
+}
+
+.department-table td{
+
+padding:16px;
+
+border-bottom:1px solid #e2e8f0;
+
+}
+
+.department-table tbody tr{
+
+transition:.3s;
+
+}
+
+.department-table tbody tr:hover{
+
+background:#f8fafc;
+
+}
+
+/*==================================================
+        STATUS
+==================================================*/
+
+.active{
+
+/* background:#dcfce7; */
+
+color:#15803d;
+
+padding:6px 14px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+.leave{
+
+background:#fef3c7;
+
+color:#b45309;
+
+padding:6px 14px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+.meeting{
+
+background:#dbeafe;
+
+color:#1d4ed8;
+
+padding:6px 14px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+}
+
+/*==================================================
+        RESPONSIVE
+==================================================*/
+
+@media(max-width:1200px){
+
+.department-cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:992px){
+
+.department-chart-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.department-dashboard{
+
+    padding:20px;
+
+}
+
+.department-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.department-cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.department-header h1{
+
+    font-size:28px;
+
+}
+
+.add-department-btn{
+
+    width:100%;
+
+}
+
+.chart-container{
+
+    height:280px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.department-card{
+
+    padding:22px;
+
+}
+
+.department-card i{
+
+    width:60px;
+
+    height:60px;
+
+    line-height:60px;
+
+    font-size:24px;
+
+}
+
+.department-card h2{
+
+    font-size:26px;
+
+}
+
+.department-chart-card{
+
+    padding:18px;
+
+}
+
+.department-table{
+
+    padding:15px;
+
+}
+
+.chart-container{
+
+    height:240px;
+
+}
+
+}
+
+/*=========================================
+        CHART HEIGHT
+=========================================*/
 
 .chart-container{
 
@@ -921,257 +1725,11 @@ height:100%!important;
 
 }
 
-/*=========================================================
-            TABLE
-=========================================================*/
-
-.client-table{
-
-background:#fff;
-
-border-radius:20px;
-
-padding:25px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-overflow-x:auto;
-
-margin-bottom:35px;
-
-}
-
-.table-header{
-
-margin-bottom:20px;
-
-}
-
-.table-header h2{
-
-color:#1e293b;
-
-}
-
-.client-table table{
-
-width:100%;
-
-border-collapse:collapse;
-
-}
-
-.client-table th{
-
-background:#2563eb;
-
-color:#fff;
-
-padding:16px;
-
-text-align:left;
-
-}
-
-.client-table td{
-
-padding:16px;
-
-border-bottom:1px solid #e5e7eb;
-
-}
-
-.client-table tbody tr:hover{
-
-background:#f8fafc;
-
-}
-
-/*=========================================================
-            STATUS
-=========================================================*/
-
-.status{
-
-padding:6px 14px;
-
-border-radius:30px;
-
-font-size:13px;
-
-font-weight:600;
-
-color:#fff;
-
-}
-
-.status.active{
-
-background:#22c55e;
-
-}
-
-.status.review{
-
-background:#f59e0b;
-
-}
-
-.status.completed{
-
-background:#2563eb;
-
-}
-
-/*=========================================================
-        BOTTOM SECTION
-=========================================================*/
-
-.client-bottom-grid{
-
-display:grid;
-
-grid-template-columns:repeat(2,1fr);
-
-gap:25px;
-
-}
-
-.meeting-card,
-
-.support-card{
-
-background:#fff;
-
-border-radius:20px;
-
-padding:25px;
-
-box-shadow:0 15px 35px rgba(0,0,0,.08);
-
-}
-
-.meeting-card h2,
-
-.support-card h2{
-
-margin-bottom:20px;
-
-color:#1e293b;
-
-}
-
-.meeting-card ul,
-
-.support-card ul{
-
-list-style:none;
-
-}
-
-.meeting-card li,
-
-.support-card li{
-
-display:flex;
-
-align-items:center;
-
-gap:12px;
-
-padding:15px 0;
-
-border-bottom:1px solid #eef2f7;
-
-color:#475569;
-
-}
-
-.meeting-card li:last-child,
-
-.support-card li:last-child{
-
-border-bottom:none;
-
-}
-
-.meeting-card i{
-
-color:#2563eb;
-
-}
-
-.support-card i{
-
-color:#22c55e;
-
-}
-
-/*=========================================================
-            RESPONSIVE
-=========================================================*/
-
-@media(max-width:1200px){
-
-.client-cards{
-
-    grid-template-columns:repeat(2,1fr);
-
-}
-
-}
-
-@media(max-width:992px){
-
-.client-chart-grid,
-
-.client-bottom-grid{
-
-    grid-template-columns:1fr;
-
-}
-
-}
+/*=========================================
+    MOBILE CHART
+=========================================*/
 
 @media(max-width:768px){
-
-.client-dashboard{
-
-    padding:20px;
-
-}
-
-.client-welcome{
-
-    flex-direction:column;
-
-    text-align:center;
-
-}
-
-.welcome-right{
-
-    justify-content:center;
-
-}
-
-.welcome-right img{
-
-    max-width:300px;
-
-}
-
-.client-cards{
-
-    grid-template-columns:1fr;
-
-}
-
-.welcome-left h1{
-
-    font-size:30px;
-
-}
 
 .chart-container{
 
@@ -1183,54 +1741,6 @@ color:#22c55e;
 
 @media(max-width:480px){
 
-.client-dashboard{
-
-    padding:15px;
-
-}
-
-.client-welcome{
-
-    padding:20px;
-
-}
-
-.client-card{
-
-    flex-direction:column;
-
-    text-align:center;
-
-}
-
-.card-icon{
-
-    width:60px;
-
-    height:60px;
-
-    font-size:24px;
-
-}
-
-.client-card h2{
-
-    font-size:24px;
-
-}
-
-.chart-card,
-
-.meeting-card,
-
-.support-card,
-
-.client-table{
-
-    padding:18px;
-
-}
-
 .chart-container{
 
     height:230px;
@@ -1239,82 +1749,22 @@ color:#22c55e;
 
 }
 </style>
-
 <script>
     /*=========================================================
-            CLIENT DASHBOARD
+            DEPARTMENT DASHBOARD
 =========================================================*/
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
 /*=========================================
-        WELCOME NAME
+        BAR CHART
 =========================================*/
 
-const name =
-    localStorage.getItem("name") ||
-    localStorage.getItem("userName") ||
-    "Client";
+const barChart = document.getElementById("departmentBarChart");
 
-const welcome =
-    document.getElementById("welcomeName");
+if (barChart) {
 
-if (welcome) {
-
-    welcome.textContent = name;
-
-}
-
-/*=========================================
-        COUNTER ANIMATION
-=========================================*/
-
-function animateCounter(id, target, suffix = "") {
-
-    const element = document.getElementById(id);
-
-    if (!element) return;
-
-    let current = 0;
-
-    const increment = Math.ceil(target / 80);
-
-    const timer = setInterval(() => {
-
-        current += increment;
-
-        if (current >= target) {
-
-            current = target;
-
-            clearInterval(timer);
-
-        }
-
-        element.textContent = current + suffix;
-
-    }, 20);
-
-}
-
-animateCounter("projectCount", 12);
-
-animateCounter("completionCount", 94, "%");
-
-animateCounter("ticketCount", 5);
-
-animateCounter("meetingCount", 8);
-
-/*=========================================
-        PROJECT CHART
-=========================================*/
-
-const projectCanvas =
-    document.getElementById("projectChart");
-
-if (projectCanvas) {
-
-    new Chart(projectCanvas, {
+    new Chart(barChart, {
 
         type: "bar",
 
@@ -1322,37 +1772,37 @@ if (projectCanvas) {
 
             labels: [
 
-                "Jan",
+                "Development",
 
-                "Feb",
+                "Marketing",
 
-                "Mar",
+                "HR",
 
-                "Apr",
+                "Finance",
 
-                "May",
+                "Sales",
 
-                "Jun"
+                "Support"
 
             ],
 
             datasets: [{
 
-                label: "Project Progress",
+                label: "Performance (%)",
 
                 data: [
 
-                    35,
+                    95,
 
-                    50,
+                    88,
 
-                    68,
-
-                    75,
+                    82,
 
                     90,
 
-                    98
+                    86,
+
+                    92
 
                 ],
 
@@ -1366,9 +1816,9 @@ if (projectCanvas) {
 
                     "#8b5cf6",
 
-                    "#06b6d4",
+                    "#ef4444",
 
-                    "#ef4444"
+                    "#06b6d4"
 
                 ],
 
@@ -1380,118 +1830,33 @@ if (projectCanvas) {
 
         },
 
-        options: {
+        options:{
 
-            responsive: true,
+            responsive:true,
 
-            maintainAspectRatio: false,
+            maintainAspectRatio:false,
 
-            plugins: {
+            plugins:{
 
-                legend: {
+                legend:{
 
-                    display: false
+                    display:false
 
                 }
 
             },
 
-            scales: {
+            scales:{
 
-                y: {
+                y:{
 
-                    beginAtZero: true,
+                    beginAtZero:true,
 
-                    max: 100
+                    max:100,
 
-                }
+                    ticks:{
 
-            }
-
-        }
-
-    });
-
-}
-
-/*=========================================
-        SERVICE CHART
-=========================================*/
-
-const serviceCanvas =
-    document.getElementById("serviceChart");
-
-if (serviceCanvas) {
-
-    new Chart(serviceCanvas, {
-
-        type: "doughnut",
-
-        data: {
-
-            labels: [
-
-                "Web",
-
-                "Mobile",
-
-                "Cloud",
-
-                "Support"
-
-            ],
-
-            datasets: [{
-
-                data: [
-
-                    40,
-
-                    25,
-
-                    20,
-
-                    15
-
-                ],
-
-                backgroundColor: [
-
-                    "#2563eb",
-
-                    "#22c55e",
-
-                    "#f59e0b",
-
-                    "#8b5cf6"
-
-                ],
-
-                borderWidth:2
-
-            }]
-
-        },
-
-        options: {
-
-            responsive: true,
-
-            maintainAspectRatio: false,
-
-            cutout: "65%",
-
-            plugins: {
-
-                legend: {
-
-                    position: "bottom",
-
-                    labels: {
-
-                        usePointStyle: true,
-
-                        padding: 18
+                        stepSize:20
 
                     }
 
@@ -1506,52 +1871,164 @@ if (serviceCanvas) {
 }
 
 /*=========================================
-        CARD ANIMATION
+        DOUGHNUT CHART
 =========================================*/
 
-const cards =
-    document.querySelectorAll(".client-card");
+const pieChart = document.getElementById("departmentPieChart");
 
-cards.forEach((card, index) => {
+if (pieChart) {
 
-    card.style.opacity = "0";
+    new Chart(pieChart, {
 
-    card.style.transform = "translateY(40px)";
+        type:"doughnut",
 
-    setTimeout(() => {
+        data:{
 
-        card.style.transition = ".6s";
+            labels:[
 
-        card.style.opacity = "1";
+                "Development",
 
-        card.style.transform = "translateY(0)";
+                "HR",
 
-    }, index * 180);
+                "Marketing",
+
+                "Finance",
+
+                "Sales"
+
+            ],
+
+            datasets:[{
+
+                data:[
+
+                    35,
+
+                    15,
+
+                    18,
+
+                    12,
+
+                    20
+
+                ],
+
+                backgroundColor:[
+
+                    "#2563eb",
+
+                    "#22c55e",
+
+                    "#f59e0b",
+
+                    "#8b5cf6",
+
+                    "#ef4444"
+
+                ],
+
+                borderWidth:2
+
+            }]
+
+        },
+
+        options:{
+
+            responsive:true,
+
+            maintainAspectRatio:false,
+
+            cutout:"65%",
+
+            plugins:{
+
+                legend:{
+
+                    position:"bottom",
+
+                    labels:{
+
+                        padding:18,
+
+                        usePointStyle:true,
+
+                        pointStyle:"circle"
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
+}
+
+/*=========================================
+    CARD ANIMATION
+=========================================*/
+
+const cards = document.querySelectorAll(".department-card");
+
+cards.forEach((card,index)=>{
+
+    card.style.opacity="0";
+
+    card.style.transform="translateY(40px)";
+
+    setTimeout(()=>{
+
+        card.style.transition=".6s ease";
+
+        card.style.opacity="1";
+
+        card.style.transform="translateY(0)";
+
+    },index*180);
 
 });
 
 /*=========================================
-        TABLE ANIMATION
+        ADD BUTTON
 =========================================*/
 
-const rows =
-    document.querySelectorAll(".client-table tbody tr");
+const addBtn=document.querySelector(".add-department-btn");
 
-rows.forEach((row, index) => {
+if(addBtn){
 
-    row.style.opacity = "0";
+    addBtn.addEventListener("click",()=>{
 
-    row.style.transform = "translateX(-25px)";
+        alert("Add Department feature will be available soon.");
 
-    setTimeout(() => {
+    });
 
-        row.style.transition = ".5s";
+}
 
-        row.style.opacity = "1";
+/*=========================================
+    TABLE ANIMATION
+=========================================*/
 
-        row.style.transform = "translateX(0)";
+const rows=document.querySelectorAll(".department-table tbody tr");
 
-    }, 600 + (index * 150));
+rows.forEach((row,index)=>{
+
+    row.style.opacity="0";
+
+    row.style.transform="translateX(-20px)";
+
+    setTimeout(()=>{
+
+        row.style.transition=".5s ease";
+
+        row.style.opacity="1";
+
+        row.style.transform="translateX(0)";
+
+    },700+(index*120));
 
 });
 
