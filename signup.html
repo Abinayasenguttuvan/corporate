@@ -1,280 +1,741 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Security Register</title>
 
-    <meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+    --green:#548dd8;
+    --dark:#050505;
+    --card:rgba(15,15,15,0.82);
+    --border:rgba(13, 75, 198, 0.18);
+    --text:#cfcfcf;
+}
 
-    <title>Sign Up | Stackly</title>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-    <!-- CSS -->
-    <link rel="stylesheet"
-        href="signup.css">
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px 15px;
+    background:
+    linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.9)),
+    url("./index1.webp") center/cover no-repeat;
+    overflow-x:hidden;
+    color:white;
+}
 
-    <!-- Google Font -->
-    <link rel="preconnect"
-        href="https://fonts.googleapis.com">
+/* PARTICLES */
+.cyber-bg{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
 
-    <link rel="preconnect"
-        href="https://fonts.gstatic.com"
-        crossorigin>
+.cyber-bg span{
+    position:absolute;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--green);
+    box-shadow:0 0 12px var(--green);
+    animation:floatParticle 8s linear infinite;
+}
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+@keyframes floatParticle{
+    0%{
+        transform:translateY(-50px);
+        opacity:0;
+    }
+    20%{opacity:1;}
+    80%{opacity:1;}
+    100%{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+/* WRAPPER */
+.cyber-wrapper{
+    width:100%;
+    max-width:820px;
+    position:relative;
+    z-index:2;
+}
 
+/* BACK BUTTON */
+.cyber-back{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:12px 20px;
+    border-radius:40px;
+    background:rgba(0,0,0,.55);
+    border:1px solid var(--border);
+    text-decoration:none;
+    color:var(--green);
+    margin-bottom:18px;
+    transition:.3s;
+}
+
+.cyber-back:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 20px rgba(8, 11, 160, 0.25);
+}
+
+/* CARD */
+.cyber-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    backdrop-filter:blur(18px);
+    border-radius:24px;
+    padding:40px;
+    box-shadow:0 0 40px rgba(82,255,117,.12);
+}
+
+/* LOGO */
+.cyber-logo{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.cyber-logo img{
+    height:60px;
+}
+
+/* ICON */
+.cyber-icon{
+    width:85px;
+    height:85px;
+    margin:18px auto;
+    border-radius:50%;
+    background:linear-gradient(135deg,#548dd8,#272fce);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+    color:black;
+    box-shadow:0 0 30px rgba(96, 98, 207, 0.35);
+}
+
+/* TITLE */
+.cyber-title{
+    text-align:center;
+    font-size:30px;
+    color:var(--green);
+}
+
+.cyber-sub{
+    text-align:center;
+    color:#aaa;
+    margin:12px 0 30px;
+}
+
+/* GRID */
+.cyber-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+/* GROUP */
+.cyber-group{
+    margin-bottom:18px;
+}
+
+.cyber-group label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    color:#d5d5d5;
+}
+
+/* INPUT */
+.cyber-input{
+    display:flex;
+    align-items:center;
+    height:50px;
+    padding:0 14px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.04);
+}
+
+.cyber-input i{
+    color:#888;
+    margin-right:10px;
+}
+
+.cyber-input input,
+.cyber-input select{
+    width:100%;
+    background:none;
+    border:none;
+    outline:none;
+    color:white;
+}
+
+.cyber-input select option{
+    background:#111;
+}
+
+/* PASSWORD */
+.cyber-pass{
+    position:relative;
+}
+
+.cyber-pass span{
+    position:absolute;
+    right:14px;
+    cursor:pointer;
+    color:#999;
+}
+
+/* ERROR */
+.cyber-error{
+    color:#ff5c5c;
+    font-size:12px;
+    margin-top:6px;
+    display:none;
+}
+
+/* TERMS */
+.cyber-terms{
+    margin:15px 0;
+    color:#bbb;
+    font-size:14px;
+}
+
+/* BUTTON */
+.cyber-btn{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,#548dd8,#272fce);
+    color:black;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.cyber-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 30px rgba(102, 82, 255, 0.3);
+}
+
+/* LOGIN LINK */
+.cyber-link{
+    text-align:center;
+    margin-top:18px;
+    color:#bbb;
+}
+
+.cyber-link a{
+    color:var(--green);
+    text-decoration:none;
+}
+
+/* POPUP */
+.cy-popup{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.82);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+    padding:20px;
+}
+
+.cy-popup.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.cy-popup-box{
+    width:100%;
+    max-width:420px;
+    background:linear-gradient(145deg,#111,#062313);
+    border-radius:24px;
+    border:1px solid rgba(41, 100, 218, 0.25);
+    padding:40px 30px;
+    text-align:center;
+    transform:scale(.7);
+    transition:.35s;
+    box-shadow:0 0 35px rgba(32, 32, 184, 0.25);
+}
+
+.cy-popup.show .cy-popup-box{
+    transform:scale(1);
+}
+
+.cy-popup-icon{
+    font-size:65px;
+    margin-bottom:18px;
+}
+
+.cy-popup h3{
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+.cy-popup p{
+    color:#cfcfcf;
+    margin-bottom:25px;
+    line-height:1.6;
+}
+
+.cy-popup button{
+    padding:14px 35px;
+    border:none;
+    border-radius:12px;
+    background:var(--green);
+    color:black;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* TABLET */
+@media(max-width:900px){
+    .cyber-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    body{
+        padding:20px 10px;
+        align-items:flex-start;
+    }
+
+    .cyber-card{
+        padding:28px 18px;
+    }
+
+    .cyber-title{
+        font-size:24px;
+    }
+
+    .cyber-logo img{
+        height:48px;
+    }
+
+    .cyber-back{
+        font-size:13px;
+        padding:10px 16px;
+    }
+}
+
+.cyber-logo{
+    text-align:center;
+    margin-bottom:15px;
+}
+
+.cyber-logo a{
+    display:inline-block;
+}
+
+.cyber-logo img{
+    height:60px;
+    cursor:pointer;
+    transition:.35s ease;
+}
+
+.cyber-logo img:hover{
+    transform:scale(1.08);
+    filter:drop-shadow(0 0 12px rgba(21, 55, 195, 0.55));
+}
+
+/* ROLE CUSTOM DROPDOWN */
+.cyber-dropdown{
+    position:relative;
+    width:100%;
+}
+
+.cyber-selected{
+    width:100%;
+    min-height:50px;
+    padding:14px 16px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.04);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    cursor:pointer;
+    color:white;
+}
+
+.cyber-options{
+    position:absolute;
+    top:calc(100% + 6px);
+    left:0;
+    width:100%;
+    background:#111;
+    border:1px solid rgba(82,255,117,.2);
+    border-radius:14px;
+    overflow:hidden;
+    display:none;
+    z-index:9999;
+    box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.cyber-options div{
+    padding:14px 16px;
+    cursor:pointer;
+    color:white;
+    transition:.3s;
+}
+
+.cyber-options div:hover{
+    background:#548dd8;
+    color:black;
+}
+
+.cyber-options.show{
+    display:block;
+}
+
+/* Desktop */
+@media (min-width:1200px){
+    .cyber-card{
+        padding:40px;
+    }
+}
+
+/* Laptop */
+@media (max-width:1199px){
+    .cyber-wrapper{
+        max-width:760px;
+    }
+}
+
+/* Tablet */
+@media (max-width:900px){
+    .cyber-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cyber-card{
+        padding:30px 24px;
+    }
+}
+
+/* Mobile */
+@media (max-width:600px){
+    body{
+        padding:15px 10px;
+        align-items:flex-start;
+    }
+
+    .cyber-wrapper{
+        width:100%;
+    }
+
+    .cyber-card{
+        width:100%;
+        padding:22px 16px;
+        border-radius:18px;
+    }
+
+    .cyber-title{
+        font-size:22px;
+    }
+
+    .cyber-sub{
+        font-size:13px;
+    }
+
+    .cyber-selected{
+        min-height:48px;
+        font-size:14px;
+    }
+
+    .cyber-options{
+        width:100%;
+        left:0;
+        right:0;
+    }
+
+    .cyber-input{
+        height:48px;
+    }
+}
+</style>
 </head>
-
 <body>
 
-    <!--==============================
-        BACKGROUND
-    ==============================-->
+<div class="cyber-bg">
+    <span style="left:10%;animation-delay:0s"></span>
+    <span style="left:30%;animation-delay:2s"></span>
+    <span style="left:50%;animation-delay:1s"></span>
+    <span style="left:70%;animation-delay:3s"></span>
+    <span style="left:90%;animation-delay:4s"></span>
+</div>
 
-    <div class="signup-bg"></div>
+<div class="cyber-wrapper">
+<a href="index.html" class="cyber-back">
+<i class="fa fa-arrow-left"></i> Back to Home
+</a>
 
-    <div class="signup-overlay"></div>
+<div class="cyber-card">
 
-    <!--==============================
-        BACK HOME
-    ==============================-->
+    <div class="cyber-logo">
+        <a href="./index.html">
+            <img src="./logo.webp" alt="Stackly Logo"
+        >
+        </a>
+    </div>
 
-    <a href="index.html"
-        class="signup-home">
+<div class="cyber-icon">
+    <i class="fa-solid fa-shield-halved"></i>
+</div>
 
-        <i class="fa-solid fa-arrow-left"></i>
+<h2 class="cyber-title">Create Account</h2>
+<p class="cyber-sub">Join our secure platform</p>
 
-        <span>Back to Home</span>
+<form id="cyberRegForm">
 
-    </a>
+    <div class="cyber-grid">
 
-    <!--==============================
-        MAIN WRAPPER
-    ==============================-->
-
-    <div class="signup-wrapper">
-
-        <!--==============================
-            LEFT CONTENT
-        ==============================-->
-
-        <div class="signup-left">
-
-            <a href="index.html"
-                class="signup-logo">
-
-                <img src="./logo.webp"
-                    alt="Logo">
-
-            </a>
-
-            <span class="signup-small">
-
-                Create Account
-
-            </span>
-
-            <h1>
-
-                Join
-
-                <span>
-
-                    Stackly
-
-                </span>
-
-            </h1>
-
-            <p>
-
-                Create your account and manage your
-                employees, departments, projects and
-                reports from one secure dashboard.
-
-            </p>
-
-            <!-- FEATURES -->
-
-            <div class="signup-features">
-
-                <div class="signup-feature">
-
-                    <i class="fa-solid fa-shield-halved"></i>
-
-                    <div>
-
-                        <h3>Secure Account</h3>
-
-                        <p>Your information is protected.</p>
-
-                    </div>
-
-                </div>
-
-                <div class="signup-feature">
-
-                    <i class="fa-solid fa-user-group"></i>
-
-                    <div>
-
-                        <h3>Team Management</h3>
-
-                        <p>Manage projects easily.</p>
-
-                    </div>
-
-                </div>
-
-                <div class="signup-feature">
-
-                    <i class="fa-solid fa-chart-line"></i>
-
-                    <div>
-
-                        <h3>Business Growth</h3>
-
-                        <p>Track performance instantly.</p>
-
-                    </div>
-
-                </div>
-
+        <div class="cyber-group">
+            <label>Full Name</label>
+            <div class="cyber-input">
+                <i class="fa fa-user"></i>
+                <input type="text" id="fullName" placeholder="John Doe" required>
             </div>
-
         </div>
+    
+        <div class="cyber-group">
+            <label>Role</label>
+        
+            <div class="cyber-dropdown">
+                <div class="cyber-selected" onclick="toggleRoleDropdown()">
+                    <span id="selectedRole">Admin</span>
+                    <i class="fa fa-chevron-down"></i>
+                </div>
+        
+                <div class="cyber-options" id="roleDropdown">
+                    <div onclick="selectRole('Admin')">Admin</div>
+                    <div onclick="selectRole('Client')">Client</div>
+                </div>
+            </div>
+        
+            <input type="hidden" id="role" value="Admin">
+        </div>
+    </div>
+    
+    <div class="cyber-group">
+        <label>Email</label>
+        <div class="cyber-input">
+            <i class="fa fa-envelope"></i>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        <p id="emailErr" class="cyber-error">Invalid email address</p>
+    </div>
+    
+    <div class="cyber-grid">
+    
+        <div class="cyber-group">
+            <label>Password</label>
+            <div class="cyber-input cyber-pass">
+                <input type="password" id="pass" required>
+                <span onclick="togglePass('pass')">
+                    <i class="fa fa-eye"></i>
+                </span>
+            </div>
+            <p id="passErr" class="cyber-error">
+                Password must be at least 6 characters
+            </p>
+        </div>
+    
+        <div class="cyber-group">
+            <label>Confirm Password</label>
+            <div class="cyber-input cyber-pass">
+                <input type="password" id="confirm" required>
+                <span onclick="togglePass('confirm')">
+                    <i class="fa fa-eye"></i>
+                </span>
+            </div>
+            <p id="confirmErr" class="cyber-error">
+                Passwords do not match
+            </p>
+        </div>
+    
+    </div>
+    
+    <div class="cyber-terms">
+        <input type="checkbox" id="terms" required>
+        Accept Terms & Privacy Policy
+    </div>
+    
+    <button class="cyber-btn">Create Account</button>
+    
+    <div class="cyber-link">
+        Already have an account?
+        <a href="login.html">Login</a>
+    </div>
+    
+    </form>
+    </div>
+    </div>
+    
+    <!-- POPUP -->
+    <div class="cy-popup" id="popup">
+        <div class="cy-popup-box">
+            <div class="cy-popup-icon" id="popupIcon"></div>
+            <h3 id="popupTitle"></h3>
+            <p id="popupMessage"></p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+    
+    <script>
+    let popupRedirect = null;
+    
+    /* PASSWORD TOGGLE */
+    function togglePass(id){
+        const input = document.getElementById(id);
+        input.type = input.type === "password" ? "text" : "password";
+    }
+    
+    /* SHOW POPUP */
+    function showPopup(type,title,message,redirect=null){
+        const popup = document.getElementById("popup");
+        const icon = document.getElementById("popupIcon");
+    
+        document.getElementById("popupTitle").innerText = title;
+        document.getElementById("popupMessage").innerText = message;
+    
+        popupRedirect = redirect;
+    
+        if(type === "success"){
+            icon.innerHTML = '<i class="fas fa-circle-check"></i>';
+            icon.style.color = "#52ff75";
+            icon.style.textShadow = "0 0 20px rgba(82,255,117,.6)";
+        }else{
+            icon.innerHTML = '<i class="fas fa-circle-xmark"></i>';
+            icon.style.color = "#ff5c5c";
+            icon.style.textShadow = "0 0 20px rgba(255,92,92,.5)";
+        }
+    
+        popup.classList.add("show");
+    }
+    
+    /* CLOSE POPUP */
+    function closePopup(){
+        document.getElementById("popup").classList.remove("show");
+    
+        if(popupRedirect){
+            setTimeout(()=>{
+                window.location.href = popupRedirect;
+            },300);
+        }
+    }
+    
+    /* FORM VALIDATION */
+    document.getElementById("cyberRegForm").addEventListener("submit",function(e){
+        e.preventDefault();
+    
+        const fullName = document.getElementById("fullName").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const pass = document.getElementById("pass").value.trim();
+        const confirm = document.getElementById("confirm").value.trim();
+        const terms = document.getElementById("terms").checked;
+    
+        let valid = true;
+    
+        /* EMAIL */
+        if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+            document.getElementById("emailErr").style.display="block";
+            valid = false;
+        }else{
+            document.getElementById("emailErr").style.display="none";
+        }
+    
+        /* PASSWORD */
+        if(pass.length < 6){
+            document.getElementById("passErr").style.display="block";
+            valid = false;
+        }else{
+            document.getElementById("passErr").style.display="none";
+        }
+    
+        /* CONFIRM */
+        if(pass !== confirm){
+            document.getElementById("confirmErr").style.display="block";
+            valid = false;
+        }else{
+            document.getElementById("confirmErr").style.display="none";
+        }
+    
+        /* EMPTY CHECK */
+        if(fullName === ""){
+            valid = false;
+            showPopup("error","Missing Name","Please enter your full name.");
+            return;
+        }
+    
+        if(!terms){
+            valid = false;
+            showPopup("error","Terms Required","Please accept terms and privacy policy.");
+            return;
+        }
+    
+        /* SUCCESS */
+        if(valid){
+            localStorage.setItem("email", email);
+            localStorage.setItem("role", document.getElementById("role").value);
+    
+            showPopup(
+                "success",
+                "Account Created",
+                "Your cybersecurity account has been created successfully.",
+                "login.html"
+            );
+        }else{
+            showPopup(
+                "error",
+                "Validation Failed",
+                "Please fix the highlighted fields."
+            );
+        }
+    });
+    function toggleRoleDropdown(){
+    document.getElementById("roleDropdown").classList.toggle("show");
+}
 
-        <!--==============================
-            RIGHT CARD
-        ==============================-->
+function selectRole(role){
+    document.getElementById("selectedRole").innerText = role;
+    document.getElementById("role").value = role;
+    document.getElementById("roleDropdown").classList.remove("show");
+}
 
-        <div class="signup-right">
-
-            <div class="signup-card">
-
-                <h2>
-
-                    Create Account
-
-                </h2>
-
-                <p>
-
-                    Fill the details below to register.
-
-                </p>
-
-                <!-- FORM -->
-
-                <form id="signupForm">
-
-                    <!-- NAME -->
-
-                    <div class="signup-group">
-
-                        <label>
-
-                            Full Name
-
-                        </label>
-
-                        <div class="signup-input">
-
-                            <i class="fa-solid fa-user"></i>
-
-                            <input
-                                type="text"
-                                id="signupName"
-                                placeholder="Enter your full name">
-
-                        </div>
-
-                        <small id="signupNameError"></small>
-
-                    </div>
-
-                    <!-- EMAIL -->
-
-                    <div class="signup-group">
-
-                        <label>
-
-                            Email Address
-
-                        </label>
-
-                        <div class="signup-input">
-
-                            <i class="fa-solid fa-envelope"></i>
-
-                            <input
-                                type="email"
-                                id="signupEmail"
-                                placeholder="Enter your email">
-
-                        </div>
-
-                        <small id="signupEmailError"></small>
-
-                    </div>
-
-                    <!-- PASSWORD -->
-
-                    <div class="signup-group">
-
-                        <label>
-
-                            Password
-
-                        </label>
-
-                        <div class="signup-input">
-
-                            <i class="fa-solid fa-lock"></i>
-
-                            <input
-                                type="password"
-                                id="signupPassword"
-                                placeholder="Create password">
-
-                            <i class="fa-solid fa-eye"
-                                id="signupToggle"></i>
-
-                        </div>
-
-                        <small id="signupPasswordError"></small>
-
-                    </div>
-
-                    <!-- CONFIRM PASSWORD -->
-
-                    <div class="signup-group">
-
-                        <label>
-
-                            Confirm Password
-
-                        </label>
-
-                        <div class="signup-input">
-
-                            <i class="fa-solid fa-key"></i>
-
-                            <input
-                                type="password"
-                                id="signupConfirm"
-                                placeholder="Confirm password">
-
-                        </div>
-
-                        <small id="signupConfirmError"></small>
-
-                    </div>
-
-                    
+window.addEventListener("click", function(e){
+    if(!e.target.closest(".cyber-dropdown")){
+        document.getElementById("roleDropdown").classList.remove("show");
+    }
+});
+    </script>
+    
+    
+    </body>
+    </html>
