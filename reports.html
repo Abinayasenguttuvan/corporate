@@ -4,35 +4,45 @@
 <head>
 
     <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corporate Client Dashboard</title>
 
-    <title>Dashboard | Stackly</title>
+    <!-- Google Font -->
 
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect"
+        href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
 
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    
+
+    <!-- Chart JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 <body>
 
-<div class="dashboard">
+<!--==========================
+        SIDEBAR
+===========================-->
 
-    <!-- ================= MOBILE MENU ================= -->
-
-    <button class="menu-btn">
-
-        <i class="fas fa-bars"></i>
-
-    </button>
-
-    <!-- ================= SIDEBAR ================= -->
-
-    <aside class="sidebar"
+<aside class="sidebar"
     id="sidebar">
 
     <div class="sidebar-logo">
@@ -81,7 +91,7 @@
 
         <li class="active">
 
-            <a href="./reports.html">
+            <a href="./reports.html" >
 
                 <i class="fas fa-user-tie"></i>
 
@@ -103,6 +113,35 @@
 
         </li>
 
+
+        <li>
+            <a href="./404.html">
+                <i class="fas fa-list-check"></i>
+                Tasks
+            </a>
+        </li>
+    
+        <li>
+            <a href="./404.html">
+                <i class="fas fa-file-lines"></i>
+                Documents
+            </a>
+        </li>
+    
+        <li>
+            <a href="./404.html">
+                <i class="fas fa-comments"></i>
+                Messages
+            </a>
+        </li>
+    
+        <li>
+            <a href="./404.html">
+                <i class="fas fa-bell"></i>
+                Notifications
+            </a>
+        </li>
+    
         
         <li class="logout">
 
@@ -120,1536 +159,1171 @@
     </ul>
 
 </aside>
-    <!-- ================= MAIN CONTENT ================= -->
 
-    <main class="main-content">
+<!--==========================
+      MAIN CONTENT
+===========================-->
 
-        <!-- ================= HEADER ================= -->
+<div class="main-content">
 
-        <header class="topbar">
+<!--==========================
+      TOP NAVBAR
+===========================-->
+
+<header class="topbar">
+
+    <div class="top-left">
+
+        <button
+            class="menu-btn"
+            id="menuBtn">
+
+            <i class="fas fa-bars"></i>
+
+        </button>
+
+        <a href="index.html"
+            class="logo">
+
+            <img src="./logo.webp"
+                alt="logo">
+
+        </a>
+
+    </div>
+
+    <!-- Search -->
+
+    <!-- <div class="search-box">
+        <a href="./404.html">
+
+        <i class="fas fa-search"></i>
+    
+        <input
+            type="text"
+            placeholder="Search Employees, Projects...">
+
+    </div></a> -->
+
+    <!-- Right Side -->
+
+    <div class="top-right">
+
+        <!-- Notification -->
+
+        <div class="icon-box">
+            <a href="./404.html">
+
+            <i class="fas fa-bell"></i>
+
+            <span class="badge">
+                5
+            </span></a>
+
+        </div>
+
+        <!-- Messages -->
+
+        <div class="icon-box">
+            <a href="./404.html">
+
+            <i class="fas fa-envelope"></i>
+
+            <span class="badge">
+                2
+            </span></a>
+
+        </div>
+
+        <!-- Profile -->
+
+        <div class="profile">
+
+            <div class="profile-image">
+
+                <i class="fas fa-user-shield"></i>
+
+            </div>
+
+            <div class="profile-info">
+
+                <h4 id="adminName">
+
+                    Loading...
+
+                </h4>
+
+                <span id="adminEmail">
+
+                    loading@email.com
+
+                </span>
+
+                <small id="clientRole">
+
+          Client
+
+                </small>
+
+            </div>
+
+            <i class="fas fa-angle-down"></i>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================================
+    CLIENT REPORT DASHBOARD
+=========================================================== -->
+
+<section class="client-report-dashboard">
+
+    <!-- =====================================
+        PAGE HEADER
+    ====================================== -->
+
+    <div class="client-report-header fade-up">
+
+        <div>
+
+            <span class="client-report-tag">
+
+                <i class="fas fa-file-lines"></i>
+
+                Reports Center
+
+            </span>
+
+            <h1>
+
+                Business Reports
+
+            </h1>
+
+            <p>
+
+                Monitor project performance, financial summaries,
+                team productivity and monthly client reports.
+
+            </p>
+
+        </div>
+
+        <div class="client-report-actions">
+
+            <button onclick="location.href='404.html'">
+
+                <i class="fas fa-download"></i>
+
+                Export PDF
+
+            </button>
+
+            <button onclick="location.href='404.html'">
+
+                <i class="fas fa-file-excel"></i>
+
+                Export Excel
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =====================================
+        REPORT SUMMARY
+    ====================================== -->
+
+    <div class="client-report-cards fade-up">
+
+        <!-- Card -->
+
+        <div class="client-report-card">
+
+            <div class="client-report-icon blue">
+
+                <i class="fas fa-folder-open"></i>
+
+            </div>
 
             <div>
 
-                <h1>
+                <h2 id="totalReports">
 
-                    Dashboard
+                    0
 
-                </h1>
+                </h2>
 
                 <p>
 
-                    Welcome Back, Admin! Here's what's happening today.
+                    Total Reports
 
                 </p>
 
             </div>
 
-            <div class="topbar-right">
+        </div>
 
-                <button class="icon-btn">
+        <!-- Card -->
 
-                    <i class="fas fa-bell"></i>
+        <div class="client-report-card">
 
-                </button>
+            <div class="client-report-icon green">
 
-                <button class="icon-btn">
-
-                    <i class="fas fa-user"></i>
-
-                </button>
-
-                <div class="date-picker">
-
-                    <i class="fas fa-calendar-days"></i>
-
-                    <input type="date">
-
-                </div>
+                <i class="fas fa-circle-check"></i>
 
             </div>
 
-        </header>
+            <div>
 
-        <!-- ================= STATISTICS START ================= -->
+                <h2 id="completedReports">
 
-        <section class="stats-grid">
+                    0
 
-                        <!-- ================= CARD 1 ================= -->
+                </h2>
 
-                        <div class="stat-card scroll-up">
+                <p>
 
-                            <div class="stat-icon blue">
-            
-                                <i class="fa-regular fa-folder-open"></i>
-            
-                            </div>
-            
-                            <div class="stat-content">
-            
-                                <small>Total Projects</small>
-            
-                                <h2>12</h2>
-            
-                                <span>Active Projects</span>
-            
-                            </div>
-            
-                        </div>
-            
-            
-                        <!-- ================= CARD 2 ================= -->
-            
-                        <div class="stat-card scroll-up">
-            
-                            <div class="stat-icon green">
-            
-                                <i class="fa-solid fa-circle-check"></i>
-            
-                            </div>
-            
-                            <div class="stat-content">
-            
-                                <small>Tasks Completed</small>
-            
-                                <h2>5</h2>
-            
-                                <span>This Month</span>
-            
-                            </div>
-            
-                        </div>
-            
-            
-                        <!-- ================= CARD 3 ================= -->
-            
-                        <div class="stat-card scroll-up">
-            
-                            <div class="stat-icon orange">
-            
-                                <i class="fa-regular fa-clock"></i>
-            
-                            </div>
-            
-                            <div class="stat-content">
-            
-                                <small>Pending Tasks</small>
-            
-                                <h2>18</h2>
-            
-                                <span>Require Attention</span>
-            
-                            </div>
-            
-                        </div>
-            
-            
-                        <!-- ================= CARD 4 ================= -->
-            
-                        <div class="stat-card scroll-up">
-            
-                            <div class="stat-icon purple">
-            
-                                <i class="fa-solid fa-users"></i>
-            
-                            </div>
-            
-                            <div class="stat-content">
-            
-                                <small>Total Clients</small>
-            
-                                <h2>16</h2>
-            
-                                <span>Registered Clients</span>
-            
-                            </div>
-            
-                        </div>
-            
-                    </section>
-            
-            
-                    <!-- ================= CONTENT GRID ================= -->
-            
-                    <section class="content-grid">
-            
-            
-                        <!-- ================= RECENT PROJECTS ================= -->
-            
-                        <div class="dashboard-card scroll-left">
-            
-                            <div class="card-header">
-            
-                                <h3>Recent Projects</h3>
-            
-                                <a href="./404.html">View All</a>
-            
-                            </div>
-            
-            
-                            <div class="project-item">
-            
-                                <div class="project-icon blue">
-            
-                                    <i class="fa-solid fa-desktop"></i>
-            
-                                </div>
-            
-                                <div class="project-info">
-            
-                                    <div class="project-title">
-            
-                                        <span>Website Redesign</span>
-            
-                                        <strong>75%</strong>
-            
-                                    </div>
-            
-                                    <div class="progress">
-            
-                                        <div class="progress-fill fill75"></div>
-            
-                                    </div>
-            
-                                </div>
-            
-                            </div>
-            
-            
-                            <div class="project-item">
-            
-                                <div class="project-icon green">
-            
-                                    <i class="fa-solid fa-mobile-screen-button"></i>
-            
-                                </div>
-            
-                                <div class="project-info">
-            
-                                    <div class="project-title">
-            
-                                        <span>Mobile App Development</span>
-            
-                                        <strong>60%</strong>
-            
-                                    </div>
-            
-                                    <div class="progress">
-            
-                                        <div class="progress-fill fill60"></div>
-            
-                                    </div>
-            
-                                </div>
-            
-                            </div>
-            
-            
-                            <div class="project-item">
-            
-                                <div class="project-icon orange">
-            
-                                    <i class="fa-solid fa-cart-shopping"></i>
-            
-                                </div>
-            
-                                <div class="project-info">
-            
-                                    <div class="project-title">
-            
-                                        <span>E-Commerce Platform</span>
-            
-                                        <strong>45%</strong>
-            
-                                    </div>
-            
-                                    <div class="progress">
-            
-                                        <div class="progress-fill fill45"></div>
-            
-                                    </div>
-            
-                                </div>
-            
-                            </div>
-            
-                            <div class="view-projects">
-            
-                                <a href="./404.html">View All Projects</a>
-            
-                            </div>
-            
-                        </div>
+                    Completed
 
-
-                                    <!-- ================= UPCOMING TASKS ================= -->
-
-            <div class="dashboard-card scroll-right">
-
-                <div class="card-header">
-
-                    <h3>Upcoming Tasks</h3>
-
-                    <a href="./404.html">View All</a>
-
-                </div>
-
-                <div class="task-list">
-
-                    <div class="task-item">
-
-                        <label>
-
-                            <input type="checkbox">
-
-                            <span class="checkmark"></span>
-
-                            Wireframe Design
-
-                        </label>
-
-                        <span class="task-date">July 06, 2026</span>
-
-                    </div>
-
-                    <div class="task-item">
-
-                        <label>
-
-                            <input type="checkbox">
-
-                            <span class="checkmark"></span>
-
-                            Client Meeting
-
-                        </label>
-
-                        <span class="task-date">July 07, 2026</span>
-
-                    </div>
-
-                    <div class="task-item">
-
-                        <label>
-
-                            <input type="checkbox">
-
-                            <span class="checkmark"></span>
-
-                            API Integration
-
-                        </label>
-
-                        <span class="task-date">July 08, 2026</span>
-
-                    </div>
-
-                    <div class="task-item">
-
-                        <label>
-
-                            <input type="checkbox">
-
-                            <span class="checkmark"></span>
-
-                            UI Design Review
-
-                        </label>
-
-                        <span class="task-date">July 09, 2026</span>
-
-                    </div>
-
-                </div>
+                </p>
 
             </div>
 
-        </section>
+        </div>
 
-    </main>
+        <!-- Card -->
 
-</div>
+        <div class="client-report-card">
 
-<script src="dashboard.js"></script>
+            <div class="client-report-icon orange">
+
+                <i class="fas fa-clock"></i>
+
+            </div>
+
+            <div>
+
+                <h2 id="pendingReports">
+
+                    0
+
+                </h2>
+
+                <p>
+
+                    Pending
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Card -->
+
+        <div class="client-report-card">
+
+            <div class="client-report-icon red">
+
+                <i class="fas fa-chart-line"></i>
+
+            </div>
+
+            <div>
+
+                <h2 id="performanceRate">
+
+                    0%
+
+                </h2>
+
+                <p>
+
+                    Performance
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =====================================
+        REPORT TABLE
+    ====================================== -->
+
+    <div class="client-report-table-card fade-up">
+
+        <div class="client-report-title">
+
+            <h2>
+
+                <i class="fas fa-table"></i>
+
+                Latest Reports
+
+            </h2>
+
+            <button onclick="location.href='404.html'">
+
+                View All
+
+            </button>
+
+        </div>
+
+        <div class="client-report-table-wrapper">
+
+            <table class="client-report-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Report</th>
+
+                        <th>Department</th>
+
+                        <th>Date</th>
+
+                        <th>Status</th>
+
+                        <th>Download</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Monthly Performance</td>
+
+                        <td>Development</td>
+
+                        <td>12 Jul 2026</td>
+
+                        <td>
+
+                            <span class="status completed">
+
+                                Completed
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <a href="404.html">
+
+                                <i class="fas fa-download"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Financial Summary</td>
+
+                        <td>Finance</td>
+
+                        <td>18 Jul 2026</td>
+
+                        <td>
+
+                            <span class="status pending">
+
+                                Pending
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <a href="404.html">
+
+                                <i class="fas fa-download"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Project Analysis</td>
+
+                        <td>Operations</td>
+
+                        <td>20 Jul 2026</td>
+
+                        <td>
+
+                            <span class="status completed">
+
+                                Completed
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <a href="404.html">
+
+                                <i class="fas fa-download"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Sales Overview</td>
+
+                        <td>Marketing</td>
+
+                        <td>22 Jul 2026</td>
+
+                        <td>
+
+                            <span class="status review">
+
+                                In Review
+
+                            </span>
+
+                        </td>
+
+                        <td>
+
+                            <a href="404.html">
+
+                                <i class="fas fa-download"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
 
 <style>
-    /*=========================================
-GOOGLE FONT
-=========================================*/
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#F4F7FC;
-    color:#1B2559;
-    overflow-x:hidden;
-}
-
-a{
-    text-decoration:none;
-}
-
-ul{
-    list-style:none;
-}
-
-
-/*=========================================
-MAIN DASHBOARD
-=========================================*/
-
-.dashboard{
-
-    display:flex;
-
-    min-height:100vh;
-
-}
-
-
-/*=========================================
-SIDEBAR
-=========================================*/
-
-.sidebar{
-
-    width:280px;
-
-    background:#111C44;
-
-    color:#fff;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-
-    position:fixed;
-
-    left:0;
-
-    top:0;
-
-    bottom:0;
-
-    padding:30px 22px;
-
-    transition:.4s;
-
-    z-index:1000;
-
-}
-
-
-/*=========================================
-LOGO
-=========================================*/
-
-.logo{
-
-    text-align:center;
-
-    margin-bottom:45px;
-
-}
-
-.logo img{
-
-    width:180px;
-
-}
-
-
-/*=========================================
-MENU
-=========================================*/
-
-.sidebar-menu{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:12px;
-
-}
-
-.sidebar-menu li{
-
-    border-radius:14px;
-
-    transition:.35s;
-
-}
-
-.sidebar-menu li a{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:16px;
-
-    padding:16px 20px;
-
-    color:#D7E2FF;
-
-    font-size:16px;
-
-    font-weight:500;
-
-    border-radius:14px;
-
-    transition:.35s;
-
-}
-
-.sidebar-menu li i{
-
-    width:22px;
-
-    text-align:center;
-
-    font-size:18px;
-
-}
-
-
-/*=========================================
-ACTIVE MENU
-=========================================*/
-
-.sidebar-menu li.active{
-
-    background:linear-gradient(90deg,#5BD4C5,#44C4B3);
-
-}
-
-.sidebar-menu li.active a{
-
-    color:#fff;
-
-}
-
-.sidebar-menu li:hover{
-
-    background:rgba(255,255,255,.08);
-
-}
-
-.sidebar-menu li:hover a{
-
-    color:#fff;
-
-}
-
-
-/*=========================================
-BOTTOM AREA
-=========================================*/
-
-.sidebar-bottom{
-
-    margin-top:35px;
-
-}
-
-.support{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    color:#D7E2FF;
-
-    font-size:15px;
-
-    margin-bottom:30px;
-
-    transition:.3s;
-
-}
-
-.support:hover{
-
-    color:#5BD4C5;
-
-}
-
-
-/*=========================================
-PROFILE
-=========================================*/
-
-.profile-switch{
-
-    background:rgba(255,255,255,.08);
-
-    border-radius:16px;
-
-    padding:16px;
-
-}
-
-.profile-info{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    margin-bottom:12px;
-
-}
-
-.profile-info img{
-
-    width:48px;
-
-    height:48px;
-
-    border-radius:50%;
-
-    object-fit:cover;
-
-    border:3px solid #5BD4C5;
-
-}
-
-.profile-info span{
-
-    color:#fff;
-
-    font-weight:600;
-
-    font-size:16px;
-
-}
-
-
-/*=========================================
-SELECT
-=========================================*/
-
-.profile-switch select{
-
+    /*=========================================================
+    CLIENT REPORT DASHBOARD - CSS PART 1A
+=========================================================*/
+
+/*==============================
+    REPORT SECTION
+==============================*/
+
+.client-report-dashboard{
     width:100%;
-
-    height:45px;
-
-    border:none;
-
-    outline:none;
-
-    border-radius:10px;
-
-    padding:0 12px;
-
-    background:#fff;
-
-    color:#222;
-
-    font-size:15px;
-
-    cursor:pointer;
-
-}
-
-
-/*=========================================
-MAIN CONTENT
-=========================================*/
-
-.main-content{
-
-    flex:1;
-
-    margin-left:280px;
-
-    padding:35px;
-
-    transition:.4s;
-
-}
-
-
-/*=========================================
-TOPBAR
-=========================================*/
-
-.topbar{
-
     display:flex;
+    flex-direction:column;
+    gap:28px;
+    animation:clientReportFade .8s ease;
+}
 
+/*==============================
+    HEADER
+==============================*/
+
+.client-report-header{
+    display:flex;
     justify-content:space-between;
-
     align-items:center;
-
-    margin-bottom:35px;
-
+    gap:30px;
+    padding:35px;
+    border-radius:24px;
+    overflow:hidden;
+    position:relative;
+    background:linear-gradient(135deg,#2563eb,#0ea5e9,#14b8a6);
+    color:#fff;
+    box-shadow:0 15px 40px rgba(0,0,0,.12);
 }
 
-.topbar h1{
-
-    font-size:34px;
-
-    font-weight:700;
-
-    color:#111;
-
-}
-
-.topbar p{
-
-    color:#777;
-
-    margin-top:8px;
-
-}
-
-
-/*=========================================
-TOPBAR RIGHT
-=========================================*/
-
-.topbar-right{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:18px;
-
-}
-
-.icon-btn{
-
-    width:48px;
-
-    height:48px;
-
-    border:none;
-
+.client-report-header::before{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
     border-radius:50%;
-
-    background:#fff;
-
-    cursor:pointer;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-    transition:.3s;
-
+    background:rgba(255,255,255,.12);
+    top:-100px;
+    right:-80px;
 }
 
-.icon-btn:hover{
-
-    background:#5BD4C5;
-
-    color:#fff;
-
+.client-report-header>*{
+    position:relative;
+    z-index:2;
 }
 
-.date-picker{
-
-    display:flex;
-
+.client-report-tag{
+    display:inline-flex;
     align-items:center;
-
     gap:10px;
-
-    background:#fff;
-
-    padding:10px 16px;
-
-    border-radius:12px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-
-}
-
-.date-picker input{
-
-    border:none;
-
-    outline:none;
-
-    background:transparent;
-
+    padding:8px 18px;
+    border-radius:50px;
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(10px);
     font-size:14px;
-
+    font-weight:600;
+    margin-bottom:18px;
 }
 
+.client-report-tag i{
+    font-size:14px;
+}
 
-/*=========================================
-MOBILE MENU BUTTON
-=========================================*/
+.client-report-header h1{
+    font-size:38px;
+    font-weight:700;
+    line-height:1.2;
+    margin-bottom:15px;
+}
 
-.menu-btn{
+.client-report-header p{
+    max-width:620px;
+    font-size:15px;
+    line-height:1.8;
+    opacity:.95;
+}
 
-    display:none;
+/*==============================
+    HEADER BUTTONS
+==============================*/
 
-    position:fixed;
+.client-report-actions{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-    top:20px;
-
-    left:20px;
-
-    width:48px;
-
-    height:48px;
-
+.client-report-actions button{
     border:none;
-
-    border-radius:12px;
-
-    background:#5BD4C5;
-
-    color:#fff;
-
-    font-size:20px;
-
-    z-index:1200;
-
     cursor:pointer;
-
+    padding:15px 24px;
+    border-radius:50px;
+    font-size:14px;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:.35s;
+    background:#fff;
+    color:#2563eb;
 }
 
-
-/*=========================================
-STATISTICS GRID
-=========================================*/
-
-.stats-grid{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
-margin-bottom:35px;
-
+.client-report-actions button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,.18);
 }
 
+/*==============================
+    KPI GRID
+==============================*/
+
+.client-report-cards{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+/*==============================
+    KPI CARD
+==============================*/
+
+.client-report-card{
+    background:#fff;
+    border-radius:22px;
+    padding:28px;
+    display:flex;
+    align-items:center;
+    gap:20px;
+    position:relative;
+    overflow:hidden;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.client-report-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#2563eb,#14b8a6);
+}
+
+.client-report-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+}
+
+.client-report-card h2{
+    font-size:34px;
+    font-weight:700;
+    color:#0f172a;
+    margin-bottom:6px;
+}
+
+.client-report-card p{
+    font-size:15px;
+    color:#64748b;
+    font-weight:500;
+}
+
+/*==============================
+    ICON
+==============================*/
+
+.client-report-icon{
+    width:72px;
+    height:72px;
+    border-radius:18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:28px;
+    flex-shrink:0;
+}
+
+.client-report-icon.blue{
+    background:linear-gradient(135deg,#2563eb,#60a5fa);
+}
+
+.client-report-icon.green{
+    background:linear-gradient(135deg,#10b981,#34d399);
+}
+
+.client-report-icon.orange{
+    background:linear-gradient(135deg,#f59e0b,#fbbf24);
+}
+
+.client-report-icon.red{
+    background:linear-gradient(135deg,#ef4444,#fb7185);
+}
+
+/*==============================
+    ANIMATION
+==============================*/
+
+@keyframes clientReportFade{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+/*=========================================================
+    CLIENT REPORT DASHBOARD - CSS PART 1B
+=========================================================*/
 
 /*=========================================
-STAT CARD
+    REPORT TABLE CARD
 =========================================*/
 
-.stat-card{
+.client-report-table-card{
+
+width:100%;
 
 background:#ffffff;
 
 border-radius:22px;
 
-padding:25px;
-
-display:flex;
-
-align-items:center;
-
-gap:18px;
-
-box-shadow:0 12px 30px rgba(0,0,0,.08);
-
-transition:.35s;
-
-cursor:pointer;
-
-}
-
-.stat-card:hover{
-
-transform:translateY(-8px);
-
-box-shadow:0 20px 40px rgba(0,0,0,.12);
-
-}
-
-
-/*=========================================
-STAT ICON
-=========================================*/
-
-.stat-icon{
-
-width:70px;
-
-height:70px;
-
-border-radius:18px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-color:#fff;
-
-font-size:28px;
-
-flex-shrink:0;
-
-}
-
-.stat-icon.blue{
-
-background:linear-gradient(135deg,#4F8CFF,#2563EB);
-
-}
-
-.stat-icon.green{
-
-background:linear-gradient(135deg,#38D39F,#18B97A);
-
-}
-
-.stat-icon.orange{
-
-background:linear-gradient(135deg,#FFA94D,#F97316);
-
-}
-
-.stat-icon.purple{
-
-background:linear-gradient(135deg,#8B5CF6,#6D28D9);
-
-}
-
-
-/*=========================================
-STAT CONTENT
-=========================================*/
-
-.stat-content{
-
-display:flex;
-
-flex-direction:column;
-
-}
-
-.stat-content small{
-
-color:#7B8794;
-
-font-size:14px;
-
-margin-bottom:6px;
-
-}
-
-.stat-content h2{
-
-font-size:34px;
-
-color:#111827;
-
-font-weight:700;
-
-margin-bottom:5px;
-
-}
-
-.stat-content span{
-
-font-size:14px;
-
-color:#9CA3AF;
-
-}
-
-
-/*=========================================
-CONTENT GRID
-=========================================*/
-
-.content-grid{
-
-display:grid;
-
-grid-template-columns:2fr 1fr;
-
-gap:30px;
-
-}
-
-
-/*=========================================
-COMMON CARD
-=========================================*/
-
-.dashboard-card{
-
-background:#fff;
-
-border-radius:22px;
-
 padding:28px;
 
-box-shadow:0 12px 30px rgba(0,0,0,.08);
-
-transition:.35s;
-
-}
-
-.dashboard-card:hover{
-
-transform:translateY(-6px);
-
-}
-
-
-/*=========================================
-CARD HEADER
-=========================================*/
-
-.card-header{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:30px;
-
-}
-
-.card-header h3{
-
-font-size:24px;
-
-color:#111827;
-
-font-weight:700;
-
-}
-
-.card-header a{
-
-color:#36C2B4;
-
-font-size:15px;
-
-font-weight:600;
-
-}
-
-.card-header a:hover{
-
-text-decoration:underline;
-
-}
-
-
-/*=========================================
-PROJECT ITEM
-=========================================*/
-
-.project-item{
-
-display:flex;
-
-align-items:center;
-
-gap:18px;
-
-margin-bottom:28px;
-
-}
-
-
-/*=========================================
-PROJECT ICON
-=========================================*/
-
-.project-icon{
-
-width:60px;
-
-height:60px;
-
-border-radius:16px;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-color:#fff;
-
-font-size:24px;
-
-flex-shrink:0;
-
-}
-
-.project-icon.blue{
-
-background:#2563EB;
-
-}
-
-.project-icon.green{
-
-background:#18B97A;
-
-}
-
-.project-icon.orange{
-
-background:#F97316;
-
-}
-
-
-/*=========================================
-PROJECT INFO
-=========================================*/
-
-.project-info{
-
-flex:1;
-
-}
-
-.project-title{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-margin-bottom:10px;
-
-}
-
-.project-title span{
-
-font-size:16px;
-
-font-weight:600;
-
-color:#111827;
-
-}
-
-.project-title strong{
-
-color:#36C2B4;
-
-font-size:15px;
-
-}
-
-
-/*=========================================
-PROGRESS BAR
-=========================================*/
-
-.progress{
-
-width:100%;
-
-height:10px;
-
-border-radius:20px;
-
-background:#E5E7EB;
+box-shadow:0 15px 35px rgba(15,23,42,.08);
 
 overflow:hidden;
 
 }
 
-.progress-fill{
-
-height:100%;
-
-border-radius:20px;
-
-background:linear-gradient(90deg,#36C2B4,#59D5C7);
-
-}
-
-.fill75{
-
-width:75%;
-
-}
-
-.fill60{
-
-width:60%;
-
-}
-
-.fill45{
-
-width:45%;
-
-}
-
-
 /*=========================================
-VIEW PROJECTS
+TABLE HEADER
 =========================================*/
 
-.view-projects{
+.client-report-title{
 
-margin-top:20px;
+display:flex;
 
-text-align:right;
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+margin-bottom:25px;
+
+flex-wrap:wrap;
 
 }
 
-.view-projects a{
+.client-report-title h2{
 
-color:#36C2B4;
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+font-size:24px;
+
+color:#0f172a;
+
+font-weight:700;
+
+}
+
+.client-report-title h2 i{
+
+color:#2563eb;
+
+}
+
+.client-report-title button{
+
+border:none;
+
+outline:none;
+
+cursor:pointer;
+
+padding:12px 22px;
+
+border-radius:50px;
+
+background:linear-gradient(135deg,#2563eb,#0ea5e9);
+
+color:#ffffff;
+
+font-size:14px;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.client-report-title button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+/*=========================================
+TABLE WRAPPER
+=========================================*/
+
+.client-report-table-wrapper{
+
+width:100%;
+
+overflow-x:auto;
+
+-webkit-overflow-scrolling:touch;
+
+border-radius:18px;
+
+}
+
+/*=========================================
+TABLE
+=========================================*/
+
+.client-report-table{
+
+width:100%;
+
+min-width:760px;
+
+border-collapse:collapse;
+
+background:#ffffff;
+
+}
+
+.client-report-table thead{
+
+background:linear-gradient(90deg,#2563eb,#0ea5e9);
+
+}
+
+.client-report-table thead th{
+
+color:#ffffff;
+
+font-size:15px;
+
+font-weight:600;
+
+padding:18px;
+
+text-align:left;
+
+white-space:nowrap;
+
+}
+
+.client-report-table tbody tr{
+
+transition:.30s;
+
+border-bottom:1px solid #edf2f7;
+
+}
+
+.client-report-table tbody tr:hover{
+
+background:#f8fbff;
+
+}
+
+.client-report-table tbody td{
+
+padding:18px;
+
+font-size:14px;
+
+color:#475569;
+
+white-space:nowrap;
+
+}
+
+/*=========================================
+STATUS BADGES
+=========================================*/
+
+.status{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+min-width:110px;
+
+padding:8px 16px;
+
+border-radius:50px;
+
+font-size:13px;
 
 font-weight:600;
 
 }
 
-.view-projects a:hover{
+.status.completed{
 
-text-decoration:underline;
+color:#15803d;
+
+background:#dcfce7;
+
+}
+
+.status.pending{
+
+color:#b45309;
+
+background:#fef3c7;
+
+}
+
+.status.review{
+
+color:#1d4ed8;
+
+background:#dbeafe;
 
 }
 
 /*=========================================
-UPCOMING TASKS
+DOWNLOAD LINK
 =========================================*/
 
-.task-list{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
+.client-report-table td a{
+
+width:42px;
+
+height:42px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:12px;
+
+background:#eff6ff;
+
+color:#2563eb;
+
+text-decoration:none;
+
+transition:.30s;
+
 }
 
-.task-item{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:16px 0;
-    border-bottom:1px solid #ECECEC;
-}
+.client-report-table td a:hover{
 
-.task-item:last-child{
-    border-bottom:none;
-}
+background:#2563eb;
 
-.task-item label{
-    display:flex;
-    align-items:center;
-    gap:15px;
-    cursor:pointer;
-    font-size:15px;
-    font-weight:500;
-    color:#1B2559;
-}
+color:#ffffff;
 
-.task-item input{
-    display:none;
-}
+transform:scale(1.08);
 
+}
 
 /*=========================================
-CUSTOM CHECKBOX
+SCROLLBAR
 =========================================*/
 
-.checkmark{
+.client-report-table-wrapper::-webkit-scrollbar{
 
-    width:22px;
-
-    height:22px;
-
-    border-radius:50%;
-
-    border:2px solid #36C2B4;
-
-    position:relative;
-
-    transition:.3s;
+height:8px;
 
 }
 
-.task-item input:checked + .checkmark{
+.client-report-table-wrapper::-webkit-scrollbar-track{
 
-    background:#36C2B4;
+background:#e5e7eb;
 
-}
-
-.task-item input:checked + .checkmark::after{
-
-    content:"✓";
-
-    color:#fff;
-
-    font-size:13px;
-
-    position:absolute;
-
-    left:4px;
-
-    top:0;
+border-radius:20px;
 
 }
 
-.task-date{
+.client-report-table-wrapper::-webkit-scrollbar-thumb{
 
-    color:#7B8794;
+background:linear-gradient(90deg,#2563eb,#0ea5e9);
 
-    font-size:13px;
+border-radius:20px;
 
 }
-
 
 /*=========================================
-SCROLL ANIMATION
+FADE ANIMATION
 =========================================*/
 
-.scroll-up,
-.scroll-left,
-.scroll-right{
+.client-report-table-card{
+
+animation:clientReportTable .8s ease;
+
+}
+
+@keyframes clientReportTable{
+
+from{
 
     opacity:0;
 
-    transition:all .8s ease;
+    transform:translateY(30px);
 
 }
 
-.scroll-up{
+to{
 
-    transform:translateY(60px);
+    opacity:1;
 
-}
-
-.scroll-left{
-
-    transform:translateX(-60px);
+    transform:translateY(0);
 
 }
 
-.scroll-right{
-
-    transform:translateX(60px);
-
 }
 
-.show{
-
-    opacity:1 !important;
-
-    transform:translate(0,0) !important;
-
-}
-
+/*=========================================================
+    CLIENT REPORT DASHBOARD - RESPONSIVE
+=========================================================*/
 
 /*=========================================
-TABLET
+    LARGE LAPTOP
 =========================================*/
 
-@media(max-width:1100px){
+@media (max-width:1400px){
 
-.stats-grid{
+.client-report-cards{
 
     grid-template-columns:repeat(2,1fr);
 
 }
 
-.content-grid{
-
-    grid-template-columns:1fr;
-
 }
-
-}
-
 
 /*=========================================
-TABLET SIDEBAR
+LAPTOP
 =========================================*/
 
-@media(max-width:900px){
+@media (max-width:1200px){
 
-.sidebar{
-
-    left:-300px;
-
-}
-
-.sidebar.active{
-
-    left:0;
-
-}
-
-.main-content{
-
-    margin-left:0;
-
-    padding:90px 20px 20px;
-
-}
-
-.menu-btn{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-.topbar{
+.client-report-header{
 
     flex-direction:column;
 
     align-items:flex-start;
 
-    gap:20px;
+    text-align:left;
 
 }
 
-.topbar-right{
+.client-report-actions{
 
     width:100%;
 
-    justify-content:space-between;
+}
+
+.client-report-header h1{
+
+    font-size:34px;
 
 }
 
 }
-
 
 /*=========================================
-MOBILE
+TABLET
 =========================================*/
 
-@media(max-width:768px){
+@media (max-width:992px){
 
-.stats-grid{
+.client-report-dashboard{
 
-    grid-template-columns:1fr;
-
-}
-
-.stat-card{
-
-    padding:20px;
+    gap:22px;
 
 }
 
-.stat-icon{
+.client-report-header{
 
-    width:60px;
+    padding:30px 24px;
 
-    height:60px;
-
-    font-size:24px;
+    border-radius:20px;
 
 }
 
-.stat-content h2{
+.client-report-header h1{
 
-    font-size:28px;
-
-}
-
-.dashboard-card{
-
-    padding:20px;
+    font-size:30px;
 
 }
 
-.card-header{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:10px;
-
-}
-
-.project-item{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-}
-
-.project-title{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:5px;
-
-}
-
-.task-item{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:10px;
-
-}
-
-}
-
-
-/*=========================================
-SMALL MOBILE
-=========================================*/
-
-@media(max-width:480px){
-
-.topbar h1{
-
-    font-size:28px;
-
-}
-
-.topbar p{
+.client-report-header p{
 
     font-size:14px;
 
 }
 
-.icon-btn{
+.client-report-cards{
 
-    width:42px;
+    grid-template-columns:repeat(2,1fr);
 
-    height:42px;
+    gap:20px;
 
 }
 
-.date-picker{
+.client-report-card{
+
+    padding:22px;
+
+}
+
+.client-report-icon{
+
+    width:65px;
+
+    height:65px;
+
+    font-size:24px;
+
+}
+
+.client-report-card h2{
+
+    font-size:30px;
+
+}
+
+}
+
+/*=========================================
+MOBILE
+=========================================*/
+
+@media (max-width:768px){
+
+.client-report-header{
+
+    padding:25px 20px;
+
+    text-align:center;
+
+    align-items:center;
+
+}
+
+.client-report-tag{
+
+    margin:auto auto 18px;
+
+}
+
+.client-report-header h1{
+
+    font-size:28px;
+
+}
+
+.client-report-header p{
+
+    max-width:100%;
+
+}
+
+.client-report-actions{
+
+    width:100%;
+
+    flex-direction:column;
+
+}
+
+.client-report-actions button{
 
     width:100%;
 
@@ -1657,73 +1331,500 @@ SMALL MOBILE
 
 }
 
-.sidebar{
+.client-report-cards{
 
-    width:260px;
-
-}
-
-.logo img{
-
-    width:150px;
+    grid-template-columns:1fr;
 
 }
 
-.profile-info img{
+.client-report-card{
 
-    width:42px;
+    width:100%;
 
-    height:42px;
+}
+
+.client-report-table-card{
+
+    padding:20px;
+
+}
+
+.client-report-title{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.client-report-title button{
+
+    width:100%;
+
+}
+
+.client-report-table{
+
+    min-width:700px;
 
 }
 
 }
-
 
 /*=========================================
-HOVER EFFECTS
+SMALL MOBILE
 =========================================*/
 
-.project-item,
-.task-item,
-.stat-card,
-.dashboard-card{
+@media (max-width:576px){
 
-    transition:.3s;
+.client-report-dashboard{
 
-}
-
-.project-item:hover{
-
-    transform:translateX(6px);
+    gap:18px;
 
 }
 
-.task-item:hover{
+.client-report-header{
 
-    background:#F8FAFC;
+    padding:20px 16px;
 
-    border-radius:12px;
-
-    padding-left:10px;
+    border-radius:18px;
 
 }
 
-.stat-card:hover .stat-icon{
+.client-report-header h1{
 
-    transform:rotate(10deg) scale(1.08);
+    font-size:24px;
+
+    line-height:1.3;
 
 }
 
-.dashboard-card:hover{
+.client-report-header p{
 
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
+    font-size:13px;
+
+    line-height:1.7;
+
+}
+
+.client-report-tag{
+
+    font-size:12px;
+
+    padding:7px 14px;
+
+}
+
+.client-report-actions button{
+
+    padding:14px;
+
+    font-size:14px;
+
+}
+
+.client-report-card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+.client-report-icon{
+
+    width:60px;
+
+    height:60px;
+
+    font-size:22px;
+
+    margin-bottom:10px;
+
+}
+
+.client-report-card h2{
+
+    font-size:28px;
+
+}
+
+.client-report-card p{
+
+    font-size:14px;
+
+}
+
+.client-report-table-card{
+
+    padding:15px;
+
+}
+
+.client-report-title h2{
+
+    font-size:20px;
+
+}
+
+.client-report-title button{
+
+    padding:12px;
+
+}
+
+.client-report-table{
+
+    min-width:650px;
+
+}
+
+}
+
+/*=========================================
+EXTRA SMALL DEVICES
+=========================================*/
+
+@media (max-width:360px){
+
+.client-report-header h1{
+
+    font-size:22px;
+
+}
+
+.client-report-card{
+
+    padding:18px;
+
+}
+
+.client-report-card h2{
+
+    font-size:24px;
+
+}
+
+.client-report-icon{
+
+    width:55px;
+
+    height:55px;
+
+    font-size:20px;
+
+}
+
+}
+</style>
+
+<script>
+    /*=========================================================
+    CLIENT REPORT DASHBOARD - JAVASCRIPT
+=========================================================*/
+
+document.addEventListener("DOMContentLoaded", () => {
+
+/*====================================
+    REPORT COUNTERS
+====================================*/
+
+function clientReportCounter(id, target, suffix = "") {
+
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
+    let current = 0;
+
+    const increment = Math.ceil(target / 80);
+
+    const timer = setInterval(() => {
+
+        current += increment;
+
+        if (current >= target) {
+
+            current = target;
+
+            clearInterval(timer);
+
+        }
+
+        element.textContent =
+            current.toLocaleString() + suffix;
+
+    }, 20);
+
+}
+
+clientReportCounter(
+    "totalReports",
+    128
+);
+
+clientReportCounter(
+    "completedReports",
+    94
+);
+
+clientReportCounter(
+    "pendingReports",
+    34
+);
+
+clientReportCounter(
+    "performanceRate",
+    96,
+    "%"
+);
+
+/*====================================
+    SCROLL ANIMATION
+====================================*/
+
+const reportItems =
+    document.querySelectorAll(".fade-up");
+
+function clientReportReveal() {
+
+    reportItems.forEach(item => {
+
+        const top =
+            item.getBoundingClientRect().top;
+
+        if (top < window.innerHeight - 80) {
+
+            item.classList.add("show");
+
+        }
+
+    });
+
+}
+
+clientReportReveal();
+
+window.addEventListener(
+    "scroll",
+    clientReportReveal
+);
+
+/*====================================
+    EXPORT BUTTONS
+====================================*/
+
+document.querySelectorAll(
+    ".client-report-actions button"
+).forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        button.style.transform =
+            "scale(.96)";
+
+        setTimeout(() => {
+
+            button.style.transform =
+                "";
+
+        }, 150);
+
+    });
+
+});
+
+/*====================================
+    TABLE DOWNLOAD BUTTONS
+====================================*/
+
+document.querySelectorAll(
+    ".client-report-table td a"
+).forEach(link => {
+
+    link.addEventListener("click", function () {
+
+        console.log(
+            "Downloading Report..."
+        );
+
+    });
+
+});
+
+/*====================================
+    TABLE ROW HOVER
+====================================*/
+
+document.querySelectorAll(
+    ".client-report-table tbody tr"
+).forEach(row => {
+
+    row.addEventListener("mouseenter", () => {
+
+        row.style.transition =
+            ".3s";
+
+    });
+
+});
+
+/*====================================
+    CURRENT DATE
+====================================*/
+
+const reportDate =
+    document.getElementById(
+        "reportCurrentDate"
+    );
+
+if (reportDate) {
+
+    reportDate.textContent =
+        new Date().toLocaleDateString(
+            "en-IN",
+            {
+                day: "2-digit",
+                month: "long",
+                year: "numeric"
+            }
+        );
+
+}
+
+/*====================================
+    REPORT SEARCH (Optional)
+====================================*/
+
+const reportSearch =
+    document.getElementById(
+        "reportSearch"
+    );
+
+if (reportSearch) {
+
+    reportSearch.addEventListener(
+        "keyup",
+        function () {
+
+            const value =
+                this.value.toLowerCase();
+
+            document.querySelectorAll(
+                ".client-report-table tbody tr"
+            ).forEach(row => {
+
+                row.style.display =
+                    row.innerText
+                        .toLowerCase()
+                        .includes(value)
+                        ? ""
+                        : "none";
+
+            });
+
+        }
+    );
+
+}
+
+/*====================================
+    PAGE LOADED
+====================================*/
+
+console.log(
+    "Client Reports Dashboard Loaded Successfully"
+);
+
+});
+</script>
+
+
+<style>
+
+    /*=========================================
+        CORPORATE ADMIN DASHBOARD CSS
+=========================================*/
+
+/* Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*=========================================
+              ROOT VARIABLES
+=========================================*/
+
+:root{
+
+    --primary:#2563eb;
+    --secondary:#0ea5e9;
+    --accent:#14b8a6;
+
+    --dark:#0f172a;
+    --dark-light:#1e293b;
+
+    --white:#ffffff;
+
+    --bg:#f5f7fb;
+
+    --border:#e5e7eb;
+
+    --text:#374151;
+
+    --success:#22c55e;
+
+    --warning:#f59e0b;
+
+    --danger:#ef4444;
+
+    --purple:#7c3aed;
+
+    --shadow:
+    0 15px 40px rgba(0,0,0,.08);
+
+    --radius:18px;
+
+    --transition:.35s ease;
 
 }
 
 
 /*=========================================
-SCROLLBAR
+              RESET
+=========================================*/
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+/*=========================================
+          SCROLLBAR
 =========================================*/
 
 ::-webkit-scrollbar{
@@ -1734,245 +1835,1547 @@ SCROLLBAR
 
 ::-webkit-scrollbar-track{
 
-    background:#F1F1F1;
+    background:#edf2f7;
 
 }
 
 ::-webkit-scrollbar-thumb{
 
-    background:#36C2B4;
+    background:linear-gradient(
+    180deg,
+    var(--primary),
+    var(--secondary));
 
     border-radius:20px;
 
 }
 
-::-webkit-scrollbar-thumb:hover{
+/*=========================================
+            SIDEBAR
+=========================================*/
 
-    background:#2DA99B;
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:270px;
+
+    height:100vh;
+
+    background:linear-gradient(
+    180deg,
+    #0f172a,
+    #1e293b);
+
+    color:#fff;
+
+    z-index:999;
+
+    overflow-y:auto;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
 
 }
+
+/*=========================================
+          SIDEBAR LOGO
+=========================================*/
+
+.sidebar-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:24px;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.sidebar-logo img{
+
+    width:170px;
+
+    max-width:100%;
+
+}
+
+.close-sidebar{
+
+    display:none;
+
+    width:40px;
+
+    height:40px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    background:rgba(255,255,255,.12);
+
+    transition:var(--transition);
+
+}
+
+.close-sidebar:hover{
+
+    transform:rotate(180deg);
+
+    background:var(--danger);
+
+}
+
+/*=========================================
+            SIDEBAR MENU
+=========================================*/
+
+.sidebar ul{
+
+    list-style:none;
+
+    padding:20px 15px;
+
+}
+
+.sidebar ul li{
+
+    margin-bottom:8px;
+
+}
+
+.sidebar ul li a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    text-decoration:none;
+
+    color:#d1d5db;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    transition:var(--transition);
+
+}
+
+.sidebar ul li a i{
+
+    width:24px;
+
+    font-size:18px;
+
+    text-align:center;
+
+}
+
+/* Hover */
+
+.sidebar ul li a:hover{
+
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
+
+    color:#fff;
+
+    transform:translateX(6px);
+
+}
+
+/* Active */
+
+.sidebar ul li.active a{
+
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
+
+    color:#fff;
+
+    box-shadow:
+    0 12px 25px rgba(37,99,235,.35);
+
+}
+
+/*=========================================
+            LOGOUT
+=========================================*/
+
+.logout{
+
+    margin-top:35px;
+
+}
+
+.logout a{
+
+    color:#ffd4d4 !important;
+
+}
+
+.logout a:hover{
+
+    background:var(--danger)!important;
+
+}
+
+/*=========================================
+            MAIN CONTENT
+=========================================*/
+
+.main-content{
+
+    margin-left:270px;
+
+    min-height:100vh;
+
+    padding:28px;
+
+    transition:var(--transition);
+
+}
+
+/*=========================================
+      COMMON DASHBOARD CARD
+=========================================*/
+
+.dashboard-card{
+
+    background:#fff;
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    transition:var(--transition);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.dashboard-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:4px;
+
+    background:linear-gradient(
+    90deg,
+    var(--primary),
+    var(--secondary));
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,.12);
+
+}
+
+/*=========================================
+          SECTION SPACING
+=========================================*/
+
+section{
+
+    margin-bottom:28px;
+
+}
+
+/*=========================================
+          UTILITY CLASSES
+=========================================*/
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-right{
+
+    text-align:right;
+
+}
+
+.d-flex{
+
+    display:flex;
+
+}
+
+.align-center{
+
+    align-items:center;
+
+}
+
+.justify-between{
+
+    justify-content:space-between;
+
+}
+
+/*=========================================
+            TOP NAVIGATION
+=========================================*/
+
+.topbar{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+background:rgba(255,255,255,.95);
+
+backdrop-filter:blur(14px);
+
+padding:18px 28px;
+
+border-radius:20px;
+
+box-shadow:0 10px 35px rgba(0,0,0,.08);
+
+margin-bottom:30px;
+
+position:sticky;
+
+top:20px;
+
+z-index:100;
+
+}
+
+.top-left{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+.menu-btn{
+
+display:none;
+
+width:48px;
+
+height:48px;
+
+border:none;
+
+outline:none;
+
+cursor:pointer;
+
+border-radius:12px;
+
+background:var(--primary);
+
+color:#fff;
+
+font-size:20px;
+
+transition:var(--transition);
+
+}
+
+.menu-btn:hover{
+
+transform:scale(1.08);
+
+}
+
+.logo img{
+
+width:170px;
+
+display:block;
+
+}
+
+/*=========================================
+          SEARCH BOX
+=========================================*/
+
+.search-box{
+
+flex:1;
+
+max-width:520px;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+background:#f1f5f9;
+
+border:1px solid var(--border);
+
+border-radius:50px;
+
+padding:0 20px;
+
+height:54px;
+
+}
+
+.search-box i{
+
+color:#64748b;
+
+font-size:18px;
+
+}
+
+.search-box input{
+
+flex:1;
+
+border:none;
+
+outline:none;
+
+background:transparent;
+
+font-size:15px;
+
+color:var(--text);
+
+font-family:'Poppins',sans-serif;
+
+}
+
+.search-box input::placeholder{
+
+color:#94a3b8;
+
+}
+
+/*=========================================
+         RIGHT SECTION
+=========================================*/
+
+.top-right{
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+}
+
+/*=========================================
+         ICON BOX
+=========================================*/
+
+.icon-box{
+
+position:relative;
+
+width:52px;
+
+height:52px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:#f8fafc;
+
+cursor:pointer;
+
+transition:var(--transition);
+
+border:1px solid var(--border);
+
+}
+
+.icon-box:hover{
+
+background:var(--primary);
+
+color:#fff;
+
+transform:translateY(-4px);
+
+}
+
+.icon-box i{
+
+font-size:18px;
+
+}
+
+.badge{
+
+position:absolute;
+
+top:-4px;
+
+right:-2px;
+
+width:22px;
+
+height:22px;
+
+border-radius:50%;
+
+background:var(--danger);
+
+color:#fff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:11px;
+
+font-weight:700;
+
+}
+
+/*=========================================
+        PROFILE
+=========================================*/
+
+.profile{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+cursor:pointer;
+
+background:#fff;
+
+border:1px solid var(--border);
+
+padding:10px 18px;
+
+border-radius:60px;
+
+transition:var(--transition);
+
+}
+
+.profile:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+}
+
+.profile-image{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+background:linear-gradient(135deg,
+var(--primary),
+var(--secondary));
+
+color:#fff;
+
+font-size:22px;
+
+}
+
+.profile-info{
+
+display:flex;
+
+flex-direction:column;
+
+}
+
+.profile-info h4{
+
+font-size:15px;
+
+font-weight:600;
+
+color:var(--dark);
+
+}
+
+.profile-info span{
+
+font-size:12px;
+
+color:#64748b;
+
+}
+
+.profile-info small{
+
+font-size:11px;
+
+color:var(--accent);
+
+font-weight:600;
+
+}
+
+.profile .fa-angle-down{
+
+color:#64748b;
+
+}
+
+/*=========================================
+      WELCOME BANNER
+=========================================*/
+
+.welcome-banner{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:40px;
+
+padding:45px;
+
+border-radius:28px;
+
+overflow:hidden;
+
+background:linear-gradient(135deg,
+#2563eb,
+#0ea5e9,
+#14b8a6);
+
+color:#fff;
+
+position:relative;
+
+}
+
+.welcome-banner::before{
+
+content:"";
+
+position:absolute;
+
+width:340px;
+
+height:340px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.12);
+
+right:-120px;
+
+top:-120px;
+
+}
+
+.welcome-content{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.welcome-content span{
+
+display:inline-block;
+
+font-size:17px;
+
+font-weight:500;
+
+margin-bottom:12px;
+
+}
+
+.welcome-content h1{
+
+font-size:42px;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+line-height:1.2;
+
+}
+
+.welcome-content p{
+
+font-size:16px;
+
+line-height:1.8;
+
+max-width:560px;
+
+margin-bottom:30px;
+
+}
+
+.welcome-content button{
+
+display:inline-flex;
+
+align-items:center;
+
+gap:10px;
+
+border:none;
+
+cursor:pointer;
+
+padding:15px 30px;
+
+border-radius:50px;
+
+background:#fff;
+
+color:var(--primary);
+
+font-size:15px;
+
+font-weight:600;
+
+transition:var(--transition);
+
+}
+
+.welcome-content button:hover{
+
+transform:translateY(-4px);
+
+}
+
+.welcome-image{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.welcome-image img{
+
+width:360px;
+
+max-width:100%;
+
+animation:floatImage 5s ease-in-out infinite;
+
+}
+
+@keyframes floatImage{
+
+0%{
+
+    transform:translateY(0);
+
+}
+
+50%{
+
+    transform:translateY(-14px);
+
+}
+
+100%{
+
+    transform:translateY(0);
+
+}
+
+}
+
+
+
+/*=========================================
+            RESPONSIVE DESIGN
+=========================================*/
+
+/* ---------- Large Laptop (1400px) ---------- */
+
+@media (max-width:1400px){
+
+.cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.quick-actions{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ---------- Laptop ---------- */
+
+@media (max-width:1200px){
+
+.dashboard-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+.welcome-banner{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.welcome-content p{
+
+    margin:20px auto;
+
+}
+
+.welcome-image img{
+
+    width:300px;
+
+}
+
+}
+
+/* ---------- Tablet ---------- */
+
+@media (max-width:992px){
+
+.sidebar{
+
+    left:-280px;
+
+    width:270px;
+
+}
+
+.sidebar.active{
+
+    left:0;
+
+}
+
+.close-sidebar{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.menu-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.main-content{
+
+    margin-left:0;
+
+    padding:20px;
+
+}
+
+.topbar{
+
+    padding:15px 20px;
+
+}
+
+.search-box{
+
+    max-width:300px;
+
+}
+
+.cards{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.quick-actions{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width:768px){
+
+.topbar{
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.search-box{
+
+    order:3;
+
+    width:100%;
+
+    max-width:100%;
+
+}
+
+.top-right{
+
+    width:100%;
+
+    justify-content:flex-end;
+
+    gap:10px;
+
+}
+
+.profile{
+
+    padding:8px 12px;
+
+}
+
+.profile-info{
+
+    display:none;
+
+}
+
+.welcome-banner{
+
+    padding:30px 20px;
+
+}
+
+.welcome-content h1{
+
+    font-size:30px;
+
+}
+
+.welcome-content p{
+
+    font-size:15px;
+
+}
+
+.welcome-image img{
+
+    width:240px;
+
+}
+
+.cards{
+
+    grid-template-columns:1fr;
+
+}
+
+.quick-actions{
+
+    grid-template-columns:1fr;
+
+}
+
+.card{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.card-icon{
+
+    margin-bottom:10px;
+
+}
+
+.employee-table{
+
+    min-width:650px;
+
+}
+
+.profile-dropdown{
+
+    right:15px;
+
+    width:220px;
+
+}
+
+}
+
+/* ---------- Small Mobile ---------- */
+
+@media (max-width:576px){
+
+.main-content{
+
+    padding:15px;
+
+}
+
+.topbar{
+
+    padding:15px;
+
+    border-radius:15px;
+
+}
+
+.logo img{
+
+    width:130px;
+
+}
+
+.icon-box{
+
+    width:45px;
+
+    height:45px;
+
+}
+
+.profile-image{
+
+    width:45px;
+
+    height:45px;
+
+    font-size:18px;
+
+}
+
+.welcome-content h1{
+
+    font-size:26px;
+
+}
+
+.welcome-content button{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+.dashboard-card{
+
+    padding:20px;
+
+}
+
+.card{
+
+    padding:20px;
+
+}
+
+.action-card{
+
+    padding:25px 15px;
+
+}
+
+.chart-filter{
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+}
+
+.chart-filter button{
+
+    flex:1;
+
+    min-width:90px;
+
+}
+
+.card-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+}
+
+.view-all-btn{
+
+    width:100%;
+
+}
+
+.schedule-item{
+
+    flex-direction:column;
+
+}
+
+.schedule-time{
+
+    width:100%;
+
+}
+
+}
+
+/*=========================================
+        SIDEBAR OVERLAY
+=========================================*/
+
+.sidebar-overlay{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(0,0,0,.45);
+
+backdrop-filter:blur(2px);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:998;
+
+}
+
+.sidebar-overlay.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+/*=========================================
+        FADE ANIMATION
+=========================================*/
+
+.fade-up{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:all .8s ease;
+
+}
+
+.fade-up.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/*=========================================
+        BUTTON EFFECT
+=========================================*/
+
+button{
+
+font-family:'Poppins',sans-serif;
+
+}
+
+button:active{
+
+transform:scale(.97);
+
+}
+
+/*=========================================
+        IMAGE SETTINGS
+=========================================*/
+
+img{
+
+max-width:100%;
+
+display:block;
+
+}
+
+/*=========================================
+        INPUT SETTINGS
+=========================================*/
+
+input{
+
+font-family:'Poppins',sans-serif;
+
+}
+
+/*=========================================
+        LINKS
+=========================================*/
+
+a{
+
+text-decoration:none;
+
+}
+
+/*=========================================
+        FINAL UTILITIES
+=========================================*/
+
+.hidden{
+
+display:none !important;
+
+}
+
+.text-success{
+
+color:var(--success);
+
+}
+
+.text-danger{
+
+color:var(--danger);
+
+}
+
+.text-warning{
+
+color:var(--warning);
+
+}
+
+.rounded{
+
+border-radius:var(--radius);
+
+}
+
+.shadow{
+
+box-shadow:var(--shadow);
+
+}
+
 </style>
 
-<script>
-    /*=========================================
-DASHBOARD JS
-=========================================*/
+
+    <script>
+    /*=========================================================
+        CORPORATE ADMIN DASHBOARD - PART 1
+=========================================================*/
 
 document.addEventListener("DOMContentLoaded", () => {
 
-/*=====================================
-MOBILE SIDEBAR
-=====================================*/
+/*====================================
+        LOCAL STORAGE USER
+====================================*/
 
-const menuBtn = document.querySelector(".menu-btn");
-const sidebar = document.querySelector(".sidebar");
+const name =
+    localStorage.getItem("name") ||
+    localStorage.getItem("userName") ||
+    "Administrator";
 
-if(menuBtn){
+const email =
+    localStorage.getItem("email") ||
+    localStorage.getItem("userEmail") ||
+    "admin@company.com";
 
-    menuBtn.addEventListener("click", () => {
+const role =
+    localStorage.getItem("role") ||
+    "Administrator";
 
-        sidebar.classList.toggle("active");
+// Profile
+
+const adminName = document.getElementById("adminName");
+const adminEmail = document.getElementById("adminEmail");
+const adminRole = document.getElementById("adminRole");
+const welcomeName = document.getElementById("welcomeName");
+
+if (adminName) adminName.textContent = name;
+if (adminEmail) adminEmail.textContent = email;
+if (adminRole) adminRole.textContent = role;
+if (welcomeName) welcomeName.textContent = name;
+
+/*====================================
+        SIDEBAR
+====================================*/
+
+const sidebar = document.getElementById("sidebar");
+const menuBtn = document.getElementById("menuBtn");
+const closeSidebar = document.getElementById("closeSidebar");
+
+// Overlay
+
+const overlay = document.createElement("div");
+overlay.className = "sidebar-overlay";
+document.body.appendChild(overlay);
+
+function openSidebar() {
+
+    sidebar.classList.add("active");
+    overlay.classList.add("active");
+
+}
+
+function closeMenu() {
+
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+
+}
+
+if (menuBtn) {
+
+    menuBtn.addEventListener("click", openSidebar);
+
+}
+
+if (closeSidebar) {
+
+    closeSidebar.addEventListener("click", closeMenu);
+
+}
+
+overlay.addEventListener("click", closeMenu);
+
+/*====================================
+      PROFILE DROPDOWN
+====================================*/
+
+const profile =
+    document.querySelector(".profile");
+
+const dropdown =
+    document.getElementById("profileDropdown");
+
+if (profile && dropdown) {
+
+    profile.addEventListener("click", (e) => {
+
+        e.stopPropagation();
+
+        dropdown.classList.toggle("active");
+
+    });
+
+    document.addEventListener("click", () => {
+
+        dropdown.classList.remove("active");
 
     });
 
 }
 
-/*=====================================
-CLOSE SIDEBAR
-=====================================*/
+/*====================================
+        LOGOUT
+====================================*/
 
-document.addEventListener("click", (e) => {
+function logoutUser() {
 
-    if(window.innerWidth <= 900){
+    const confirmLogout =
+        confirm("Do you want to logout?");
 
-        if(
-            !sidebar.contains(e.target) &&
-            !menuBtn.contains(e.target)
-        ){
+    if (!confirmLogout) return;
 
-            sidebar.classList.remove("active");
+    localStorage.removeItem("name");
+    localStorage.removeItem("email");
+    localStorage.removeItem("role");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userEmail");
 
-        }
-
-    }
-
-});
-
-/*=====================================
-ROLE SWITCH
-=====================================*/
-
-const role = document.getElementById("roleSelect");
-
-if(role){
-
-    role.addEventListener("change", function(){
-
-        window.location.href = this.value;
-
-    });
+    window.location.href = "login.html";
 
 }
 
-/*=====================================
-AUTO DATE
-=====================================*/
+const logoutBtn =
+    document.getElementById("logoutBtn");
 
-const dateInput = document.querySelector(".date-picker input");
+const logoutMenu =
+    document.getElementById("logoutMenu");
 
-if(dateInput){
+if (logoutBtn) {
 
-    const today = new Date().toISOString().split("T")[0];
+    logoutBtn.addEventListener(
+        "click",
+        (e) => {
 
-    dateInput.value = today;
+            e.preventDefault();
+
+            logoutUser();
+
+        }
+    );
 
 }
 
-/*=====================================
-SCROLL ANIMATION
-=====================================*/
+if (logoutMenu) {
 
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-        }
-
-    });
-
-},{
-
-    threshold:0.2
-
-});
-
-document.querySelectorAll(
-    ".scroll-up,.scroll-left,.scroll-right"
-).forEach(el=>{
-
-    observer.observe(el);
-
-});
-
-/*=====================================
-PROGRESS BAR ANIMATION
-=====================================*/
-
-document.querySelectorAll(".progress-fill").forEach(bar=>{
-
-    const width = bar.classList.contains("fill75") ? "75%" :
-                  bar.classList.contains("fill60") ? "60%" :
-                  bar.classList.contains("fill45") ? "45%" : "0%";
-
-    bar.style.width = "0";
-
-    setTimeout(()=>{
-
-        bar.style.transition = "width 1.2s ease";
-
-        bar.style.width = width;
-
-    },300);
-
-});
-
-/*=====================================
-TASK CHECKBOX
-=====================================*/
-
-document.querySelectorAll(".task-item input").forEach(check=>{
-
-    check.addEventListener("change",()=>{
-
-        const task = check.closest(".task-item");
-
-        if(check.checked){
-
-            task.style.opacity=".6";
-
-            task.style.textDecoration="line-through";
-
-        }
-
-        else{
-
-            task.style.opacity="1";
-
-            task.style.textDecoration="none";
-
-        }
-
-    });
-
-});
-
-/*=====================================
-CARD HOVER
-=====================================*/
-
-document.querySelectorAll(".stat-card").forEach(card=>{
-
-    card.addEventListener("mouseenter",()=>{
-
-        card.style.transform="translateY(-8px)";
-
-    });
-
-    card.addEventListener("mouseleave",()=>{
-
-        card.style.transform="translateY(0px)";
-
-    });
-
-});
-
-/*=====================================
-NOTIFICATION BUTTON
-=====================================*/
-
-const bell = document.querySelector(".fa-bell");
-
-if(bell){
-
-    bell.parentElement.addEventListener("click",()=>{
-
-        bell.classList.add("fa-shake");
-
-        setTimeout(()=>{
-
-            bell.classList.remove("fa-shake");
-
-        },1000);
-
-    });
-
-};
-
-/*=====================================
-PROFILE BUTTON
-=====================================*/
-
-const profileBtn = document.querySelector(".fa-user");
-
-if(profileBtn){
-
-    profileBtn.parentElement.addEventListener("click",()=>{
-
-        alert("Profile page coming soon.");
-
-    });
+    logoutMenu.addEventListener(
+        "click",
+        logoutUser
+    );
 
 }
 
+/*====================================
+      KPI COUNTER ANIMATION
+====================================*/
+
+function animateCounter(id, target, prefix = "") {
+
+    const element =
+        document.getElementById(id);
+
+    if (!element) return;
+
+    let current = 0;
+
+    const increment =
+        Math.ceil(target / 80);
+
+    const timer = setInterval(() => {
+
+        current += increment;
+
+        if (current >= target) {
+
+            current = target;
+
+            clearInterval(timer);
+
+        }
+
+        element.textContent =
+            prefix + current.toLocaleString();
+
+    }, 20);
+
+}
+
+animateCounter(
+    "employeeCount",
+    1286
+);
+
+animateCounter(
+    "projectCount",
+    84
+);
+
+animateCounter(
+    "clientCount",
+    312
+);
+
+animateCounter(
+    "revenueCount",
+    12800000,
+    "₹"
+);
 
 });
 
-    </script>
 
-</body>
 
-</html>
+</script>
