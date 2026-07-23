@@ -614,7 +614,7 @@ document.addEventListener("click", function(e){
 
         </p>
 
-        <a href="404.html" class="hero-btn">
+        <a href="./404.html" class="hero-btn">
 
             <span class="btn-text">
                 Get Started
@@ -676,6 +676,181 @@ document.addEventListener("click", function(e){
 
     
 <style>
+    /*=========================================
+HERO SECTION
+=========================================*/
+
+.hero{
+
+position:relative;
+
+width:100%;
+
+min-height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+background:url("images/hero-bg.jpg") center center/cover no-repeat;
+
+}
+
+/*=========================================
+SMOKEY / CEMENT OVERLAY
+=========================================*/
+
+.hero .overlay{
+
+position:absolute;
+
+inset:0;
+
+z-index:1;
+
+background:
+
+    radial-gradient(circle at 20% 30%,
+    rgba(255,255,255,.08) 0%,
+    transparent 35%),
+
+    radial-gradient(circle at 80% 20%,
+    rgba(255,255,255,.06) 0%,
+    transparent 30%),
+
+    radial-gradient(circle at 60% 80%,
+    rgba(255,255,255,.08) 0%,
+    transparent 35%),
+
+    linear-gradient(
+    rgba(15,15,15,.45),
+    rgba(25,25,25,.60));
+
+backdrop-filter:blur(2px);
+
+}
+
+/*=========================================
+SMOKE LAYER
+=========================================*/
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+z-index:2;
+
+background:
+
+    radial-gradient(circle,
+    rgba(255,255,255,.10) 0%,
+    transparent 65%);
+
+mix-blend-mode:screen;
+
+opacity:.45;
+
+animation:smokeMove 12s ease-in-out infinite alternate;
+
+}
+
+/*=========================================
+SECOND SMOKE LAYER
+=========================================*/
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+width:180%;
+
+height:180%;
+
+top:-40%;
+
+left:-40%;
+
+z-index:2;
+
+background:
+
+    radial-gradient(circle,
+    rgba(255,255,255,.06) 0%,
+    transparent 70%);
+
+filter:blur(90px);
+
+animation:smokeFloat 18s linear infinite;
+
+}
+
+/*=========================================
+CONTENT
+=========================================*/
+
+.hero-content,
+
+.hero-stats{
+
+position:relative;
+
+z-index:5;
+
+}
+
+/*=========================================
+SMOKE ANIMATION
+=========================================*/
+
+@keyframes smokeMove{
+
+0%{
+
+transform:translate(-20px,-10px) scale(1);
+
+}
+
+100%{
+
+transform:translate(20px,15px) scale(1.15);
+
+}
+
+}
+
+@keyframes smokeFloat{
+
+0%{
+
+transform:rotate(0deg) translateX(0);
+
+}
+
+50%{
+
+transform:rotate(2deg) translateX(25px);
+
+}
+
+100%{
+
+transform:rotate(0deg) translateX(0);
+
+}
+
+}
     /*======================================
 HEADER HEIGHT VARIABLES
 ======================================*/
@@ -711,6 +886,7 @@ align-items:center;
 overflow:hidden;
 
 background:url("./image\ 5.webp") center center/cover no-repeat;
+
 
 }
 
@@ -3432,7 +3608,7 @@ document.head.appendChild(style);
     
                 <div class="about-image reveal-left">
     
-                    <img src="./image 1.webp"
+                    <img src="./image 7.webp"
                         alt="About Stackly">
     
                     <!-- Experience Card -->
@@ -3547,7 +3723,7 @@ document.head.appendChild(style);
     
                     <!-- Button -->
     
-                    <a href="contact.html" class="about-btn">
+                    <a href="./404.html" class="about-btn">
     
                         Learn More
     
@@ -3561,9 +3737,7 @@ document.head.appendChild(style);
     
         </section>
     
-        <!-- JavaScript -->
-    
-        <script src="about.js"></script>
+        
     
     
 
@@ -8813,42 +8987,37 @@ document.head.appendChild(style);
                     <ul class="stkx-footer-links">
 
                         <li>
-                            <a href="index.html">
+                            <a href="./index.html">
                                 <span class="stkx-dot"></span>
                                 Home
                             </a>
                         </li>
 
                         <li>
-                            <a href="about.html">
+                            <a href="./about.html">
                                 <span class="stkx-dot"></span>
                                 About Us
                             </a>
                         </li>
 
                         <li>
-                            <a href="services.html">
+                            <a href="./services.html">
                                 <span class="stkx-dot"></span>
                                 Services
                             </a>
                         </li>
 
                         <li>
-                            <a href="./404.html">
+                            <a href="./carrers.html">
                                 <span class="stkx-dot"></span>
-                                Corporate
+                              Careers
                             </a>
                         </li>
 
-                        <li>
-                            <a href="./404.html">
-                                <span class="stkx-dot"></span>
-                                Customer
-                            </a>
-                        </li>
+                        
 
                         <li>
-                            <a href="contact.html">
+                            <a href="./contact.html">
                                 <span class="stkx-dot"></span>
                                 Contact Us
                             </a>
@@ -9033,7 +9202,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
      FOOTER JAVASCRIPT
 =========================================== -->
 
-<script src="footer.js"></script>
+
 
 <style>
 
